@@ -781,6 +781,7 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 (function(){
   /* 방문 분석 설정: 깃허브(github.io)에서만 동작해요 */
   var SITE = { ga4: 'G-73SENFXNYM', clarity: 'yy02i3cg82' };
+  var landing = location.href; /* 들어온 주소 그대로(UTM 포함) 기록용 */
   var onSite = /(^|\.)github\.io$/.test(location.hostname);
   var qs = {}; try { new URLSearchParams(location.search).forEach(function(v,k){ qs[k]=v; }); } catch(e){}
   /* 내 방문 제외: 주소 끝에 ?me=1 을 붙여 한 번 열면 그 브라우저의 방문은 집계에서 빠져요 (?me=0 으로 해제) */
@@ -799,10 +800,16 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
     setTimeout(function(){ if (tst.parentNode) tst.parentNode.removeChild(tst); }, 4000);
   }
   onSite = onSite && !owner;
+  /* 주소창 정리: utm_ 값은 기록에만 쓰고 주소창에서는 바로 지워요 */
+  try {
+    var sp = new URLSearchParams(location.search), hadUtm = false;
+    Array.from(sp.keys()).forEach(function(k){ if (/^utm_/i.test(k)) { sp.delete(k); hadUtm = true; } });
+    if (hadUtm) { var rest = sp.toString(); history.replaceState(null, '', location.pathname + (rest ? '?' + rest : '') + location.hash); }
+  } catch(e){}
   if (onSite && SITE.ga4) {
     var g = document.createElement('script'); g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=' + SITE.ga4; document.head.appendChild(g);
     window.dataLayer = window.dataLayer || []; window.gtag = function(){ dataLayer.push(arguments); };
-    gtag('js', new Date()); gtag('config', SITE.ga4);
+    gtag('js', new Date()); gtag('config', SITE.ga4, { page_location: landing });
   }
   if (onSite && SITE.clarity) {
     (function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)}; t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i; y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y); })(window, document, "clarity", "script", SITE.clarity);
