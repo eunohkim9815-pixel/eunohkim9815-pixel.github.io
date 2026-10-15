@@ -785,6 +785,22 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
   var SITE = { ga4: '', clarity: '' };
   var onSite = /(^|\.)github\.io$/.test(location.hostname);
   var qs = {}; try { new URLSearchParams(location.search).forEach(function(v,k){ qs[k]=v; }); } catch(e){}
+  /* 내 방문 제외: 주소 끝에 ?me=1 을 붙여 한 번 열면 그 브라우저의 방문은 집계에서 빠져요 (?me=0 으로 해제) */
+  var owner = false;
+  try {
+    if (qs.me === '1') localStorage.setItem('ek_owner', '1');
+    if (qs.me === '0') localStorage.removeItem('ek_owner');
+    owner = localStorage.getItem('ek_owner') === '1';
+  } catch(e){ owner = qs.me === '1'; }
+  if (qs.me === '1' || qs.me === '0') {
+    try { history.replaceState(null, '', location.pathname + location.hash); } catch(e){}
+    var tst = document.createElement('div');
+    tst.textContent = owner ? '✓ 이 브라우저에서 연 방문은 이제 집계에서 빠져요' : '이 브라우저에서 연 방문도 다시 집계돼요';
+    tst.setAttribute('style', 'position:fixed;left:50%;bottom:28px;transform:translateX(-50%);z-index:9999;background:#111;color:#fff;font-size:14px;font-weight:600;padding:12px 20px;border-radius:999px;white-space:nowrap');
+    document.body.appendChild(tst);
+    setTimeout(function(){ if (tst.parentNode) tst.parentNode.removeChild(tst); }, 4000);
+  }
+  onSite = onSite && !owner;
   if (onSite && SITE.ga4) {
     var g = document.createElement('script'); g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=' + SITE.ga4; document.head.appendChild(g);
     window.dataLayer = window.dataLayer || []; window.gtag = function(){ dataLayer.push(arguments); };
