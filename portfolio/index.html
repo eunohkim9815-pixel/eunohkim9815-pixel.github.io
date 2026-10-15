@@ -60,8 +60,6 @@ section[id],article[id]{scroll-margin-top:calc(var(--bar) + 12px)}
 .site-link b{font-weight:700}
 .site-link span{font-family:var(--mono);font-size:12px;letter-spacing:0;overflow-wrap:anywhere}
 .site-link:hover{background:var(--blue);color:#fff}
-.hero-intro{display:flex;align-items:center;gap:10px;margin-bottom:16px;font-size:clamp(17px,1.6vw,21px);font-weight:600;color:var(--ink-2);letter-spacing:-.02em}
-.hero-intro::before{content:"";width:20px;height:2px;background:var(--blue)}
 .hero-title{font-weight:700;font-size:clamp(31px,4.6vw,64px);line-height:1.24;letter-spacing:-.045em}
 .hero-title .hl{color:var(--blue)}
 .hl-band{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:clamp(40px,5vw,72px)}
@@ -78,6 +76,7 @@ section[id],article[id]{scroll-margin-top:calc(var(--bar) + 12px)}
   .hl-band{grid-template-columns:minmax(0,1fr);gap:10px}
   .site-link{margin-left:0}
   .hero-title br{display:none}
+  .hero-title br.br-keep{display:inline}
 }
 /* ───────── section heads ───────── */
 .sec{position:relative;padding:clamp(64px,8vw,104px) 0}
@@ -367,8 +366,7 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
       <span>김은오 · EUNOH KIM</span>
       <a class="site-link" id="siteLink" href="https://eunohkim9815-pixel.github.io/portfolio/" target="_blank" rel="noopener"><b>웹사이트에서 보기</b><span>eunohkim9815-pixel.github.io/portfolio</span><i aria-hidden="true">↗</i></a>
     </div>
-    <p class="hero-intro">마케터 김은오입니다</p>
-    <h1 class="hero-title">주도적으로 문제를 찾아 몰입하고,<br> 끝까지 파고들어 <span class="hl">성과</span>를 만들어 왔습니다</h1>
+    <h1 class="hero-title">주도적으로 문제를 찾아 몰입하고,<br> 끝까지 파고들어 <span class="hl">성과</span>를 만들어 온<br class="br-keep"> 마케터 김은오</h1>
     <nav class="hl-band" aria-label="케이스 바로가기">
       <a class="hi" href="#case-1" data-case="1">
         <span class="mono">Case 01</span>
@@ -832,7 +830,7 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
   var seen = {};
   if ('IntersectionObserver' in window) {
     var navIO = new IntersectionObserver(function(es){ es.forEach(function(en){ if (en.isIntersecting) navLinks.forEach(function(a){ a.classList.toggle('on', a.getAttribute('href') === '#' + en.target.id); }); }); }, {rootMargin:'-45% 0px -50% 0px'});
-    ['about','projects','contact'].forEach(function(id){ var el=document.getElementById(id); if (el) navIO.observe(el); });
+    ['top','about','projects','contact'].forEach(function(id){ var el=document.getElementById(id); if (el) navIO.observe(el); });
     var viewIO = new IntersectionObserver(function(es){ es.forEach(function(en){ var id = en.target.id; if (en.isIntersecting && !seen[id]) { seen[id] = 1; track('section_view', {section: id}); } }); }, {threshold:0.3});
     ['about','case-1','case-2','case-3','contact'].forEach(function(id){ var el=document.getElementById(id); if (el) viewIO.observe(el); });
   }
