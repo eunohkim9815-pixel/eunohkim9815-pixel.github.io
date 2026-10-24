@@ -365,6 +365,24 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
   html{scroll-behavior:auto}
   .px,.r-num,.hi-num{transform:none!important}
 }
+/* Contact: 스픽 브랜드 컬러 (블루 #1C49FF, 네이비 #12205A) */
+.closing{--sp-blue:#1c49ff;--sp-navy:#12205a;overflow:hidden;background:var(--sp-navy);color:#fff}
+.closing::before,.closing::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.closing::before{right:-14%;top:-38%;width:min(760px,70vw);aspect-ratio:1;background:radial-gradient(closest-side,rgba(28,73,255,.6),rgba(28,73,255,0))}
+.closing::after{left:-18%;bottom:-55%;width:min(620px,60vw);aspect-ratio:1;background:radial-gradient(closest-side,rgba(16,130,236,.28),rgba(16,130,236,0))}
+.closing .wrap{position:relative;z-index:1}
+.closing .sec-head{border-bottom-color:rgba(255,255,255,.2)}
+.closing .kicker b{color:#9db1ff}
+.closing .kicker .mono{color:rgba(255,255,255,.72)}
+.closing .sec-title{color:#fff}
+.closing .thanks p.t{color:rgba(255,255,255,.78)}
+.closing .thanks .sign{color:#fff}
+.closing .thanks{align-items:center}
+.closing .contact-card{background:var(--sp-blue);border-radius:22px 22px 22px 6px;box-shadow:0 28px 56px -28px rgba(3,8,40,.85)}
+.closing .contact-card .mono{color:rgba(255,255,255,.75)}
+.closing .contact-card .copy{background:#fff;color:var(--sp-navy);font-weight:600}
+.closing .contact-card .copy:hover,.closing .contact-card .copy.done{background:var(--sp-navy);color:#fff}
+.closing .contact-card .cc-phone{border-top-color:rgba(255,255,255,.3)}
 </style>
 </head>
 <body>
