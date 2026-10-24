@@ -288,6 +288,12 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 .loop-s li{position:relative;display:flex;align-items:center;justify-content:center;min-height:44px;padding:7px 6px;border-radius:8px;background:var(--soft);font-size:12.5px;font-weight:500;line-height:1.35;text-align:center}
 .loop-s li+li::before{content:"";position:absolute;left:-15px;top:50%;width:11px;height:1.5px;background:var(--mute-2)}
 .loop-s li+li::after{content:"";position:absolute;left:-9px;top:calc(50% - 3.5px);width:6px;height:6px;border-top:1.5px solid var(--mute-2);border-right:1.5px solid var(--mute-2);transform:rotate(45deg)}
+.loop-s li{flex-direction:column}
+.loop-s li small{display:block;margin-top:2px;font-size:11px;font-weight:400;color:var(--mute)}
+.loop-s li.hl{background:var(--blue-tint);color:var(--blue-deep);font-weight:700}
+.kpis .loop{grid-column:1 / -1;margin-top:0}
+.loop.fn .loop-s{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 18px}
+.loop.fn .loop-s li:nth-child(3)::before,.loop.fn .loop-s li:nth-child(3)::after{display:none}
 .rc .retro{margin-top:10px;padding-top:10px;border-top:1px dashed #d8dbe0;font-size:13px}
 .rc .retro b{color:var(--ink)}
 @media screen and (max-width:640px){
@@ -688,6 +694,7 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
         <div>
           <div class="case-tags"><span class="tag">광고 운영, 소재 및 랜딩 기획</span><span class="case-meta">이지엠앤씨 | 퍼포먼스 마케터 | 2026.02 ~ 현재</span></div>
           <h3 class="case-title">광고 소재와 판단 기준을 바꿔 임플란트 예약률을 3배 회복한 경험</h3>
+          <p class="case-impact">신청 → 예약 전환율 3.5% → 10.6%, 예약단가 67% 절감 <span style="white-space:nowrap">(8월 초 대비 9월 초)</span></p>
         </div>
       </header>
       <div class="cols">
@@ -697,13 +704,17 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
           <div class="kpis">
             <div class="kpi"><span class="k-l">예약률</span><b>10.3% → 3.5%</b></div>
             <div class="kpi"><span class="k-l">예약단가</span><b><small>7월 대비</small>3.7배 상승</b></div>
+            <div class="loop fn" role="img" aria-label="7월에서 8월 초로 오며 광고비는 일평균 1.5배 늘고 신청도 늘었지만, 예약 전환은 10.3퍼센트에서 3.5퍼센트로 떨어지고 예약단가는 3.7배 올랐음">
+              <span class="loop-h">7월 → 8월 초</span>
+              <ol class="loop-s"><li>광고비 1.5배 ↑<small>일평균 기준</small></li><li>신청 늘어남</li><li class="hl">예약 전환<br>10.3% → 3.5%</li><li>예약단가 3.7배 ↑</li></ol>
+            </div>
             <div class="need"><svg aria-hidden="true"><use href="#i-flag"/></svg>이 치과를 예약할 이유가 명확히 필요!</div>
           </div>
           <div class="card">
             <h5>상담 기록에서 찾은 핵심 원인 2가지</h5>
             <p class="sub">임플란트는 의료진과 가격을 보고 결정해요</p>
             <ol class="pts">
-              <li><b>① 고객 기준과 어긋난 소재</b><p>상담 기록 163건 전수 조사</p><p class="so">허수 상당수가 치과 지원금 소재를 시에서 주는 지원금으로 착각하고 신청</p></li>
+              <li><b>① 고객 기준과 어긋난 소재</b><p>상담 기록 163건 전수 조사</p><p class="so">8월 초 소재별 무효율 60~82%, 신청 10건 중 6~8건이 무효</p><p class="so">지원금 안내 랜딩은 '신청한 적 없다' 응답이 11.2%, 가격 공개 랜딩(1.6%)의 7배</p></li>
               <li><b>② 신청 단가만 보는 성과 판단</b><p>소재를 켜고 끄는 기준이 신청 1건당 비용뿐</p><p class="so">신청만 싸면 허수가 많아도 좋은 소재로 남아 예약이 무너져도 판단에 드러나지 않음</p></li>
             </ol>
           </div>
@@ -743,7 +754,7 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
             </div>
           </div>
           <div class="st">
-            <h5 class="st-h"><em>③</em> 공통: '예약과 내원'으로 판정하는 구조</h5>
+            <h5 class="st-h"><em>③</em> 공통: '예약과 내원'으로 판정하는 리포팅 구조</h5>
             <ul class="st-l"><li>AI로 광고, 상담 데이터 통합 대시보드 구축</li><li>신청일 기준 코호트와 기존 환자 매칭으로 성과 왜곡 보정</li><li>판정 가이드라인 공유, 점차 팀 기준으로 정착</li></ul>
             <div class="media flow" role="img" aria-label="메타 광고, 구글 광고, 상담 기록을 통합 대시보드로 모아 신청, 예약, 내원까지 보는 구조. 기존 판정은 신청, 새 판정은 예약과 내원">
               <div class="src"><span>메타 광고</span><span>구글 광고</span><span>상담 기록</span></div>
