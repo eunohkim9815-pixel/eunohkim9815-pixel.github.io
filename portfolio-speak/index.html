@@ -385,24 +385,24 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 .hero .hi-lb{color:var(--sp-navy)}
 .hero .hi-num{color:var(--sp-blue)}
 
-/* Contact: 스픽 브랜드 컬러 (블루 #1C49FF, 네이비 #12205A) */
-.closing{--sp-blue:#1c49ff;--sp-navy:#12205a;overflow:hidden;background:var(--sp-navy);color:#fff}
+/* Contact: 첫 화면과 같은 스픽 메인 블루 #1C49FF 바탕 */
+.closing{--sp-blue:#1c49ff;--sp-navy:#12205a;--sp-mute:#8990ad;overflow:hidden;background:var(--sp-blue);color:#fff}
 .closing::before,.closing::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
-.closing::before{right:-14%;top:-38%;width:min(760px,70vw);aspect-ratio:1;background:radial-gradient(closest-side,rgba(28,73,255,.6),rgba(28,73,255,0))}
-.closing::after{left:-18%;bottom:-55%;width:min(620px,60vw);aspect-ratio:1;background:radial-gradient(closest-side,rgba(16,130,236,.28),rgba(16,130,236,0))}
+.closing::before{right:-14%;top:-38%;width:min(760px,70vw);aspect-ratio:1;background:radial-gradient(closest-side,rgba(120,150,255,.55),rgba(120,150,255,0))}
+.closing::after{left:-18%;bottom:-55%;width:min(620px,60vw);aspect-ratio:1;background:radial-gradient(closest-side,rgba(10,34,190,.55),rgba(10,34,190,0))}
 .closing .wrap{position:relative;z-index:1}
-.closing .sec-head{border-bottom-color:rgba(255,255,255,.2)}
-.closing .kicker b{color:#9db1ff}
-.closing .kicker .mono{color:rgba(255,255,255,.72)}
+.closing .sec-head{border-bottom-color:rgba(255,255,255,.3)}
+.closing .kicker b{color:#fff}
+.closing .kicker .mono{color:rgba(255,255,255,.82)}
 .closing .sec-title{color:#fff}
-.closing .thanks p.t{color:rgba(255,255,255,.78)}
+.closing .thanks p.t{color:rgba(255,255,255,.88)}
 .closing .thanks .sign{color:#fff}
 .closing .thanks{align-items:center}
-.closing .contact-card{background:var(--sp-blue);border-radius:22px 22px 22px 6px;box-shadow:0 28px 56px -28px rgba(3,8,40,.85)}
-.closing .contact-card .mono{color:rgba(255,255,255,.75)}
-.closing .contact-card .copy{background:#fff;color:var(--sp-navy);font-weight:600}
+.closing .contact-card{background:#fff;color:var(--sp-navy);border-radius:22px 22px 22px 6px;box-shadow:0 28px 56px -28px rgba(8,22,120,.8)}
+.closing .contact-card .mono{color:var(--sp-mute)}
+.closing .contact-card .copy{background:var(--sp-blue);color:#fff;font-weight:600}
 .closing .contact-card .copy:hover,.closing .contact-card .copy.done{background:var(--sp-navy);color:#fff}
-.closing .contact-card .cc-phone{border-top-color:rgba(255,255,255,.3)}
+.closing .contact-card .cc-phone{border-top-color:#e6e9f5}
 </style>
 </head>
 <body>
@@ -431,10 +431,10 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
   <div class="wrap">
     <div class="hero-meta">
       <span class="mono"><span class="dot"></span>Portfolio 2026</span>
-      <span>김은오 · EUNOH KIM</span>
+      <span>김은오 | EUNOH KIM</span>
       <a class="site-link" id="siteLink" href="https://eunohkim9815-pixel.github.io/portfolio-speak/" target="_blank" rel="noopener"><b>웹사이트에서 보기</b><span>eunohkim9815-pixel.github.io/portfolio-speak</span><i aria-hidden="true">↗</i></a>
     </div>
-    <h1 class="hero-title">고객 여정에서 막힌 구간을 찾아<br> <span class="hl">전환</span>을 끌어올리는 마케터 김은오입니다.</h1>
+    <h1 class="hero-title">고객 여정에서 막힌 구간을 찾아<br> <span class="hl">전환</span>을 끌어올리는 마케터 김은오입니다</h1>
     <nav class="hl-band" aria-label="케이스 바로가기">
       <a class="hi" href="#case-1" data-case="1">
         <span class="mono">Case 01</span>
@@ -634,15 +634,15 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
             <span class="cap" style="margin-top:8px;text-align:center">구매 전환율</span>
           </div>
           <div class="rc">
-            <span class="cap">메타 광고 기준 · 기존 24개 vs 개선 후 60개 광고</span>
+            <span class="cap">메타 광고 기준, 기존 24개 vs 개선 후 60개 광고</span>
             <ul>
-              <li><b>가입당 비용은 그대로(−4%), <span style="white-space:nowrap;font-size:inherit;color:inherit">구매당 비용만 45% 절감</span></b><span>183만 원 → 101만 원</span></li>
+              <li><b>가입당 비용은 그대로(−4%), <span style="white-space:nowrap;font-size:inherit;color:inherit">구매당 비용만 45% 절감</span></b></li>
               <li><b>ROAS 63% → 120%, 손익분기 넘김</b></li>
             </ul>
           </div>
           <div class="rc note"><svg aria-hidden="true"><use href="#i-check"/></svg><p>메타 본사 미팅과 크리에이티브 데이에서 회사가 사례로 소개</p></div>
           <div class="rc line">
-            <span class="cap">→ 겨울캠프 공동구매로 확장 · 성과 좋은 인플루언서와 진행</span>
+            <span class="cap">→ 겨울캠프 공동구매로 확장, 성과 좋은 <span style="white-space:nowrap">인플루언서와 진행</span></span>
             <span class="big">10일 만에 신규 가입 115건</span>
             <p>평소 인플루언서 광고 3주치<br>가입당 6.9만 원, 평소보다 19% 낮음</p>
             <p class="retro"><b>회고:</b> 광고 성과 상위가 공구 성과 상위는 아니어서, 다음 공구는 추천 링크 유입 실적으로 선정하기로 정리</p>
@@ -727,10 +727,10 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
           <div class="rc">
             <ul>
               <li><b>250세트 기한 내 전량 발송</b></li>
-              <li><b>브랜드 호감 형성</b><span>VIP 고객 긍정 피드백 다수</span><span>'역대 최고의 기프트박스'라는 호평</span></li>
+              <li><b>브랜드 호감 형성</b><span>VIP 고객 긍정 피드백 다수, '역대 최고의 기프트박스'라는 호평, 색칠한 그림을 보내온 고객</span></li>
             </ul>
           </div>
-          <div class="rc note"><svg aria-hidden="true"><use href="#i-check"/></svg><p>다음 분기 기프트박스도 같은 방식으로 제작</p></div>
+          <div class="rc note"><svg aria-hidden="true"><use href="#i-check"/></svg><p>취향 기반 기프트박스 기획은 <span style="white-space:nowrap">다음 시즌부터 정례화</span></p></div>
         </section>
       </div>
     </div>
@@ -764,7 +764,7 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
             <h5>상담 기록에서 찾은 핵심 원인 2가지</h5>
             <p class="sub">임플란트는 의료진과 가격을 보고 결정해요</p>
             <ol class="pts">
-              <li><b>① 고객 기준과 어긋난 소재</b><p>상담 기록 163건 전수 조사</p><p class="so">8월 초 소재별 무효율 60~82%, 신청 10건 중 6~8건이 무효</p><p class="so">지원금 안내 랜딩은 '신청한 적 없다' 응답이 11.2%, 가격 공개 랜딩(1.6%)의 7배</p></li>
+              <li><b>① 고객 기준과 어긋난 소재와 랜딩</b><p>상담 기록 163건 전수 조사</p><p class="so">혜택만 보고 신청한 허수가 8월 초 신청의 절반(50.5%)</p><p class="so">지원금 안내 랜딩은 '신청한 적 없다' 응답이 11.2%, 가격 공개 랜딩은 0.9%</p></li>
               <li><b>② 신청 단가만 보는 성과 판단</b><p>소재를 켜고 끄는 기준이 신청 1건당 비용뿐</p><p class="so">신청만 싸면 허수가 많아도 좋은 소재로 남아 예약이 무너져도 판단에 드러나지 않음</p></li>
             </ol>
           </div>
@@ -779,7 +779,7 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
           <h4 class="col-h"><span>02</span>전략 / 실행</h4>
           <div class="st">
             <h5 class="st-h"><em>①</em> 메타: 의료진 이력을 앞세운 소재</h5>
-            <ul class="st-l"><li>지원금 오인 소재를 줄이고, 의료진 이력을 앞세운 소재 투입</li><li>소재 제작팀과 협업해 치의학 박사, 식립 실적 등 의료진 특장점 강조</li></ul>
+            <ul class="st-l"><li>혜택 소재를 줄이고, 의료진 이력을 앞세운 소재 투입</li><li>소재 제작팀과 협업해 치의학 박사, 식립 실적 등 의료진 특장점 강조</li></ul>
             <div class="media quad">
               <figure><div class="shot"><img src="assets/im-cr-1.jpg" alt="의료진 이력 소재 1" loading="lazy" width="700" height="875"></div></figure>
               <figure><div class="shot"><img src="assets/im-cr-2.jpg" alt="의료진 이력 소재 2" loading="lazy" width="700" height="700"></div></figure>
