@@ -276,6 +276,25 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 }
 
 
+/* 링글 케이스 추가 블록 */
+.case-impact{margin-top:10px;font-size:clamp(15px,1.25vw,17px);font-weight:600;color:var(--blue-deep);letter-spacing:-.02em;line-height:1.5}
+.obs{display:grid;gap:6px;margin-top:10px;counter-reset:ob}
+.obs li{position:relative;padding-left:24px;font-size:13.5px;line-height:1.5;color:var(--ink-2)}
+.obs li::before{counter-increment:ob;content:counter(ob);position:absolute;left:0;top:.15em;width:17px;height:17px;border-radius:50%;background:#fff;color:var(--blue-deep);font-size:11px;font-weight:700;line-height:17px;text-align:center}
+.obs+.hyp-t{margin-top:12px;padding-top:12px;border-top:1px solid rgba(47,91,255,.18)}
+.loop{margin-top:14px;padding:12px 14px 14px;border-radius:12px;border:1px solid var(--line)}
+.loop-h{display:block;margin-bottom:9px;font-size:12.5px;font-weight:600;color:var(--mute)}
+.loop-s{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.loop-s li{position:relative;display:flex;align-items:center;justify-content:center;min-height:44px;padding:7px 6px;border-radius:8px;background:var(--soft);font-size:12.5px;font-weight:500;line-height:1.35;text-align:center}
+.loop-s li+li::before{content:"";position:absolute;left:-15px;top:50%;width:11px;height:1.5px;background:var(--mute-2)}
+.loop-s li+li::after{content:"";position:absolute;left:-9px;top:calc(50% - 3.5px);width:6px;height:6px;border-top:1.5px solid var(--mute-2);border-right:1.5px solid var(--mute-2);transform:rotate(45deg)}
+.rc .retro{margin-top:10px;padding-top:10px;border-top:1px dashed #d8dbe0;font-size:13px}
+.rc .retro b{color:var(--ink)}
+@media screen and (max-width:640px){
+  .loop-s{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 18px}
+  .loop-s li:nth-child(3)::before,.loop-s li:nth-child(3)::after{display:none}
+}
+
 /* sans overrides for reused blocks */
 .sec-head{border-bottom:1px solid var(--ink)}
 .kicker{gap:10px}
@@ -491,7 +510,8 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
         <div class="case-no"><i>Case</i>01</div>
         <div>
           <div class="case-tags"><span class="tag">인플루언서 마케팅</span><span class="case-meta">링글 틴즈 | 사업개발 인턴, 세일즈 콜과 마케팅 담당 | 2024.05 ~ 2024.12</span></div>
-          <h3 class="case-title">인플루언서를 활용해 제품의 핵심 세일즈 모델을 개선한 경험</h3>
+          <h3 class="case-title">세일즈 콜에서 찾은 구매 기준으로 인플루언서 가이드를 재구성한 뒤, <span style="white-space:nowrap">구매 전환율이 1.7배 오른 경험</span></h3>
+          <p class="case-impact">가입 → 결제 전환율 4.8% → 8.3%, ROAS 63% → 120%</p>
         </div>
       </header>
       <div class="cols">
@@ -500,11 +520,21 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
           <p class="p-lead">광고비의 1/3을 인플루언서 광고에 편성했으나, 가입만 늘고 구매로는 이어지지 않았습니다</p>
           <div class="kpis">
             <div class="kpi"><span class="k-l">구매 전환율</span><b>4.8%</b><span class="k-s">가입 100명 중 5명만 구매</span></div>
-            <div class="kpi"><span class="k-l">ROAS</span><b>63%</b><span class="k-s">광고비보다 매출이 적음</span></div>
+            <div class="kpi"><span class="k-l">ROAS</span><b>63%</b><span class="k-s">손익분기 ROAS 100% 대비 37%p 미달</span></div>
             <div class="need"><svg aria-hidden="true"><use href="#i-flag"/></svg>'링글 틴즈'를 구매해야 할 이유가 명확히 필요!</div>
           </div>
+          <div class="card tint">
+            <h5>세일즈 콜과 영상 비교로 세운 가설</h5>
+            <ol class="obs">
+              <li>가입은 늘었지만 결제로 안 이어짐 (가입→구매 4.8%, ROAS 63%)</li>
+              <li>세일즈 콜에서 학부모가 보는 건 진도와 첨삭</li>
+              <li>성과 상위 영상과 하위 영상을 요소별로 비교하니, 잘된 영상엔 수업 과정이 보였음</li>
+            </ol>
+            <p class="hyp-t">가설: 학부모 기준인 진도와 첨삭, 수업 과정을 가이드에 넣으면 결제가 오른다</p>
+            <p class="hyp-v">검증: 가이드 전후 광고 비교, 메타 광고 24개 vs 60개</p>
+          </div>
           <div class="card">
-            <h5>문제의 원인</h5>
+            <h5>그래서 찾은 원인</h5>
             <ol class="pts">
               <li><b>① 구매로 이어질 기준이 없던 가이드</b><p>학부모는 진도와 첨삭을 보는데</p><p class="so">가이드는 '많이 말하기'뿐</p></li>
               <li><b>② 인플루언서 특성을 못 살린 단순 소개</b><p>영유, 국제학교, 레벨테스트 준비 등 니즈가 다른데</p><p class="so">모두에게 같은 흐름</p></li>
@@ -530,8 +560,12 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
             </div>
           </div>
           <div class="st">
-            <h5 class="st-h"><em>②</em> 인플루언서 특성을 살린 맞춤 협업</h5>
+            <h5 class="st-h"><em>②</em> 유형별 협업과 크리에이터 협업 회고</h5>
             <ul class="st-l"><li>6가지 유형별로 도입부와 강조점을 나눠 기획, 성과 좋은 인플루언서와 재협업</li><li>섭외 메일과 응대를 자동화해 섭외부터 정산까지 단독 운영</li></ul>
+            <div class="loop">
+              <span class="loop-h">크리에이터 협업 회고</span>
+              <ol class="loop-s"><li>유형별 협업</li><li>구매당 비용으로 선별</li><li>상위 인플루언서와 재협업</li><li>공동구매로 확장</li></ol>
+            </div>
             <div class="media reels">
               <figure class="reel"><div class="shot"><img src="assets/rg-reel-1.jpg" alt="'16년 영어육아' 인플루언서 릴스" loading="lazy" width="386" height="566"></div><figcaption>'16년 영어육아'<span>조회 5.6만</span></figcaption></figure>
               <figure class="reel"><div class="shot"><img src="assets/rg-reel-2.jpg" alt="'영유 출신' 인플루언서 릴스" loading="lazy" width="386" height="566"></div><figcaption>'영유 출신'<span>조회 8.1만</span></figcaption></figure>
@@ -556,8 +590,8 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
           <div class="rc">
             <span class="cap">메타 광고 기준 · 기존 24개 vs 개선 후 60개 광고</span>
             <ul>
-              <li><b>구매당 비용 45% 절감</b></li>
-              <li><b>ROAS 63% → 120%</b></li>
+              <li><b>가입당 비용은 그대로(−4%), <span style="white-space:nowrap;font-size:inherit;color:inherit">구매당 비용만 45% 절감</span></b><span>183만 원 → 101만 원</span></li>
+              <li><b>ROAS 63% → 120%, 손익분기 넘김</b></li>
             </ul>
           </div>
           <div class="rc note"><svg aria-hidden="true"><use href="#i-check"/></svg><p>메타 본사 미팅과 크리에이티브 데이에서 회사가 사례로 소개</p></div>
@@ -565,6 +599,7 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
             <span class="cap">→ 겨울캠프 공동구매로 확장 · 성과 좋은 인플루언서와 진행</span>
             <span class="big">10일 만에 신규 가입 115건</span>
             <p>평소 인플루언서 광고 3주치<br>가입당 6.9만 원, 평소보다 19% 낮음</p>
+            <p class="retro"><b>회고:</b> 광고 성과 상위가 공구 성과 상위는 아니어서, 다음 공구는 추천 링크 유입 실적으로 선정하기로 정리</p>
           </div>
         </section>
       </div>
