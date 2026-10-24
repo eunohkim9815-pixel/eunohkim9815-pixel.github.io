@@ -203,6 +203,7 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 .reel .shot img{height:100%;object-fit:cover}
 .reel figcaption{font-size:11.5px;line-height:1.35;color:var(--ink-2)}
 .reel figcaption span{display:block;color:var(--mute);font-size:11px}
+.reel figcaption span.rt{margin-top:5px;padding-top:5px;border-top:1px dashed var(--line);color:var(--ink-2);font-size:11px;line-height:1.4}
 .trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:end}
 .trio .shot{background:#fff}
 .quad{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;align-items:end}
@@ -277,7 +278,8 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 
 
 /* 링글 케이스 추가 블록 */
-.case-impact{margin-top:10px;font-size:clamp(15px,1.25vw,17px);font-weight:600;color:var(--blue-deep);letter-spacing:-.02em;line-height:1.5}
+.case-chips{display:flex;flex-wrap:wrap;gap:6px 8px;margin-top:12px}
+.tag.ol{padding:3px 11px;border:1px solid var(--blue);background:#fff;color:var(--blue-deep)}
 .obs{display:grid;gap:6px;margin-top:10px;counter-reset:ob}
 .obs li{position:relative;padding-left:24px;font-size:13.5px;line-height:1.5;color:var(--ink-2)}
 .obs li::before{counter-increment:ob;content:counter(ob);position:absolute;left:0;top:.15em;width:17px;height:17px;border-radius:50%;background:#fff;color:var(--blue-deep);font-size:11px;font-weight:700;line-height:17px;text-align:center}
@@ -516,8 +518,8 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
         <div class="case-no"><i>Case</i>01</div>
         <div>
           <div class="case-tags"><span class="tag">인플루언서 마케팅</span><span class="case-meta">링글 틴즈 | 사업개발 인턴, 세일즈 콜과 마케팅 담당 | 2024.05 ~ 2024.12</span></div>
-          <h3 class="case-title">세일즈 콜에서 찾은 구매 기준으로 인플루언서 가이드를 재구성한 뒤, <span style="white-space:nowrap">구매 전환율이 1.7배 오른 경험</span></h3>
-          <p class="case-impact">가입 → 결제 전환율 4.8% → 8.3%, ROAS 63% → 120%</p>
+          <h3 class="case-title">세일즈 콜에서 찾은 기준으로 인플루언서 가이드를 재구성한 경험</h3>
+          <div class="case-chips"><span class="tag ol">구매 전환율 4.8% → 8.3%</span><span class="tag ol">ROAS 63% → 120%</span></div>
         </div>
       </header>
       <div class="cols">
@@ -573,11 +575,11 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
               <ol class="loop-s"><li>유형별 협업</li><li>구매당 비용으로 선별</li><li>상위 인플루언서와 재협업</li><li>공동구매로 확장</li></ol>
             </div>
             <div class="media reels">
-              <figure class="reel"><div class="shot"><img src="assets/rg-reel-1.jpg" alt="'16년 영어육아' 인플루언서 릴스" loading="lazy" width="386" height="566"></div><figcaption>'16년 영어육아'<span>조회 5.6만</span></figcaption></figure>
-              <figure class="reel"><div class="shot"><img src="assets/rg-reel-2.jpg" alt="'영유 출신' 인플루언서 릴스" loading="lazy" width="386" height="566"></div><figcaption>'영유 출신'<span>조회 8.1만</span></figcaption></figure>
-              <figure class="reel"><div class="shot"><img src="assets/rg-reel-3.jpg" alt="'사립초 겨울방학' 인플루언서 릴스" loading="lazy" width="386" height="566"></div><figcaption>'사립초 겨울방학'<span>조회 12.3만</span></figcaption></figure>
-              <figure class="reel"><div class="shot"><img src="assets/rg-reel-4.jpg" alt="'국제학교 학생' 인플루언서 릴스" loading="lazy" width="386" height="566"></div><figcaption>'국제학교 학생'<span>조회 12.6만</span></figcaption></figure>
-              <figure class="reel"><div class="shot"><img src="assets/rg-reel-5.jpg" alt="'미국 학교 준비' 인플루언서 릴스" loading="lazy" width="386" height="566"></div><figcaption>'미국 학교 준비'<span>조회 99.4만</span></figcaption></figure>
+              <figure class="reel"><div class="shot"><img src="assets/rg-reel-1.jpg" alt="'16년 영어육아' 인플루언서 릴스" loading="lazy" width="386" height="566"></div><figcaption>'16년 영어육아'<span>조회 5.6만</span><span class="rt">엄마표 영어 학부모 / 원어민과 1:1 대화</span></figcaption></figure>
+              <figure class="reel"><div class="shot"><img src="assets/rg-reel-2.jpg" alt="'영유 출신' 인플루언서 릴스" loading="lazy" width="386" height="566"></div><figcaption>'영유 출신'<span>조회 8.1만</span><span class="rt">영유 다닌 자녀 / 라이팅, 1:1 심화 토론</span></figcaption></figure>
+              <figure class="reel"><div class="shot"><img src="assets/rg-reel-3.jpg" alt="'사립초 겨울방학' 인플루언서 릴스" loading="lazy" width="386" height="566"></div><figcaption>'사립초 겨울방학'<span>조회 12.3만</span><span class="rt">영어 다음 단계가 필요한 자녀 / 원서읽기 루틴, 1:1 수업</span></figcaption></figure>
+              <figure class="reel"><div class="shot"><img src="assets/rg-reel-4.jpg" alt="'국제학교 학생' 인플루언서 릴스" loading="lazy" width="386" height="566"></div><figcaption>'국제학교 학생'<span>조회 12.6만</span><span class="rt">국제학교 재학 자녀 / 학교 과목 대비, 에세이 첨삭</span></figcaption></figure>
+              <figure class="reel"><div class="shot"><img src="assets/rg-reel-5.jpg" alt="'미국 학교 준비' 인플루언서 릴스" loading="lazy" width="386" height="566"></div><figcaption>'미국 학교 준비'<span>조회 99.4만</span><span class="rt">미국 학교 진학 예정 자녀 / 현지 수업 대비 1:1 수업</span></figcaption></figure>
             </div>
           </div>
         </section>
@@ -620,6 +622,7 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
         <div>
           <div class="case-tags"><span class="tag">VIP 로열티 마케팅</span><span class="case-meta">KZ_K Studio | 마케팅팀 인턴 | 2022.11 ~ 2023.07, 뉴욕</span></div>
           <h3 class="case-title">관성적으로 만들던 VIP 기프트박스를 고객 취향으로 바꿔 재구매로 연결한 경험</h3>
+          <div class="case-chips"><span class="tag ol">쇼룸 방문 고객 재구매 약 70%</span></div>
         </div>
       </header>
       <div class="cols">
@@ -693,8 +696,8 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
         <div class="case-no"><i>Case</i>03</div>
         <div>
           <div class="case-tags"><span class="tag">광고 운영, 소재 및 랜딩 기획</span><span class="case-meta">이지엠앤씨 | 퍼포먼스 마케터 | 2026.02 ~ 현재</span></div>
-          <h3 class="case-title">광고 소재와 판단 기준을 바꿔 임플란트 예약률을 3배 회복한 경험</h3>
-          <p class="case-impact">신청 → 예약 전환율 3.5% → 10.6%, 예약단가 67% 절감 <span style="white-space:nowrap">(8월 초 대비 9월 초)</span></p>
+          <h3 class="case-title">광고 소재와 판단 기준을 바꿔 임플란트 예약률을 회복한 경험</h3>
+          <div class="case-chips"><span class="tag ol">예약 전환율 3.5% → 10.6%</span><span class="tag ol">예약단가 67% 절감</span></div>
         </div>
       </header>
       <div class="cols">
