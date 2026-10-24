@@ -365,6 +365,26 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
   html{scroll-behavior:auto}
   .px,.r-num,.hi-num{transform:none!important}
 }
+/* Hero: 스픽 브랜드 컬러 (Contact와 같은 톤) */
+.hero{--sp-blue:#1c49ff;--sp-navy:#12205a;position:relative;overflow:hidden;background:var(--sp-navy);color:#fff}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.hero::before{right:-12%;top:-28%;width:min(860px,78vw);aspect-ratio:1;background:radial-gradient(closest-side,rgba(28,73,255,.62),rgba(28,73,255,0))}
+.hero::after{left:-18%;bottom:-48%;width:min(640px,62vw);aspect-ratio:1;background:radial-gradient(closest-side,rgba(16,130,236,.26),rgba(16,130,236,0))}
+.hero .wrap{position:relative;z-index:1}
+.hero .hero-meta{color:rgba(255,255,255,.7);border-bottom-color:rgba(255,255,255,.18)}
+.hero .hero-meta .mono{color:#fff}
+.hero .dot{background:#7f9bff}
+.hero .site-link{border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#fff}
+.hero .site-link:hover{background:var(--sp-blue);border-color:var(--sp-blue);color:#fff}
+.hero .hero-title{color:#fff}
+.hero .hero-title .hl{color:#7f9bff}
+.hero .hi{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16);color:#fff}
+.hero .hi:hover{border-color:rgba(255,255,255,.55)}
+.hero .hi .mono,.hero .hi-tag,.hero .hi-go{color:rgba(255,255,255,.62)}
+.hero .hi-res{border-top-color:rgba(255,255,255,.16)}
+.hero .hi-lb{color:rgba(255,255,255,.78)}
+.hero .hi-num{color:#8fa6ff}
+
 /* Contact: 스픽 브랜드 컬러 (블루 #1C49FF, 네이비 #12205A) */
 .closing{--sp-blue:#1c49ff;--sp-navy:#12205a;overflow:hidden;background:var(--sp-navy);color:#fff}
 .closing::before,.closing::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
