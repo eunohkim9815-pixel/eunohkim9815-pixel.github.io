@@ -403,35 +403,48 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 @media screen and (min-width:861px){@container (max-width:167px){.hero .hi-txt{min-height:3.2em}}}
 @media screen and (min-width:861px) and (max-width:900px){.hero .hi{padding-left:18px;padding-right:18px}}
 
-/* About(2장): 프로필 + 서머리, 아래 2열(이력 | 자격, Skills & Tools) */
-.about .ab-intro{display:grid;grid-template-columns:200px minmax(0,1fr);gap:clamp(28px,4.5vw,72px);align-items:center;margin-bottom:clamp(36px,4.5vw,56px);padding-bottom:clamp(32px,4vw,48px);border-bottom:1px solid var(--line)}
+/* About(2장): 레퍼런스처럼 왼쪽 사이드(사진 위, 연락처 아래) | 오른쪽 본문(제목과 서머리, 그 아래 2열) */
+.about .ab-layout{display:grid;grid-template-columns:clamp(210px,17vw,240px) minmax(0,1fr);gap:0}
+.about .ab-side{display:flex;flex-direction:column;align-items:center;text-align:center;padding-right:clamp(24px,3vw,44px);border-right:1px solid var(--line)}
 .about .ab-photo{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:16px;background:var(--soft)}
-.about .ab-name{margin-top:16px;font-size:20px;font-weight:700;letter-spacing:-.02em;line-height:1.4}
+.about .ab-id{margin-top:18px}
+.about .ab-name{font-size:20px;font-weight:700;letter-spacing:-.02em;line-height:1.4}
 .about .ab-role{font-size:14px;color:var(--ink-2)}
-.about .ab-contact{margin-top:10px;display:grid;gap:2px;font-size:14px;color:var(--ink-2)}
-.about .ab-contact a{color:inherit;text-decoration:none;word-break:break-all}
-.about .ab-summary{font-size:clamp(16px,1.45vw,20px);font-weight:500;line-height:1.85;letter-spacing:-.02em;color:var(--ink);max-width:40em}
-.about .ab-two{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-.about .ab-col{display:grid;gap:34px;align-content:start}
+.about .ab-contact{margin-top:auto;padding-top:28px;display:grid;gap:3px;font-size:13.5px;color:var(--ink-2)}
+.about .ab-contact a{color:inherit;text-decoration:none;word-break:normal;overflow-wrap:normal}
+.about .ab-main{min-width:0;padding-left:clamp(24px,3.4vw,52px)}
+.about .ab-head{margin-bottom:clamp(28px,3.5vw,44px)}
+.about .ab-summary{font-size:clamp(16px,1.4vw,19px);font-weight:500;line-height:1.85;letter-spacing:-.02em;color:var(--ink-2);max-width:44em}
+.about .ab-two{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,3vw,44px)}
+.about .ab-col{display:grid;gap:30px;align-content:start}
+.about .ab-right{gap:30px;padding-left:clamp(0px,2.4vw,36px)}
+.about .career li{grid-template-columns:46px minmax(0,1fr);row-gap:6px;column-gap:14px}
+.about .cv-date{grid-column:1 / -1}
+.about .edu li{grid-template-columns:minmax(0,1fr)}
 .about .cert{width:100%;border-collapse:collapse;border-top:1px solid var(--line)}
 .about .cert th,.about .cert td{padding:11px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.5;text-align:left;vertical-align:middle}
 .about .cert th{font-weight:600;color:var(--ink)}
 .about .cert td{text-align:right;color:var(--ink-2);white-space:nowrap;font-variant-numeric:tabular-nums;padding-left:16px}
-.about .tools{display:grid;gap:20px}
+.about .tools{display:grid;gap:20px;container-type:inline-size}
 .about .tg-h{font-size:13px;font-weight:600;color:var(--ink-2);margin-bottom:10px}
 .about .tg-chips{display:flex;flex-wrap:wrap;gap:8px}
 .about .tg-chips li{padding:3px 12px;border-radius:999px;background:#edeff2;color:#44474d;font-size:13.5px;line-height:1.6;white-space:nowrap}
-.about .tg-icons{display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:14px 8px}
+.about .tg-icons{display:grid;grid-template-columns:repeat(3,62px);justify-content:start;gap:14px 6px}
+@container (min-width:402px){.about .tg-icons{grid-template-columns:repeat(6,62px)}}
 .about .tg-icons li{display:flex;flex-direction:column;align-items:center;text-align:center}
 .about .ti{display:grid;place-items:center;width:48px;height:48px;border-radius:12px;background:#fff;border:1px solid var(--line)}
 .about .ti img{width:26px;height:26px;object-fit:contain}
 .about .tn{margin-top:6px;font-size:12px;line-height:1.35;color:var(--ink-2);word-break:keep-all}
+@media screen and (max-width:1079px){.about .ab-two{grid-template-columns:minmax(0,1fr)}.about .ab-right{padding-left:0;border-left:0}.about .ab-contact{margin-top:14px;padding-top:0}}
 @media screen and (max-width:860px){
-  .about .ab-intro{grid-template-columns:minmax(0,1fr);align-items:start}
-  .about .ab-profile{display:grid;grid-template-columns:120px minmax(0,1fr);column-gap:18px;align-items:center}
-  .about .ab-photo{grid-row:1 / span 3}
-  .about .ab-name{margin-top:0}
-  .about .ab-two{grid-template-columns:minmax(0,1fr)}
+  .about .ab-layout{grid-template-columns:minmax(0,1fr)}
+  .about .ab-main{display:contents}
+  .about .ab-head{order:1}
+  .about .ab-side{order:2;display:grid;grid-template-columns:120px minmax(0,1fr);column-gap:18px;align-items:center;text-align:left;padding:0 0 28px;margin-bottom:28px;border-right:0;border-bottom:1px solid var(--line)}
+  .about .ab-photo{grid-row:1 / span 2}
+  .about .ab-id{margin-top:0;align-self:end}
+  .about .ab-contact{margin-top:6px;padding-top:0;align-self:start}
+  .about .ab-two{order:3}
 }
 
 /* Contact: 첫 화면과 같은 팀스파르타 레드 #FA0030 바탕 */
@@ -510,24 +523,26 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 
 <section class="sec about" id="about">
   <div class="wrap">
-    <header class="sec-head one">
-      <div class="kicker"><b>01</b><span class="mono">About me</span></div>
-      <h2 class="sec-title">데이터로 퍼널의 이탈 원인을 찾아, 전환을 끌어올려 왔습니다</h2>
-    </header>
-    <div class="ab-intro">
-      <div class="ab-profile">
+    <div class="ab-layout">
+      <aside class="ab-side">
         <img class="ab-photo" src="assets/profile.jpg" alt="김은오 사진" width="520" height="520">
-        <p class="ab-name">김은오</p>
-        <p class="ab-role">마케터</p>
+        <div class="ab-id">
+          <p class="ab-name">김은오</p>
+          <p class="ab-role">마케터</p>
+        </div>
         <ul class="ab-contact">
           <li><a href="tel:010-6253-7082">010-6253-7082</a></li>
-          <li><a href="mailto:eunoh.kim9815@gmail.com">eunoh.kim9815@gmail.com</a></li>
+          <li><a href="mailto:eunoh.kim9815@gmail.com">eunoh.kim9815<wbr>@gmail.com</a></li>
         </ul>
-      </div>
-      <p class="ab-summary">퍼널의 이탈 구간은 데이터로 찾고, 이탈 원인은 고객 리서치로 끝까지 확인합니다. 발견한 문제는 주도적으로 개선에 나서고, 정형화된 방식이라도 고객이 반응하지 않으면 재설계합니다. 그렇게 유입에서 멈추지 않고, 전환과 리텐션까지 책임지는 마케팅을 지향합니다.</p>
-    </div>
-    <div class="about-grid ab-two">
-      <div class="ab-col">
+      </aside>
+      <div class="ab-main">
+        <header class="sec-head one ab-head">
+          <div class="kicker"><b>01</b><span class="mono">About me</span></div>
+          <h2 class="sec-title">데이터로 퍼널의 이탈 원인을 찾아, 전환을 끌어올려 왔습니다</h2>
+          <p class="ab-summary">퍼널의 이탈 구간은 데이터로 찾고, 이탈 원인은 고객 리서치로 끝까지 확인합니다. 발견한 문제는 주도적으로 개선에 나서고, 정형화된 방식이라도 고객이 반응하지 않으면 재설계합니다. 그렇게 유입에서 멈추지 않고, 전환과 리텐션까지 책임지는 마케팅을 지향합니다.</p>
+        </header>
+        <div class="about-grid ab-two">
+          <div class="ab-col">
         <div>
           <h3 class="ab-h">총 경력</h3>
           <p class="total">2년 2개월<span>(재직 9개월, 인턴 17개월)</span></p>
@@ -547,9 +562,8 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
             <li><div class="cv-date">2025.03 ~ 2027.08</div><div class="cv-body"><b>한국방송통신대학교</b><small>통계데이터과학과 편입, 졸업예정</small></div></li>
           </ol>
         </div>
-      </div>
-
-      <div class="ab-right">
+          </div>
+          <div class="ab-right">
         <div>
           <h3 class="ab-h">자격</h3>
           <table class="cert">
@@ -584,6 +598,8 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
               </ul>
             </div>
           </div>
+        </div>
+      </div>
         </div>
       </div>
     </div>
