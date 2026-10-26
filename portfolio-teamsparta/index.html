@@ -384,6 +384,12 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 .hero .hi-res{border-top-color:#eceef1}
 .hero .hi-lb{color:var(--sp-navy)}
 .hero .hi-num{color:var(--sp-blue)}
+/* 표지: 지원 직무 라벨, 길어진 타일 문구 */
+.hero .hero-meta{margin-bottom:clamp(20px,2.3vw,32px)}
+.hero .hero-role{margin:0 0 clamp(10px,1vw,14px);font-size:clamp(14px,1.15vw,16px);font-weight:600;line-height:1.6;color:#fff;letter-spacing:-.01em}
+.hero .hi-num{font-size:clamp(20px,2.4vw,34px);letter-spacing:-.035em}
+@media screen and (max-width:860px){.hero .hi-num{font-size:clamp(22px,7vw,30px)}}
+@media screen and (max-width:380px){.hero .hero-title{font-size:8vw}}
 
 /* Contact: 첫 화면과 같은 팀스파르타 레드 #FA0030 바탕 */
 .closing{--sp-blue:#fa0030;--sp-navy:#16171a;--sp-mute:#8e9299;overflow:hidden;background:var(--sp-blue);color:#fff}
@@ -434,27 +440,28 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
       <span>김은오 | EUNOH KIM</span>
       <a class="site-link" id="siteLink" href="https://eunohkim9815-pixel.github.io/portfolio-teamsparta/" target="_blank" rel="noopener"><b>웹사이트에서 보기</b><span>eunohkim9815-pixel.github.io/portfolio-teamsparta</span><i aria-hidden="true">↗</i></a>
     </div>
-    <h1 class="hero-title">고객 여정에서 막힌 구간을 찾아<br> <span class="hl">전환</span>을 끌어올리는 마케터 김은오입니다</h1>
+    <p class="hero-role">팀스파르타 Growth Manager 지원</p>
+    <h1 class="hero-title">데이터로 퍼널의 이탈 원인을 찾아<br> <span class="hl">전환</span>을 끌어올리는 마케터 김은오입니다</h1>
     <nav class="hl-band" aria-label="케이스 바로가기">
       <a class="hi" href="#case-1" data-case="1">
         <span class="mono">Case 01</span>
         <span class="hi-name">링글 틴즈</span>
         <span class="hi-tag">인플루언서 마케팅</span>
-        <span class="hi-res"><span class="hi-lb">인플루언서 광고 구매 전환율</span><span class="hi-num" data-grow>1.7배 상승</span></span>
+        <span class="hi-res"><span class="hi-lb">인플루언서 광고 구매 전환율</span><span class="hi-num" data-grow>가입 → 구매 전환 1.7배</span></span>
         <span class="hi-go">케이스 보기 ↓</span>
       </a>
       <a class="hi" href="#case-2" data-case="2">
         <span class="mono">Case 02</span>
         <span class="hi-name">KZ_K Studio</span>
         <span class="hi-tag">VIP 로열티 마케팅</span>
-        <span class="hi-res"><span class="hi-lb">기프트박스 발송 후, 쇼룸 방문 고객</span><span class="hi-num" data-grow>약 70% 재구매</span></span>
+        <span class="hi-res"><span class="hi-lb">기프트박스 발송 후, 쇼룸 방문 고객</span><span class="hi-num" data-grow>쇼룸 고객 재구매 약 70%</span></span>
         <span class="hi-go">케이스 보기 ↓</span>
       </a>
       <a class="hi" href="#case-3" data-case="3">
         <span class="mono">Case 03</span>
         <span class="hi-name">이지엠앤씨</span>
         <span class="hi-tag">광고 운영, 소재 및 랜딩 기획</span>
-        <span class="hi-res"><span class="hi-lb">계정 전체 예약률</span><span class="hi-num" data-grow>3배 회복</span></span>
+        <span class="hi-res"><span class="hi-lb">계정 전체 예약률</span><span class="hi-num" data-grow>신청 → 예약 전환 3배</span></span>
         <span class="hi-go">케이스 보기 ↓</span>
       </a>
     </nav>
