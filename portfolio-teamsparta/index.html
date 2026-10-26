@@ -24,7 +24,7 @@
   --sans:'IBM Plex Sans KR','Apple SD Gothic Neo','Noto Sans KR',system-ui,sans-serif;
   --serif:var(--sans); --it:var(--sans);
   --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
-  --gutter:clamp(16px,3.6vw,56px); --maxw:1280px; --bar:58px;
+  --gutter:clamp(16px,3.6vw,56px); --maxw:1800px; --bar:58px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{background:#fff;-webkit-text-size-adjust:100%;scroll-behavior:smooth;overflow-x:clip}
@@ -400,10 +400,6 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 /* 칩은 항상 윗줄, 텍스트는 아랫줄 (세 타일 통일) */
 /* 작은 글씨가 한 줄에 안 들어가면 '→' 앞에서만 줄바꿈 */
 .hero .hi-txt .seg{white-space:nowrap}
-/* 표지 하단 연락처 한 줄 */
-.hero .hero-contact{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin-top:clamp(18px,2vw,26px);font-size:14px;line-height:1.5;color:#fff}
-.hero .hero-contact a{color:#fff;text-decoration:none}
-.hero .hero-contact span{color:rgba(255,255,255,.6)}
 @media screen and (min-width:861px){@container (max-width:167px){.hero .hi-txt{min-height:3.2em}}}
 @media screen and (min-width:861px) and (max-width:900px){.hero .hi{padding-left:18px;padding-right:18px}}
 
@@ -448,15 +444,16 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 .cs-4p{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
 .cs-4p li{padding:2px 10px;border-radius:999px;background:#edeff2;color:#44474d;font-size:12px;font-weight:500;line-height:1.6;white-space:nowrap}
 .cs-role{margin-top:12px;font-size:13.5px;color:var(--mute)}
-/* 헤더 바 바로 아래 회사명과 기간: 오른쪽 정렬, 표지 타일 작은 줄과 같은 13px */
-.cs-co{margin-top:10px;text-align:right;font-size:13px;line-height:1.5;color:var(--mute)}
+/* 회사명과 기간: 검은 헤더 바 안, 제목 오른쪽 (B장은 3C4P 칩 왼쪽) */
+.cs-bar .cs-co{flex:none;margin-left:auto;font-size:13px;line-height:1.5;color:rgba(255,255,255,.72);white-space:nowrap}
+.cs-bar .cs-co+.cs-4p{margin-left:0}
 /* 퍼널 한 줄: 끊긴 단계만 빨강 */
 .cs-funnel{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;row-gap:10px;margin-top:clamp(20px,2.4vw,30px)}
-.cs-funnel .fs{padding:9px 18px;border-radius:10px;border:1.5px solid #d3d6db;background:#fff;font-size:15px;font-weight:600;line-height:1.4;color:var(--ink);white-space:nowrap}
+.cs-funnel .fs{padding:13px 28px;border-radius:14px;border:2px solid #d3d6db;background:#fff;font-size:20px;font-weight:700;line-height:1.4;letter-spacing:-.02em;color:var(--ink);white-space:nowrap}
 .cs-funnel .fs.x{border-color:var(--blue);background:var(--blue-tint);color:var(--blue-deep)}
-.cs-funnel .fa{position:relative;flex:none;width:clamp(28px,3.2vw,46px);height:0;margin:0 12px 0 8px;border-top:2px solid #b4b8bf}
-.cs-funnel .fa::after{content:"";position:absolute;right:-3px;top:-6px;width:9px;height:9px;border-top:2px solid #b4b8bf;border-right:2px solid #b4b8bf;transform:rotate(45deg)}
-.cs-funnel .fa.x{border-top:2px dashed var(--blue)}
+.cs-funnel .fa{position:relative;flex:none;width:clamp(36px,4.4vw,72px);height:0;margin:0 16px 0 12px;border-top:2.5px solid #b4b8bf}
+.cs-funnel .fa::after{content:"";position:absolute;right:-3px;top:-7.5px;width:12px;height:12px;border-top:2.5px solid #b4b8bf;border-right:2.5px solid #b4b8bf;transform:rotate(45deg)}
+.cs-funnel .fa.x{border-top:2.5px dashed var(--blue)}
 .cs-funnel .fa.x::after{border-color:var(--blue)}
 .cs-strip{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 10px;margin-top:12px;padding:10px 16px;border-radius:10px;background:var(--soft);font-size:14px;line-height:1.5;color:var(--ink-2)}
 .cs-strip b{margin-right:6px;font-weight:700;color:var(--ink)}
@@ -482,8 +479,8 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
 .cs-hyp p{font-size:17px;font-weight:600;line-height:1.6;letter-spacing:-.02em;color:var(--ink)}
 .cs-hyp p small{display:block;margin-top:4px;font-size:14px;font-weight:400;letter-spacing:-.01em;color:var(--ink-2)}
 /* A장 맨 아래 가설 칸: 전체 폭, 가운데 정렬 */
-.cs-a .cs-hyp{flex-direction:column;align-items:center;gap:8px;margin-top:12px;text-align:center}
-.cs-a .cs-hyp .hyp-l{margin-top:0}
+.cs-a .cs-hyp{display:grid;grid-template-columns:72px minmax(0,1fr) 72px;align-items:center;gap:0 12px;margin-top:12px;text-align:center}
+.cs-a .cs-hyp .hyp-l{justify-self:start;margin-top:0}
 .cs-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:clamp(24px,2.6vw,36px);align-items:start;margin-top:clamp(16px,1.8vw,22px)}
 /* B장 전략은 2열, 결과까지 3열 */
 .cs-st{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px clamp(20px,2.2vw,30px);align-items:start}
@@ -548,9 +545,11 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   .cs-title{flex-basis:100%}
   .cs-4p{margin-left:0}
   .bx{grid-template-columns:minmax(0,1fr);padding:16px 18px}
-  .cs-funnel .fs{padding:7px 12px;font-size:14px}
   .cs-funnel .fa{width:22px;margin:0 9px 0 5px}
   .cs-hyp{flex-direction:column;gap:8px;padding:14px 16px}
+  .cs-a .cs-hyp{grid-template-columns:minmax(0,1fr);gap:8px}
+  .cs-bar .cs-co{margin-left:0}
+  .cs-funnel .fs{padding:8px 14px;font-size:15px;border-width:1.5px}
   .sg-side{grid-template-columns:minmax(0,1fr);gap:0}
   .tb th,.tb td{padding:7px 7px;font-size:13px}
 }
@@ -631,7 +630,6 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
         <span class="hi-res"><span class="hi-lb"><span class="hi-chip">쇼룸 1:1 대화로 고객 취향 분석</span><span class="hi-txt">맞춤 기프트박스 발송 뒤 재구매</span></span><span class="hi-num" data-grow><span class="ln">쇼룸에서 만난 고객 <em>약 70%</em>를</span><br><span class="ln">재구매로 연결</span></span></span>
       </a>
     </nav>
-    <p class="hero-contact"><a href="tel:010-6253-7082">010-6253-7082</a><span aria-hidden="true">|</span><a href="mailto:eunoh.kim9815@gmail.com">eunoh.kim9815@gmail.com</a></p>
   </div>
 </section>
 
@@ -685,7 +683,6 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
             <tr><th scope="row">ADsP 데이터분석 준전문가</th><td>2026.05</td></tr>
             <tr><th scope="row">Google 애널리틱스 인증</th><td>2026.10</td></tr>
             <tr><th scope="row">검색광고마케터</th><td>2026.03</td></tr>
-            <tr><th scope="row">OPIc IH</th><td>2026.09</td></tr>
             <tr><th scope="row">GTQ 포토샵 1급</th><td>2022.07</td></tr>
             <tr><th scope="row">GTQi 일러스트 1급</th><td>2022.06</td></tr>
           </table>
@@ -731,8 +728,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   <!-- ───── 3장 CASE 01 링글 틴즈 인플루언서: A 문제 ───── -->
   <article class="cs cs-a" id="case-1">
     <div class="wrap">
-      <header class="cs-bar"><span class="cs-no">CASE 01</span><h3 class="cs-title">세일즈 콜 기준으로 인플루언서 가이드를 재구성해 구매 전환율을 1.7배로 높인 경험</h3></header>
-      <p class="cs-co">링글 틴즈 | 2024.07 ~ 2024.12</p>
+      <header class="cs-bar"><span class="cs-no">CASE 01</span><h3 class="cs-title">세일즈 콜 기준으로 인플루언서 가이드를 재구성해 구매 전환율을 1.7배로 높인 경험</h3><span class="cs-co">링글 틴즈 | 2024.07 ~ 2024.12</span></header>
       <div class="cs-funnel" role="img" aria-label="인플루언서 콘텐츠, 가입, 구매 순서의 퍼널에서 가입에서 구매로 가는 단계가 끊김">
         <span class="fs">인플루언서 콘텐츠</span><i class="fa"></i><span class="fs">가입</span><i class="fa x"></i><span class="fs x">구매</span>
       </div>
@@ -749,8 +745,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   <!-- ───── 4장 CASE 01: B 전략과 결과 ───── -->
   <article class="cs cs-b" id="case-1-b">
     <div class="wrap">
-      <header class="cs-bar"><span class="cs-no">CASE 01</span><h3 class="cs-title">세일즈 콜 기준으로 인플루언서 가이드를 재구성해 구매 전환율을 1.7배로 높인 경험</h3><ul class="cs-4p" aria-label="바꾼 요소"><li>Promotion</li></ul></header>
-      <p class="cs-co">링글 틴즈 | 2024.07 ~ 2024.12</p>
+      <header class="cs-bar"><span class="cs-no">CASE 01</span><h3 class="cs-title">세일즈 콜 기준으로 인플루언서 가이드를 재구성해 구매 전환율을 1.7배로 높인 경험</h3><span class="cs-co">링글 틴즈 | 2024.07 ~ 2024.12</span><ul class="cs-4p" aria-label="바꾼 요소"><li>Promotion</li></ul></header>
       <div class="cs-grid">
         <div class="cs-st">
           <section class="sg">
@@ -806,8 +801,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   <!-- ───── 5장 CASE 02 이지엠앤씨 임플란트: A 문제 ───── -->
   <article class="cs cs-a" id="case-3">
     <div class="wrap">
-      <header class="cs-bar"><span class="cs-no">CASE 02</span><h3 class="cs-title">상담 기록 163건에서 찾은 기준으로 소재와 판정 기준을 바꿔 예약률을 3배로 끌어올린 경험</h3></header>
-      <p class="cs-co">이지엠앤씨 | 2026.07 ~ 2026.09</p>
+      <header class="cs-bar"><span class="cs-no">CASE 02</span><h3 class="cs-title">상담 기록 163건에서 찾은 기준으로 소재와 판정 기준을 바꿔 예약률을 3배로 끌어올린 경험</h3><span class="cs-co">이지엠앤씨 | 2026.07 ~ 2026.09</span></header>
       <div class="cs-funnel" role="img" aria-label="광고, 상담 신청, CS 통화, 예약, 내원 순서의 퍼널에서 상담 신청에서 예약으로 가는 단계가 끊김">
         <span class="fs">광고</span><i class="fa"></i><span class="fs">상담 신청</span><i class="fa x"></i><span class="fs">CS 통화</span><i class="fa x"></i><span class="fs x">예약</span><i class="fa"></i><span class="fs">내원</span>
       </div>
@@ -825,8 +819,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   <!-- ───── 6장 CASE 02: B 전략과 결과 ───── -->
   <article class="cs cs-b" id="case-3-b">
     <div class="wrap">
-      <header class="cs-bar"><span class="cs-no">CASE 02</span><h3 class="cs-title">상담 기록 163건에서 찾은 기준으로 소재와 판정 기준을 바꿔 예약률을 3배로 끌어올린 경험</h3><ul class="cs-4p" aria-label="바꾼 요소"><li>Price</li><li>Promotion</li></ul></header>
-      <p class="cs-co">이지엠앤씨 | 2026.07 ~ 2026.09</p>
+      <header class="cs-bar"><span class="cs-no">CASE 02</span><h3 class="cs-title">상담 기록 163건에서 찾은 기준으로 소재와 판정 기준을 바꿔 예약률을 3배로 끌어올린 경험</h3><span class="cs-co">이지엠앤씨 | 2026.07 ~ 2026.09</span><ul class="cs-4p" aria-label="바꾼 요소"><li>Price</li><li>Promotion</li></ul></header>
       <div class="cs-grid">
         <div class="cs-st r3">
           <section class="sg">
@@ -893,8 +886,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   <!-- ───── 7장 CASE 03 KZ_K Studio 기프트박스: A 문제 ───── -->
   <article class="cs cs-a" id="case-2">
     <div class="wrap">
-      <header class="cs-bar"><span class="cs-no">CASE 03</span><h3 class="cs-title">관성적으로 만들던 VIP 기프트박스를 고객 취향으로 바꿔 재구매로 연결한 경험</h3></header>
-      <p class="cs-co">KZ_K Studio | 2022.11 ~ 2023.07</p>
+      <header class="cs-bar"><span class="cs-no">CASE 03</span><h3 class="cs-title">관성적으로 만들던 VIP 기프트박스를 고객 취향으로 바꿔 재구매로 연결한 경험</h3><span class="cs-co">KZ_K Studio | 2022.11 ~ 2023.07</span></header>
       <div class="cs-funnel" role="img" aria-label="구매, 재방문, 재구매 순서의 퍼널에서 구매에서 재방문으로 가는 단계가 끊김">
         <span class="fs">구매</span><i class="fa x"></i><span class="fs x">재방문</span><i class="fa"></i><span class="fs">재구매</span>
       </div>
@@ -911,8 +903,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   <!-- ───── 8장 CASE 03: B 전략과 결과 ───── -->
   <article class="cs cs-b" id="case-2-b">
     <div class="wrap">
-      <header class="cs-bar"><span class="cs-no">CASE 03</span><h3 class="cs-title">관성적으로 만들던 VIP 기프트박스를 고객 취향으로 바꿔 재구매로 연결한 경험</h3><ul class="cs-4p" aria-label="바꾼 요소"><li>Product</li></ul></header>
-      <p class="cs-co">KZ_K Studio | 2022.11 ~ 2023.07</p>
+      <header class="cs-bar"><span class="cs-no">CASE 03</span><h3 class="cs-title">관성적으로 만들던 VIP 기프트박스를 고객 취향으로 바꿔 재구매로 연결한 경험</h3><span class="cs-co">KZ_K Studio | 2022.11 ~ 2023.07</span><ul class="cs-4p" aria-label="바꾼 요소"><li>Product</li></ul></header>
       <div class="cs-grid">
         <div class="cs-st r1">
           <section class="sg">
