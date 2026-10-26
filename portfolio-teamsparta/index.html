@@ -403,6 +403,37 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 @media screen and (min-width:861px){@container (max-width:167px){.hero .hi-txt{min-height:3.2em}}}
 @media screen and (min-width:861px) and (max-width:900px){.hero .hi{padding-left:18px;padding-right:18px}}
 
+/* About(2장): 프로필 + 서머리, 아래 2열(이력 | 자격, Skills & Tools) */
+.about .ab-intro{display:grid;grid-template-columns:200px minmax(0,1fr);gap:clamp(28px,4.5vw,72px);align-items:center;margin-bottom:clamp(36px,4.5vw,56px);padding-bottom:clamp(32px,4vw,48px);border-bottom:1px solid var(--line)}
+.about .ab-photo{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:16px;background:var(--soft)}
+.about .ab-name{margin-top:16px;font-size:20px;font-weight:700;letter-spacing:-.02em;line-height:1.4}
+.about .ab-role{font-size:14px;color:var(--ink-2)}
+.about .ab-contact{margin-top:10px;display:grid;gap:2px;font-size:14px;color:var(--ink-2)}
+.about .ab-contact a{color:inherit;text-decoration:none;word-break:break-all}
+.about .ab-summary{font-size:clamp(16px,1.45vw,20px);font-weight:500;line-height:1.85;letter-spacing:-.02em;color:var(--ink);max-width:40em}
+.about .ab-two{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.about .ab-col{display:grid;gap:34px;align-content:start}
+.about .cert{width:100%;border-collapse:collapse;border-top:1px solid var(--line)}
+.about .cert th,.about .cert td{padding:11px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.5;text-align:left;vertical-align:middle}
+.about .cert th{font-weight:600;color:var(--ink)}
+.about .cert td{text-align:right;color:var(--ink-2);white-space:nowrap;font-variant-numeric:tabular-nums;padding-left:16px}
+.about .tools{display:grid;gap:20px}
+.about .tg-h{font-size:13px;font-weight:600;color:var(--ink-2);margin-bottom:10px}
+.about .tg-chips{display:flex;flex-wrap:wrap;gap:8px}
+.about .tg-chips li{padding:3px 12px;border-radius:999px;background:#edeff2;color:#44474d;font-size:13.5px;line-height:1.6;white-space:nowrap}
+.about .tg-icons{display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:14px 8px}
+.about .tg-icons li{display:flex;flex-direction:column;align-items:center;text-align:center}
+.about .ti{display:grid;place-items:center;width:48px;height:48px;border-radius:12px;background:#fff;border:1px solid var(--line)}
+.about .ti img{width:26px;height:26px;object-fit:contain}
+.about .tn{margin-top:6px;font-size:12px;line-height:1.35;color:var(--ink-2);word-break:keep-all}
+@media screen and (max-width:860px){
+  .about .ab-intro{grid-template-columns:minmax(0,1fr);align-items:start}
+  .about .ab-profile{display:grid;grid-template-columns:120px minmax(0,1fr);column-gap:18px;align-items:center}
+  .about .ab-photo{grid-row:1 / span 3}
+  .about .ab-name{margin-top:0}
+  .about .ab-two{grid-template-columns:minmax(0,1fr)}
+}
+
 /* Contact: 첫 화면과 같은 팀스파르타 레드 #FA0030 바탕 */
 .closing{--sp-blue:#fa0030;--sp-navy:#16171a;--sp-mute:#8e9299;overflow:hidden;background:var(--sp-blue);color:#fff}
 .closing::before,.closing::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
@@ -481,58 +512,22 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
   <div class="wrap">
     <header class="sec-head one">
       <div class="kicker"><b>01</b><span class="mono">About me</span></div>
-      <h2 class="sec-title">고객 여정에서 막힌 구간을 찾아, 전환을 끌어올려 왔습니다</h2>
+      <h2 class="sec-title">데이터로 퍼널의 이탈 원인을 찾아, 전환을 끌어올려 왔습니다</h2>
     </header>
-    <div class="about-grid">
-      <div class="ab-left">
-        <h3 class="ab-h">핵심 역량</h3>
-        <ol class="core">
-          <li>
-            <p class="core-t">역할 범위를 넘어 새로운 시도를 제안하여 성과를 낸 경험 <span>링글</span></p>
-            <ul>
-              <li>세일즈 콜을 하면서 <strong>고객의 구매 결정 요인을 파악</strong>해, 인플루언서 콘텐츠 가이드의 소구점을 재구성</li>
-              <li>인플루언서 공동구매를 기획해 섭외부터 정산까지 단독 운영</li>
-              <li>AI를 활용해 메일 발송, 채널톡 응대 등 반복 작업의 <strong>자동화 시스템을 구축</strong>해 업무 시간 단축</li>
-            </ul>
-          </li>
-          <li>
-            <p class="core-t">관성적으로 해 오던 방식을 바꿔 방문 고객 재구매율 약 70%를 만든 경험 <span>KZ_K Studio</span></p>
-            <ul>
-              <li><strong>쇼룸 응대를 자청해</strong> 고객 니즈를 파악하고, 기존 VIP 기프트박스 프로모션을 새롭게 구성</li>
-              <li>릴스 영상 편집, 메일러와 시즌 컬렉션 이미지 리터칭 등 외주 작업을 내부 제작으로 전환</li>
-            </ul>
-          </li>
-          <li>
-            <p class="core-t">신청부터 예약, 내원까지 집요하게 추적해 예약률을 3배 회복한 경험 <span>이지엠앤씨</span></p>
-            <ul>
-              <li>상담 기록 163건을 전수 분석해 예약 감소 원인을 파악하고, 광고 성과 지표를 예약과 내원으로 전환</li>
-              <li>임플란트 선택의 핵심 USP를 담은 <strong>새로운 소재를 발굴</strong>해 광고 성과 향상</li>
-            </ul>
-          </li>
-        </ol>
-        <div class="skills">
-          <div>
-            <h3 class="ab-h">Soft Skill</h3>
-            <div class="soft">
-              <span>도전 정신과<br>실행력</span>
-              <span>창의적<br>문제 해결</span>
-              <span>데이터 기반<br>결과 검증</span>
-              <span>협업 중심<br>커뮤니케이션</span>
-              <span>몰입과<br>집요함</span>
-            </div>
-          </div>
-          <div>
-            <h3 class="ab-h">Hard Skill</h3>
-            <dl class="hard">
-              <div><dt>광고</dt><dd>Meta Ads, Google Ads, TikTok Ads, 네이버 광고, 토스애즈</dd></div>
-              <div><dt>데이터, 자동화</dt><dd>GA4, BigQuery, SQL, Google Apps Script, n8n, Claude Code</dd></div>
-              <div><dt>디자인, 협업</dt><dd>Figma, Photoshop, Illustrator, InDesign, Google Workspace, Slack</dd></div>
-            </dl>
-          </div>
-        </div>
+    <div class="ab-intro">
+      <div class="ab-profile">
+        <img class="ab-photo" src="assets/profile.jpg" alt="김은오 사진" width="520" height="520">
+        <p class="ab-name">김은오</p>
+        <p class="ab-role">마케터</p>
+        <ul class="ab-contact">
+          <li><a href="tel:010-6253-7082">010-6253-7082</a></li>
+          <li><a href="mailto:eunoh.kim9815@gmail.com">eunoh.kim9815@gmail.com</a></li>
+        </ul>
       </div>
-
-      <div class="ab-right">
+      <p class="ab-summary">퍼널의 이탈 구간은 데이터로 찾고, 이탈 원인은 고객 리서치로 끝까지 확인합니다. 발견한 문제는 주도적으로 개선에 나서고, 정형화된 방식이라도 고객이 반응하지 않으면 재설계합니다. 그렇게 유입에서 멈추지 않고, 전환과 리텐션까지 책임지는 마케팅을 지향합니다.</p>
+    </div>
+    <div class="about-grid ab-two">
+      <div class="ab-col">
         <div>
           <h3 class="ab-h">총 경력</h3>
           <p class="total">2년 2개월<span>(재직 9개월, 인턴 17개월)</span></p>
@@ -551,6 +546,44 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
             <li><div class="cv-date">2016.03 ~ 2022.02</div><div class="cv-body"><b>경북대학교</b><small>심리학 전공, 경영학 복수전공</small></div></li>
             <li><div class="cv-date">2025.03 ~ 2027.08</div><div class="cv-body"><b>한국방송통신대학교</b><small>통계데이터과학과 편입, 졸업예정</small></div></li>
           </ol>
+        </div>
+      </div>
+
+      <div class="ab-right">
+        <div>
+          <h3 class="ab-h">자격</h3>
+          <table class="cert">
+            <tr><th scope="row">ADsP 데이터분석 준전문가</th><td>2026.05</td></tr>
+            <tr><th scope="row">Google 애널리틱스 인증</th><td>2026.10</td></tr>
+            <tr><th scope="row">검색광고마케터</th><td>2026.03</td></tr>
+            <tr><th scope="row">OPIc IH</th><td>2026.09</td></tr>
+            <tr><th scope="row">GTQ 포토샵 1급</th><td>2022.07</td></tr>
+            <tr><th scope="row">GTQi 일러스트 1급</th><td>2022.06</td></tr>
+          </table>
+        </div>
+        <div>
+          <h3 class="ab-h">Skills &amp; Tools</h3>
+          <div class="tools">
+            <div class="tg">
+              <p class="tg-h">광고 매체</p>
+              <ul class="tg-chips"><li>Meta Ads</li><li>Google Ads</li><li>TikTok Ads</li><li>네이버 광고</li><li>토스애즈</li></ul>
+            </div>
+            <div class="tg">
+              <p class="tg-h">데이터와 자동화</p>
+              <ul class="tg-chips"><li>GA4</li><li>SQL</li><li>Google Apps Script</li><li>n8n</li><li>Claude Code</li></ul>
+            </div>
+            <div class="tg">
+              <p class="tg-h">디자인과 협업</p>
+              <ul class="tg-icons">
+                <li><span class="ti"><img src="assets/tools/figma.svg" alt="" width="26" height="26"></span><span class="tn">Figma</span></li>
+                <li><span class="ti"><img src="assets/tools/photoshop.svg" alt="" width="26" height="26"></span><span class="tn">Photoshop</span></li>
+                <li><span class="ti"><img src="assets/tools/illustrator.svg" alt="" width="26" height="26"></span><span class="tn">Illustrator</span></li>
+                <li><span class="ti"><img src="assets/tools/indesign.svg" alt="" width="26" height="26"></span><span class="tn">InDesign</span></li>
+                <li><span class="ti"><img src="assets/tools/google.svg" alt="" width="26" height="26"></span><span class="tn">Google Workspace</span></li>
+                <li><span class="ti"><img src="assets/tools/slack.svg" alt="" width="26" height="26"></span><span class="tn">Slack</span></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
