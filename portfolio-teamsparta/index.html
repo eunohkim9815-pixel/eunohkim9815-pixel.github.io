@@ -400,6 +400,10 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 /* 칩은 항상 윗줄, 텍스트는 아랫줄 (세 타일 통일) */
 /* 작은 글씨가 한 줄에 안 들어가면 '→' 앞에서만 줄바꿈 */
 .hero .hi-txt .seg{white-space:nowrap}
+/* 표지 하단 연락처 한 줄 */
+.hero .hero-contact{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin-top:clamp(18px,2vw,26px);font-size:14px;line-height:1.5;color:#fff}
+.hero .hero-contact a{color:#fff;text-decoration:none}
+.hero .hero-contact span{color:rgba(255,255,255,.6)}
 @media screen and (min-width:861px){@container (max-width:167px){.hero .hi-txt{min-height:3.2em}}}
 @media screen and (min-width:861px) and (max-width:900px){.hero .hi{padding-left:18px;padding-right:18px}}
 
@@ -444,15 +448,17 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 .cs-4p{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
 .cs-4p li{padding:2px 10px;border-radius:999px;background:#edeff2;color:#44474d;font-size:12px;font-weight:500;line-height:1.6;white-space:nowrap}
 .cs-role{margin-top:12px;font-size:13.5px;color:var(--mute)}
+/* 헤더 바 바로 아래 회사명과 기간: 오른쪽 정렬, 표지 타일 작은 줄과 같은 13px */
+.cs-co{margin-top:10px;text-align:right;font-size:13px;line-height:1.5;color:var(--mute)}
 /* 퍼널 한 줄: 끊긴 단계만 빨강 */
-.cs-funnel{display:flex;flex-wrap:wrap;align-items:center;row-gap:10px;margin-top:clamp(20px,2.4vw,30px)}
+.cs-funnel{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;row-gap:10px;margin-top:clamp(20px,2.4vw,30px)}
 .cs-funnel .fs{padding:9px 18px;border-radius:10px;border:1.5px solid #d3d6db;background:#fff;font-size:15px;font-weight:600;line-height:1.4;color:var(--ink);white-space:nowrap}
 .cs-funnel .fs.x{border-color:var(--blue);background:var(--blue-tint);color:var(--blue-deep)}
 .cs-funnel .fa{position:relative;flex:none;width:clamp(28px,3.2vw,46px);height:0;margin:0 12px 0 8px;border-top:2px solid #b4b8bf}
 .cs-funnel .fa::after{content:"";position:absolute;right:-3px;top:-6px;width:9px;height:9px;border-top:2px solid #b4b8bf;border-right:2px solid #b4b8bf;transform:rotate(45deg)}
 .cs-funnel .fa.x{border-top:2px dashed var(--blue)}
 .cs-funnel .fa.x::after{border-color:var(--blue)}
-.cs-strip{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin-top:12px;padding:10px 16px;border-radius:10px;background:var(--soft);font-size:14px;line-height:1.5;color:var(--ink-2)}
+.cs-strip{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 10px;margin-top:12px;padding:10px 16px;border-radius:10px;background:var(--soft);font-size:14px;line-height:1.5;color:var(--ink-2)}
 .cs-strip b{margin-right:6px;font-weight:700;color:var(--ink)}
 .cs-strip .hl{font-weight:700;color:var(--blue-deep)}
 .cs-strip i{font-style:normal;color:var(--mute-2)}
@@ -475,8 +481,19 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
 .cs-hyp .hyp-l{flex:none;margin-top:2px;padding:2px 12px;border-radius:999px;background:var(--blue);color:#fff;font-size:13px;font-weight:700;line-height:1.6}
 .cs-hyp p{font-size:17px;font-weight:600;line-height:1.6;letter-spacing:-.02em;color:var(--ink)}
 .cs-hyp p small{display:block;margin-top:4px;font-size:14px;font-weight:400;letter-spacing:-.01em;color:var(--ink-2)}
-.cs-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:clamp(24px,3vw,44px);align-items:start;margin-top:clamp(20px,2.4vw,30px)}
-.sg+.sg,.cs-st>.loop{margin-top:26px}
+/* A장 맨 아래 가설 칸: 전체 폭, 가운데 정렬 */
+.cs-a .cs-hyp{flex-direction:column;align-items:center;gap:8px;margin-top:12px;text-align:center}
+.cs-a .cs-hyp .hyp-l{margin-top:0}
+.cs-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:clamp(24px,2.6vw,36px);align-items:start;margin-top:clamp(16px,1.8vw,22px)}
+/* B장 전략은 2열, 결과까지 3열 */
+.cs-st{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px clamp(20px,2.2vw,30px);align-items:start}
+.cs-st>.loop{grid-column:1 / -1;margin-top:0}
+.cs-st.r3>.sg:first-child{grid-row:span 2}
+.cs-st .quad{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cs-st .ba{grid-template-columns:minmax(0,1fr)}
+.cs-st.r1{grid-template-columns:minmax(0,1fr)}
+.cs-st.r1 .trio{max-width:620px}
+.cs-st .flow{grid-template-columns:minmax(0,.85fr) auto minmax(0,.75fr) auto minmax(0,1.8fr);padding:12px}
 .sg-bar{display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:10px;background:#eef0f2;font-size:16px;font-weight:700;line-height:1.45;letter-spacing:-.025em;color:var(--ink)}
 .sg-bar b{color:var(--blue-deep)}
 .sg-bar.rs{background:#16171a;color:#fff}
@@ -525,7 +542,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   .cs{break-before:page;border-top:0;padding:0;display:flex!important;flex-direction:column;justify-content:center}
   .bx,.sg,.vbox,.nx,.big,.tb,.cs-hyp,.cs-bar,.cs-funnel,.loop{break-inside:avoid}
 }
-@media screen and (max-width:1079px){.cs-grid{grid-template-columns:minmax(0,1fr)}}
+@media screen and (max-width:1079px){.cs-grid,.cs-st{grid-template-columns:minmax(0,1fr)}.cs-st.r3>.sg:first-child{grid-row:auto}}
 @media screen and (max-width:860px){
   .cs-bar{padding:12px 16px}
   .cs-title{flex-basis:100%}
@@ -550,7 +567,12 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
 .closing .sec-title{color:#fff}
 .closing .thanks p.t{color:rgba(255,255,255,.88)}
 .closing .thanks .sign{color:#fff}
-.closing .thanks{align-items:center}
+.closing .thanks{align-items:center;grid-template-columns:minmax(0,1.9fr) minmax(0,1fr)}
+/* 감사 문장: 어바웃 미 제목과 같은 크기, 두 문장은 줄을 나눔 */
+.closing .thanks p.t{font-size:clamp(22px,2.35vw,34px);font-weight:600;line-height:1.5;letter-spacing:-.035em;color:#fff}
+.closing .thanks p.t .ln{display:block}
+.closing .thanks p.t .ln+.ln{margin-top:.25em}
+@media screen and (max-width:860px){.closing .thanks{grid-template-columns:minmax(0,1fr)}}
 .closing .contact-card{background:#fff;color:var(--sp-navy);border-radius:22px 22px 22px 6px;box-shadow:0 28px 56px -28px rgba(110,0,20,.6)}
 .closing .contact-card .mono{color:var(--sp-mute)}
 .closing .contact-card .copy{background:var(--sp-blue);color:#fff;font-weight:600}
@@ -609,6 +631,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
         <span class="hi-res"><span class="hi-lb"><span class="hi-chip">쇼룸 1:1 대화로 고객 취향 분석</span><span class="hi-txt">맞춤 기프트박스 발송 뒤 재구매</span></span><span class="hi-num" data-grow><span class="ln">쇼룸에서 만난 고객 <em>약 70%</em>를</span><br><span class="ln">재구매로 연결</span></span></span>
       </a>
     </nav>
+    <p class="hero-contact"><a href="tel:010-6253-7082">010-6253-7082</a><span aria-hidden="true">|</span><a href="mailto:eunoh.kim9815@gmail.com">eunoh.kim9815@gmail.com</a></p>
   </div>
 </section>
 
@@ -705,78 +728,29 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
     </header>
   </div>
 
-  <!-- ───── 3장 CASE 01-1 링글 1부 세일즈 콜: A 문제 ───── -->
+  <!-- ───── 3장 CASE 01 링글 틴즈 인플루언서: A 문제 ───── -->
   <article class="cs cs-a" id="case-1">
     <div class="wrap">
-      <header class="cs-bar"><span class="cs-no">CASE 01-1</span><h3 class="cs-title">세일즈 콜에서 학부모의 결정 기준을 찾아 유형별로 상담 멘트를 바꾼 경험</h3></header>
-      <p class="cs-role">링글 틴즈 | 사업개발 인턴, 세일즈 콜과 마케팅 담당 | 2024.05 ~ 2024.12</p>
-      <div class="cs-funnel" role="img" aria-label="체험 신청, 세일즈 콜, 결제 순서의 퍼널에서 세일즈 콜에서 결제로 가는 단계가 끊김">
-        <span class="fs">체험 신청</span><i class="fa"></i><span class="fs">세일즈 콜</span><i class="fa x"></i><span class="fs x">결제</span>
-      </div>
-      <ol class="cs-boxes">
-        <li class="bx"><h4><b>①</b>원래 지표와 기준</h4><ul><li>평가 지표: 체험 신청 고객의 결제 전환 <mark class="fill">【채울 것: 지표 이름과 같은 멘트일 때 수준】</mark></li></ul></li>
-        <li class="bx"><h4><b>②</b>이상 신호</h4><ul><li>같은 멘트로 안내하면 결제까지 이어지지 않는 학부모가 아이 배경에 따라 달랐음</li></ul></li>
-        <li class="bx"><h4><b>③</b>직접 확인한 것</h4><ul><li>콜마다 세 가지를 물음: 왜 영어 공부를 시키는지, 어떤 광고를 보고 왔는지, 자녀 영어에서 가장 중시하는 점</li><li>시키지 않은 고객 리서치였고, 이 리서치가 계기가 되어 마케팅 업무까지 담당</li></ul></li>
-        <li class="bx q"><h4><b>④</b>왜 같은 멘트가 안 통했나</h4><ul><li>학부모가 보는 기준은 '많이 말하기'가 아니라 진도와 첨삭</li><li>영유 재학, 국제학교, 레벨테스트 준비, 엄마표 영어 등 아이 배경마다 망설이는 이유가 달라 같은 멘트로는 설득 포인트를 못 짚음</li></ul></li>
-      </ol>
-    </div>
-  </article>
-
-  <!-- ───── 4장 CASE 01-1: B 전략과 결과 ───── -->
-  <article class="cs cs-b" id="case-1-b">
-    <div class="wrap">
-      <header class="cs-bar"><span class="cs-no">CASE 01-1</span><h3 class="cs-title">세일즈 콜에서 학부모의 결정 기준을 찾아 유형별로 상담 멘트를 바꾼 경험</h3><ul class="cs-4p" aria-label="바꾼 요소"><li>Customer</li></ul></header>
-      <div class="cs-hyp"><span class="hyp-l">가설</span><p>아이 배경별로 학부모가 보는 기준에 맞춰 멘트를 나누면 결제까지 이어질 것</p></div>
-      <div class="cs-grid">
-        <div class="cs-st">
-          <section class="sg">
-            <h4 class="sg-bar"><b>①</b>유형별 멘트</h4>
-            <ul class="sg-l"><li>아이 배경 유형별로 첫 질문과 앞세우는 USP를 다르게 구성</li><li>USP 두 가지: 아이비리그 튜터의 첨삭, 진도가 보이는 4단계 학습</li></ul>
-            <table class="tb"><thead><tr><th>유형</th><th>첫 질문</th><th>강조점</th></tr></thead><tbody><tr><td colspan="3"><mark class="fill">【채울 것】</mark></td></tr></tbody></table>
-          </section>
-          <section class="sg">
-            <h4 class="sg-bar"><b>②</b>기준을 마케팅으로 전달</h4>
-            <ul class="sg-l"><li>콜에서 확인한 학부모 기준을 정리해 인플루언서 콘텐츠 가이드 재구성의 근거로 사용</li></ul>
-          </section>
-        </div>
-        <div class="cs-res">
-          <h4 class="sg-bar rs">결과</h4>
-          <div class="big">
-            <p class="big-n"><mark class="fill">【채울 것: 유형별 멘트 적용 뒤 결제 전환 수치. 없으면 큰 문장으로】</mark></p>
-            <p class="big-t">콜에서 찾은 학부모 기준이 2부 인플루언서 가이드 재구성의 출발점</p>
-          </div>
-          <div class="nx">
-            <h5>확장과 다음</h5>
-            <div class="nx-r"><b>확장</b><ul><li>고객 리서치를 계기로 세일즈 콜에서 마케팅 업무까지 담당 범위 확대</li></ul></div>
-            <div class="nx-r"><b>다음</b><ul><li><mark class="fill">【채울 것. 후보: 유형별로 콜 전 안내 메시지를 보내 상담 전 기대치를 맞추는 것】</mark></li></ul></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </article>
-
-  <!-- ───── 5장 CASE 01-2 링글 2부 인플루언서: A 문제 ───── -->
-  <article class="cs cs-a" id="case-1-2">
-    <div class="wrap">
-      <header class="cs-bar"><span class="cs-no">CASE 01-2</span><h3 class="cs-title">세일즈 콜 기준으로 인플루언서 가이드를 재구성해 구매 전환율을 1.7배로 높인 경험</h3></header>
-      <p class="cs-role">링글 틴즈 | 2024.07부터 인플루언서 마케팅 단독 담당</p>
+      <header class="cs-bar"><span class="cs-no">CASE 01</span><h3 class="cs-title">세일즈 콜 기준으로 인플루언서 가이드를 재구성해 구매 전환율을 1.7배로 높인 경험</h3></header>
+      <p class="cs-co">링글 틴즈 | 2024.07 ~ 2024.12</p>
       <div class="cs-funnel" role="img" aria-label="인플루언서 콘텐츠, 가입, 구매 순서의 퍼널에서 가입에서 구매로 가는 단계가 끊김">
         <span class="fs">인플루언서 콘텐츠</span><i class="fa"></i><span class="fs">가입</span><i class="fa x"></i><span class="fs x">구매</span>
       </div>
       <ol class="cs-boxes">
-        <li class="bx"><h4><b>①</b>원래 지표와 기준</h4><ul><li>팀이 보던 지표: 가입 수와 가입당 비용 <mark class="fill">【확인】</mark></li><li>기준: 손익분기 ROAS 100%. 6월 가이드로 집행한 광고는 ROAS 63%로 미달, 구매 전환율 4.8%</li></ul></li>
+        <li class="bx"><h4><b>①</b>원래 지표와 기준</h4><ul><li>팀이 보던 지표: 가입 수와 가입당 비용</li><li>기준: 손익분기 ROAS 100%. 6월 가이드로 집행한 광고는 ROAS 63%로 미달, 구매 전환율 4.8%</li></ul></li>
         <li class="bx"><h4><b>②</b>이상 신호</h4><ul><li>광고비의 1/3을 편성한 인플루언서 광고에서 가입은 늘었지만 구매로 이어지지 않음. 가입 100명 중 5명만 구매</li></ul></li>
-        <li class="bx"><h4><b>③</b>직접 확인한 것</h4><ul><li>1부 세일즈 콜에서 확인한 학부모 기준: 진도와 첨삭</li><li>퍼포먼스팀과 성과 상위 4개, 하위 4개 영상을 요소별로 비교. 잘된 영상에는 수업 과정이 보였음</li></ul></li>
+        <li class="bx"><h4><b>③</b>직접 확인한 것</h4><ul><li>세일즈 콜을 하며 왜 영어 공부를 시키는지, 어떤 광고를 보고 왔는지, 무엇을 중시하는지 직접 물어 확인한 학부모 기준: 진도와 첨삭</li><li>퍼포먼스팀과 성과 상위 4개, 하위 4개 영상을 요소별로 비교. 잘된 영상에는 수업 과정이 보였음</li></ul></li>
         <li class="bx q"><h4><b>④</b>왜 이걸 안 쓰지?</h4><ul><li>6월 가이드는 '재미있게, 많이 말하기'만 요구해 학부모가 보는 기준이 콘텐츠에 없었음</li><li>유형이 다른 인플루언서에게 같은 흐름을 요구해 각자의 학부모에게 닿지 않음</li></ul></li>
       </ol>
+      <div class="cs-hyp"><span class="hyp-l">가설</span><p>학부모의 기준인 4단계 진도와 튜터 첨삭이 보이도록 가이드를 바꾸고, 인플루언서 유형별로 도입부와 강조점을 나누면 구매 전환이 오를 것<small>이상적인 타깃은 영유 입학 레벨테스트를 준비하는 유치원생 학부모, 실제 대상은 어린 자녀 학부모 전반</small></p></div>
     </div>
   </article>
 
-  <!-- ───── 6장 CASE 01-2: B 전략과 결과 ───── -->
-  <article class="cs cs-b" id="case-1-2-b">
+  <!-- ───── 4장 CASE 01: B 전략과 결과 ───── -->
+  <article class="cs cs-b" id="case-1-b">
     <div class="wrap">
-      <header class="cs-bar"><span class="cs-no">CASE 01-2</span><h3 class="cs-title">세일즈 콜 기준으로 인플루언서 가이드를 재구성해 구매 전환율을 1.7배로 높인 경험</h3><ul class="cs-4p" aria-label="바꾼 요소"><li>Promotion</li></ul></header>
-      <div class="cs-hyp"><span class="hyp-l">가설</span><p>학부모의 기준인 4단계 진도와 튜터 첨삭이 보이도록 가이드를 바꾸고, 인플루언서 유형별로 도입부와 강조점을 나누면 구매 전환이 오를 것<small>이상적인 타깃은 영유 입학 레벨테스트를 준비하는 유치원생 학부모, 실제 대상은 어린 자녀 학부모 전반</small></p></div>
+      <header class="cs-bar"><span class="cs-no">CASE 01</span><h3 class="cs-title">세일즈 콜 기준으로 인플루언서 가이드를 재구성해 구매 전환율을 1.7배로 높인 경험</h3><ul class="cs-4p" aria-label="바꾼 요소"><li>Promotion</li></ul></header>
+      <p class="cs-co">링글 틴즈 | 2024.07 ~ 2024.12</p>
       <div class="cs-grid">
         <div class="cs-st">
           <section class="sg">
@@ -829,11 +803,11 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
     </div>
   </article>
 
-  <!-- ───── 7장 CASE 02 이지엠앤씨 임플란트: A 문제 ───── -->
+  <!-- ───── 5장 CASE 02 이지엠앤씨 임플란트: A 문제 ───── -->
   <article class="cs cs-a" id="case-3">
     <div class="wrap">
       <header class="cs-bar"><span class="cs-no">CASE 02</span><h3 class="cs-title">상담 기록 163건에서 찾은 기준으로 소재와 판정 기준을 바꿔 예약률을 3배로 끌어올린 경험</h3></header>
-      <p class="cs-role">이지엠앤씨 | 퍼포먼스 마케터 | 포항 임플란트 치과 메타 계정 전체와 구글 캠페인 담당 | 2026.07 ~</p>
+      <p class="cs-co">이지엠앤씨 | 2026.07 ~ 2026.09</p>
       <div class="cs-funnel" role="img" aria-label="광고, 상담 신청, CS 통화, 예약, 내원 순서의 퍼널에서 상담 신청에서 예약으로 가는 단계가 끊김">
         <span class="fs">광고</span><i class="fa"></i><span class="fs">상담 신청</span><i class="fa x"></i><span class="fs">CS 통화</span><i class="fa x"></i><span class="fs x">예약</span><i class="fa"></i><span class="fs">내원</span>
       </div>
@@ -844,16 +818,17 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
         <li class="bx"><h4><b>③</b>직접 확인한 것</h4><ul><li>상담 기록 163건 전수 조사: 혜택만 보고 신청한 허수가 8월 초 신청의 절반인 50.5%</li><li>지원금 안내 랜딩은 '신청한 적 없다' 응답이 11.2%, 가격 공개 랜딩은 0.9%</li><li>기존 환자로 분류돼 광고 성과에서 빠지던 예약과 내원을 광고 리드와 매칭해 집계</li></ul></li>
         <li class="bx q"><h4><b>④</b>왜 신청은 늘고 예약은 무너졌나</h4><ul><li>신청 단가로만 판정하니 지원금 소구가 계속 쓰이고, 시 지원금으로 오인한 허수 신청이 늘어도 판정에 드러나지 않았음</li><li>임플란트는 의료진과 가격을 보고 결정하는데 광고는 둘 다 보여 주지 않았음</li></ul></li>
       </ol>
+      <div class="cs-hyp"><span class="hyp-l">가설</span><p>신청 전에 핵심 USP인 의료진 이력과 가격을 보여 주면 허수는 줄고 예약은 늘 것.<small>검증은 같은 기간 기존 소재와 허수, 예약, 내원 비교</small></p></div>
     </div>
   </article>
 
-  <!-- ───── 8장 CASE 02: B 전략과 결과 ───── -->
+  <!-- ───── 6장 CASE 02: B 전략과 결과 ───── -->
   <article class="cs cs-b" id="case-3-b">
     <div class="wrap">
       <header class="cs-bar"><span class="cs-no">CASE 02</span><h3 class="cs-title">상담 기록 163건에서 찾은 기준으로 소재와 판정 기준을 바꿔 예약률을 3배로 끌어올린 경험</h3><ul class="cs-4p" aria-label="바꾼 요소"><li>Price</li><li>Promotion</li></ul></header>
-      <div class="cs-hyp"><span class="hyp-l">가설</span><p>신청 전에 핵심 USP인 의료진 이력과 가격을 보여 주면 허수는 줄고 예약은 늘 것.<small>검증은 같은 기간 기존 소재와 허수, 예약, 내원 비교</small></p></div>
+      <p class="cs-co">이지엠앤씨 | 2026.07 ~ 2026.09</p>
       <div class="cs-grid">
-        <div class="cs-st">
+        <div class="cs-st r3">
           <section class="sg">
             <h4 class="sg-bar"><b>①</b>메타: 의료진 이력을 앞세운 소재</h4>
             <ul class="sg-l"><li>8월 1일부터 8일의 하락을 확인하고 8월 9일부터 지원금 소재 축소</li><li>소재 제작팀과 협업해 치의학 박사, 식립 실적 등 의료진 특장점 강조 소재 투입</li></ul>
@@ -867,7 +842,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
           </section>
           <section class="sg">
             <h4 class="sg-bar"><b>②</b>구글: 가격 공개 랜딩으로 예산 이동</h4>
-            <div class="sg-side">
+            <div class="sg-stack">
               <ul class="sg-l"><li>기존 랜딩 중 개당 가격을 공개한 페이지를 골라 8월 19일까지 예산 비중 19.5% → 50.9%</li><li>신청 단가는 지원금 랜딩이 낮지만 예약 전환은 가격 공개 랜딩이 2배</li></ul>
               <div class="media duo">
                 <figure><div class="shot"><img src="assets/im-land-1.jpg" alt="가격 공개 랜딩 첫 화면 1" loading="lazy" width="700" height="700"></div></figure>
@@ -908,18 +883,18 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
           <div class="nx">
             <h5>확장과 다음</h5>
             <div class="nx-r"><b>확장</b><ul><li>판정 기준을 신청에서 예약과 내원으로 바꾸는 가이드라인을 팀 기준으로 정착시키는 중</li></ul></div>
-            <div class="nx-r"><b>다음</b><ul><li><mark class="fill">【채울 것. 후보: 미예약 신청자에게 보낼 후속 안내 시나리오】</mark></li></ul></div>
+            <div class="nx-r"><b>다음</b><ul><li>미예약 신청자에게 보낼 후속 안내 시나리오 설계</li></ul></div>
           </div>
         </div>
       </div>
     </div>
   </article>
 
-  <!-- ───── 9장 CASE 03 KZ_K Studio 기프트박스: A 문제 ───── -->
+  <!-- ───── 7장 CASE 03 KZ_K Studio 기프트박스: A 문제 ───── -->
   <article class="cs cs-a" id="case-2">
     <div class="wrap">
       <header class="cs-bar"><span class="cs-no">CASE 03</span><h3 class="cs-title">관성적으로 만들던 VIP 기프트박스를 고객 취향으로 바꿔 재구매로 연결한 경험</h3></header>
-      <p class="cs-role">KZ_K Studio | 마케팅팀 인턴 | 2022.11 ~ 2023.07, 뉴욕</p>
+      <p class="cs-co">KZ_K Studio | 2022.11 ~ 2023.07</p>
       <div class="cs-funnel" role="img" aria-label="구매, 재방문, 재구매 순서의 퍼널에서 구매에서 재방문으로 가는 단계가 끊김">
         <span class="fs">구매</span><i class="fa x"></i><span class="fs x">재방문</span><i class="fa"></i><span class="fs">재구매</span>
       </div>
@@ -929,16 +904,17 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
         <li class="bx"><h4><b>③</b>직접 확인한 것</h4><ul><li>쇼룸 응대를 자청해 방문 고객과 1:1 대화. 약 80%의 취미가 그림</li></ul></li>
         <li class="bx q"><h4><b>④</b>왜 박스가 호감으로 남지 않았나</h4><ul><li>받는 사람의 취향 대신 시즌 유행을 기준으로 구성하던 관성</li><li>디자이너의 컬렉션 스케치와 컬렉션마다 고유한 원단 컬러라는 브랜드 자산을 쓰지 않고 있었음</li></ul></li>
       </ol>
+      <div class="cs-hyp"><span class="hyp-l">가설</span><p>고객의 취향인 그림에 브랜드를 담으면 브랜드만의 호감이 쌓이고 그 호감이 재구매로 이어질 것</p></div>
     </div>
   </article>
 
-  <!-- ───── 10장 CASE 03: B 전략과 결과 ───── -->
+  <!-- ───── 8장 CASE 03: B 전략과 결과 ───── -->
   <article class="cs cs-b" id="case-2-b">
     <div class="wrap">
       <header class="cs-bar"><span class="cs-no">CASE 03</span><h3 class="cs-title">관성적으로 만들던 VIP 기프트박스를 고객 취향으로 바꿔 재구매로 연결한 경험</h3><ul class="cs-4p" aria-label="바꾼 요소"><li>Product</li></ul></header>
-      <div class="cs-hyp"><span class="hyp-l">가설</span><p>고객의 취향인 그림에 브랜드를 담으면 브랜드만의 호감이 쌓이고 그 호감이 재구매로 이어질 것</p></div>
+      <p class="cs-co">KZ_K Studio | 2022.11 ~ 2023.07</p>
       <div class="cs-grid">
-        <div class="cs-st">
+        <div class="cs-st r1">
           <section class="sg">
             <h4 class="sg-bar"><b>①</b>취향 조사에서 상품으로</h4>
             <ul class="sg-l"><li>타겟이 즐겨 보는 매거진을 전부 읽어 레퍼런스로 삼고, 쇼룸 대화로 취향 확인</li><li>디자이너와 협업해 컬렉션 의상을 밑그림으로 그린 스케치북과 원단 컬러 색연필 8색으로 구성, 스케치북 제작부터 박스 구성까지 직접 진행</li></ul>
@@ -975,7 +951,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
           <div class="nx">
             <h5>확장과 다음</h5>
             <div class="nx-r"><b>확장</b><ul><li>취향 기반 기프트박스 기획은 다음 시즌부터 정례화</li></ul></div>
-            <div class="nx-r"><b>다음</b><ul><li><mark class="fill">【채울 것. 후보: 박스 수령 뒤 쇼룸 방문으로 이어지는지 추적】</mark></li></ul></div>
+            <div class="nx-r"><b>다음</b><ul><li>박스 수령 뒤 쇼룸 방문으로 이어지는지 추적</li></ul></div>
           </div>
         </div>
       </div>
@@ -992,7 +968,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
     </header>
     <div class="thanks">
       <div>
-        <p class="t">제 이야기를 끝까지 읽어주셔서 <span style="white-space:nowrap">진심으로 감사드립니다.</span><br>궁금한 점이 있으시면 언제든 편하게 연락 주세요.</p>
+        <p class="t"><span class="ln">제 이야기를 끝까지 읽어주셔서 진심으로 감사드립니다.</span><span class="ln">궁금한 점이 있으시면 언제든 편하게 연락 주세요.</span></p>
         <p class="sign">김은오 드림</p>
       </div>
       <div class="contact-card">
@@ -1077,7 +1053,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
     var navIO = new IntersectionObserver(function(es){ es.forEach(function(en){ if (en.isIntersecting) navLinks.forEach(function(a){ a.classList.toggle('on', a.getAttribute('href') === '#' + en.target.id); }); }); }, {rootMargin:'-45% 0px -50% 0px'});
     ['top','about','projects','contact'].forEach(function(id){ var el=document.getElementById(id); if (el) navIO.observe(el); });
     var viewIO = new IntersectionObserver(function(es){ es.forEach(function(en){ var id = en.target.id; if (en.isIntersecting && !seen[id]) { seen[id] = 1; track('section_view', {section: id}); } }); }, {threshold:0.3});
-    ['about','case-1','case-1-b','case-1-2','case-1-2-b','case-3','case-3-b','case-2','case-2-b','contact'].forEach(function(id){ var el=document.getElementById(id); if (el) viewIO.observe(el); });
+    ['about','case-1','case-1-b','case-3','case-3-b','case-2','case-2-b','contact'].forEach(function(id){ var el=document.getElementById(id); if (el) viewIO.observe(el); });
   }
 
   var bar = document.querySelector('.progress');
