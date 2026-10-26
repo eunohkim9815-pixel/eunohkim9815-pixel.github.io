@@ -592,7 +592,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
 /* 정성 성과 칩 */
 .qchip{display:inline-block;margin-right:6px;padding:0 8px;border-radius:999px;background:#edeff2;color:#44474d;font-size:11.5px;font-weight:600;line-height:1.75;vertical-align:1px;white-space:nowrap}
 
-/* ── A장 도식 (세 사례 같은 스타일, 빨강은 끊긴 단계만) ── */
+/* ── 도식 (세 사례 같은 스타일, 빨강은 끊긴 단계와 개선 후만) ── */
 /* 1. A장 퍼널: 끊긴 화살표와 다음 단계를 한 묶음으로 둬 줄바꿈해도 같이 내려감 */
 .fgrp{display:inline-flex;align-items:center}
 /* 2. A장 사고 과정 스테퍼: 왼쪽 세로 선과 번호 원, 가설만 빨강 */
@@ -605,84 +605,45 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
 .cs-steps .cs-hyp[data-step]::before{bottom:50%}
 .cs-steps [data-step]::after{content:attr(data-step);position:absolute;left:-52px;top:50%;z-index:1;width:32px;height:32px;margin-top:-16px;border-radius:50%;background:#e6e8eb;color:#5f646b;font-family:var(--sans);font-size:15px;font-weight:700;line-height:32px;text-align:center}
 .cs-steps .cs-hyp[data-step]::after{background:var(--blue);color:#fff}
+/* 3. B장 실행 타임라인: 전체 폭 가로 띠, 점과 날짜 라벨 */
+.cs-tl{margin-top:clamp(16px,1.8vw,22px);padding:14px 18px 12px;border-radius:12px;background:var(--soft)}
+.cs-tl ol{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));column-gap:12px}
+.cs-tl ol::before{content:"";position:absolute;left:calc((100% - 48px) / 10);right:calc((100% - 48px) / 10);top:33px;height:2px;background:#cfd3d9}
+.cs-tl.nd ol::before{top:12px}
+.cs-tl li{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center}
+.cs-tl b{display:block;height:21px;font-size:14px;font-weight:700;line-height:21px;color:#44474d;white-space:nowrap}
+.cs-tl i{position:relative;z-index:1;display:block;width:14px;height:14px;margin:6px 0;border-radius:50%;border:3px solid #b4b8bf;background:#fff}
+.cs-tl span{font-size:14px;line-height:1.45;letter-spacing:-.01em;color:var(--ink-2)}
+.cs-tl li.on b{color:var(--blue-deep)}
+.cs-tl li.on i{border-color:var(--blue);background:var(--blue)}
+.cs-tl li.on span{font-weight:600;color:var(--ink)}
+/* 4. B장 전후 비교 막대: 검증 상자 안, 기존 회색, 개선 후 빨강 */
+.cmpbar{margin-top:8px;padding-top:10px;border-top:1px dashed var(--line)}
+.cb-lg{display:flex;gap:14px;justify-content:flex-end;margin-bottom:6px;font-size:12px;color:var(--mute)}
+.cb-lg span{display:inline-flex;align-items:center;gap:5px}
+.cb-lg span::before{content:"";width:10px;height:10px;border-radius:2px;background:#c4c8ce}
+.cb-lg .r::before{background:var(--blue)}
+.cb-m{display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;align-items:center}
+.cb-m+.cb-m{margin-top:8px}
+.cb-l{font-size:13px;font-weight:600;line-height:1.3;color:var(--ink-2)}
+.cb-l small{display:block;font-size:11px;font-weight:500;color:var(--mute)}
+.cb-bars{display:grid;gap:3px}
+.cb-r{display:flex;align-items:center;gap:6px}
+.cb-r i{display:block;flex:none;width:calc(var(--w) * .78);height:12px;border-radius:3px;background:#c4c8ce}
+.cb-r.r i{background:var(--blue)}
+.cb-r b{font-size:12.5px;font-weight:700;line-height:1;color:#6b7078;white-space:nowrap}
+.cb-r.r b{color:var(--blue-deep)}
 @media screen and (max-width:860px){
   .cs-steps{padding-left:40px}
   .cs-steps [data-step]::before{left:-28px}
   .cs-steps [data-step]::after{left:-40px;width:26px;height:26px;margin-top:-13px;font-size:13px;line-height:26px}
-}
-
-/* ── B장 새 구조: 전략 Problem ≫ Solution | 성과, As-is → To-be, 보조 요소, 확장과 다음 (세 사례 같은 스타일) ── */
-.nlab{display:inline-block;margin-bottom:10px;padding:3px 12px;border-radius:999px;background:var(--blue-tint);color:var(--ink);font-size:13.5px;font-weight:700;line-height:1.5;letter-spacing:-.01em}
-.dbl{display:block;flex:none;width:26px;height:26px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238e939b' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 6l6 6-6 6M13 6l6 6-6 6'/%3E%3C/svg%3E") center/contain no-repeat}
-.nb-top{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(20px,2.6vw,36px);align-items:start;margin-top:clamp(16px,1.8vw,22px)}
-.ps-hd,.ps li{display:grid;grid-template-columns:minmax(0,1fr) 26px minmax(0,1.2fr);column-gap:10px}
-.ps-hd{margin-bottom:6px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
-.ps ol{display:grid;gap:8px}
-.ps li{row-gap:8px;align-items:stretch}
-.ps li>.dbl{align-self:center}
-.ps-p,.ps-s{display:flex;align-items:center;padding:10px 14px;border-radius:12px;font-size:15.5px;line-height:1.5;letter-spacing:-.015em}
-.ps-p{background:var(--soft);color:var(--ink-2)}
-.ps-s{border:1.5px solid var(--blue);background:#fff;color:var(--ink);font-weight:600}
-.ps-x{grid-column:3}
-.ps-x .flow{margin-top:0;padding:10px}
-.kcards{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:10px}
-.kcard{display:flex;flex-direction:column;justify-content:center;padding:12px;border-radius:14px;border:1px solid var(--line);background:#fff}
-.kc-l{font-size:14.5px;font-weight:700;line-height:1.45;color:var(--ink)}
-.kc-n{margin-top:2px;font-size:clamp(24px,2.1vw,30px);font-weight:700;line-height:1.25;letter-spacing:-.035em;color:var(--blue)}
-.kc-n em{font-style:normal;font-size:1.15em}
-.kc-s{margin-top:2px;font-size:14.5px;font-weight:600;line-height:1.45;color:var(--ink)}
-.vrows{margin-top:12px}
-.vr-h{display:flex;align-items:center;gap:8px;margin-bottom:4px;font-size:13px;font-weight:700;color:var(--ink-2)}
-.vr-h .qchip{margin-right:0}
-.vr-h small{font-size:13px;font-weight:500;color:var(--mute)}
-.vrows ul{border-top:1px solid var(--line)}
-.vrows li{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:7px 2px;border-bottom:1px dashed var(--line)}
-.vr-i{font-size:14.5px;font-weight:600;line-height:1.45;color:var(--ink)}
-.vr-i small{margin-left:6px;font-size:13px;font-weight:400;color:var(--mute)}
-.vr-v{flex:none;font-size:15.5px;font-weight:700;line-height:1.45;color:var(--blue-deep);white-space:nowrap}
-.vrows li.full .vr-i{font-weight:500;color:var(--ink-2)}
-.nb-ab{margin-top:clamp(16px,1.8vw,22px)}
-.tt-row{display:flex;justify-content:center;align-items:stretch;gap:16px}
-.tt-row>.dbl{align-self:center;width:30px;height:30px}
-.tt-c{position:relative;padding:12px;border-radius:16px}
-.tt-c.asis{border:2px dashed #b4b8bf;background:#fafafb}
-.tt-c.tobe{margin-right:28px;border:2px solid var(--blue);background:#fff}
-.tt-c.txt{display:flex;align-items:center;justify-content:center;width:clamp(200px,20vw,280px);padding:18px 22px;text-align:center}
-.tt-c.txt p{font-size:17px;font-weight:600;line-height:1.55;letter-spacing:-.02em;color:var(--ink-2)}
-.tt-c>figure{width:clamp(240px,27vw,390px)}
-.tt-c figcaption{margin-top:6px}
-.tt-c.tobe{display:flex;gap:14px;align-items:flex-end}
-.tt-imgs{display:flex;align-items:flex-end;gap:8px}
-.tt-imgs .shot img{width:auto;height:clamp(96px,10.5vw,150px)}
-.badge{position:absolute;top:-30px;right:-34px;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;width:84px;height:84px;border-radius:50%;background:var(--blue);color:#fff;text-align:center;box-shadow:0 10px 22px -10px rgba(160,0,30,.6)}
-.badge span{font-size:12.5px;font-weight:600;line-height:1.3}
-.badge b{font-size:22px;font-weight:800;line-height:1.15;letter-spacing:-.03em}
-.nb-sup{margin-top:clamp(14px,1.6vw,20px)}
-.nb-sup.rg{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:20px;align-items:start}
-.nb-sup.rg .tb,.nb-sup.rg .reels{margin-top:0}
-.sup-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-end;gap:12px}
-.sup-row .shot img{width:auto;max-width:none;height:clamp(84px,8.4vw,120px)}
-.nb-sup.kz .loop{margin-top:12px}
-.nb>.wrap>.nx{margin-top:clamp(14px,1.6vw,20px)}
-@media screen and (max-width:1079px){
-  .nb-top,.nb-sup.rg{grid-template-columns:minmax(0,1fr)}
-}
-@media screen and (max-width:860px){
-  .ps-hd{display:none}
-  .ps li{grid-template-columns:minmax(0,1fr);row-gap:6px}
-  .ps li>.dbl{justify-self:center;width:22px;height:22px;transform:rotate(90deg)}
-  .ps-x{grid-column:1}
-  .kcards{grid-template-columns:minmax(0,1fr)}
-  .tt-row{flex-direction:column;align-items:stretch}
-  .tt-row>.dbl{align-self:center;transform:rotate(90deg)}
-  .tt-c.txt{width:auto}
-  .tt-c.tobe{margin-right:0;padding-top:28px;flex-direction:column;align-items:stretch}
-  .tt-c>figure{width:auto}
-  .tt-imgs{flex-wrap:wrap}
-  .tt-imgs .shot img{height:80px}
-  .badge{top:-30px;right:-6px;width:80px;height:80px}
-  .badge b{font-size:19px}
-  .sup-row .shot img{height:76px}
+  .cs-tl{padding:12px 14px}
+  .cs-tl ol{grid-template-columns:minmax(0,1fr);row-gap:10px}
+  .cs-tl ol::before,.cs-tl.nd ol::before{left:6px;right:auto;top:10px;bottom:10px;width:2px;height:auto}
+  .cs-tl li{display:block;padding-left:26px;text-align:left}
+  .cs-tl i{position:absolute;left:0;top:3px;margin:0}
+  .cs-tl b{display:inline;height:auto;margin-right:8px;line-height:1.5}
+  .cs-tl span{display:inline}
 }
 
 /* 인쇄: 글자 크기는 그대로 두고 안쪽 여백과 간격만 줄여 한 쪽에 맞춤 */
@@ -693,6 +654,10 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   .cs-strip{margin-top:10px;padding-top:7px;padding-bottom:7px}
   .cs-steps{--sg:9px;margin-top:16px}
   .cs-a .cs-hyp{padding-top:12px;padding-bottom:12px}
+  .cs-tl{margin-top:12px;padding:9px 16px 8px}
+  .cs-tl i{margin:4px 0}
+  .cs-tl ol::before{top:31px}
+  .cs-tl.nd ol::before{top:10px}
   .cs-grid{margin-top:12px}
   .cs-st{row-gap:18px}
   .sg-bar{padding-top:6px;padding-bottom:6px}
@@ -702,27 +667,8 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   .tb th,.tb td{padding-top:5px;padding-bottom:5px}
   .cs-res{gap:10px}
   .vbox,.nx{padding:10px 14px}
-}
-/* 인쇄 B장: 글자 크기는 그대로, 보조 요소 이미지부터 줄이고 간격을 좁혀 한 쪽에 맞춤 */
-@media print{
-  .nb-top{margin-top:12px;gap:28px}
-  .nlab{margin-bottom:7px}
-  .kcard{padding:10px 12px}
-  .vrows{margin-top:10px}
-  .vrows li{padding-top:5px;padding-bottom:5px}
-  .nb-ab{margin-top:12px}
-  .tt-c>figure{width:240px}
-  .nb-sup{margin-top:10px}
-  .nb-sup.rg{grid-template-columns:minmax(0,1fr) auto}
-  .nb-sup.rg .reels{grid-template-columns:repeat(5,88px)}
-  .nb-sup .tb th,.nb-sup .tb td{padding-top:3px;padding-bottom:3px}
-  .sup-row .shot img{height:64px}
-  .nb-sup.kz .loop{margin-top:10px;padding:8px 12px 10px}
-  .nb-sup.kz .loop-h{margin-bottom:6px}
-  .nb-sup.kz .loop-s li{min-height:32px;padding:4px 6px}
-  .nb>.wrap>.nx{margin-top:10px;padding:8px 14px}
-  .nb .nx h5{margin-bottom:4px}
-  .nb .nx-r+.nx-r{margin-top:7px;padding-top:7px}
+  .cmpbar{margin-top:6px;padding-top:8px}
+  .cb-m+.cb-m{margin-top:6px}
 }
 
 /* Contact: 첫 화면과 같은 팀스파르타 레드 #FA0030 바탕 */
@@ -915,33 +861,61 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
     </div>
   </article>
 
-  <!-- ───── 4장 CASE 01: B 전략과 성과 ───── -->
-  <article class="cs cs-b nb" id="case-1-b">
+  <!-- ───── 4장 CASE 01: B 전략과 결과 ───── -->
+  <article class="cs cs-b" id="case-1-b">
     <div class="wrap">
       <header class="cs-bar"><span class="cs-no">CASE 01</span><h3 class="cs-title">세일즈 콜 기준으로 인플루언서 가이드를 재구성해 구매 전환율을 1.7배로 높인 경험</h3><span class="cs-co"><b>링글 틴즈</b> | 2024.07 ~ 2024.12</span></header>
-      <div class="nb-top">
-        <section class="nb-st"><span class="nlab">전략</span><div class="ps"><p class="ps-hd"><span>Problem</span><span></span><span>Solution</span></p><ol><li><p class="ps-p">'재미있게, 많이 말하기'만 요구하던 가이드</p><i class="dbl" aria-hidden="true"></i><p class="ps-s">학부모 기준인 4단계 진도와 튜터 첨삭을 필수로 노출</p></li><li><p class="ps-p">유형이 다른 인플루언서에게 같은 흐름</p><i class="dbl" aria-hidden="true"></i><p class="ps-s">5개 유형별 도입부와 강조점 분리</p></li><li><p class="ps-p">1인이 수작업으로 섭외, 응대, 정산</p><i class="dbl" aria-hidden="true"></i><p class="ps-s">GPT 자동화로 섭외부터 정산까지 단독 운영</p></li></ol></div></section>
-        <section class="nb-rs"><span class="nlab">성과</span><div class="kcards"><div class="kcard"><p class="kc-l">구매 전환율</p><p class="kc-n">4.8% → 8.3%, <em>1.7배</em></p></div><div class="kcard"><p class="kc-l">ROAS</p><p class="kc-n">63% → 120%</p></div></div><div class="vrows"><p class="vr-h">검증</p><ul><li><span class="vr-i">구매당 비용<small>(가입당 비용은 그대로)</small></span><b class="vr-v">45% ▼</b></li><li><span class="vr-i">손익분기 ROAS 100%</span><b class="vr-v">넘김 ▲</b></li><li class="full"><span class="vr-i">기존 가이드 광고 24개 대 재구성 가이드 광고 60개 비교</span></li></ul></div></section>
-      </div>
-      <section class="nb-ab"><span class="nlab">As-is → To-be</span><div class="tt-row"><div class="tt-c asis"><figure><div class="shot"><img src="assets/rg-guide-before.jpg" alt="수정 전 6월 인플루언서 콘텐츠 가이드" loading="lazy" width="1400" height="788"></div><figcaption>수정 전 6월 가이드</figcaption></figure></div><i class="dbl" aria-hidden="true"></i><div class="tt-c tobe"><figure><div class="shot"><img src="assets/rg-guide-after.jpg" alt="수정 후 인플루언서 콘텐츠 가이드" loading="lazy" width="1400" height="788"></div><figcaption>수정 후 가이드</figcaption></figure><span class="badge" aria-label="구매 전환율 1.7배"><span>구매 전환율</span><b>1.7배</b></span></div></div></section>
-      <div class="nb-sup rg"><table class="tb"><thead><tr><th>인플루언서 프로필</th><th>닿는 학부모</th><th>강조점</th></tr></thead><tbody>
+      <div class="cs-tl"><ol aria-label="실행 타임라인"><li><b>6월</b><i aria-hidden="true"></i><span>기존 가이드 운영</span></li><li><b>7월</b><i aria-hidden="true"></i><span>성과 상위 하위 영상 비교 분석</span></li><li class="on"><b>8월 12일</b><i aria-hidden="true"></i><span>재구성 가이드 첫 적용</span></li><li><b>9~10월</b><i aria-hidden="true"></i><span>유형별 재협업</span></li><li><b>11월 19~28일</b><i aria-hidden="true"></i><span>겨울캠프 공동구매</span></li></ol></div>
+      <div class="cs-grid">
+        <div class="cs-st">
+          <section class="sg">
+            <h4 class="sg-bar"><b>①</b>학부모 기준에 맞는 가이드 재구성</h4>
+            <ul class="sg-l"><li>기존 마케터 퇴사 뒤 단독으로 맡아 기존 가이드를 개선</li><li>4단계 학습 화면 필수, 초안은 직접 검수</li></ul>
+            <div class="media ba">
+              <figure><div class="shot"><img src="assets/rg-guide-before.jpg" alt="수정 전 6월 인플루언서 콘텐츠 가이드" loading="lazy" width="1400" height="788"></div><figcaption>수정 전 6월 가이드</figcaption></figure>
+              <figure><div class="shot"><img src="assets/rg-guide-after.jpg" alt="수정 후 인플루언서 콘텐츠 가이드" loading="lazy" width="1400" height="788"></div><figcaption>수정 후 가이드</figcaption></figure>
+            </div>
+          </section>
+          <section class="sg">
+            <h4 class="sg-bar"><b>②</b>인플루언서 유형별 협업</h4>
+            <ul class="sg-l"><li>협업 방식: 인플루언서가 자녀 수업 장면을 담은 릴스를 제작해 게시하고, 그 영상을 메타 광고 소재로 집행</li><li>유형별 도입부와 강조점을 나눠 기획, 재구성한 가이드를 모든 인플루언서에게 전달<small>2024.08.12부터 집행한 광고 60개</small></li><li>섭외 메일, 채널톡 응대, 정산을 GPT로 자동화해 섭외부터 정산까지 단독 운영</li></ul>
+            <div class="sg-pair">
+              <table class="tb"><thead><tr><th>인플루언서 프로필</th><th>닿는 학부모</th><th>강조점</th></tr></thead><tbody>
                 <tr><td>16년 차 엄마표 영어 육아</td><td>엄마표 영어 학부모</td><td>원어민과 1:1 대화</td></tr>
                 <tr><td>영유 출신 자녀를 둔 학부모</td><td>영유 다닌 자녀</td><td>라이팅, 1:1 심화 토론</td></tr>
                 <tr><td>사립초 자녀 학부모</td><td>영어 다음 단계가 필요한 자녀</td><td>원서읽기 루틴, 1:1 수업</td></tr>
                 <tr><td>국제학교 재학생 자녀</td><td>국제학교 재학 자녀</td><td>학교 과목 대비, 에세이 첨삭</td></tr>
                 <tr><td>미국 학교 진학 준비 자녀</td><td>미국 학교 진학 예정 자녀</td><td>현지 수업 대비 1:1 수업</td></tr>
-              </tbody></table><div class="media reels">
+              </tbody></table>
+              <div class="media reels">
                 <figure class="reel"><div class="shot"><img src="assets/rg-reel-1.jpg" alt="16년 영어육아 인플루언서 릴스" loading="lazy" width="386" height="566"></div><figcaption>원어민과 1:1 대화</figcaption></figure>
                 <figure class="reel"><div class="shot"><img src="assets/rg-reel-2.jpg" alt="영유 출신 인플루언서 릴스" loading="lazy" width="386" height="566"></div><figcaption>라이팅, 1:1 심화 토론</figcaption></figure>
                 <figure class="reel"><div class="shot"><img src="assets/rg-reel-3.jpg" alt="사립초 겨울방학 인플루언서 릴스" loading="lazy" width="386" height="566"></div><figcaption>원서읽기 루틴, 1:1 수업</figcaption></figure>
                 <figure class="reel"><div class="shot"><img src="assets/rg-reel-4.jpg" alt="국제학교 학생 인플루언서 릴스" loading="lazy" width="386" height="566"></div><figcaption>학교 과목 대비, 에세이 첨삭</figcaption></figure>
                 <figure class="reel"><div class="shot"><img src="assets/rg-reel-5.jpg" alt="미국 학교 준비 인플루언서 릴스" loading="lazy" width="386" height="566"></div><figcaption>현지 수업 대비 1:1 수업</figcaption></figure>
-              </div></div>
-      <div class="nx">
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="cs-res">
+          <h4 class="sg-bar rs">결과</h4>
+          <div class="big">
+            <p class="big-s">인플루언서 광고 구매 전환율</p>
+            <p class="big-n">4.8% → 8.3%, <em>1.7배</em></p>
+            <p class="big-sub">기존 가이드 광고 24개 대 재구성 가이드 광고 60개</p>
+          </div>
+          <div class="vbox">
+            <h5>검증</h5>
+            <ul><li>가입당 비용은 그대로였고 구매당 비용만 45% 절감</li><li>ROAS 63% → 120%, 손익분기 넘김</li></ul>
+            <div class="cmpbar" role="img" aria-label="기존 가이드 광고 대 재구성 가이드 광고: 구매 전환율 4.8%에서 8.3%, ROAS 63%에서 120%, 구매당 비용 지수 100에서 55"><p class="cb-lg"><span class="g">기존</span><span class="r">개선 후</span></p><div class="cb-m"><p class="cb-l">구매 전환율</p><div class="cb-bars"><div class="cb-r g"><i style="--w:57.8%"></i><b>4.8%</b></div><div class="cb-r r"><i style="--w:100.0%"></i><b>8.3%</b></div></div></div><div class="cb-m"><p class="cb-l">ROAS</p><div class="cb-bars"><div class="cb-r g"><i style="--w:52.5%"></i><b>63%</b></div><div class="cb-r r"><i style="--w:100.0%"></i><b>120%</b></div></div></div><div class="cb-m"><p class="cb-l">구매당 비용<small>지수</small></p><div class="cb-bars"><div class="cb-r g"><i style="--w:100.0%"></i><b>100</b></div><div class="cb-r r"><i style="--w:55.0%"></i><b>55</b></div></div></div></div>
+          </div>
+          <div class="nx">
             <h5>확장과 다음</h5>
             <div class="nx-r"><b>확장</b><ul><li>성과 좋은 인플루언서와 겨울캠프 공동구매, 10일 만에 신규 가입 115건, 평소 인플루언서 광고 3주치, 가입당 비용은 평소보다 19% 낮음</li><li><span class="qchip">정성 성과</span>메타 크리에이티브 데이에서 회사 사례로 소개</li></ul></div>
             <div class="nx-r"><b>다음</b><ul><li>광고 성과 상위가 공동구매 성과 상위는 아니어서, 다음 공동구매는 추천 링크 유입 실적으로 인플루언서를 선정하기로 정리</li></ul></div>
           </div>
+        </div>
+      </div>
     </div>
   </article>
 
@@ -965,12 +939,39 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
     </div>
   </article>
 
-  <!-- ───── 6장 CASE 02: B 전략과 성과 ───── -->
-  <article class="cs cs-b nb" id="case-3-b">
+  <!-- ───── 6장 CASE 02: B 전략과 결과 ───── -->
+  <article class="cs cs-b" id="case-3-b">
     <div class="wrap">
       <header class="cs-bar"><span class="cs-no">CASE 02</span><h3 class="cs-title">상담 기록 163건에서 찾은 기준으로 소재와 판정 기준을 바꿔 예약률을 3배로 끌어올린 경험</h3><span class="cs-co"><b>이지엠앤씨</b> | 2026.07 ~ 2026.09</span></header>
-      <div class="nb-top">
-        <section class="nb-st"><span class="nlab">전략</span><div class="ps"><p class="ps-hd"><span>Problem</span><span></span><span>Solution</span></p><ol><li><p class="ps-p">상담 신청당 비용만으로 소재 판정</p><i class="dbl" aria-hidden="true"></i><p class="ps-s">예약과 내원 기준 리포팅 구조: AI 통합 대시보드, 신청일 코호트, 기존 환자 매칭</p><div class="ps-x"><div class="media flow" role="img" aria-label="메타 광고, 구글 광고, 상담 기록을 통합 대시보드로 모아 신청, 예약, 내원까지 보는 구조. 기존 판정은 신청, 새 판정은 예약과 내원">
+      <div class="cs-tl"><ol aria-label="실행 타임라인"><li><b>7월</b><i aria-hidden="true"></i><span>운영 시작</span></li><li><b>8월 1~8일</b><i aria-hidden="true"></i><span>예약률 하락 확인</span></li><li class="on"><b>8월 9일</b><i aria-hidden="true"></i><span>지원금 소재 축소 시작</span></li><li><b>8월 19일</b><i aria-hidden="true"></i><span>가격 공개 랜딩 예산 비중 50.9%</span></li><li><b>9월 1~9일</b><i aria-hidden="true"></i><span>예약률 10.6%</span></li></ol></div>
+      <div class="cs-grid">
+        <div class="cs-st r3">
+          <section class="sg">
+            <h4 class="sg-bar"><b>①</b>메타: 의료진 이력을 앞세운 소재</h4>
+            <ul class="sg-l"><li>8월 1일부터 8일의 하락을 확인하고 8월 9일부터 지원금 소재 축소</li><li>소재 제작팀과 협업해 치의학 박사, 식립 실적 등 의료진 특장점 강조 소재 투입</li></ul>
+            <div class="media quad">
+              <figure><div class="shot"><img src="assets/im-cr-1.jpg" alt="의료진 이력을 앞세운 메타 소재 1" loading="lazy" width="700" height="875"></div></figure>
+              <figure><div class="shot"><img src="assets/im-cr-2.jpg" alt="의료진 이력을 앞세운 메타 소재 2" loading="lazy" width="700" height="700"></div></figure>
+              <figure><div class="shot"><img src="assets/im-cr-3.jpg" alt="의료진 이력을 앞세운 메타 소재 3" loading="lazy" width="700" height="700"></div></figure>
+              <figure><div class="shot"><img src="assets/im-cr-4.jpg" alt="의료진 이력을 앞세운 메타 소재 4" loading="lazy" width="700" height="875"></div></figure>
+            </div>
+            <p class="cap">메타 소재</p>
+          </section>
+          <section class="sg">
+            <h4 class="sg-bar"><b>②</b>구글: 가격 공개 랜딩으로 예산 이동</h4>
+            <div class="sg-stack">
+              <ul class="sg-l"><li>기존 랜딩 중 개당 가격을 공개한 페이지를 골라 8월 19일까지 예산 비중 19.5% → 50.9%</li><li>신청 단가는 지원금 랜딩이 낮지만 예약 전환은 가격 공개 랜딩이 2배</li></ul>
+              <div class="media duo">
+                <figure><div class="shot"><img src="assets/im-land-1.jpg" alt="가격 공개 랜딩 첫 화면 1" loading="lazy" width="700" height="700"></div></figure>
+                <figure><div class="shot"><img src="assets/im-land-2.jpg" alt="가격 공개 랜딩 첫 화면 2" loading="lazy" width="700" height="700"></div></figure>
+                <p class="cap">가격 공개 랜딩 첫 화면</p>
+              </div>
+            </div>
+          </section>
+          <section class="sg">
+            <h4 class="sg-bar"><b>③</b>공통: 예약과 내원으로 판정하는 리포팅 구조</h4>
+            <ul class="sg-l"><li>AI로 광고와 상담 데이터를 통합한 대시보드 구축, 신청일 기준 코호트와 기존 환자 매칭으로 성과 왜곡 보정</li><li>판정 가이드라인을 공유해 점차 팀 기준으로 정착</li></ul>
+            <div class="media flow" role="img" aria-label="메타 광고, 구글 광고, 상담 기록을 통합 대시보드로 모아 신청, 예약, 내원까지 보는 구조. 기존 판정은 신청, 새 판정은 예약과 내원">
               <div class="src"><span>메타 광고</span><span>구글 광고</span><span>상담 기록</span></div>
               <div class="arr"></div>
               <div class="hub">통합<br>대시보드</div>
@@ -979,15 +980,31 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
                 <div class="funnel"><span>신청</span><span class="new">예약</span><span class="new">내원</span></div>
                 <div class="judge"><span>기존 판정</span><span class="new">새 판정</span></div>
               </div>
-            </div></div></li><li><p class="ps-p">지원금 소구 소재가 허수 신청 유발</p><i class="dbl" aria-hidden="true"></i><p class="ps-s">메타: 의료진 이력을 앞세운 소재 투입</p></li><li><p class="ps-p">지원금 랜딩에 예산 집중</p><i class="dbl" aria-hidden="true"></i><p class="ps-s">구글: 가격 공개 랜딩으로 예산 비중 19.5% → 50.9%</p></li></ol></div></section>
-        <section class="nb-rs"><span class="nlab">성과</span><div class="kcards"><div class="kcard"><p class="kc-l">계정 전체 예약률</p><p class="kc-n">3.5% → 10.6%, <em>3배</em></p></div><div class="kcard"><p class="kc-l">예약단가</p><p class="kc-n">67% 절감</p></div></div><div class="vrows"><p class="vr-h">검증<small>같은 기간 비교</small></p><ul><li><span class="vr-i">새 소재 예약 전환</span><b class="vr-v">7.4% → 23.4% ▲</b></li><li><span class="vr-i">허수 비율</span><b class="vr-v">36.6% → 8.5% ▼</b></li><li><span class="vr-i">구글 가격 공개 랜딩 내원단가</span><b class="vr-v">52% ▼</b></li></ul></div></section>
-      </div>
-      <section class="nb-ab"><span class="nlab">As-is → To-be</span><div class="tt-row"><div class="tt-c asis txt"><p>지원금 소구 소재와 랜딩, 신청당 비용 판정</p></div><i class="dbl" aria-hidden="true"></i><div class="tt-c tobe"><figure class="tt-g"><div class="tt-imgs"><div class="shot"><img src="assets/im-cr-1.jpg" alt="의료진 이력을 앞세운 메타 소재 1" loading="lazy" width="700" height="875"></div><div class="shot"><img src="assets/im-cr-2.jpg" alt="의료진 이력을 앞세운 메타 소재 2" loading="lazy" width="700" height="700"></div><div class="shot"><img src="assets/im-cr-3.jpg" alt="의료진 이력을 앞세운 메타 소재 3" loading="lazy" width="700" height="700"></div><div class="shot"><img src="assets/im-cr-4.jpg" alt="의료진 이력을 앞세운 메타 소재 4" loading="lazy" width="700" height="875"></div></div><figcaption>메타 소재</figcaption></figure><figure class="tt-g"><div class="tt-imgs"><div class="shot"><img src="assets/im-land-1.jpg" alt="가격 공개 랜딩 첫 화면 1" loading="lazy" width="700" height="700"></div><div class="shot"><img src="assets/im-land-2.jpg" alt="가격 공개 랜딩 첫 화면 2" loading="lazy" width="700" height="700"></div></div><figcaption>가격 공개 랜딩 첫 화면</figcaption></figure><span class="badge" aria-label="예약 전환 3.2배"><span>예약 전환</span><b>3.2배</b></span></div></div></section>
-      <div class="nx">
+            </div>
+          </section>
+        </div>
+        <div class="cs-res">
+          <h4 class="sg-bar rs">결과</h4>
+          <div class="big">
+            <p class="big-s">계정 전체 예약률</p>
+            <p class="big-n">3.5% → 10.6%, <em>3배</em></p>
+            <p class="big-sub">8월 초 대비 9월 초</p>
+          </div>
+          <div class="big">
+            <p class="big-n s"><span class="d">예약단가</span> 67% 절감</p>
+          </div>
+          <div class="vbox">
+            <h5>같은 기간 비교</h5>
+            <ul><li>새 소재 예약 전환 23.4% 대 기존 소재 7.4%, 3.2배</li><li>허수 비율 36.6% → 8.5%, 상담 가능한 유효 리드 비율 상승</li><li>구글 가격 공개 랜딩 내원단가 52% 절감</li></ul>
+            <div class="cmpbar" role="img" aria-label="같은 기간 기존 소재 대 새 소재: 예약 전환 7.4%에서 23.4%, 허수 비율 36.6%에서 8.5%, 구글 내원단가 지수 100에서 48"><p class="cb-lg"><span class="g">기존</span><span class="r">개선 후</span></p><div class="cb-m"><p class="cb-l">예약 전환</p><div class="cb-bars"><div class="cb-r g"><i style="--w:31.6%"></i><b>7.4%</b></div><div class="cb-r r"><i style="--w:100.0%"></i><b>23.4%</b></div></div></div><div class="cb-m"><p class="cb-l">허수 비율</p><div class="cb-bars"><div class="cb-r g"><i style="--w:100.0%"></i><b>36.6%</b></div><div class="cb-r r"><i style="--w:23.2%"></i><b>8.5%</b></div></div></div><div class="cb-m"><p class="cb-l">구글 내원단가<small>지수</small></p><div class="cb-bars"><div class="cb-r g"><i style="--w:100.0%"></i><b>100</b></div><div class="cb-r r"><i style="--w:48.0%"></i><b>48</b></div></div></div></div>
+          </div>
+          <div class="nx">
             <h5>확장과 다음</h5>
             <div class="nx-r"><b>확장</b><ul><li><span class="qchip">정성 성과</span>판정 기준을 신청에서 예약과 내원으로 바꾸는 가이드라인을 팀 기준으로 정착시키는 중</li></ul></div>
             <div class="nx-r"><b>다음</b><ul><li>미예약 신청자에게 보낼 후속 안내 시나리오 설계</li></ul></div>
           </div>
+        </div>
+      </div>
     </div>
   </article>
 
@@ -1010,24 +1027,53 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
     </div>
   </article>
 
-  <!-- ───── 8장 CASE 03: B 전략과 성과 ───── -->
-  <article class="cs cs-b nb" id="case-2-b">
+  <!-- ───── 8장 CASE 03: B 전략과 결과 ───── -->
+  <article class="cs cs-b" id="case-2-b">
     <div class="wrap">
       <header class="cs-bar"><span class="cs-no">CASE 03</span><h3 class="cs-title">관성적으로 만들던 VIP 기프트박스를 고객 취향으로 바꿔 재구매로 연결한 경험</h3><span class="cs-co"><b>KZ_K Studio</b> | 2022.11 ~ 2023.07</span></header>
-      <div class="nb-top">
-        <section class="nb-st"><span class="nlab">전략</span><div class="ps"><p class="ps-hd"><span>Problem</span><span></span><span>Solution</span></p><ol><li><p class="ps-p">시즌 유행 아이템 위주 기프트박스</p><i class="dbl" aria-hidden="true"></i><p class="ps-s">고객 취향인 그림을 담은 컬렉션 스케치북과 원단 컬러 색연필 8색</p></li><li><p class="ps-p">매거진 리서치와 구매 이력뿐인 고객 자료</p><i class="dbl" aria-hidden="true"></i><p class="ps-s">쇼룸 1:1 고객 리서치로 취향 확인, 약 80%가 그림</p></li><li><p class="ps-p">외주에 의존하던 릴스, 메일러, 간행물</p><i class="dbl" aria-hidden="true"></i><p class="ps-s">직접 제작으로 전환</p></li></ol></div></section>
-        <section class="nb-rs"><span class="nlab">성과</span><div class="kcards"><div class="kcard"><p class="kc-l">쇼룸에서 만난 고객</p><p class="kc-n">약 70%</p><p class="kc-s">재방문과 재구매</p></div><div class="kcard"><p class="kc-n">250세트</p><p class="kc-s">기한 내 전량 발송</p></div></div><div class="vrows"><p class="vr-h">근거<span class="qchip">정성 성과</span></p><ul><li class="full"><span class="vr-i">VIP 긍정 피드백 다수</span></li><li class="full"><span class="vr-i">'역대 최고의 기프트박스' 호평</span></li><li class="full"><span class="vr-i">색칠한 그림을 보내온 고객</span></li></ul></div></section>
-      </div>
-      <section class="nb-ab"><span class="nlab">As-is → To-be</span><div class="tt-row"><div class="tt-c asis txt"><p>시즌 유행 아이템 박스</p></div><i class="dbl" aria-hidden="true"></i><div class="tt-c tobe"><figure><div class="shot"><img src="assets/kz-giftbox.jpg" alt="열린 기프트박스" loading="lazy" width="740" height="516"></div></figure><span class="badge" aria-label="재구매 약 70%"><span>재구매</span><b>약 70%</b></span></div></div></section>
-      <div class="nb-sup kz"><div class="sup-row"><figure><div class="shot"><img src="assets/kz-sketch.jpg" alt="스케치북 표지" loading="lazy" width="367" height="367"></div><figcaption>스케치북 표지</figcaption></figure><figure><div class="shot"><img src="assets/kz-drawing.jpg" alt="밑그림과 원단 정보" loading="lazy" width="242" height="286"></div><figcaption>밑그림과 원단 정보</figcaption></figure><figure><div class="shot"><img src="assets/kz-howto.jpg" alt="색칠 가이드" loading="lazy" width="280" height="226"></div><figcaption>색칠 가이드</figcaption></figure><figure><div class="shot"><img src="assets/kz-cover.jpg" alt="뉴스페이퍼 표지" loading="lazy" width="1200" height="800"></div><figcaption>뉴스페이퍼 표지</figcaption></figure><figure><div class="shot"><img src="assets/kz-spread.jpg" alt="뉴스페이퍼 내지" loading="lazy" width="1200" height="800"></div><figcaption>뉴스페이퍼 내지</figcaption></figure><figure><div class="shot" style="background:#ededed"><img src="assets/kz-mailer.jpg" alt="룩북 메일러" loading="lazy" width="838" height="309"></div><figcaption>룩북 메일러</figcaption></figure></div><div class="loop">
+      <div class="cs-tl nd"><ol aria-label="실행 타임라인"><li><i aria-hidden="true"></i><span>매거진 리서치</span></li><li><i aria-hidden="true"></i><span>쇼룸 1:1 고객 리서치</span></li><li class="on"><i aria-hidden="true"></i><span>디자이너 협업 기획과 벤더 소싱</span></li><li><i aria-hidden="true"></i><span>23SS 기프트박스 250세트 발송</span></li><li><i aria-hidden="true"></i><span>다음 시즌 정례화</span></li></ol></div>
+      <div class="cs-grid">
+        <div class="cs-st r1">
+          <section class="sg">
+            <h4 class="sg-bar"><b>①</b>취향 조사에서 상품으로</h4>
+            <ul class="sg-l"><li>타겟이 즐겨 보는 매거진을 전부 읽어 레퍼런스로 삼고, 쇼룸 대화로 취향 확인</li><li>디자이너와 협업해 컬렉션 의상을 밑그림으로 그린 스케치북과 원단 컬러 색연필 8색으로 구성, 스케치북 제작부터 박스 구성까지 직접 진행</li></ul>
+            <div class="media trio">
+              <figure><div class="shot"><img src="assets/kz-sketch.jpg" alt="스케치북 표지" loading="lazy" width="367" height="367"></div><figcaption>스케치북 표지</figcaption></figure>
+              <figure><div class="shot"><img src="assets/kz-drawing.jpg" alt="밑그림과 원단 정보" loading="lazy" width="242" height="286"></div><figcaption>밑그림과 원단 정보</figcaption></figure>
+              <figure><div class="shot"><img src="assets/kz-howto.jpg" alt="색칠 가이드" loading="lazy" width="280" height="226"></div><figcaption>색칠 가이드</figcaption></figure>
+            </div>
+          </section>
+          <section class="sg">
+            <h4 class="sg-bar"><b>②</b>외주 콘텐츠를 직접 제작</h4>
+            <ul class="sg-l"><li>외주였던 릴스 편집, 메일러, 뉴스페이퍼와 룩북 등 시즌 간행물을 직접 디자인</li></ul>
+            <div class="media trio" style="align-items:start">
+              <figure><div class="shot"><img src="assets/kz-cover.jpg" alt="뉴스페이퍼 표지" loading="lazy" width="1200" height="800"></div><figcaption>뉴스페이퍼 표지</figcaption></figure>
+              <figure><div class="shot"><img src="assets/kz-spread.jpg" alt="뉴스페이퍼 내지" loading="lazy" width="1200" height="800"></div><figcaption>뉴스페이퍼 내지</figcaption></figure>
+              <figure><div class="shot" style="background:#ededed"><img src="assets/kz-mailer.jpg" alt="룩북 메일러" loading="lazy" width="838" height="309"></div><figcaption>룩북 메일러</figcaption></figure>
+            </div>
+          </section>
+          <div class="loop">
             <span class="loop-h">기대한 고객 행동</span>
             <ol class="loop-s"><li>박스 수령</li><li>밑그림 색칠</li><li>실물 보러 쇼룸 방문</li><li>재구매</li></ol>
-          </div></div>
-      <div class="nx">
+          </div>
+        </div>
+        <div class="cs-res">
+          <h4 class="sg-bar rs">결과</h4>
+          <div class="big">
+            <p class="big-t">쇼룸에서 직접 만난 고객 <em>약 70%</em>의 재방문과 재구매</p>
+          </div>
+          <div class="vbox">
+            <h5>근거</h5>
+            <ul><li>250세트 기한 내 전량 발송</li><li><span class="qchip">정성 성과</span>VIP 긍정 피드백 다수, '역대 최고의 기프트박스' 호평, 색칠한 그림을 보내온 고객</li></ul>
+          </div>
+          <figure class="res-img"><div class="shot"><img src="assets/kz-giftbox.jpg" alt="열린 기프트박스" loading="lazy" width="740" height="516"></div></figure>
+          <div class="nx">
             <h5>확장과 다음</h5>
             <div class="nx-r"><b>확장</b><ul><li>취향 기반 기프트박스 기획은 다음 시즌부터 정례화</li></ul></div>
             <div class="nx-r"><b>다음</b><ul><li>박스 수령 뒤 쇼룸 방문으로 이어지는지 추적</li></ul></div>
           </div>
+        </div>
+      </div>
     </div>
   </article>
 </section>
