@@ -497,6 +497,7 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 .bx.q li::before{background:var(--blue)}
 /* ④ 문제 정의: 첫 줄 질문 굵게 */
 .bx-c{min-width:0}
+.bx-why{display:inline-block;margin-bottom:6px;padding:1px 10px;border-radius:999px;background:var(--blue-tint);color:var(--blue-deep);font-size:12.5px;font-weight:700;line-height:1.6;letter-spacing:.02em}
 .bx-q{margin-bottom:8px;font-size:17px;font-weight:700;line-height:1.5;letter-spacing:-.02em;color:var(--ink)}
 /* 채울 것, 확인 표시 */
 mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;font-weight:600;-webkit-box-decoration-break:clone;box-decoration-break:clone}
@@ -647,12 +648,14 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   .cs-bar{padding-top:10px;padding-bottom:10px}
   .cs-funnel{margin-top:14px}
   .cs-funnel .fs{padding-top:10px;padding-bottom:10px}
-  .cs-steps{--sg:9px;margin-top:16px}
-  .cs-a .cs-hyp{padding-top:12px;padding-bottom:12px}
+  .cs-steps{--sg:7px;margin-top:16px}
+  .cs-a .cs-hyp{padding-top:10px;padding-bottom:10px}
   .cs-a .cs-hyp .cs-cmp{margin-top:10px}
   .cmp-box{padding-top:9px;padding-bottom:9px}
   .cs-grid{margin-top:12px}
   .cs-st{row-gap:18px}
+  .cs-st .sg-stack .duo{grid-template-columns:repeat(2,146px)}
+  .cs-st .flow{padding:9px 12px}
   .sg-bar{padding-top:6px;padding-bottom:6px}
   .sg-l{margin-top:8px;gap:3px}
   .media,.sg-pair{margin-top:10px}
@@ -844,15 +847,15 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
       </div>
       <div class="cs-steps">
       <ol class="cs-boxes">
-          <li class="bx" data-step="1"><h4><b>①</b>팀 KPI</h4><ul><li>프로젝트 목적: 인플루언서 광고의 구매 전환 증진</li><li>팀 KPI: 신규 가입 수, 가입당 비용</li><li>기준치: 가입당 비용 적정 범위, 가입 → 첫결제 전환율 11%, 첫결제 ROAS 240%</li><li>기존 가이드 광고는 가입당 비용이 적정 범위 이내로 KPI상 이상 징후 없음</li></ul></li>
+          <li class="bx" data-step="1"><h4><b>①</b>팀 KPI</h4><ul><li>프로젝트 목적: 인플루언서 광고의 구매 전환 증진</li><li>팀 KPI: 가입당 비용 목표 5.5만 원, 적정 범위 8~10만 원 이내, 가입 → 첫결제 전환율 11%, 첫결제 ROAS 240%</li><li>개선 전 가이드 광고의 가입당 비용은 8.7만 원으로 적정 범위 이내, KPI상 이상 징후 없음</li></ul></li>
           <li class="bx" data-step="2"><h4><b>②</b>퍼널 이탈 지점</h4><ul><li>광고비의 1/3을 편성한 인플루언서 광고에서 가입은 늘었지만 구매로 이어지지 않음</li><li>가입 → 구매 4.8%는 팀 내부 기준 11%의 절반 이하, ROAS 63%는 기준치 240%는 물론 손익분기 100%에도 미달</li></ul></li>
           <li class="bx" data-step="3"><h4><b>③</b>원인 분석</h4><ul><li>세일즈 콜을 활용한 고객 리서치 실시: 영어 학습 목적, 유입 광고, 중시 요소를 질문해 학부모의 구매 결정 요인이 진도와 첨삭임을 확인</li><li>성과 상위 4개와 하위 4개 영상 요소별 비교 분석 실시: 고성과 영상에는 예습, 수업, 숙제, 복습의 4단계 학습 과정이 노출됨</li></ul></li>
-          <li class="bx q" data-step="4"><h4><b>④</b>문제 정의</h4><div class="bx-c"><p class="bx-q">왜 학부모가 보는 기준이 콘텐츠에 없었나</p><ul><li>6월 가이드는 '재미있게, 많이 말하기'만 요구해 학부모의 구매 결정 요인인 진도와 첨삭이 콘텐츠에 없었음</li><li>엄마표 영어, 영유 자녀, 사립초 자녀, 국제학교 자녀, 미국 학교 진학 준비 등 자녀 배경이 다른 인플루언서에게 같은 흐름을 요구해 각 타겟 학부모에게 맞는 소구가 되지 않음</li></ul></div></li>
+          <li class="bx q" data-step="4"><h4><b>④</b>문제 정의</h4><div class="bx-c"><p class="bx-q">왜 학부모가 보는 기준이 콘텐츠에 없었나</p><ul><li>개선 전 가이드는 '재미있게, 많이 말하기'만 요구해 학부모의 구매 결정 요인인 진도와 첨삭이 콘텐츠에 없었음</li><li>엄마표 영어, 영유 자녀, 사립초 자녀, 국제학교 자녀, 미국 학교 진학 준비 등 자녀 배경이 다른 인플루언서에게 같은 흐름을 요구해 각 타겟 학부모에게 맞는 소구가 되지 않음</li></ul></div></li>
         </ol>
         <div class="cs-hyp" data-step="H"><span class="hyp-l">가설</span><p>학부모의 기준인 예습, 수업, 숙제, 복습의 4단계 학습 과정과 튜터 첨삭이 보이도록 가이드를 재구성하고, 인플루언서 유형별로 도입부와 강조점을 나누면 구매 전환이 오를 것</p>
           <div class="cs-cmp">
             <span class="cmp-chip">As-is</span><span class="cmp-chip to">To-be</span>
-            <p class="cmp-box">'재미있게, 많이 말하기' 가이드, 유형 구분 없는 동일 흐름</p><i class="cmp-arr" aria-hidden="true"></i><p class="cmp-box to">4단계 학습 과정과 튜터 첨삭 노출, 유형별 도입부와 강조점</p>
+            <p class="cmp-box">개선 전 가이드, 유형 구분 없는 동일 흐름</p><i class="cmp-arr" aria-hidden="true"></i><p class="cmp-box to">4단계 학습 과정과 튜터 첨삭 노출, 유형별 도입부와 강조점</p>
           </div>
         </div>
       </div>
@@ -869,8 +872,8 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
             <h4 class="sg-bar"><b>①</b>학부모 기준에 맞는 가이드 재구성</h4>
             <ul class="sg-l"><li>예습, 수업, 숙제, 복습의 4단계 학습 과정 화면 필수 노출</li><li>콘텐츠 초안 직접 검수</li></ul>
             <div class="media ba">
-              <figure><div class="shot"><img src="assets/rg-guide-before.jpg" alt="수정 전 6월 인플루언서 콘텐츠 가이드" loading="lazy" width="1400" height="788"></div><figcaption>수정 전 6월 가이드</figcaption></figure>
-              <figure><div class="shot"><img src="assets/rg-guide-after.jpg" alt="수정 후 인플루언서 콘텐츠 가이드" loading="lazy" width="1400" height="788"></div><figcaption>수정 후 가이드</figcaption></figure>
+              <figure><div class="shot"><img src="assets/rg-guide-before.jpg" alt="개선 전 인플루언서 콘텐츠 가이드" loading="lazy" width="1400" height="788"></div><figcaption>개선 전 가이드</figcaption></figure>
+              <figure><div class="shot"><img src="assets/rg-guide-after.jpg" alt="개선 후 인플루언서 콘텐츠 가이드" loading="lazy" width="1400" height="788"></div><figcaption>개선 후 가이드</figcaption></figure>
             </div>
           </section>
           <section class="sg">
@@ -924,10 +927,10 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
       </div>
       <div class="cs-steps">
       <ol class="cs-boxes">
-          <li class="bx" data-step="1"><h4><b>①</b>팀 KPI</h4><ul><li>프로젝트 목적: 임플란트 상담 신청의 예약과 내원 증진</li><li>팀 KPI: 임플란트 상담 신청당 비용. 소재와 랜딩의 유지, 중단, 예산 배분을 이 지표 하나로 판정</li><li>신청당 비용이 낮을수록 좋은 소재로 판정되는 구조라 지원금 소구 소재와 랜딩이 최우수로 분류됨. 구글 기준 지원금 랜딩의 신청당 비용이 가격 공개 랜딩보다 32% 낮았기 때문</li></ul></li>
-          <li class="bx" data-step="2"><h4><b>②</b>퍼널 이탈 지점</h4><ul><li>7월보다 광고비와 신청은 늘었지만 8월 초 계정 전체 예약률이 10.3%에서 3.5%로 3분의 1 수준까지 하락, 예약단가는 3.7배 상승</li></ul></li>
+          <li class="bx" data-step="1"><h4><b>①</b>팀 KPI</h4><ul><li>프로젝트 목적: 임플란트 상담 신청의 예약과 내원 증진</li><li>팀 KPI: 임플란트 상담 신청 DB 단가. 명시된 목표치 없이 직전 달 수준 유지와 소재 간 상대 비교로 판정, 7월 메타 DB 단가 4.2만 원이 사실상의 기준선</li><li>광고 성과를 DB 단가로 판정해 소재와 랜딩의 ON/OFF와 예산 배분을 결정하는 구조. 이 기준에서는 지원금 소구가 최우수로 분류됨 (구글 지원금 랜딩 DB 단가 6.3만 원, 가격 공개 랜딩 9.3만 원)</li></ul></li>
+          <li class="bx" data-step="2"><h4><b>②</b>퍼널 이탈 지점</h4><ul><li>7월보다 광고비와 상담 신청은 늘었고 DB 단가는 5.4만 원으로 28% 악화에 그쳐 보였지만, 8월 초 계정 전체 예약률은 10.3%에서 3.5%로 3분의 1 수준까지 하락하고 예약단가는 3.7배 상승</li></ul></li>
           <li class="bx" data-step="3"><h4><b>③</b>원인 분석</h4><ul><li>상담 기록 163건 전수 분석: 혜택만 보고 신청한 허수가 8월 초 신청의 절반인 50.5%</li><li>지원금 안내 랜딩은 '신청한 적 없다' 응답이 11.2%, 가격 공개 랜딩은 0.9%</li><li>광고로 재유입됐지만 기존 환자로 분류돼 광고 성과에서 누락되던 예약과 내원을 광고 리드 DB와 매칭해 집계, 광고 성과가 실제보다 낮게 잡히던 왜곡을 보정</li></ul></li>
-          <li class="bx q" data-step="4"><h4><b>④</b>문제 정의</h4><div class="bx-c"><p class="bx-q">왜 신청은 늘고 예약은 무너졌나</p><ul><li>신청당 비용으로만 판정하니 지원금 소구가 계속 쓰이고, 시 지원금으로 오인한 허수 신청이 늘어도 판정에 드러나지 않았음</li><li>임플란트는 의료진과 가격을 보고 결정하는데 광고는 둘 다 보여 주지 않았음</li></ul></div></li>
+          <li class="bx q" data-step="4"><h4><b>④</b>문제 정의</h4><div class="bx-c"><p class="bx-q">왜 신청은 늘고 예약은 무너졌나</p><ul><li>광고 성과를 DB 단가로 판정해 소재 ON/OFF를 결정하니, 지원금 소구 소재가 계속 ON으로 유지됐고 시 지원금으로 오인한 허수 신청이 늘어도 판정에 드러나지 않았음</li><li>임플란트는 의료진과 가격을 보고 결정하는데 광고는 둘 다 보여 주지 않았음</li></ul></div></li>
         </ol>
         <div class="cs-hyp" data-step="H"><span class="hyp-l">가설</span><p>신청 전에 핵심 USP인 의료진 이력과 가격을 보여 주면 허수는 줄고 예약은 늘 것.<small>검증은 같은 기간 기존 소재와 허수, 예약, 내원 비교</small></p>
           <div class="cs-cmp">
@@ -947,7 +950,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
         <div class="cs-st r3">
           <section class="sg">
             <h4 class="sg-bar"><b>①</b>메타: 의료진 이력을 앞세운 소재</h4>
-            <ul class="sg-l"><li>8월 초 예약률 하락을 확인한 직후 지원금 소구 소재 축소</li><li>소재 제작팀과 협업해 치의학 박사, 식립 실적 등 의료진 특장점 강조 소재 투입</li></ul>
+            <ul class="sg-l"><li>메타는 소재가 성과를 좌우하는 채널이라 지원금 소구 소재를 의료진 이력 소재로 교체하는 것이 가장 빠른 레버</li><li>8월 초 예약률 하락을 확인한 직후 지원금 소구 소재 축소</li><li>소재 제작팀과 협업해 치의학 박사, 식립 실적 등 의료진 특장점 강조 소재 투입</li></ul>
             <div class="media quad">
               <figure><div class="shot"><img src="assets/im-cr-1.jpg" alt="의료진 이력을 앞세운 메타 소재 1" loading="lazy" width="700" height="875"></div></figure>
               <figure><div class="shot"><img src="assets/im-cr-2.jpg" alt="의료진 이력을 앞세운 메타 소재 2" loading="lazy" width="700" height="700"></div></figure>
@@ -959,7 +962,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
           <section class="sg">
             <h4 class="sg-bar"><b>②</b>구글: 가격 공개 랜딩으로 예산 이동</h4>
             <div class="sg-stack">
-              <ul class="sg-l"><li>기존 랜딩 중 개당 가격을 공개한 페이지를 골라 예산 비중 19.5% → 50.9%로 확대</li><li>신청당 비용은 지원금 랜딩이 32% 낮았지만, 예약 전환율은 가격 공개 랜딩이 2배 높았음</li></ul>
+              <ul class="sg-l"><li>구글은 소구가 다른 랜딩 여러 개를 동시에 운영하던 채널이라 새 소재 제작 없이 랜딩 간 예산 재배분으로 즉시 대응</li><li>기존 랜딩 중 개당 가격을 공개한 페이지를 골라 예산 비중 19.5% → 50.9%로 확대</li><li>신청당 비용은 지원금 랜딩이 32% 낮았지만, 예약 전환율은 가격 공개 랜딩이 2배 높았음</li></ul>
               <div class="media duo">
                 <figure><div class="shot"><img src="assets/im-land-1.jpg" alt="가격 공개 랜딩 첫 화면 1" loading="lazy" width="700" height="700"></div></figure>
                 <figure><div class="shot"><img src="assets/im-land-2.jpg" alt="가격 공개 랜딩 첫 화면 2" loading="lazy" width="700" height="700"></div></figure>
@@ -1018,12 +1021,12 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
           <li class="bx" data-step="1"><h4><b>①</b>팀 KPI</h4><ul><li>프로젝트 목적: VIP 고객 리텐션 강화</li><li>팀 KPI: 하이엔드 브랜드 특성상 매출을 좌우하는 VIP 고객의 재방문과 재구매. 시즌마다 VIP 250명에게 기프트박스를 보내 관리</li></ul></li>
           <li class="bx" data-step="2"><h4><b>②</b>퍼널 이탈 지점</h4><ul><li>시즌 유행 아이템 위주의 기프트박스는 어디서나 받을 수 있어 브랜드만의 호감으로 남기 어렵다고 판단</li></ul></li>
           <li class="bx" data-step="3"><h4><b>③</b>원인 분석</h4><ul><li>기존 기프트박스 구성의 근거는 매거진 리서치와 구매 이력뿐이라, 고객이 무엇을 좋아하는지 보여 주는 취향 데이터가 없어 구성 기준이 시즌 유행에 머물렀음</li><li>쇼룸 응대를 자청해 1:1 고객 리서치 실시: 방문 고객 약 80%의 취미가 그림</li></ul></li>
-          <li class="bx q" data-step="4"><h4><b>④</b>문제 정의</h4><div class="bx-c"><p class="bx-q">왜 기존 박스는 브랜드만의 호감으로 남기 어렵다고 봤나</p><ul><li>받는 사람의 취향 대신 시즌 유행을 기준으로 구성하던 관성</li><li>디자이너의 컬렉션 스케치, 컬러만으로 그 시즌 컬렉션이 떠오르는 원단 컬러 팔레트 같은 브랜드 자산을 쓰지 않고 있었음</li></ul></div></li>
+          <li class="bx q" data-step="4"><h4><b>④</b>문제 정의</h4><div class="bx-c"><p class="bx-q">기존 박스로는 브랜드 호감이 쌓이지 않아 재구매로 이어지기 어렵다고 판단</p><span class="bx-why">Why</span><ul><li>받는 사람의 취향이 아니라 시즌 유행 아이템을 기준으로 구성하던 관성</li><li>디자이너가 옷을 만들 때 그린 스케치, 컬렉션마다 정해 두는 원단 색상처럼 브랜드만 가진 자산이 박스에 전혀 담기지 않았음</li></ul></div></li>
         </ol>
         <div class="cs-hyp" data-step="H"><span class="hyp-l">가설</span><p>고객의 취향인 그림에 브랜드를 담으면 브랜드만의 호감이 쌓이고 그 호감이 재구매로 이어질 것</p>
           <div class="cs-cmp">
             <span class="cmp-chip">As-is</span><span class="cmp-chip to">To-be</span>
-            <p class="cmp-box">시즌 유행 아이템 기프트박스</p><i class="cmp-arr" aria-hidden="true"></i><p class="cmp-box to">고객 취향인 그림을 담은 컬렉션 스케치북 박스</p>
+            <p class="cmp-box">시즌 유행 아이템 기프트박스</p><i class="cmp-arr" aria-hidden="true"></i><p class="cmp-box to">고객 취향인 그림을 담은 기프트박스</p>
           </div>
         </div>
       </div>
