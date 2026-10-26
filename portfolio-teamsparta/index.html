@@ -468,6 +468,9 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 .cs-bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:14px 22px;border-radius:12px;background:#16171a;color:#fff}
 .cs-no{flex:none;padding:3px 10px;border-radius:6px;background:var(--blue);color:#fff;font-family:var(--mono);font-size:12.5px;font-weight:500;letter-spacing:.06em;line-height:1.5;white-space:nowrap}
 .cs-title{flex:1 1 360px;min-width:0;font-size:clamp(18px,1.7vw,23px);font-weight:700;line-height:1.4;letter-spacing:-.035em;color:#fff}
+/* 회사명 칩이 길어 제목이 두 줄이 되는 사례(링글)는 제목을 한 줄로 두고 칩을 다음 줄 오른쪽으로 */
+.cs-bar.two{row-gap:6px}
+.cs-bar.two .cs-title{flex-basis:calc(100% - 120px)}
 .cs-4p{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
 .cs-4p li{padding:2px 10px;border-radius:999px;background:#edeff2;color:#44474d;font-size:12px;font-weight:500;line-height:1.6;white-space:nowrap}
 .cs-role{margin-top:12px;font-size:13.5px;color:var(--mute)}
@@ -483,10 +486,6 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 .cs-funnel .fa::after{content:"";position:absolute;right:-3px;top:-7.5px;width:12px;height:12px;border-top:2.5px solid #b4b8bf;border-right:2.5px solid #b4b8bf;transform:rotate(45deg)}
 .cs-funnel .fa.x{border-top:2.5px dashed var(--blue)}
 .cs-funnel .fa.x::after{border-color:var(--blue)}
-.cs-strip{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 10px;margin-top:12px;padding:10px 16px;border-radius:10px;background:var(--soft);font-size:14px;line-height:1.5;color:var(--ink-2)}
-.cs-strip b{margin-right:6px;font-weight:700;color:var(--ink)}
-.cs-strip .hl{font-weight:700;color:var(--blue-deep)}
-.cs-strip i{font-style:normal;color:var(--mute-2)}
 /* 상자 4개 */
 .cs-boxes{display:grid;gap:12px;margin-top:clamp(20px,2.4vw,30px)}
 .bx{display:grid;grid-template-columns:clamp(190px,17vw,240px) minmax(0,1fr);gap:8px 28px;align-items:start;padding:18px 24px;border-radius:14px;border:1px solid var(--line);background:#fff}
@@ -532,6 +531,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
 .sg-l li{position:relative;padding-left:14px;font-size:15px;line-height:1.65;color:var(--ink-2)}
 .sg-l li::before{content:"";position:absolute;left:0;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--mute-2)}
 .sg-l li small{display:block;font-size:13px;color:var(--mute)}
+.sg-l li small.in{display:inline}
 .sg-side{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:20px;align-items:start}
 .sg-side .media{margin-top:12px}
 .duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
@@ -564,6 +564,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
 .vbox li::before{content:"";position:absolute;left:2px;top:calc(6px + .42em);width:11px;height:6px;border-left:2px solid var(--blue);border-bottom:2px solid var(--blue);transform:rotate(-45deg)}
 .nx{padding:14px 18px;border-radius:14px;background:var(--soft)}
 .nx-r{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;align-items:baseline}
+.nx-r.solo{grid-template-columns:minmax(0,1fr)}
 .nx-r+.nx-r{margin-top:10px;padding-top:10px;border-top:1px dashed #d8dbe0}
 .nx-r>b{font-size:13px;font-weight:700;color:var(--blue-deep)}
 .nx-r li{font-size:14px;line-height:1.6;color:var(--ink-2)}
@@ -576,7 +577,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
 @media screen and (max-width:1079px){.cs-grid,.cs-st{grid-template-columns:minmax(0,1fr)}.cs-st.r3>.sg:first-child{grid-row:auto}}
 @media screen and (max-width:860px){
   .cs-bar{padding:12px 16px}
-  .cs-title{flex-basis:100%}
+  .cs-title,.cs-bar.two .cs-title{flex-basis:100%}
   .cs-4p{margin-left:0}
   .bx{grid-template-columns:minmax(0,1fr);padding:16px 18px}
   .cs-funnel .fa{width:22px;margin:0 9px 0 5px}
@@ -586,6 +587,9 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   .cs-a .cs-hyp .cs-cmp{margin-top:6px}
   .cs-bar .cs-co{margin-left:0;padding:4px 14px;font-size:14px}
   .cs-bar .cs-co b{font-size:15px}
+  .cs-bar .cs-co.role{border-radius:14px}
+  .cs-co .co-sep{display:none}
+  .cs-co .co-role{display:block}
   .cs-funnel .fs{padding:8px 14px;font-size:15px;border-width:1.5px}
   .sg-side{grid-template-columns:minmax(0,1fr);gap:0}
   .tb th,.tb td{padding:7px 7px;font-size:13px}
@@ -648,7 +652,6 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   .cs-bar{padding-top:10px;padding-bottom:10px}
   .cs-funnel{margin-top:14px}
   .cs-funnel .fs{padding-top:10px;padding-bottom:10px}
-  .cs-strip{margin-top:10px;padding-top:7px;padding-bottom:7px}
   .cs-steps{--sg:9px;margin-top:16px}
   .cs-a .cs-hyp{padding-top:12px;padding-bottom:12px}
   .cs-a .cs-hyp .cs-cmp{margin-top:10px}
@@ -840,21 +843,21 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   <!-- ───── 3장 CASE 01 링글 틴즈 인플루언서: A 문제 ───── -->
   <article class="cs cs-a" id="case-1">
     <div class="wrap">
-      <header class="cs-bar"><span class="cs-no">CASE 01</span><h3 class="cs-title">세일즈 콜 기준으로 인플루언서 가이드를 재구성해 구매 전환율을 1.7배로 높인 경험</h3><span class="cs-co"><b>링글 틴즈</b> | 2024.07 ~ 2024.12</span></header>
+      <header class="cs-bar two"><span class="cs-no">CASE 01</span><h3 class="cs-title">세일즈 콜 기준으로 인플루언서 가이드를 재구성해 구매 전환율을 1.7배로 높인 경험</h3><span class="cs-co role"><b>링글 틴즈</b> | 2024.07 ~ 2024.12<span class="co-sep"> | </span><span class="co-role">인플루언서 마케팅 단독 담당</span></span></header>
       <div class="cs-funnel" role="img" aria-label="릴스 광고, 랜딩 유입, 가입, 구매 순서의 퍼널에서 가입에서 구매로 가는 단계가 끊김">
         <span class="fs">릴스 광고</span><i class="fa"></i><span class="fs">랜딩 유입</span><i class="fa"></i><span class="fs">가입</span><span class="fgrp"><i class="fa x"></i><span class="fs x">구매</span></span>
       </div>
       <div class="cs-steps">
       <ol class="cs-boxes">
-          <li class="bx" data-step="1"><h4><b>①</b>팀 KPI</h4><ul><li>프로젝트 목적은 인플루언서 광고의 구매 전환 증진</li><li>팀은 가입 수와 가입당 비용으로 인플루언서를 평가했고, 기준치는 가입당 비용 적정 범위, 가입 → 첫결제 전환율 11%, 첫결제 ROAS 240%</li><li>기존 가이드로 집행한 광고는 가입당 비용이 적정 범위 안이어서 이 지표로는 문제가 보이지 않았음</li></ul></li>
+          <li class="bx" data-step="1"><h4><b>①</b>팀 KPI</h4><ul><li>프로젝트 목적: 인플루언서 광고의 구매 전환 증진</li><li>팀 KPI: 신규 가입 수, 가입당 비용</li><li>기준치: 가입당 비용 적정 범위, 가입 → 첫결제 전환율 11%, 첫결제 ROAS 240%</li><li>기존 가이드 광고는 가입당 비용이 적정 범위 이내로 KPI상 이상 징후 없음</li></ul></li>
           <li class="bx" data-step="2"><h4><b>②</b>퍼널 이탈 지점</h4><ul><li>광고비의 1/3을 편성한 인플루언서 광고에서 가입은 늘었지만 구매로 이어지지 않음</li><li>가입 → 구매 4.8%는 팀 내부 기준 11%의 절반 이하, ROAS 63%는 기준치 240%는 물론 손익분기 100%에도 미달</li></ul></li>
-          <li class="bx" data-step="3"><h4><b>③</b>원인 분석</h4><ul><li>세일즈 콜 기반 고객 리서치: 영어 학습 목적, 유입 광고, 중시하는 요소를 물어 확인한 학부모의 구매 결정 요인은 진도와 첨삭</li><li>성과 상위 4개와 하위 4개 영상 요소별 비교 분석: 고성과 영상에는 수업 과정이 노출됨</li></ul></li>
-          <li class="bx q" data-step="4"><h4><b>④</b>문제 정의</h4><div class="bx-c"><p class="bx-q">왜 학부모가 보는 기준이 콘텐츠에 없었나</p><ul><li>6월 가이드는 '재미있게, 많이 말하기'만 요구해 학부모의 구매 결정 요인이 콘텐츠에 없었음</li><li>유형이 다른 인플루언서에게 같은 흐름을 요구해 각자의 학부모에게 닿지 않음</li></ul></div></li>
+          <li class="bx" data-step="3"><h4><b>③</b>원인 분석</h4><ul><li>세일즈 콜을 활용한 고객 리서치 실시: 영어 학습 목적, 유입 광고, 중시 요소를 질문해 학부모의 구매 결정 요인이 진도와 첨삭임을 확인</li><li>성과 상위 4개와 하위 4개 영상 요소별 비교 분석 실시: 고성과 영상에는 예습, 수업, 숙제, 복습의 4단계 학습 과정이 노출됨</li></ul></li>
+          <li class="bx q" data-step="4"><h4><b>④</b>문제 정의</h4><div class="bx-c"><p class="bx-q">왜 학부모가 보는 기준이 콘텐츠에 없었나</p><ul><li>6월 가이드는 '재미있게, 많이 말하기'만 요구해 학부모의 구매 결정 요인인 진도와 첨삭이 콘텐츠에 없었음</li><li>엄마표 영어, 영유 자녀, 사립초 자녀, 국제학교 자녀, 미국 학교 진학 준비 등 자녀 배경이 다른 인플루언서에게 같은 흐름을 요구해 각 타겟 학부모에게 맞는 소구가 되지 않음</li></ul></div></li>
         </ol>
-        <div class="cs-hyp" data-step="H"><span class="hyp-l">가설</span><p>학부모의 기준인 4단계 진도와 튜터 첨삭이 보이도록 가이드를 바꾸고, 인플루언서 유형별로 도입부와 강조점을 나누면 구매 전환이 오를 것<small>이상적인 타깃은 영유 입학 레벨테스트를 준비하는 유치원생 학부모, 실제 대상은 어린 자녀 학부모 전반</small></p>
+        <div class="cs-hyp" data-step="H"><span class="hyp-l">가설</span><p>학부모의 기준인 예습, 수업, 숙제, 복습의 4단계 학습 과정과 튜터 첨삭이 보이도록 가이드를 재구성하고, 인플루언서 유형별로 도입부와 강조점을 나누면 구매 전환이 오를 것</p>
           <div class="cs-cmp">
             <span class="cmp-chip">As-is</span><span class="cmp-chip to">To-be</span>
-            <p class="cmp-box">'재미있게, 많이 말하기' 가이드, 유형 구분 없는 동일 흐름</p><i class="cmp-arr" aria-hidden="true"></i><p class="cmp-box to">학부모 기준인 4단계 진도와 튜터 첨삭 노출, 유형별 도입부와 강조점</p>
+            <p class="cmp-box">'재미있게, 많이 말하기' 가이드, 유형 구분 없는 동일 흐름</p><i class="cmp-arr" aria-hidden="true"></i><p class="cmp-box to">4단계 학습 과정과 튜터 첨삭 노출, 유형별 도입부와 강조점</p>
           </div>
         </div>
       </div>
@@ -864,12 +867,12 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   <!-- ───── 4장 CASE 01: B 전략과 결과 ───── -->
   <article class="cs cs-b" id="case-1-b">
     <div class="wrap">
-      <header class="cs-bar"><span class="cs-no">CASE 01</span><h3 class="cs-title">세일즈 콜 기준으로 인플루언서 가이드를 재구성해 구매 전환율을 1.7배로 높인 경험</h3><span class="cs-co"><b>링글 틴즈</b> | 2024.07 ~ 2024.12</span></header>
+      <header class="cs-bar two"><span class="cs-no">CASE 01</span><h3 class="cs-title">세일즈 콜 기준으로 인플루언서 가이드를 재구성해 구매 전환율을 1.7배로 높인 경험</h3><span class="cs-co role"><b>링글 틴즈</b> | 2024.07 ~ 2024.12<span class="co-sep"> | </span><span class="co-role">인플루언서 마케팅 단독 담당</span></span></header>
       <div class="cs-grid">
         <div class="cs-st">
           <section class="sg">
             <h4 class="sg-bar"><b>①</b>학부모 기준에 맞는 가이드 재구성</h4>
-            <ul class="sg-l"><li>기존 마케터 퇴사 뒤 단독으로 맡아 기존 가이드를 개선</li><li>4단계 학습 화면 필수, 초안은 직접 검수</li></ul>
+            <ul class="sg-l"><li>예습, 수업, 숙제, 복습의 4단계 학습 과정 화면 필수 노출</li><li>콘텐츠 초안 직접 검수</li></ul>
             <div class="media ba">
               <figure><div class="shot"><img src="assets/rg-guide-before.jpg" alt="수정 전 6월 인플루언서 콘텐츠 가이드" loading="lazy" width="1400" height="788"></div><figcaption>수정 전 6월 가이드</figcaption></figure>
               <figure><div class="shot"><img src="assets/rg-guide-after.jpg" alt="수정 후 인플루언서 콘텐츠 가이드" loading="lazy" width="1400" height="788"></div><figcaption>수정 후 가이드</figcaption></figure>
@@ -877,9 +880,9 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
           </section>
           <section class="sg">
             <h4 class="sg-bar"><b>②</b>인플루언서 유형별 협업</h4>
-            <ul class="sg-l"><li>협업 방식: 인플루언서가 자녀 수업 장면을 담은 릴스를 제작해 게시하고, 그 영상을 메타 광고 소재로 집행</li><li>유형별 도입부와 강조점을 나눠 기획, 재구성한 가이드를 모든 인플루언서에게 전달<small>2024.08.12부터 집행한 광고 60개</small></li><li>섭외 메일, 채널톡 응대, 정산을 GPT로 자동화해 섭외부터 정산까지 단독 운영</li></ul>
+            <ul class="sg-l"><li>협업 방식: 인플루언서가 자녀 수업 장면을 담은 릴스를 제작해 게시하고, 그 영상을 메타 광고 소재로 집행</li><li>자녀 배경별 5개 유형으로 도입부와 강조점을 나눠 기획, 재구성한 가이드를 모든 인플루언서에게 전달 <small class="in">(2024.08.12부터 집행한 광고 60개)</small></li><li>섭외 메일, 채널톡 응대, 정산 자동화로 섭외부터 정산까지 단독 운영</li></ul>
             <div class="sg-pair">
-              <table class="tb"><thead><tr><th>인플루언서 프로필</th><th>닿는 학부모</th><th>강조점</th></tr></thead><tbody>
+              <table class="tb"><thead><tr><th>인플루언서 프로필</th><th>타겟 학부모</th><th>강조점</th></tr></thead><tbody>
                 <tr><td>16년 차 엄마표 영어 육아</td><td>엄마표 영어 학부모</td><td>원어민과 1:1 대화</td></tr>
                 <tr><td>영유 출신 자녀를 둔 학부모</td><td>영유 다닌 자녀</td><td>라이팅, 1:1 심화 토론</td></tr>
                 <tr><td>사립초 자녀 학부모</td><td>영어 다음 단계가 필요한 자녀</td><td>원서읽기 루틴, 1:1 수업</td></tr>
@@ -905,13 +908,12 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
           </div>
           <div class="vbox">
             <h5>검증</h5>
-            <ul><li>가입당 비용은 그대로였고 구매당 비용만 45% 절감</li><li>ROAS 63% → 120%, 손익분기 넘김</li></ul>
+            <ul><li>가입당 비용은 유지, 구매당 비용 45% 절감</li><li>ROAS 63% → 120%, 손익분기 넘김</li><li><span class="qchip">정성 성과</span>가이드라인 재구성으로 성과가 개선된 사례를 회사가 메타 크리에이티브 데이에서 소개</li></ul>
             <div class="cmpbar" role="img" aria-label="기존 가이드 광고 대 재구성 가이드 광고: 구매 전환율 4.8%에서 8.3%, ROAS 63%에서 120%, 구매당 비용 지수 100에서 55"><p class="cb-lg"><span class="g">기존</span><span class="r">개선 후</span></p><div class="cb-m"><p class="cb-l">구매 전환율</p><div class="cb-bars"><div class="cb-r g"><i style="--w:57.8%"></i><b>4.8%</b></div><div class="cb-r r"><i style="--w:100.0%"></i><b>8.3%</b></div></div></div><div class="cb-m"><p class="cb-l">ROAS</p><div class="cb-bars"><div class="cb-r g"><i style="--w:52.5%"></i><b>63%</b></div><div class="cb-r r"><i style="--w:100.0%"></i><b>120%</b></div></div></div><div class="cb-m"><p class="cb-l">구매당 비용<small>지수</small></p><div class="cb-bars"><div class="cb-r g"><i style="--w:100.0%"></i><b>100</b></div><div class="cb-r r"><i style="--w:55.0%"></i><b>55</b></div></div></div></div>
           </div>
           <div class="nx">
-            <h5>확장과 다음</h5>
-            <div class="nx-r"><b>확장</b><ul><li>성과 좋은 인플루언서와 겨울캠프 공동구매, 10일 만에 신규 가입 115건, 평소 인플루언서 광고 3주치, 가입당 비용은 평소보다 19% 낮음</li><li><span class="qchip">정성 성과</span>메타 크리에이티브 데이에서 회사 사례로 소개</li></ul></div>
-            <div class="nx-r"><b>다음</b><ul><li>광고 성과 상위가 공동구매 성과 상위는 아니어서, 다음 공동구매는 추천 링크 유입 실적으로 인플루언서를 선정하기로 정리</li></ul></div>
+            <h5>확장</h5>
+            <div class="nx-r solo"><ul><li>성과 상위 인플루언서와 겨울캠프 공동구매 진행, 10일 만에 신규 가입 115건, 평소 인플루언서 광고 3주치, 가입당 비용은 평소보다 19% 낮음</li></ul></div>
           </div>
         </div>
       </div>
@@ -925,12 +927,11 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
       <div class="cs-funnel" role="img" aria-label="광고, 상담 신청, CS 통화, 예약, 내원 순서의 퍼널에서 상담 신청에서 예약으로 가는 단계가 끊김">
         <span class="fs">광고</span><i class="fa"></i><span class="fs">상담 신청</span><span class="fgrp"><i class="fa x"></i><span class="fs">CS 통화</span><i class="fa x"></i><span class="fs x">예약</span></span><i class="fa"></i><span class="fs">내원</span>
       </div>
-      <p class="cs-strip"><b>7월 → 8월 초</b><span>광고비 일평균 1.5배 ↑</span><i>→</i><span>신청 ↑</span><i>→</i><span class="hl">예약 전환 10.3% → 3.5%</span><i>→</i><span>예약단가 3.7배 ↑</span></p>
       <div class="cs-steps">
       <ol class="cs-boxes">
-          <li class="bx" data-step="1"><h4><b>①</b>팀 KPI</h4><ul><li>프로젝트 목적은 임플란트 상담 신청의 예약과 내원 증진</li><li>소재 운영 여부를 판정하는 KPI는 상담 신청당 비용 하나</li><li>이 기준으로는 지원금 소구가 1등. 구글에서 지원금 랜딩의 신청당 비용이 가격 공개 랜딩보다 32% 낮았음</li></ul></li>
+          <li class="bx" data-step="1"><h4><b>①</b>팀 KPI</h4><ul><li>프로젝트 목적: 임플란트 상담 신청의 예약과 내원 증진</li><li>팀 KPI: 임플란트 상담 신청당 비용. 소재와 랜딩의 유지, 중단, 예산 배분을 이 지표 하나로 판정</li><li>신청당 비용이 낮을수록 좋은 소재로 판정되는 구조라 지원금 소구 소재와 랜딩이 최우수로 분류됨. 구글 기준 지원금 랜딩의 신청당 비용이 가격 공개 랜딩보다 32% 낮았기 때문</li></ul></li>
           <li class="bx" data-step="2"><h4><b>②</b>퍼널 이탈 지점</h4><ul><li>7월보다 광고비와 신청은 늘었지만 8월 초 계정 전체 예약률이 10.3%에서 3.5%로 3분의 1 수준까지 하락, 예약단가는 3.7배 상승</li></ul></li>
-          <li class="bx" data-step="3"><h4><b>③</b>원인 분석</h4><ul><li>상담 기록 163건 전수 분석: 혜택만 보고 신청한 허수가 8월 초 신청의 절반인 50.5%</li><li>지원금 안내 랜딩은 '신청한 적 없다' 응답이 11.2%, 가격 공개 랜딩은 0.9%</li><li>기존 환자로 분류돼 광고 성과에서 빠지던 예약과 내원을 광고 리드와 매칭해 집계</li></ul></li>
+          <li class="bx" data-step="3"><h4><b>③</b>원인 분석</h4><ul><li>상담 기록 163건 전수 분석: 혜택만 보고 신청한 허수가 8월 초 신청의 절반인 50.5%</li><li>지원금 안내 랜딩은 '신청한 적 없다' 응답이 11.2%, 가격 공개 랜딩은 0.9%</li><li>광고로 재유입됐지만 기존 환자로 분류돼 광고 성과에서 누락되던 예약과 내원을 광고 리드 DB와 매칭해 집계, 광고 성과가 실제보다 낮게 잡히던 왜곡을 보정</li></ul></li>
           <li class="bx q" data-step="4"><h4><b>④</b>문제 정의</h4><div class="bx-c"><p class="bx-q">왜 신청은 늘고 예약은 무너졌나</p><ul><li>신청당 비용으로만 판정하니 지원금 소구가 계속 쓰이고, 시 지원금으로 오인한 허수 신청이 늘어도 판정에 드러나지 않았음</li><li>임플란트는 의료진과 가격을 보고 결정하는데 광고는 둘 다 보여 주지 않았음</li></ul></div></li>
         </ol>
         <div class="cs-hyp" data-step="H"><span class="hyp-l">가설</span><p>신청 전에 핵심 USP인 의료진 이력과 가격을 보여 주면 허수는 줄고 예약은 늘 것.<small>검증은 같은 기간 기존 소재와 허수, 예약, 내원 비교</small></p>
@@ -1020,7 +1021,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
       </div>
       <div class="cs-steps">
       <ol class="cs-boxes">
-          <li class="bx" data-step="1"><h4><b>①</b>팀 KPI</h4><ul><li>프로젝트 목적은 VIP 고객 리텐션 강화</li><li>VIP 고객 리텐션. 하이엔드 브랜드 특성상 재방문과 재구매가 매출을 좌우해, 시즌마다 VIP 250명에게 기프트박스를 보내 리텐션을 관리</li></ul></li>
+          <li class="bx" data-step="1"><h4><b>①</b>팀 KPI</h4><ul><li>프로젝트 목적: VIP 고객 리텐션 강화</li><li>팀 KPI: VIP 고객 리텐션. 하이엔드 브랜드 특성상 재방문과 재구매가 매출을 좌우해, 시즌마다 VIP 250명에게 기프트박스를 보내 리텐션을 관리</li></ul></li>
           <li class="bx" data-step="2"><h4><b>②</b>퍼널 이탈 지점</h4><ul><li>시즌 유행 아이템 위주의 기프트박스는 어디서나 받을 수 있어 브랜드만의 호감으로 남기 어렵다고 판단</li></ul></li>
           <li class="bx" data-step="3"><h4><b>③</b>원인 분석</h4><ul><li>회사 자료는 매거진 리서치와 구매 이력뿐이라 취향 데이터가 없었음</li><li>쇼룸 응대를 자청해 진행한 1:1 고객 리서치: 방문 고객 약 80%의 취미가 그림</li></ul></li>
           <li class="bx q" data-step="4"><h4><b>④</b>문제 정의</h4><div class="bx-c"><p class="bx-q">왜 박스가 호감으로 남지 않았나</p><ul><li>받는 사람의 취향 대신 시즌 유행을 기준으로 구성하던 관성</li><li>디자이너의 컬렉션 스케치와 컬렉션마다 고유한 원단 컬러라는 브랜드 자산을 쓰지 않고 있었음</li></ul></div></li>
