@@ -435,6 +435,33 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
   .about .ab-photo{width:120px}
   .about .ab-two{grid-template-columns:minmax(0,1fr)}
 }
+/* 어바웃 미 글씨 키움 (PC와 인쇄) */
+@media screen and (min-width:861px),print{
+  .about .ab-photo{width:220px}
+  .about .ab-name{font-size:25px}
+  .about .ab-role{font-size:16.5px}
+  .about .ab-contact{font-size:16.5px}
+  .about .ab-summary{font-size:clamp(18px,1.55vw,23px)}
+  .about .ab-h{font-size:17px;margin-bottom:16px}
+  .about .ab-h::before{width:7px;height:7px}
+  .about .total{font-size:21px}
+  .about .total span{font-size:17px}
+  .about .career li{grid-template-columns:160px 54px minmax(0,1fr);gap:16px;padding:15px 0}
+  .about .cv-date{font-size:15.5px}
+  .about .cv-date small{font-size:14px}
+  .about .cv-logo{width:54px;height:54px}
+  .about .cv-body b{font-size:19px}
+  .about .cv-body span{font-size:16.5px}
+  .about .cv-body small{font-size:15px}
+  .about .edu li{grid-template-columns:160px minmax(0,1fr)}
+  .about .cert th,.about .cert td{font-size:17px;padding:12px 0}
+  .about .tg-h{font-size:15.5px;margin-bottom:12px}
+  .about .tg-chips li{font-size:16px;padding:4px 14px}
+  .about .tg-icons{grid-template-columns:repeat(auto-fill,minmax(86px,1fr));gap:16px 10px}
+  .about .ti{width:58px;height:58px;border-radius:14px}
+  .about .ti img{width:32px;height:32px}
+  .about .tn{font-size:14px}
+}
 
 /* 사례 장 3~10장: 사례마다 A장(문제), B장(전략과 결과). 헤더 바는 마리트 장표의 검은 바 모양 */
 .cs{position:relative;padding:clamp(56px,6vw,84px) 0;border-top:1px solid var(--line)}
@@ -445,7 +472,8 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 .cs-4p li{padding:2px 10px;border-radius:999px;background:#edeff2;color:#44474d;font-size:12px;font-weight:500;line-height:1.6;white-space:nowrap}
 .cs-role{margin-top:12px;font-size:13.5px;color:var(--mute)}
 /* 회사명과 기간: 검은 헤더 바 안, 제목 오른쪽 (B장은 3C4P 칩 왼쪽) */
-.cs-bar .cs-co{flex:none;margin-left:auto;font-size:13px;line-height:1.5;color:rgba(255,255,255,.72);white-space:nowrap}
+.cs-bar .cs-co{flex:none;margin-left:auto;font-size:16px;font-weight:500;line-height:1.5;color:#fff;white-space:nowrap}
+.cs-bar .cs-co b{font-size:18px;font-weight:700;letter-spacing:-.02em}
 .cs-bar .cs-co+.cs-4p{margin-left:0}
 /* 퍼널 한 줄: 끊긴 단계만 빨강 */
 .cs-funnel{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;row-gap:10px;margin-top:clamp(20px,2.4vw,30px)}
@@ -475,11 +503,11 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;font-weight:600;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 /* B장 */
 .cs-hyp{display:flex;align-items:flex-start;gap:14px;margin-top:clamp(18px,2.2vw,26px);padding:16px 22px;border-radius:14px;background:var(--blue-tint)}
-.cs-hyp .hyp-l{flex:none;margin-top:2px;padding:2px 12px;border-radius:999px;background:var(--blue);color:#fff;font-size:13px;font-weight:700;line-height:1.6}
+.cs-hyp .hyp-l{flex:none;margin-top:2px;padding:6px 18px;border-radius:999px;background:var(--blue);color:#fff;font-size:17px;font-weight:700;line-height:1.5}
 .cs-hyp p{font-size:17px;font-weight:600;line-height:1.6;letter-spacing:-.02em;color:var(--ink)}
 .cs-hyp p small{display:block;margin-top:4px;font-size:14px;font-weight:400;letter-spacing:-.01em;color:var(--ink-2)}
 /* A장 맨 아래 가설 칸: 전체 폭, 가운데 정렬 */
-.cs-a .cs-hyp{display:grid;grid-template-columns:72px minmax(0,1fr) 72px;align-items:center;gap:0 12px;margin-top:12px;text-align:center}
+.cs-a .cs-hyp{display:grid;grid-template-columns:96px minmax(0,1fr) 96px;align-items:center;gap:0 12px;margin-top:12px;text-align:center}
 .cs-a .cs-hyp .hyp-l{justify-self:start;margin-top:0}
 .cs-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:clamp(24px,2.6vw,36px);align-items:start;margin-top:clamp(16px,1.8vw,22px)}
 /* B장 전략은 2열, 결과까지 3열 */
@@ -493,7 +521,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
 .cs-st .flow{grid-template-columns:minmax(0,.85fr) auto minmax(0,.75fr) auto minmax(0,1.8fr);padding:12px}
 .sg-bar{display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:10px;background:#eef0f2;font-size:16px;font-weight:700;line-height:1.45;letter-spacing:-.025em;color:var(--ink)}
 .sg-bar b{color:var(--blue-deep)}
-.sg-bar.rs{background:#16171a;color:#fff}
+.sg-bar.rs{background:var(--blue);color:#fff}
 .sg-l{display:grid;gap:5px;margin-top:12px}
 .sg-l li{position:relative;padding-left:14px;font-size:15px;line-height:1.65;color:var(--ink-2)}
 .sg-l li::before{content:"";position:absolute;left:0;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--mute-2)}
@@ -548,7 +576,8 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   .cs-funnel .fa{width:22px;margin:0 9px 0 5px}
   .cs-hyp{flex-direction:column;gap:8px;padding:14px 16px}
   .cs-a .cs-hyp{grid-template-columns:minmax(0,1fr);gap:8px}
-  .cs-bar .cs-co{margin-left:0}
+  .cs-bar .cs-co{margin-left:0;font-size:14px}
+  .cs-bar .cs-co b{font-size:15.5px}
   .cs-funnel .fs{padding:8px 14px;font-size:15px;border-width:1.5px}
   .sg-side{grid-template-columns:minmax(0,1fr);gap:0}
   .tb th,.tb td{padding:7px 7px;font-size:13px}
@@ -728,7 +757,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   <!-- ───── 3장 CASE 01 링글 틴즈 인플루언서: A 문제 ───── -->
   <article class="cs cs-a" id="case-1">
     <div class="wrap">
-      <header class="cs-bar"><span class="cs-no">CASE 01</span><h3 class="cs-title">세일즈 콜 기준으로 인플루언서 가이드를 재구성해 구매 전환율을 1.7배로 높인 경험</h3><span class="cs-co">링글 틴즈 | 2024.07 ~ 2024.12</span></header>
+      <header class="cs-bar"><span class="cs-no">CASE 01</span><h3 class="cs-title">세일즈 콜 기준으로 인플루언서 가이드를 재구성해 구매 전환율을 1.7배로 높인 경험</h3><span class="cs-co"><b>링글 틴즈</b> | 2024.07 ~ 2024.12</span></header>
       <div class="cs-funnel" role="img" aria-label="인플루언서 콘텐츠, 가입, 구매 순서의 퍼널에서 가입에서 구매로 가는 단계가 끊김">
         <span class="fs">인플루언서 콘텐츠</span><i class="fa"></i><span class="fs">가입</span><i class="fa x"></i><span class="fs x">구매</span>
       </div>
@@ -745,7 +774,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   <!-- ───── 4장 CASE 01: B 전략과 결과 ───── -->
   <article class="cs cs-b" id="case-1-b">
     <div class="wrap">
-      <header class="cs-bar"><span class="cs-no">CASE 01</span><h3 class="cs-title">세일즈 콜 기준으로 인플루언서 가이드를 재구성해 구매 전환율을 1.7배로 높인 경험</h3><span class="cs-co">링글 틴즈 | 2024.07 ~ 2024.12</span><ul class="cs-4p" aria-label="바꾼 요소"><li>Promotion</li></ul></header>
+      <header class="cs-bar"><span class="cs-no">CASE 01</span><h3 class="cs-title">세일즈 콜 기준으로 인플루언서 가이드를 재구성해 구매 전환율을 1.7배로 높인 경험</h3><span class="cs-co"><b>링글 틴즈</b> | 2024.07 ~ 2024.12</span></header>
       <div class="cs-grid">
         <div class="cs-st">
           <section class="sg">
@@ -801,7 +830,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   <!-- ───── 5장 CASE 02 이지엠앤씨 임플란트: A 문제 ───── -->
   <article class="cs cs-a" id="case-3">
     <div class="wrap">
-      <header class="cs-bar"><span class="cs-no">CASE 02</span><h3 class="cs-title">상담 기록 163건에서 찾은 기준으로 소재와 판정 기준을 바꿔 예약률을 3배로 끌어올린 경험</h3><span class="cs-co">이지엠앤씨 | 2026.07 ~ 2026.09</span></header>
+      <header class="cs-bar"><span class="cs-no">CASE 02</span><h3 class="cs-title">상담 기록 163건에서 찾은 기준으로 소재와 판정 기준을 바꿔 예약률을 3배로 끌어올린 경험</h3><span class="cs-co"><b>이지엠앤씨</b> | 2026.07 ~ 2026.09</span></header>
       <div class="cs-funnel" role="img" aria-label="광고, 상담 신청, CS 통화, 예약, 내원 순서의 퍼널에서 상담 신청에서 예약으로 가는 단계가 끊김">
         <span class="fs">광고</span><i class="fa"></i><span class="fs">상담 신청</span><i class="fa x"></i><span class="fs">CS 통화</span><i class="fa x"></i><span class="fs x">예약</span><i class="fa"></i><span class="fs">내원</span>
       </div>
@@ -819,7 +848,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   <!-- ───── 6장 CASE 02: B 전략과 결과 ───── -->
   <article class="cs cs-b" id="case-3-b">
     <div class="wrap">
-      <header class="cs-bar"><span class="cs-no">CASE 02</span><h3 class="cs-title">상담 기록 163건에서 찾은 기준으로 소재와 판정 기준을 바꿔 예약률을 3배로 끌어올린 경험</h3><span class="cs-co">이지엠앤씨 | 2026.07 ~ 2026.09</span><ul class="cs-4p" aria-label="바꾼 요소"><li>Price</li><li>Promotion</li></ul></header>
+      <header class="cs-bar"><span class="cs-no">CASE 02</span><h3 class="cs-title">상담 기록 163건에서 찾은 기준으로 소재와 판정 기준을 바꿔 예약률을 3배로 끌어올린 경험</h3><span class="cs-co"><b>이지엠앤씨</b> | 2026.07 ~ 2026.09</span></header>
       <div class="cs-grid">
         <div class="cs-st r3">
           <section class="sg">
@@ -886,7 +915,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   <!-- ───── 7장 CASE 03 KZ_K Studio 기프트박스: A 문제 ───── -->
   <article class="cs cs-a" id="case-2">
     <div class="wrap">
-      <header class="cs-bar"><span class="cs-no">CASE 03</span><h3 class="cs-title">관성적으로 만들던 VIP 기프트박스를 고객 취향으로 바꿔 재구매로 연결한 경험</h3><span class="cs-co">KZ_K Studio | 2022.11 ~ 2023.07</span></header>
+      <header class="cs-bar"><span class="cs-no">CASE 03</span><h3 class="cs-title">관성적으로 만들던 VIP 기프트박스를 고객 취향으로 바꿔 재구매로 연결한 경험</h3><span class="cs-co"><b>KZ_K Studio</b> | 2022.11 ~ 2023.07</span></header>
       <div class="cs-funnel" role="img" aria-label="구매, 재방문, 재구매 순서의 퍼널에서 구매에서 재방문으로 가는 단계가 끊김">
         <span class="fs">구매</span><i class="fa x"></i><span class="fs x">재방문</span><i class="fa"></i><span class="fs">재구매</span>
       </div>
@@ -903,7 +932,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   <!-- ───── 8장 CASE 03: B 전략과 결과 ───── -->
   <article class="cs cs-b" id="case-2-b">
     <div class="wrap">
-      <header class="cs-bar"><span class="cs-no">CASE 03</span><h3 class="cs-title">관성적으로 만들던 VIP 기프트박스를 고객 취향으로 바꿔 재구매로 연결한 경험</h3><span class="cs-co">KZ_K Studio | 2022.11 ~ 2023.07</span><ul class="cs-4p" aria-label="바꾼 요소"><li>Product</li></ul></header>
+      <header class="cs-bar"><span class="cs-no">CASE 03</span><h3 class="cs-title">관성적으로 만들던 VIP 기프트박스를 고객 취향으로 바꿔 재구매로 연결한 경험</h3><span class="cs-co"><b>KZ_K Studio</b> | 2022.11 ~ 2023.07</span></header>
       <div class="cs-grid">
         <div class="cs-st r1">
           <section class="sg">
