@@ -381,11 +381,12 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 .hero .hero-title .hl{display:inline-block;color:#fff;background:var(--sp-blue);border-radius:.16em;padding:.03em .12em .07em;line-height:1.04}
 .hero .hi{background:#fff;border-color:var(--line-2);color:var(--sp-navy);box-shadow:none}
 .hero .hi:hover{border-color:#b4b8bf;transform:translateY(-4px);box-shadow:0 18px 36px -24px rgba(12,13,15,.28)}
-.hero .hi .mono,.hero .hi-tag,.hero .hi-go{color:var(--sp-mute)}
+.hero .hi .mono,.hero .hi-go{color:var(--sp-mute)}
 .hero .hi-res{border-top-color:#eceef1}
 .hero .hi-lb{color:var(--sp-navy)}
 .hero .hi-num{color:var(--sp-navy)}
 .hero .hi-num em{font-style:normal;color:var(--hl)}
+.hero .hi-tag{font-size:14.5px;color:#16171a}
 .hero .hi-tag .hi-ar{color:var(--hl)}
 .hero .hi-num .ln{white-space:nowrap}
 /* 표지: 지원 직무 라벨, 길어진 타일 문구 */
@@ -478,12 +479,15 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 .cs-bar .cs-co b{font-size:17px;font-weight:700;letter-spacing:-.02em}
 .cs-bar .cs-co+.cs-4p{margin-left:0}
 /* 퍼널 한 줄: 끊긴 단계만 빨강 */
-.cs-funnel{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;row-gap:10px;margin-top:clamp(20px,2.4vw,30px)}
-.cs-funnel .fs{padding:13px 28px;border-radius:14px;border:2px solid #d3d6db;background:#fff;font-size:20px;font-weight:700;line-height:1.4;letter-spacing:-.02em;color:var(--ink);white-space:nowrap}
-.cs-funnel .fs.x{border-color:var(--hl);background:#fff;color:var(--hl)}
-.cs-funnel .fa{position:relative;flex:none;width:clamp(36px,4.4vw,72px);height:0;margin:0 16px 0 12px;border-top:2.5px solid #b4b8bf}
-.cs-funnel .fa::after{content:"";position:absolute;right:-3px;top:-7.5px;width:12px;height:12px;border-top:2.5px solid #b4b8bf;border-right:2.5px solid #b4b8bf;transform:rotate(45deg)}
-.cs-funnel .fa.x{border-top:2.5px dashed var(--hl)}
+/* A장 퍼널 띠: 전체 폭 연한 회색 띠, 왼쪽 위 '퍼널' 라벨. 끊긴 구간만 --hl, 그 구간 바로 아래 --hl 라벨 */
+.fband{position:relative;margin-top:clamp(18px,2vw,26px);padding:22px 24px;border-radius:14px;background:#f5f6f8}
+.fband-l{position:absolute;left:18px;top:12px;font-size:12.5px;font-weight:600;line-height:1.4;letter-spacing:.02em;color:var(--mute)}
+.cs-funnel{--fh:52px;display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;row-gap:12px}
+.cs-funnel .fs{display:inline-flex;align-items:center;height:var(--fh);padding:0 24px;border-radius:12px;border:1.5px solid #16171a;background:#fff;font-size:22px;font-weight:700;line-height:1;letter-spacing:-.02em;color:#16171a;white-space:nowrap}
+.cs-funnel .fs.x{border:2px solid var(--hl);color:var(--hl)}
+.cs-funnel .fa{position:relative;flex:none;width:clamp(36px,5vw,80px);height:0;margin:calc(var(--fh) / 2 - 1px) 14px 0 10px;border-top:2px solid var(--gray-d)}
+.cs-funnel .fa::after{content:"";position:absolute;right:-2px;top:-6px;width:10px;height:10px;border-top:2px solid var(--gray-d);border-right:2px solid var(--gray-d);transform:rotate(45deg)}
+.cs-funnel .fa.x{border-top:2px dashed var(--hl)}
 .cs-funnel .fa.x::after{border-color:var(--hl)}
 /* 상자 4개 */
 .cs-boxes{display:grid;gap:12px;margin-top:clamp(20px,2.4vw,30px)}
@@ -500,6 +504,7 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 /* ④ 문제 정의: 첫 줄 질문 굵게 */
 .bx-c{min-width:0}
 .bx-why{display:inline-block;margin-bottom:6px;padding:1px 10px;border-radius:999px;background:#edeff2;color:#44474d;font-size:12.5px;font-weight:700;line-height:1.6;letter-spacing:.02em}
+.bx-q em{font-style:normal;color:var(--hl)}
 .bx-q{margin-bottom:8px;font-size:17px;font-weight:700;line-height:1.5;letter-spacing:-.02em;color:var(--ink)}
 /* 채울 것, 확인 표시 */
 mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;font-weight:600;-webkit-box-decoration-break:clone;box-decoration-break:clone}
@@ -527,6 +532,9 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
 .sg-bar{display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:10px;background:#eef0f2;font-size:16px;font-weight:700;line-height:1.45;letter-spacing:-.025em;color:var(--ink)}
 .sg-bar b{color:var(--blue-deep)}
 .sg-bar.rs{background:var(--blue);color:#fff}
+/* B장 결과 바 오른쪽 끝 흰 칩(바 높이 그대로), 화살표만 --hl */
+.sg-bar.rs .rs-chip{margin-left:auto;padding:1px 10px;border-radius:999px;background:#fff;color:#16171a;font-size:13px;font-weight:600;line-height:1.5;letter-spacing:-.01em;white-space:nowrap}
+.rs-chip i{font-style:normal;color:var(--hl)}
 .sg-l{display:grid;gap:5px;margin-top:12px}
 .sg-l li{position:relative;padding-left:14px;font-size:15px;line-height:1.65;color:var(--ink-2)}
 .sg-l li::before{content:"";position:absolute;left:0;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--mute-2)}
@@ -573,7 +581,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
 .res-img .shot{background:#fff}
 @media print{
   .cs{break-before:page;border-top:0;padding:0;display:flex!important;flex-direction:column;justify-content:center}
-  .bx,.sg,.vbox,.nx,.big,.tb,.cs-hyp,.cs-bar,.cs-funnel,.loop{break-inside:avoid}
+  .bx,.sg,.vbox,.nx,.big,.tb,.cs-hyp,.cs-bar,.fband,.loop{break-inside:avoid}
 }
 @media screen and (max-width:1079px){.cs-grid,.cs-st{grid-template-columns:minmax(0,1fr)}.cs-st.r3>.sg:first-child{grid-row:auto}}
 @media screen and (max-width:860px){
@@ -581,14 +589,17 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   .cs-title{flex-basis:100%}
   .cs-4p{margin-left:0}
   .bx{grid-template-columns:minmax(0,1fr);padding:16px 18px}
-  .cs-funnel .fa{width:22px;margin:0 9px 0 5px}
+  .fband{padding:38px 14px 18px}
+  .fband-l{left:14px;top:12px}
+  .cs-funnel{--fh:42px;row-gap:10px}
+  .cs-funnel .fa{width:24px;margin-left:6px;margin-right:9px}
   .cs-hyp{flex-direction:column;gap:8px;padding:14px 16px}
   .cs-a .cs-hyp{grid-template-columns:minmax(0,1fr);gap:8px}
   .cs-a .cs-hyp .hyp-l,.cs-a .cs-hyp>p,.cs-a .cs-hyp .cs-cmp{grid-column:1;grid-row:auto}
   .cs-a .cs-hyp .cs-cmp{margin-top:6px}
   .cs-bar .cs-co{margin-left:0;padding:4px 14px;font-size:14px}
   .cs-bar .cs-co b{font-size:15px}
-  .cs-funnel .fs{padding:8px 14px;font-size:15px;border-width:1.5px}
+  .cs-funnel .fs{padding:0 14px;font-size:17px}
   .sg-side{grid-template-columns:minmax(0,1fr);gap:0}
   .tb th,.tb td{padding:7px 7px;font-size:13px}
 }
@@ -611,8 +622,10 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
 }
 
 /* ── 도식 (세 사례 같은 스타일, 빨강은 끊긴 단계와 개선 후만) ── */
-/* 1. A장 퍼널: 끊긴 화살표와 다음 단계를 한 묶음으로 둬 줄바꿈해도 같이 내려감 */
-.fgrp{display:inline-flex;align-items:center}
+/* 1. A장 퍼널: 끊긴 구간(화살표, 다음 칩, 그 아래 라벨)을 한 묶음으로 둬 폰에서 같이 줄바꿈. 라벨은 폭 0으로 두고 가운데 정렬해 구간 폭을 바꾸지 않음 */
+.fgrp{display:inline-flex;flex-direction:column;align-items:center}
+.fseg{display:flex;align-items:flex-start}
+.flab{display:flex;justify-content:center;width:0;margin-top:8px;font-size:14px;font-weight:700;line-height:1.5;letter-spacing:-.01em;color:var(--hl);white-space:nowrap}
 /* 2. A장 사고 과정 스테퍼: 왼쪽 세로 선과 번호 원, 가설만 빨강 */
 .cs-steps{--sg:12px;position:relative;margin-top:clamp(20px,2.4vw,30px);padding-left:52px}
 .cs-steps .cs-boxes{margin-top:0;gap:var(--sg)}
@@ -648,9 +661,11 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
 /* 인쇄: 글자 크기는 그대로 두고 안쪽 여백과 간격만 줄여 한 쪽에 맞춤 */
 @media print{
   .cs-bar{padding-top:10px;padding-bottom:10px}
-  .cs-funnel{margin-top:14px}
-  .cs-funnel .fs{padding-top:10px;padding-bottom:10px}
+  .fband{margin-top:14px}
   .cs-steps{--sg:7px;margin-top:16px}
+  /* PDF에서 A장이 넘쳐서: 스테퍼 번호 원과 세로선을 빼고 왼쪽 여백도 씀 (사이트 화면은 그대로) */
+  .cs-steps{padding-left:0}
+  .cs-steps [data-step]::before,.cs-steps [data-step]::after{display:none}
   .cs-a .cs-hyp{padding-top:10px;padding-bottom:10px}
   .cs-a .cs-hyp .cs-cmp{margin-top:10px}
   .cmp-box{padding-top:9px;padding-bottom:9px}
@@ -722,19 +737,19 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
       <a class="hi" href="#case-1" data-case="1">
         <span class="mono">Case 01</span>
         <span class="hi-name">링글 틴즈</span>
-        <span class="hi-tag">가입 <span class="hi-ar">→</span> 구매 전환</span>
+        <span class="hi-tag">가입 <span class="hi-ar">→</span> 구매</span>
         <span class="hi-res"><span class="hi-lb"><span class="hi-chip">인플루언서 콘텐츠 가이드 재구성</span><span class="hi-txt"><span class="seg">적용 전 4.8%</span> <span class="seg">→ 적용 후 8.3%</span></span></span><span class="hi-num" data-grow><span class="ln">인플루언서 광고 구매 전환율을</span><br><span class="ln"><em>1.7배</em>로 개선</span></span></span>
       </a>
       <a class="hi" href="#case-3" data-case="3">
         <span class="mono">Case 02</span>
         <span class="hi-name">이지엠앤씨</span>
-        <span class="hi-tag">상담 신청 <span class="hi-ar">→</span> 예약 전환</span>
+        <span class="hi-tag">상담 신청 <span class="hi-ar">→</span> 예약</span>
         <span class="hi-res"><span class="hi-lb"><span class="hi-chip">광고 소재와 성과 판정 기준 변경</span><span class="hi-txt"><span class="seg">8월 초 3.5%</span> <span class="seg">→ 9월 초 10.6%</span></span></span><span class="hi-num" data-grow><span class="ln">임플란트 광고 예약 전환율을</span><br><span class="ln"><em>3배</em>로 개선</span></span></span>
       </a>
       <a class="hi" href="#case-2" data-case="2">
         <span class="mono">Case 03</span>
         <span class="hi-name">KZ_K Studio</span>
-        <span class="hi-tag">구매 <span class="hi-ar">→</span> 재구매 전환</span>
+        <span class="hi-tag">구매 <span class="hi-ar">→</span> 재방문</span>
         <span class="hi-res"><span class="hi-lb"><span class="hi-chip">쇼룸 1:1 대화로 고객 취향 분석</span><span class="hi-txt">맞춤 기프트박스 발송 뒤 재구매</span></span><span class="hi-num" data-grow><span class="ln">쇼룸에서 만난 고객 <em>약 70%</em>를</span><br><span class="ln">재구매로 연결</span></span></span>
       </a>
     </nav>
@@ -837,13 +852,15 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   <article class="cs cs-a" id="case-1">
     <div class="wrap">
       <header class="cs-bar"><span class="cs-no">CASE 01</span><h3 class="cs-title">세일즈 콜 기준으로 인플루언서 가이드를 재구성해 구매 전환율을 1.7배로 높인 경험</h3><span class="cs-co"><b>링글 틴즈</b> | 2024.07 ~ 2024.12</span></header>
-      <div class="cs-funnel" role="img" aria-label="릴스 광고, 랜딩 유입, 가입, 구매 순서의 퍼널에서 가입에서 구매로 가는 단계가 끊김">
-        <span class="fs">릴스 광고</span><i class="fa"></i><span class="fs">랜딩 유입</span><i class="fa"></i><span class="fs">가입</span><span class="fgrp"><i class="fa x"></i><span class="fs x">구매</span></span>
+      <div class="fband"><span class="fband-l">퍼널</span>
+      <div class="cs-funnel" role="img" aria-label="릴스 광고, 랜딩 유입, 가입, 구매 순서의 퍼널에서 가입에서 구매로 가는 단계가 끊김, 구매 전환율 4.8%, 팀 기준 11%">
+        <span class="fs">릴스 광고</span><i class="fa"></i><span class="fs">랜딩 유입</span><i class="fa"></i><span class="fs">가입</span><span class="fgrp"><span class="fseg"><i class="fa x"></i><span class="fs x">구매</span></span><b class="flab">구매 전환율 4.8%, 팀 기준 11%</b></span>
+      </div>
       </div>
       <div class="cs-steps">
       <ol class="cs-boxes">
           <li class="bx" data-step="1"><h4><b>①</b>팀 KPI</h4><ul><li>프로젝트 목적: 인플루언서 광고의 구매 전환 증진</li><li>팀 KPI: 가입당 비용 목표치와 적정 범위, 가입 → 첫결제 전환율 11%, 첫결제 ROAS 240%</li><li>개선 전 가이드 광고의 가입당 비용은 적정 범위 이내로 KPI상 이상 징후 없음</li></ul></li>
-          <li class="bx" data-step="2"><h4><b>②</b>퍼널 이탈 지점</h4><ul><li>광고비의 1/3을 편성한 인플루언서 광고에서 가입은 늘었지만 구매로 이어지지 않음</li><li>가입 → 구매 4.8%는 팀 내부 기준 11%의 절반 이하, ROAS 63%는 기준치 240%는 물론 손익분기 100%에도 미달</li></ul></li>
+          <li class="bx" data-step="2"><h4><b>②</b>퍼널 이탈 구간</h4><div class="bx-c"><p class="bx-q">이탈 구간: <em>가입 → 구매</em></p><ul><li>광고비의 1/3을 편성한 인플루언서 광고에서 가입은 늘었지만 구매로 이어지지 않음</li><li>가입 → 구매 4.8%는 팀 내부 기준 11%의 절반 이하, ROAS 63%는 기준치 240%는 물론 손익분기 100%에도 미달</li></ul></div></li>
           <li class="bx" data-step="3"><h4><b>③</b>원인 분석</h4><ul><li>세일즈 콜을 활용한 고객 리서치 실시: 영어 학습 목적, 유입 광고, 중시 요소를 질문해 학부모의 구매 결정 요인이 진도와 첨삭임을 확인</li><li>성과 상위 4개와 하위 4개 영상 요소별 비교 분석 실시: 고성과 영상에는 예습, 수업, 숙제, 복습의 4단계 학습 과정이 노출됨</li></ul></li>
           <li class="bx q" data-step="4"><h4><b>④</b>문제 정의</h4><div class="bx-c"><p class="bx-q">왜 학부모가 보는 기준이 콘텐츠에 없었나</p><ul><li>개선 전 가이드는 '재미있게, 많이 말하기'만 요구해 학부모의 구매 결정 요인인 진도와 첨삭이 콘텐츠에 없었음</li><li>엄마표 영어, 영유 자녀, 사립초 자녀, 국제학교 자녀, 미국 학교 진학 준비 등 자녀 배경이 다른 인플루언서에게 같은 흐름을 요구해 각 타겟 학부모에게 맞는 소구가 되지 않음</li></ul></div></li>
         </ol>
@@ -893,7 +910,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
           </section>
         </div>
         <div class="cs-res">
-          <h4 class="sg-bar rs">결과</h4>
+          <h4 class="sg-bar rs">결과<span class="rs-chip">이탈 구간 가입 <i>→</i> 구매</span></h4>
           <div class="big">
             <p class="big-s">인플루언서 광고 구매 전환율</p>
             <p class="big-n"><span class="d">4.8% →</span> 8.3%, <span class="nw"><em>1.7배</em> 상승</span></p>
@@ -917,13 +934,15 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   <article class="cs cs-a" id="case-3">
     <div class="wrap">
       <header class="cs-bar"><span class="cs-no">CASE 02</span><h3 class="cs-title">상담 기록 163건에서 찾은 기준으로 소재와 판정 기준을 바꿔 예약률을 3배로 끌어올린 경험</h3><span class="cs-co"><b>이지엠앤씨</b> | 2026.07 ~ 2026.09</span></header>
-      <div class="cs-funnel" role="img" aria-label="광고, 상담 신청, CS 통화, 예약, 내원 순서의 퍼널에서 상담 신청에서 예약으로 가는 단계가 끊김">
-        <span class="fs">광고</span><i class="fa"></i><span class="fs">상담 신청</span><span class="fgrp"><i class="fa x"></i><span class="fs">CS 통화</span><i class="fa x"></i><span class="fs x">예약</span></span><i class="fa"></i><span class="fs">내원</span>
+      <div class="fband"><span class="fband-l">퍼널</span>
+      <div class="cs-funnel" role="img" aria-label="광고, 상담 신청, 예약, 내원 순서의 퍼널에서 상담 신청에서 예약으로 가는 단계가 끊김, 예약률 10.3%에서 3.5%로">
+        <span class="fs">광고</span><i class="fa"></i><span class="fs">상담 신청</span><span class="fgrp"><span class="fseg"><i class="fa x"></i><span class="fs x">예약</span></span><b class="flab">예약률 10.3% → 3.5%</b></span><i class="fa"></i><span class="fs">내원</span>
+      </div>
       </div>
       <div class="cs-steps">
       <ol class="cs-boxes">
           <li class="bx" data-step="1"><h4><b>①</b>팀 KPI</h4><ul><li>프로젝트 목적: 임플란트 상담 신청의 예약과 내원 증진</li><li>팀 KPI: 임플란트 상담 신청 DB 단가. 명시된 목표치 없이 직전 달 수준 유지와 소재 간 상대 비교로 판정</li><li>광고 성과를 DB 단가로 판정해 소재와 랜딩의 ON/OFF와 예산 배분을 결정하는 구조. 이 기준에서는 지원금 소구가 최우수로 분류됨. 구글 기준 지원금 랜딩의 DB 단가가 가격 공개 랜딩보다 32% 낮았기 때문</li></ul></li>
-          <li class="bx" data-step="2"><h4><b>②</b>퍼널 이탈 지점</h4><ul><li>7월보다 광고비와 상담 신청은 늘었고 DB 단가는 28% 악화에 그쳐 보였지만, 8월 초 계정 전체 예약률은 10.3%에서 3.5%로 3분의 1 수준까지 하락하고 예약단가는 3.7배 상승</li></ul></li>
+          <li class="bx" data-step="2"><h4><b>②</b>퍼널 이탈 구간</h4><div class="bx-c"><p class="bx-q">이탈 구간: <em>상담 신청 → 예약</em></p><ul><li>7월보다 광고비와 상담 신청은 늘었고 DB 단가는 28% 악화에 그쳐 보였지만, 8월 초 계정 전체 예약률은 10.3%에서 3.5%로 3분의 1 수준까지 하락하고 예약단가는 3.7배 상승</li></ul></div></li>
           <li class="bx" data-step="3"><h4><b>③</b>원인 분석</h4><ul><li>상담 기록 163건 전수 분석: 혜택만 보고 신청한 허수가 8월 초 신청의 절반인 50.5%</li><li>지원금 안내 랜딩은 '신청한 적 없다' 응답이 11.2%, 가격 공개 랜딩은 0.9%</li><li>광고로 재유입됐지만 기존 환자로 분류돼 광고 성과에서 누락되던 예약과 내원을 광고 리드 DB와 매칭해 집계, 광고 성과가 실제보다 낮게 잡히던 왜곡을 보정</li></ul></li>
           <li class="bx q" data-step="4"><h4><b>④</b>문제 정의</h4><div class="bx-c"><p class="bx-q">왜 신청은 늘고 예약은 무너졌나</p><ul><li>광고 성과를 DB 단가로 판정해 소재 ON/OFF를 결정하니, 지원금 소구 소재가 계속 ON으로 유지됐고 시 지원금으로 오인한 허수 신청이 늘어도 판정에 드러나지 않았음</li><li>임플란트는 의료진과 가격을 보고 결정하는데 광고는 둘 다 보여 주지 않았음</li></ul></div></li>
         </ol>
@@ -981,7 +1000,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
           </section>
         </div>
         <div class="cs-res">
-          <h4 class="sg-bar rs">결과</h4>
+          <h4 class="sg-bar rs">결과<span class="rs-chip">이탈 구간 상담 신청 <i>→</i> 예약</span></h4>
           <div class="big">
             <p class="big-s">계정 전체 예약률</p>
             <p class="big-n"><span class="d">3.5% →</span> 10.6%, <span class="nw"><em>3배</em> 상승</span></p>
@@ -1008,13 +1027,15 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   <article class="cs cs-a" id="case-2">
     <div class="wrap">
       <header class="cs-bar"><span class="cs-no">CASE 03</span><h3 class="cs-title">관성적으로 만들던 VIP 기프트박스를 고객 취향으로 바꿔 재구매로 연결한 경험</h3><span class="cs-co"><b>KZ_K Studio</b> | 2022.11 ~ 2023.07</span></header>
-      <div class="cs-funnel" role="img" aria-label="구매, 재방문, 재구매 순서의 퍼널에서 구매에서 재방문으로 가는 단계가 끊김">
-        <span class="fs">구매</span><i class="fa x"></i><span class="fs x">재방문</span><i class="fa"></i><span class="fs">재구매</span>
+      <div class="fband"><span class="fband-l">퍼널</span>
+      <div class="cs-funnel" role="img" aria-label="구매, 재방문, 재구매 순서의 퍼널에서 구매에서 재방문으로 가는 단계가 끊김, 박스를 받아도 다시 찾을 이유가 없음">
+        <span class="fs">구매</span><span class="fgrp"><span class="fseg"><i class="fa x"></i><span class="fs x">재방문</span></span><b class="flab">박스를 받아도 다시 찾을 이유가 없음</b></span><i class="fa"></i><span class="fs">재구매</span>
+      </div>
       </div>
       <div class="cs-steps">
       <ol class="cs-boxes">
           <li class="bx" data-step="1"><h4><b>①</b>팀 KPI</h4><ul><li>프로젝트 목적: VIP 고객 리텐션 강화</li><li>팀 KPI: 하이엔드 브랜드 특성상 매출을 좌우하는 VIP 고객의 재방문과 재구매. 시즌마다 VIP 250명에게 기프트박스를 보내 관리</li></ul></li>
-          <li class="bx" data-step="2"><h4><b>②</b>퍼널 이탈 지점</h4><ul><li>시즌 유행 아이템 위주의 기프트박스는 어디서나 받을 수 있어 브랜드만의 호감으로 남기 어렵다고 판단</li></ul></li>
+          <li class="bx" data-step="2"><h4><b>②</b>퍼널 이탈 구간</h4><div class="bx-c"><p class="bx-q">이탈 구간: <em>구매 → 재방문</em></p><ul><li>시즌 유행 아이템 위주의 기프트박스는 어디서나 받을 수 있어, 박스를 받은 고객이 다음 시즌에 쇼룸을 다시 찾을 이유가 되기 어려웠음</li></ul></div></li>
           <li class="bx" data-step="3"><h4><b>③</b>원인 분석</h4><ul><li>기존 기프트박스 구성의 근거는 매거진 리서치와 구매 이력뿐이라, 고객이 무엇을 좋아하는지 보여 주는 취향 데이터가 없어 구성 기준이 시즌 유행에 머물렀음</li><li>쇼룸 응대를 자청해 1:1 고객 리서치 실시: 방문 고객 약 80%의 취미가 그림</li></ul></li>
           <li class="bx q" data-step="4"><h4><b>④</b>문제 정의</h4><div class="bx-c"><p class="bx-q">기존 박스로는 브랜드 호감이 쌓이지 않아 재구매로 이어지기 어렵다고 판단</p><span class="bx-why">Why</span><ul><li>받는 사람의 취향이 아니라 시즌 유행 아이템을 기준으로 구성하던 관성</li><li>디자이너가 옷을 만들 때 그린 스케치, 컬렉션마다 정해 두는 원단 색상처럼 브랜드만 가진 자산이 박스에 전혀 담기지 않았음</li></ul></div></li>
         </ol>
@@ -1058,7 +1079,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
           </div>
         </div>
         <div class="cs-res">
-          <h4 class="sg-bar rs">결과</h4>
+          <h4 class="sg-bar rs">결과<span class="rs-chip">이탈 구간 구매 <i>→</i> 재방문</span></h4>
           <div class="big">
             <p class="big-t">쇼룸에서 직접 만난 고객 <em>약 70%</em>의 재방문과 재구매</p>
           </div>
