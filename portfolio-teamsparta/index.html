@@ -20,7 +20,11 @@
 :root{
   color-scheme: light;
   --bg:#ffffff; --ink:#0d0e10; --ink-2:#383b41; --mute:#72767d; --mute-2:#a4a8ae; --line:#e5e7ea; --soft:#f4f5f7; --soft-2:#eceef1;
-  --blue:#fa0030; --blue-deep:#d1002a; --blue-tint:#fff1f3;
+  /* 하이라이트: 팀스파르타 브랜드 레드(첨부 로고에서 뽑은 값). 다른 값으로 확정되면 이 한 줄만 바꾸기 */
+  --hl:#FA0030;
+  /* 예전 강조색 변수는 중립으로: 진한 글자색과 연한 회색 */
+  --blue:#16171a; --blue-deep:#16171a; --blue-tint:#f5f6f8;
+  --gray-d:#5f646b; --line-2:#d8dbe0;
   --sans:'IBM Plex Sans KR','Apple SD Gothic Neo','Noto Sans KR',system-ui,sans-serif;
   --serif:var(--sans); --it:var(--sans);
   --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
@@ -50,7 +54,7 @@ section[id],article[id]{scroll-margin-top:calc(var(--bar) + 12px)}
 .nav a:hover,.nav a.on{color:var(--ink)}
 .nav a::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:0 50%;transition:transform .25s}
 .nav a.on::after{transform:scaleX(1)}
-.progress{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--blue);transform-origin:0 50%;transform:scaleX(0)}
+.progress{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--gray-d);transform-origin:0 50%;transform:scaleX(0)}
 
 /* hero */
 .hero{padding:calc(var(--bar) + clamp(28px,4vw,56px)) 0 clamp(56px,7vw,96px)}
@@ -100,7 +104,7 @@ section[id],article[id]{scroll-margin-top:calc(var(--bar) + 12px)}
 /* ───────── about ───────── */
 .about-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,4vw,64px)}
 .ab-h{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;letter-spacing:-.01em;margin-bottom:14px}
-.ab-h::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--blue)}
+.ab-h::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gray-d)}
 .core{display:grid;gap:12px}
 .core>li{padding:18px 20px;border-radius:14px;background:var(--soft)}
 .core-t{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font-weight:600;font-size:16.5px;line-height:1.45;color:var(--blue-deep);letter-spacing:-.02em}
@@ -221,10 +225,10 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 .flow .hub{padding:14px 8px;border-radius:10px;background:var(--ink);color:#fff;text-align:center;font-size:13px;font-weight:600;line-height:1.35}
 .flow .funnel{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;text-align:center}
 .flow .funnel span{padding:7px 2px;border-radius:8px;font-size:12.5px;background:var(--soft)}
-.flow .funnel span.new{background:var(--blue-tint);color:var(--blue-deep);font-weight:600}
+.flow .funnel span.new{background:var(--soft);color:#16171a;font-weight:700}
 .flow .judge{display:grid;grid-template-columns:1fr 2fr;gap:5px;margin-top:6px;text-align:center;font-size:11.5px;color:var(--mute)}
 .flow .judge span{border-top:1.5px solid var(--mute-2);padding-top:4px}
-.flow .judge span.new{border-color:var(--blue);color:var(--blue-deep);font-weight:600}
+.flow .judge span.new{border-color:#16171a;color:#16171a;font-weight:700}
 /* 결과 */
 .r-pre{font-size:16px;font-weight:500;line-height:1.5;color:var(--ink-2)}
 .r-num{display:flex;align-items:baseline;flex-wrap:wrap;gap:0 .16em;color:var(--blue);font-family:var(--serif);font-weight:400;font-size:clamp(46px,4.6vw,66px);line-height:1.02;letter-spacing:-.05em;margin-top:4px;transform-origin:0 100%;will-change:transform}
@@ -283,7 +287,7 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 .obs{display:grid;gap:6px;margin-top:10px;counter-reset:ob}
 .obs li{position:relative;padding-left:24px;font-size:13.5px;line-height:1.5;color:var(--ink-2)}
 .obs li::before{counter-increment:ob;content:counter(ob);position:absolute;left:0;top:.15em;width:17px;height:17px;border-radius:50%;background:#fff;color:var(--blue-deep);font-size:11px;font-weight:700;line-height:17px;text-align:center}
-.obs+.hyp-t{margin-top:12px;padding-top:12px;border-top:1px solid rgba(250,0,48,.18)}
+.obs+.hyp-t{margin-top:12px;padding-top:12px;border-top:1px solid rgba(22,23,26,.14)}
 .loop{margin-top:14px;padding:12px 14px 14px;border-radius:12px;border:1px solid var(--line)}
 .loop-h{display:block;margin-bottom:9px;font-size:12.5px;font-weight:600;color:var(--mute)}
 .loop-s{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
@@ -306,7 +310,7 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 /* sans overrides for reused blocks */
 .sec-head{border-bottom:1px solid var(--ink)}
 .kicker{gap:10px}
-.kicker b{font-family:var(--mono);font-style:normal;font-weight:500;font-size:13px;letter-spacing:.06em;color:var(--blue)}
+.kicker b{font-family:var(--mono);font-style:normal;font-weight:500;font-size:13px;letter-spacing:.06em;color:var(--gray-d)}
 .kicker .mono{color:var(--ink-2)}
 .sec-title{font-weight:700;letter-spacing:-.04em}
 .sec-head.one .sec-title{font-weight:700}
@@ -365,30 +369,28 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
   html{scroll-behavior:auto}
   .px,.r-num,.hi-num{transform:none!important}
 }
-/* Hero: 팀스파르타 레드 #FA0030 바탕 */
-.hero{--sp-blue:#fa0030;--sp-navy:#16171a;--sp-mute:#8e9299;position:relative;overflow:hidden;background:var(--sp-blue);color:#fff}
-.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
-.hero::before{right:-10%;top:-34%;width:min(820px,76vw);aspect-ratio:1;background:radial-gradient(closest-side,rgba(255,120,140,.5),rgba(255,120,140,0))}
-.hero::after{left:-16%;bottom:-52%;width:min(680px,64vw);aspect-ratio:1;background:radial-gradient(closest-side,rgba(150,0,28,.5),rgba(150,0,28,0))}
+/* Hero: 흰 바탕, 진한 글자. --sp-blue는 '전환' 마커에만 쓰고 값은 --hl */
+.hero{--sp-blue:var(--hl);--sp-navy:#16171a;--sp-mute:#8e9299;position:relative;overflow:hidden;background:#fff;color:#16171a}
 .hero .wrap{position:relative;z-index:1}
-.hero .hero-meta{color:rgba(255,255,255,.82);border-bottom-color:rgba(255,255,255,.3)}
-.hero .hero-meta .mono{color:#fff}
-.hero .dot{background:#fff}
-.hero .site-link{border-color:#fff;background:#fff;color:var(--sp-blue)}
+.hero .hero-meta{color:var(--mute);border-bottom-color:var(--line)}
+.hero .hero-meta .mono{color:#16171a}
+.hero .dot{background:var(--gray-d)}
+.hero .site-link{border-color:var(--line-2);background:#fff;color:#16171a}
 .hero .site-link:hover{background:var(--sp-navy);border-color:var(--sp-navy);color:#fff}
-.hero .hero-title{color:#fff}
-.hero .hero-title .hl{display:inline-block;color:var(--sp-blue);background:#fff;border-radius:.16em;padding:.03em .12em .07em;line-height:1.04}
-.hero .hi{background:#fff;border-color:#fff;color:var(--sp-navy);box-shadow:0 22px 44px -26px rgba(110,0,20,.55)}
-.hero .hi:hover{border-color:#fff;transform:translateY(-4px);box-shadow:0 28px 52px -24px rgba(110,0,20,.65)}
+.hero .hero-title{color:#16171a}
+.hero .hero-title .hl{display:inline-block;color:#fff;background:var(--sp-blue);border-radius:.16em;padding:.03em .12em .07em;line-height:1.04}
+.hero .hi{background:#fff;border-color:var(--line-2);color:var(--sp-navy);box-shadow:none}
+.hero .hi:hover{border-color:#b4b8bf;transform:translateY(-4px);box-shadow:0 18px 36px -24px rgba(12,13,15,.28)}
 .hero .hi .mono,.hero .hi-tag,.hero .hi-go{color:var(--sp-mute)}
 .hero .hi-res{border-top-color:#eceef1}
 .hero .hi-lb{color:var(--sp-navy)}
 .hero .hi-num{color:var(--sp-navy)}
-.hero .hi-num em{font-style:normal;color:var(--sp-blue)}
+.hero .hi-num em{font-style:normal;color:var(--hl)}
+.hero .hi-tag .hi-ar{color:var(--hl)}
 .hero .hi-num .ln{white-space:nowrap}
 /* 표지: 지원 직무 라벨, 길어진 타일 문구 */
 .hero .hero-meta{margin-bottom:clamp(20px,2.3vw,32px)}
-.hero .hero-role{margin:0 0 clamp(10px,1vw,14px);font-size:clamp(14px,1.15vw,16px);font-weight:600;line-height:1.6;color:#fff;letter-spacing:-.01em}
+.hero .hero-role{margin:0 0 clamp(10px,1vw,14px);font-size:clamp(14px,1.15vw,16px);font-weight:600;line-height:1.6;color:var(--gray-d);letter-spacing:-.01em}
 /* 큰 문장: 1줄 끝에서만 줄바꿈(두 줄 고정), 가장 긴 1줄이 타일에 들어가게 타일 폭 기준 크기, 세 타일 같은 크기 */
 .hero .hi-num{font-size:clamp(14px,7.7cqi,30px);line-height:1.3;letter-spacing:-.035em}
 @media screen and (max-width:380px){.hero .hero-title{font-size:8vw}}
@@ -466,7 +468,7 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 /* 사례 장 3~10장: 사례마다 A장(문제), B장(전략과 결과). 헤더 바는 마리트 장표의 검은 바 모양 */
 .cs{position:relative;padding:clamp(56px,6vw,84px) 0;border-top:1px solid var(--line)}
 .cs-bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:14px 22px;border-radius:12px;background:#16171a;color:#fff}
-.cs-no{flex:none;padding:3px 10px;border-radius:6px;background:var(--blue);color:#fff;font-family:var(--mono);font-size:12.5px;font-weight:500;letter-spacing:.06em;line-height:1.5;white-space:nowrap}
+.cs-no{flex:none;padding:3px 10px;border-radius:6px;background:#fff;color:#16171a;font-family:var(--mono);font-size:12.5px;font-weight:500;letter-spacing:.06em;line-height:1.5;white-space:nowrap}
 .cs-title{flex:1 1 360px;min-width:0;font-size:clamp(18px,1.7vw,23px);font-weight:700;line-height:1.4;letter-spacing:-.035em;color:#fff}
 .cs-4p{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
 .cs-4p li{padding:2px 10px;border-radius:999px;background:#edeff2;color:#44474d;font-size:12px;font-weight:500;line-height:1.6;white-space:nowrap}
@@ -478,11 +480,11 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 /* 퍼널 한 줄: 끊긴 단계만 빨강 */
 .cs-funnel{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;row-gap:10px;margin-top:clamp(20px,2.4vw,30px)}
 .cs-funnel .fs{padding:13px 28px;border-radius:14px;border:2px solid #d3d6db;background:#fff;font-size:20px;font-weight:700;line-height:1.4;letter-spacing:-.02em;color:var(--ink);white-space:nowrap}
-.cs-funnel .fs.x{border-color:var(--blue);background:var(--blue-tint);color:var(--blue-deep)}
+.cs-funnel .fs.x{border-color:var(--hl);background:#fff;color:var(--hl)}
 .cs-funnel .fa{position:relative;flex:none;width:clamp(36px,4.4vw,72px);height:0;margin:0 16px 0 12px;border-top:2.5px solid #b4b8bf}
 .cs-funnel .fa::after{content:"";position:absolute;right:-3px;top:-7.5px;width:12px;height:12px;border-top:2.5px solid #b4b8bf;border-right:2.5px solid #b4b8bf;transform:rotate(45deg)}
-.cs-funnel .fa.x{border-top:2.5px dashed var(--blue)}
-.cs-funnel .fa.x::after{border-color:var(--blue)}
+.cs-funnel .fa.x{border-top:2.5px dashed var(--hl)}
+.cs-funnel .fa.x::after{border-color:var(--hl)}
 /* 상자 4개 */
 .cs-boxes{display:grid;gap:12px;margin-top:clamp(20px,2.4vw,30px)}
 .bx{display:grid;grid-template-columns:clamp(190px,17vw,240px) minmax(0,1fr);gap:8px 28px;align-items:start;padding:18px 24px;border-radius:14px;border:1px solid var(--line);background:#fff}
@@ -497,7 +499,7 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 .bx.q li::before{background:var(--blue)}
 /* ④ 문제 정의: 첫 줄 질문 굵게 */
 .bx-c{min-width:0}
-.bx-why{display:inline-block;margin-bottom:6px;padding:1px 10px;border-radius:999px;background:var(--blue-tint);color:var(--blue-deep);font-size:12.5px;font-weight:700;line-height:1.6;letter-spacing:.02em}
+.bx-why{display:inline-block;margin-bottom:6px;padding:1px 10px;border-radius:999px;background:#edeff2;color:#44474d;font-size:12.5px;font-weight:700;line-height:1.6;letter-spacing:.02em}
 .bx-q{margin-bottom:8px;font-size:17px;font-weight:700;line-height:1.5;letter-spacing:-.02em;color:var(--ink)}
 /* 채울 것, 확인 표시 */
 mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;font-weight:600;-webkit-box-decoration-break:clone;box-decoration-break:clone}
@@ -547,7 +549,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
 .big{padding:4px 2px}
 .big+.big{padding-top:12px;border-top:1px solid var(--line)}
 .big-s{font-size:17px;font-weight:700;line-height:1.5;letter-spacing:-.02em;color:#16171a}
-.big-n{margin-top:2px;font-size:clamp(28px,2.6vw,36px);font-weight:700;line-height:1.25;letter-spacing:-.04em;color:var(--blue)}
+.big-n{margin-top:2px;font-size:clamp(28px,2.6vw,36px);font-weight:700;line-height:1.25;letter-spacing:-.04em;color:var(--hl)}
 .big-n em{font-style:normal;font-size:1.2em}
 .big-n .nw{white-space:nowrap}
 .big-n .d{color:#16171a}
@@ -555,7 +557,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
 .big-n mark.fill{font-size:15px;line-height:1.6;letter-spacing:-.01em}
 .big-sub{margin-top:4px;font-size:13px;color:var(--mute)}
 .big-t{margin-top:4px;font-size:clamp(20px,1.85vw,25px);font-weight:700;line-height:1.45;letter-spacing:-.035em;color:#16171a}
-.big-t em{font-style:normal;color:var(--blue)}
+.big-t em{font-style:normal;color:var(--hl)}
 .vbox{padding:14px 18px;border-radius:14px;border:1px solid var(--line);background:#fff}
 .vbox h5,.nx h5{margin-bottom:6px;font-size:14px;font-weight:700;letter-spacing:-.01em;color:var(--ink)}
 .vbox li{position:relative;padding:6px 0 6px 22px;border-top:1px dashed var(--line);font-size:14.5px;font-weight:600;line-height:1.5;color:var(--ink)}
@@ -596,7 +598,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
 .cmp-chip{grid-area:ca;justify-self:center;padding:2px 12px;border-radius:999px;background:#edeff2;color:#44474d;font-size:13px;font-weight:700;line-height:1.5;letter-spacing:.01em}
 .cmp-chip.to{grid-area:cb;background:var(--blue);color:#fff}
 .cmp-box{grid-area:ba;align-self:stretch;display:flex;align-items:center;justify-content:center;padding:13px 22px;border:2px solid #d3d6db;border-radius:14px;background:#fff;font-size:17px;font-weight:600;line-height:1.5;letter-spacing:-.02em;color:var(--ink-2);text-align:center}
-.cmp-box.to{grid-area:bb;border-color:var(--blue);color:var(--ink)}
+.cmp-box.to{grid-area:bb;border-color:#16171a;border-width:1.5px;color:var(--ink)}
 .cmp-arr{grid-area:ar;position:relative;display:block;width:56px;height:0;border-top:2.5px solid #b4b8bf}
 .cmp-arr::after{content:"";position:absolute;right:-2px;top:-7.5px;width:12px;height:12px;border-top:2.5px solid #b4b8bf;border-right:2.5px solid #b4b8bf;transform:rotate(45deg)}
 /* 정성 성과 칩 */
@@ -620,13 +622,13 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
 .cs-steps .bx[data-step="1"]::before{top:50%}
 .cs-steps .cs-hyp[data-step]::before{bottom:50%}
 .cs-steps [data-step]::after{content:attr(data-step);position:absolute;left:-52px;top:50%;z-index:1;width:32px;height:32px;margin-top:-16px;border-radius:50%;background:#e6e8eb;color:#5f646b;font-family:var(--sans);font-size:15px;font-weight:700;line-height:32px;text-align:center}
-.cs-steps .cs-hyp[data-step]::after{background:var(--blue);color:#fff}
+.cs-steps .cs-hyp[data-step]::after{background:#e6e8eb;color:#5f646b}
 /* 3. B장 전후 비교 막대: 검증 상자 안, 기존 회색, 개선 후 빨강 */
 .cmpbar{margin-top:8px;padding-top:10px;border-top:1px dashed var(--line)}
 .cb-lg{display:flex;gap:14px;justify-content:flex-end;margin-bottom:6px;font-size:12px;color:var(--mute)}
 .cb-lg span{display:inline-flex;align-items:center;gap:5px}
 .cb-lg span::before{content:"";width:10px;height:10px;border-radius:2px;background:#c4c8ce}
-.cb-lg .r::before{background:var(--blue)}
+.cb-lg .r::before{background:var(--hl)}
 .cb-m{display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;align-items:center}
 .cb-m+.cb-m{margin-top:8px}
 .cb-l{font-size:13px;font-weight:600;line-height:1.3;color:var(--ink-2)}
@@ -634,9 +636,9 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
 .cb-bars{display:grid;gap:3px}
 .cb-r{display:flex;align-items:center;gap:6px}
 .cb-r i{display:block;flex:none;width:calc(var(--w) * .78);height:12px;border-radius:3px;background:#c4c8ce}
-.cb-r.r i{background:var(--blue)}
+.cb-r.r i{background:var(--hl)}
 .cb-r b{font-size:12.5px;font-weight:700;line-height:1;color:#6b7078;white-space:nowrap}
-.cb-r.r b{color:var(--blue-deep)}
+.cb-r.r b{color:var(--hl)}
 @media screen and (max-width:860px){
   .cs-steps{padding-left:40px}
   .cs-steps [data-step]::before{left:-28px}
@@ -667,28 +669,21 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   .cb-m+.cb-m{margin-top:6px}
 }
 
-/* Contact: 첫 화면과 같은 팀스파르타 레드 #FA0030 바탕 */
-.closing{--sp-blue:#fa0030;--sp-navy:#16171a;--sp-mute:#8e9299;overflow:hidden;background:var(--sp-blue);color:#fff}
-.closing::before,.closing::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
-.closing::before{right:-14%;top:-38%;width:min(760px,70vw);aspect-ratio:1;background:radial-gradient(closest-side,rgba(255,120,140,.5),rgba(255,120,140,0))}
-.closing::after{left:-18%;bottom:-55%;width:min(620px,60vw);aspect-ratio:1;background:radial-gradient(closest-side,rgba(150,0,28,.5),rgba(150,0,28,0))}
+/* Contact: 흰 바탕, 진한 글자 */
+.closing{--sp-navy:#16171a;--sp-mute:#8e9299;overflow:hidden;background:#fff;color:#16171a}
 .closing .wrap{position:relative;z-index:1}
-.closing .sec-head{border-bottom-color:rgba(255,255,255,.3)}
-.closing .kicker b{color:#fff}
-.closing .kicker .mono{color:rgba(255,255,255,.82)}
-.closing .sec-title{color:#fff}
-.closing .thanks p.t{color:rgba(255,255,255,.88)}
-.closing .thanks .sign{color:#fff}
+.closing .thanks p.t{color:#16171a}
+.closing .thanks .sign{color:#16171a}
 .closing .thanks{align-items:center;grid-template-columns:minmax(0,1.9fr) minmax(0,1fr)}
 /* 감사 문장: 어바웃 미 제목과 같은 크기, 두 문장은 줄을 나눔 */
-.closing .thanks p.t{font-size:clamp(22px,2.35vw,34px);font-weight:600;line-height:1.5;letter-spacing:-.035em;color:#fff}
+.closing .thanks p.t{font-size:clamp(22px,2.35vw,34px);font-weight:600;line-height:1.5;letter-spacing:-.035em;color:#16171a}
 .closing .thanks p.t .ln{display:block}
 .closing .thanks p.t .ln+.ln{margin-top:.25em}
 @media screen and (max-width:860px){.closing .thanks{grid-template-columns:minmax(0,1fr)}}
-.closing .contact-card{background:#fff;color:var(--sp-navy);border-radius:22px 22px 22px 6px;box-shadow:0 28px 56px -28px rgba(110,0,20,.6)}
+.closing .contact-card{background:#fff;color:var(--sp-navy);border:1px solid var(--line-2);border-radius:22px 22px 22px 6px;box-shadow:none}
 .closing .contact-card .mono{color:var(--sp-mute)}
-.closing .contact-card .copy{background:var(--sp-blue);color:#fff;font-weight:600}
-.closing .contact-card .copy:hover,.closing .contact-card .copy.done{background:var(--sp-navy);color:#fff}
+.closing .contact-card .copy{background:#16171a;color:#fff;font-weight:600}
+.closing .contact-card .copy:hover,.closing .contact-card .copy.done{background:#383b41;color:#fff}
 .closing .contact-card .cc-phone{border-top-color:#eceef1}
 </style>
 </head>
@@ -727,19 +722,19 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
       <a class="hi" href="#case-1" data-case="1">
         <span class="mono">Case 01</span>
         <span class="hi-name">링글 틴즈</span>
-        <span class="hi-tag">가입 → 구매 전환</span>
+        <span class="hi-tag">가입 <span class="hi-ar">→</span> 구매 전환</span>
         <span class="hi-res"><span class="hi-lb"><span class="hi-chip">인플루언서 콘텐츠 가이드 재구성</span><span class="hi-txt"><span class="seg">적용 전 4.8%</span> <span class="seg">→ 적용 후 8.3%</span></span></span><span class="hi-num" data-grow><span class="ln">인플루언서 광고 구매 전환율을</span><br><span class="ln"><em>1.7배</em>로 개선</span></span></span>
       </a>
       <a class="hi" href="#case-3" data-case="3">
         <span class="mono">Case 02</span>
         <span class="hi-name">이지엠앤씨</span>
-        <span class="hi-tag">상담 신청 → 예약 전환</span>
+        <span class="hi-tag">상담 신청 <span class="hi-ar">→</span> 예약 전환</span>
         <span class="hi-res"><span class="hi-lb"><span class="hi-chip">광고 소재와 성과 판정 기준 변경</span><span class="hi-txt"><span class="seg">8월 초 3.5%</span> <span class="seg">→ 9월 초 10.6%</span></span></span><span class="hi-num" data-grow><span class="ln">임플란트 광고 예약 전환율을</span><br><span class="ln"><em>3배</em>로 개선</span></span></span>
       </a>
       <a class="hi" href="#case-2" data-case="2">
         <span class="mono">Case 03</span>
         <span class="hi-name">KZ_K Studio</span>
-        <span class="hi-tag">구매 → 재구매 전환</span>
+        <span class="hi-tag">구매 <span class="hi-ar">→</span> 재구매 전환</span>
         <span class="hi-res"><span class="hi-lb"><span class="hi-chip">쇼룸 1:1 대화로 고객 취향 분석</span><span class="hi-txt">맞춤 기프트박스 발송 뒤 재구매</span></span><span class="hi-num" data-grow><span class="ln">쇼룸에서 만난 고객 <em>약 70%</em>를</span><br><span class="ln">재구매로 연결</span></span></span>
       </a>
     </nav>
@@ -834,7 +829,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   <div class="wrap">
     <header class="sec-head one">
       <div class="kicker"><b>02</b><span class="mono">Projects</span></div>
-      <h2 class="sec-title">결제, 리텐션, 예약을 끌어올린 <span style="white-space:nowrap">세 개의 케이스</span></h2>
+      <h2 class="sec-title">구매, 예약, 재구매를 끌어올린 <span style="white-space:nowrap">세 개의 케이스</span></h2>
     </header>
   </div>
 
@@ -932,7 +927,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
           <li class="bx" data-step="3"><h4><b>③</b>원인 분석</h4><ul><li>상담 기록 163건 전수 분석: 혜택만 보고 신청한 허수가 8월 초 신청의 절반인 50.5%</li><li>지원금 안내 랜딩은 '신청한 적 없다' 응답이 11.2%, 가격 공개 랜딩은 0.9%</li><li>광고로 재유입됐지만 기존 환자로 분류돼 광고 성과에서 누락되던 예약과 내원을 광고 리드 DB와 매칭해 집계, 광고 성과가 실제보다 낮게 잡히던 왜곡을 보정</li></ul></li>
           <li class="bx q" data-step="4"><h4><b>④</b>문제 정의</h4><div class="bx-c"><p class="bx-q">왜 신청은 늘고 예약은 무너졌나</p><ul><li>광고 성과를 DB 단가로 판정해 소재 ON/OFF를 결정하니, 지원금 소구 소재가 계속 ON으로 유지됐고 시 지원금으로 오인한 허수 신청이 늘어도 판정에 드러나지 않았음</li><li>임플란트는 의료진과 가격을 보고 결정하는데 광고는 둘 다 보여 주지 않았음</li></ul></div></li>
         </ol>
-        <div class="cs-hyp" data-step="H"><span class="hyp-l">가설</span><p>신청 전에 핵심 USP인 의료진 이력과 가격을 보여 주면 허수는 줄고 예약은 늘 것.<small>검증은 같은 기간 기존 소재와 허수, 예약, 내원 비교</small></p>
+        <div class="cs-hyp" data-step="H"><span class="hyp-l">가설</span><p>신청 전에 핵심 USP인 의료진 이력과 가격을 보여 주면 허수는 줄고 예약은 늘 것<small>검증은 같은 기간 기존 소재와 허수, 예약, 내원 비교</small></p>
           <div class="cs-cmp">
             <span class="cmp-chip">As-is</span><span class="cmp-chip to">To-be</span>
             <p class="cmp-box">신청당 비용 기준 소재 판정, 지원금 소구 중심</p><i class="cmp-arr" aria-hidden="true"></i><p class="cmp-box to">예약과 내원 기준 판정, 의료진 이력과 가격 공개 소구</p>
@@ -1087,7 +1082,6 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   <div class="wrap">
     <header class="sec-head one">
       <div class="kicker"><b>03</b><span class="mono">Contact</span></div>
-      <h2 class="sec-title">끝까지 봐 주셔서 감사합니다.</h2>
     </header>
     <div class="thanks">
       <div>
