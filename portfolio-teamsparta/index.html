@@ -659,27 +659,34 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   .cs-steps [data-step]::before{left:-28px}
   .cs-steps [data-step]::after{left:-40px;width:26px;height:26px;margin-top:-13px;font-size:13px;line-height:26px}
 }
-/* 2-1. 1080px 이상과 PDF: 가로 퍼널 띠와 스테퍼를 빼고, 상자 묶음 왼쪽에 세로 퍼널 기둥 (높이는 오른쪽 상자 묶음 전체와 같음). 1079px 이하는 가로 퍼널 띠 그대로 */
+/* 2-1. 1080px 이상과 PDF: 가로 퍼널 띠와 스테퍼를 빼고, 상자 ①~④ 묶음 왼쪽에만 세로 퍼널 기둥 (높이는 ①~④ 묶음과 같음). 가설 상자는 묶음에서 빼서 맨 아래 전체 폭. 상자 라벨은 본문 높이의 세로 가운데이고 라벨 칸 가로 가운데. 1079px 이하는 가로 퍼널 띠, 스테퍼, 라벨 정렬 그대로 */
 .fcol{display:none}
 @media screen and (min-width:1080px),print{
   .cs-a .fband{display:none}
-  .cs-ab{display:grid;grid-template-columns:280px minmax(0,1fr);gap:14px;margin-top:clamp(18px,2vw,26px)}
-  .cs-ab>.cs-steps{margin-top:0;padding-left:0}
+  .cs-ab{display:grid;grid-template-columns:280px minmax(0,1fr);column-gap:28px;margin-top:clamp(18px,2vw,26px)}
+  .cs-ab>.cs-steps{display:contents}
   .cs-ab>.cs-steps [data-step]::before,.cs-ab>.cs-steps [data-step]::after{display:none}
-  .fcol{position:relative;display:flex;align-items:center;justify-content:center;padding:44px 20px;border-radius:14px;background:#f5f6f8}
+  .fcol{grid-column:1;grid-row:1;display:flex;flex-direction:column;padding:26px 0;background:#fff}
+  .cs-ab .cs-boxes{grid-column:2;grid-row:1}
+  .cs-ab .cs-steps .cs-hyp{grid-column:1 / -1;grid-row:2;margin-top:12px}
+  .cs-a .bx{align-items:center}
+  .cs-a .bx h4{justify-content:center;text-align:center}
 }
-/* 기둥 안 퍼널: 위에서 아래로 좁아지는 가로 막대. 끊긴 단계만 --hl 바탕, 바로 위 칸 사이에 --hl 점선과 '이탈' 알약 */
-.vfun{--cut:34px;display:flex;flex-direction:column;align-items:center}
-.vfun>li{display:flex;align-items:center;justify-content:center;height:46px;border:1.5px solid #c9cdd3;border-radius:10px;background:#fff;font-size:19px;font-weight:600;line-height:1;letter-spacing:-.02em;color:#5f646b;white-space:nowrap}
-.vfun>li+li{margin-top:10px}
-.vfun.n4>li:nth-child(1),.vfun.n3>li:nth-child(1){width:240px}
-.vfun.n4>li:nth-child(2){width:205px}
-.vfun.n4>li:nth-child(3){width:170px}
-.vfun.n3>li:nth-child(2){width:195px}
-.vfun.n4>li:nth-child(4),.vfun.n3>li:nth-child(3){width:150px}
-.vfun>li.x{position:relative;margin-top:var(--cut);border:0;background:var(--hl);color:#fff;font-size:21px;font-weight:800;box-shadow:0 5px 12px -5px color-mix(in srgb,var(--hl) 60%,transparent)}
-.vfun>li.x::before{content:"";position:absolute;left:50%;top:calc(var(--cut) / -2);width:70%;transform:translate(-50%,-50%);border-top:2.5px dashed var(--hl)}
-.vcut{position:absolute;left:50%;top:calc(var(--cut) / -2);z-index:1;height:22px;transform:translate(-50%,-50%);padding:0 10px;border:1.5px solid var(--hl);border-radius:999px;background:#fff;font-size:12px;font-weight:800;line-height:19px;letter-spacing:.02em;color:var(--hl);white-space:nowrap}
+/* 기둥 안 퍼널: 첫 막대는 기둥 맨 위, 마지막 막대는 맨 아래, 막대 사이 세로 화살표가 남는 높이를 똑같이 나눔. 끊긴 막대만 --hl 바탕, 그 바로 위 화살표만 --hl 점선과 한가운데 '이탈' 알약 */
+.vfun{flex:1;display:flex;flex-direction:column;align-items:center}
+.vfun>.vb{flex:none;display:flex;align-items:center;justify-content:center;height:52px;border:1.5px solid #b8bcc2;border-radius:10px;background:#fff;font-size:19px;font-weight:600;line-height:1;letter-spacing:-.02em;color:#383b41;white-space:nowrap}
+.vfun.n4>.vb:nth-of-type(1),.vfun.n3>.vb:nth-of-type(1){width:240px}
+.vfun.n4>.vb:nth-of-type(2){width:205px}
+.vfun.n4>.vb:nth-of-type(3){width:170px}
+.vfun.n3>.vb:nth-of-type(2){width:195px}
+.vfun.n4>.vb:nth-of-type(4),.vfun.n3>.vb:nth-of-type(3){width:150px}
+.vfun>.vb.x{border:0;background:var(--hl);color:#fff;font-size:21px;font-weight:800;box-shadow:0 5px 12px -5px color-mix(in srgb,var(--hl) 60%,transparent)}
+.vfun>.va{position:relative;flex:1 1 0;width:14px;min-height:40px;margin:6px 0}
+.vfun>.va::before{content:"";position:absolute;left:50%;top:0;bottom:2px;border-left:2px solid #9aa0a6;transform:translateX(-50%)}
+.vfun>.va::after{content:"";position:absolute;left:50%;bottom:2px;width:10px;height:10px;border-right:2px solid #9aa0a6;border-bottom:2px solid #9aa0a6;transform:translateX(-50%) rotate(45deg)}
+.vfun>.va.x::before{border-left:2.5px dashed var(--hl)}
+.vfun>.va.x::after{border-color:var(--hl)}
+.vcut{position:absolute;left:50%;top:50%;z-index:1;height:22px;transform:translate(-50%,-50%);padding:0 10px;border:1.5px solid var(--hl);border-radius:999px;background:#fff;font-size:12px;font-style:normal;font-weight:800;line-height:19px;letter-spacing:.02em;color:var(--hl);white-space:nowrap}
 
 /* 인쇄: 글자 크기는 그대로 두고 안쪽 여백과 간격만 줄여 한 쪽에 맞춤 */
 @media print{
@@ -688,7 +695,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   .cs-steps{--sg:7px;margin-top:16px}
   .cs-ab{margin-top:16px}
   /* 끊긴 단계 막대의 약한 그림자는 PDF에도 남김 (인쇄 전체 그림자 끔 규칙의 예외) */
-  .vfun>li.x{box-shadow:0 5px 12px -5px color-mix(in srgb,var(--hl) 60%,transparent)!important}
+  .vfun>.vb.x{box-shadow:0 5px 12px -5px color-mix(in srgb,var(--hl) 60%,transparent)!important}
   .cs-a .cs-hyp{padding-top:10px;padding-bottom:10px}
   .cs-a .cs-hyp .cs-cmp{margin-top:10px}
   .cmp-box{padding-top:9px;padding-bottom:9px}
@@ -882,8 +889,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
       </div>
       <div class="cs-ab">
       <div class="fcol" role="img" aria-label="릴스 광고, 랜딩 유입, 가입, 구매 순서의 퍼널에서 가입에서 구매로 가는 단계에서 이탈">
-        <span class="fband-l">퍼널</span>
-        <ol class="vfun n4"><li>릴스 광고</li><li>랜딩 유입</li><li>가입</li><li class="x"><span class="vcut">이탈</span>구매</li></ol>
+        <div class="vfun n4"><span class="vb">릴스 광고</span><i class="va"></i><span class="vb">랜딩 유입</span><i class="va"></i><span class="vb">가입</span><i class="va x"><span class="vcut">이탈</span></i><span class="vb x">구매</span></div>
       </div>
       <div class="cs-steps">
       <ol class="cs-boxes">
@@ -970,8 +976,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
       </div>
       <div class="cs-ab">
       <div class="fcol" role="img" aria-label="광고, 상담 신청, 예약, 내원 순서의 퍼널에서 상담 신청에서 예약으로 가는 단계에서 이탈">
-        <span class="fband-l">퍼널</span>
-        <ol class="vfun n4"><li>광고</li><li>상담 신청</li><li class="x"><span class="vcut">이탈</span>예약</li><li>내원</li></ol>
+        <div class="vfun n4"><span class="vb">광고</span><i class="va"></i><span class="vb">상담 신청</span><i class="va x"><span class="vcut">이탈</span></i><span class="vb x">예약</span><i class="va"></i><span class="vb">내원</span></div>
       </div>
       <div class="cs-steps">
       <ol class="cs-boxes">
@@ -1069,8 +1074,7 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
       </div>
       <div class="cs-ab">
       <div class="fcol" role="img" aria-label="구매, 재방문, 재구매 순서의 퍼널에서 구매에서 재방문으로 가는 단계에서 이탈">
-        <span class="fband-l">퍼널</span>
-        <ol class="vfun n3"><li>구매</li><li class="x"><span class="vcut">이탈</span>재방문</li><li>재구매</li></ol>
+        <div class="vfun n3"><span class="vb">구매</span><i class="va x"><span class="vcut">이탈</span></i><span class="vb x">재방문</span><i class="va"></i><span class="vb">재구매</span></div>
       </div>
       <div class="cs-steps">
       <ol class="cs-boxes">
