@@ -515,12 +515,11 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
 .cs-hyp .hyp-l{flex:none;margin-top:2px;padding:6px 18px;border-radius:999px;background:var(--blue);color:#fff;font-size:17px;font-weight:700;line-height:1.5}
 .cs-hyp>p{font-size:17px;font-weight:600;line-height:1.6;letter-spacing:-.02em;color:var(--ink)}
 .cs-hyp>p small{display:block;margin-top:4px;font-size:14px;font-weight:400;letter-spacing:-.01em;color:var(--ink-2)}
-/* A장 맨 아래 가설 칸: 전체 폭, 가운데 정렬 */
-.cs-a .cs-hyp{display:grid;grid-template-columns:96px minmax(0,1fr) 96px;align-items:center;gap:0 12px;margin-top:12px;text-align:center}
-.cs-a .cs-hyp .hyp-l{justify-self:start;margin-top:0;grid-column:1;grid-row:1}
-/* 가설 상자 안: 가설 문장, 작은 줄, 그 아래 As-is → To-be 띠 */
-.cs-a .cs-hyp>p{grid-column:2;grid-row:1}
-.cs-a .cs-hyp .cs-cmp{grid-column:1 / -1;grid-row:2;margin-top:14px}
+/* A장 맨 아래 가설 칸: 전체 폭. '가설' 칩과 문장을 한 묶음으로 붙여 가운데에, 그 아래 As-is → To-be 띠 */
+.cs-a .cs-hyp{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 14px;margin-top:12px;text-align:left}
+.cs-a .cs-hyp .hyp-l{margin-top:0}
+.cs-a .cs-hyp>p{flex:0 1 auto;max-width:calc(100% - 120px)}
+.cs-a .cs-hyp .cs-cmp{flex-basis:100%;margin-top:14px}
 .cs-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:clamp(24px,2.6vw,36px);align-items:start;margin-top:clamp(16px,1.8vw,22px)}
 /* B장 전략은 2열, 결과까지 3열 */
 .cs-st{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px clamp(20px,2.2vw,30px);align-items:start}
@@ -596,8 +595,8 @@ mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;fon
   .cs-funnel{--fh:42px;row-gap:10px}
   .cs-funnel .fa{width:24px;margin-left:6px;margin-right:9px}
   .cs-hyp{flex-direction:column;gap:8px;padding:14px 16px}
-  .cs-a .cs-hyp{grid-template-columns:minmax(0,1fr);gap:8px}
-  .cs-a .cs-hyp .hyp-l,.cs-a .cs-hyp>p,.cs-a .cs-hyp .cs-cmp{grid-column:1;grid-row:auto}
+  .cs-a .cs-hyp{flex-direction:column;align-items:flex-start;gap:8px}
+  .cs-a .cs-hyp>p{max-width:100%}
   .cs-a .cs-hyp .cs-cmp{margin-top:6px}
   .cs-bar .cs-co{margin-left:0;padding:4px 14px;font-size:14px}
   .cs-bar .cs-co b{font-size:15px}
