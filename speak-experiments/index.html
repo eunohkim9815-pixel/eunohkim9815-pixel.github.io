@@ -601,7 +601,7 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 /* ───────── 표, 도표, 상자 (11/2 개편) ───────── */
 /* 액션 한 장 요약 */
 .ap{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
-.ap-hd,.ap-r{display:grid;grid-template-columns:150px minmax(0,1fr) minmax(0,1.3fr) minmax(0,1fr)}
+.ap-hd,.ap-r{display:grid;grid-template-columns:168px minmax(0,1fr) minmax(0,1.3fr) minmax(0,1fr)}
 .ap-hd span{padding:11px 16px;background:var(--navy);color:#fff;font-size:12.5px;font-weight:700;letter-spacing:-.01em}
 .ap-hd span+span{border-left:1px solid rgba(255,255,255,.12)}
 .ap-g{padding:8px 16px;border-top:1px solid var(--line);background:var(--soft);font-size:12px;font-weight:700;color:var(--ink-2)}
@@ -687,7 +687,7 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 .ev-row{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:12px;margin-top:12px}
 .ev-row .card{margin-top:0}
 .bt{display:grid;margin-top:10px}
-.bt-g,.bt-r{display:grid;grid-template-columns:150px minmax(0,1fr) 82px 78px;align-items:center;gap:10px}
+.bt-g,.bt-r{display:grid;grid-template-columns:150px minmax(0,1fr) 82px 86px;align-items:center;gap:10px}
 .bt-g{padding:10px 0 5px;border-bottom:1px solid var(--ink);font-size:11.5px;font-weight:600;color:var(--mute)}
 .bt-g:first-child{padding-top:0}
 .bt-g span:first-child{grid-column:1 / 3;color:var(--ink);font-size:12.5px;font-weight:700}
@@ -848,7 +848,7 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
   .rd:nth-child(3)::before,.rd:nth-child(3)::after{display:none}
 }
 @media screen and (max-width:760px){
-  .bt-g,.bt-r{grid-template-columns:minmax(0,1fr) 76px 70px;row-gap:3px}
+  .bt-g,.bt-r{grid-template-columns:minmax(0,1fr) 76px 84px;row-gap:3px}
   .bt-l{grid-column:1 / -1}
   .bt-g span:first-child{grid-column:1 / -1}
   .bt-g span:nth-child(3){display:none}
@@ -910,9 +910,9 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 .ax-h{margin:10px 0 6px;font-size:12px;font-weight:700;color:var(--ink)}
 .ax.hot i{background:var(--blue)}
 .ax-foot{margin-top:8px}
-/* Why: 데이터 → 아쉬운 점 → 기회 → 제안 */
+/* Why: 데이터 → 보완 포인트 → 기회 → 제안 */
 .opp{margin-top:14px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
-.opp-hd,.opp-r{display:grid;grid-template-columns:86px minmax(0,1.5fr) minmax(0,1.15fr) minmax(0,1.25fr) 104px}
+.opp-hd,.opp-r{display:grid;grid-template-columns:86px minmax(0,1.5fr) minmax(0,1.15fr) minmax(0,1.25fr) 126px}
 .opp-hd span{padding:9px 12px;background:var(--navy);color:#fff;font-size:12px;font-weight:700}
 .opp-hd span:nth-child(4){background:var(--blue)}
 .opp-r{border-top:1px solid var(--line)}
@@ -979,12 +979,33 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 @media screen and (max-width:420px){.why-pairs{grid-template-columns:minmax(0,1fr)}}
 #plan .road{grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:14px}
 @media screen and (max-width:860px){#plan .road{grid-template-columns:minmax(0,1fr)}}
+/* v4: 제안 번호에 Stage 표기, 근거 이미지 */
+.ex-h em{display:inline-block;margin:0 7px 0 0;vertical-align:2px;padding:1px 8px;border-radius:6px;background:var(--blue);color:#fff;font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.02em;line-height:1.5}
+.sf-p{max-width:100%;line-height:1.35}
+.sf-p.m{white-space:normal}
+@media screen and (max-width:640px){.sf-p{font-size:10.5px;padding:2px 6px}}
+.sf{flex-direction:row;flex-wrap:wrap;align-content:flex-start;gap:6px 4px}
+.sf b{flex:1 0 100%}
+.bt-cs{display:flex;flex-direction:column;align-items:flex-start;gap:3px}
+.ev-push{display:grid;gap:6px;margin-top:10px}
+.ev-push>img{display:block;width:100%;height:auto;border-radius:14px}
+.ev-cap{font-size:11px;line-height:1.45;color:var(--mute)}
+.ev-to{display:flex;align-items:center;gap:8px;margin-top:2px;font-size:12px;line-height:1.45;color:var(--ink-2)}
+.ev-to i{font-style:normal;font-weight:700;color:var(--blue)}
+.ev-to img{flex:none;width:36px;height:36px;border-radius:50%;object-fit:cover;background:#dfe9ff}
+.ev-to strong,.ev-row strong{font-weight:700;color:var(--ink)}
+.ev-row{display:flex;align-items:center;gap:10px;margin-top:10px;padding:8px 10px;border-radius:10px;background:var(--blue-tint)}
+.ev-row img{flex:none;width:84px;height:auto;border-radius:8px}
+.ev-row span{font-size:12px;line-height:1.45;color:var(--ink-2)}
+.fmap-z span.one i{display:none}
+.ap-c{flex-direction:column;align-items:flex-start}
+.ap-s{display:flex;flex-wrap:wrap;align-items:center;gap:4px 7px}
 
 /* print: A4 가로 슬라이드 6쪽 (표지 | Why | What & How | Stage 01 | CRM | So What & Who) */
 @media print{
   @page{size:A4 landscape;margin:6mm}
   @page cover{size:A4 landscape;margin:0}
-  :root{--z-cover:1.270;--z-prob:0.670;--z-plan:0.800;--z-s1:0.720;--z-s2:0.740;--z-imp:1.060;--h-cover:625.0px;}
+  :root{--z-cover:1.270;--z-prob:0.660;--z-plan:0.770;--z-s1:0.720;--z-s2:0.690;--z-imp:1.170;--h-cover:625.0px;}
   html,body{background:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   html{scroll-behavior:auto}
   body{zoom:1}
@@ -1007,13 +1028,18 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
   #longer{zoom:var(--z-s2)}
   #impact{zoom:var(--z-imp)}
   .hero-sub{max-width:none;white-space:nowrap;font-size:16px}
-  #problems .bt-g,#problems .bt-r{grid-template-columns:128px minmax(0,1fr) 74px 70px;gap:8px}
+  #problems .bt-g,#problems .bt-r{grid-template-columns:128px minmax(0,1fr) 74px 80px;gap:8px}
   #problems .ax{grid-template-columns:120px minmax(0,1fr) 18px}
+  #problems .bt-r{padding:4px 0}
+  #problems .bt-cs{gap:2px}
+  #problems .bt-cs em{padding:1px 8px}
+  .ap-c{gap:2px 7px}
+  .ap-c em{padding:1px 8px}
   .sec-head{margin-bottom:16px;padding-bottom:12px}
   .case-head{margin-bottom:16px}
   .src-note{margin-top:10px;padding-top:8px}
   .prob-lead{margin:-4px 0 12px}
-  .ex,.card,.prob,.road,.stat,.rc,.ask,.flow,.qs,.case-chk,.opp,.sfun,.eff,.who{break-inside:avoid}
+  .ex,.card,.prob,.road,.stat,.rc,.flow,.qs,.case-chk,.opp,.sfun,.eff,.who,.ev-push{break-inside:avoid}
   .px,.r-num,.hi-num{transform:none!important}
   .pc:hover{transform:none}
 }
@@ -1057,58 +1083,58 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
       <div class="fmap-z" aria-hidden="true">
         <span style="--s:3"><b>Stage 01</b>더 많이<i>Paid</i></span>
         <span style="--s:3"><b>Stage 02</b>더 오래<i>CRM</i></span>
-        <span style="--s:1"><b>03</b>다시<i>CRM</i></span>
+        <span class="one" style="--s:1"><b>Stage 03</b>다시<i>CRM</i></span>
       </div>
       <ol class="fsteps">
         <li class="fs">
           <div class="fs-h"><span class="fs-no">01</span><span class="fs-n">광고</span></div>
           <span class="fs-z">Stage 01 더 많이</span>
           <div class="fs-pc">
-            <a class="pc" href="#p1b" data-p="1b"><em>01 B</em>재미와 레벨을 앞세운 소재</a>
-            <a class="pc" href="#p1c" data-p="1c"><em>01 C</em>여행 검색에서 시작하는 유입</a>
+            <a class="pc" href="#p1b" data-p="1b"><em>Stage 01 B</em>재미와 레벨을 앞세운 소재</a>
+            <a class="pc" href="#p1c" data-p="1c"><em>Stage 01 C</em>여행 검색에서 시작하는 유입</a>
           </div>
         </li>
         <li class="fs">
           <div class="fs-h"><span class="fs-no">02</span><span class="fs-n">랜딩</span></div>
           <span class="fs-z">Stage 01 더 많이</span>
           <div class="fs-pc">
-            <a class="pc" href="#p1a" data-p="1a"><em>01 A</em>광고 속 가격과 챌린지를 첫 화면에</a>
+            <a class="pc" href="#p1a" data-p="1a"><em>Stage 01 A</em>광고 속 가격과 챌린지를 첫 화면에</a>
           </div>
         </li>
         <li class="fs">
           <div class="fs-h"><span class="fs-no">03</span><span class="fs-n">결제</span></div>
           <span class="fs-z">Stage 01 더 많이</span>
           <div class="fs-pc">
-            <a class="pc m" href="#p1a" data-p="1a-m"><em>01 A로 확인</em>결제 전환, 방문자당 매출</a>
+            <a class="pc m" href="#p1a" data-p="1a-m"><em>Stage 01 A의 성과로 확인</em>결제 전환, 방문자당 매출</a>
           </div>
         </li>
         <li class="fs">
           <div class="fs-h"><span class="fs-no">04</span><span class="fs-n">첫 수업</span></div>
           <span class="fs-z">Stage 02 더 오래</span>
           <div class="fs-pc">
-            <a class="pc m" href="#p1b" data-p="1b-m"><em>01 B, C로 확인</em>첫 수업 완료 단가</a>
+            <a class="pc m" href="#p1b" data-p="1b-m"><em>Stage 01 B, C의 성과로 확인</em>첫 수업 완료 단가</a>
           </div>
         </li>
         <li class="fs">
           <div class="fs-h"><span class="fs-no">05</span><span class="fs-n">첫 30일</span></div>
           <span class="fs-z">Stage 02 더 오래</span>
           <div class="fs-pc">
-            <a class="pc" href="#p2a" data-p="2a"><em>02 A</em>100일 선물 미리 안내</a>
+            <a class="pc" href="#p2a" data-p="2a"><em>Stage 02 A</em>100일 선물 미리 안내</a>
           </div>
         </li>
         <li class="fs">
           <div class="fs-h"><span class="fs-no">06</span><span class="fs-n">갱신</span></div>
           <span class="fs-z">Stage 02 더 오래</span>
           <div class="fs-pc">
-            <a class="pc" href="#p2b" data-p="2b"><em>02 B</em>갱신 전 1년 학습 리포트</a>
+            <a class="pc" href="#p2b" data-p="2b"><em>Stage 02 B</em>갱신 전 1년 학습 리포트</a>
           </div>
         </li>
         <li class="fs">
           <div class="fs-h"><span class="fs-no">07</span><span class="fs-n">복귀</span></div>
           <span class="fs-z">Stage 03 다시</span>
           <div class="fs-pc">
-            <a class="pc" href="#p3a" data-p="3a"><em>03 A</em>AI 튜터나 캐릭터가 말 걸기</a>
-            <a class="pc" href="#p3b" data-p="3b"><em>03 B</em>가입 목적으로 다시 부르기</a>
+            <a class="pc" href="#p3a" data-p="3a"><em>Stage 03 A</em>AI 튜터나 캐릭터가 말 걸기</a>
+            <a class="pc" href="#p3b" data-p="3b"><em>Stage 03 B</em>가입 목적으로 다시 부르기</a>
           </div>
         </li>
       </ol>
@@ -1124,7 +1150,7 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
       <h2 class="sec-title">문제 제기와 기회 포착</h2>
     </header>
     <p class="prob-lead">리뷰 1,194건, 커뮤니티 후기 37건, 블로그 후기 82건, 광고 21개를 직접 모아 분석했습니다.</p>
-    <p class="ap-legend why-legend"><span><span class="prob-go">01 A</span>이 데이터에서 이어지는 제안 번호 (Stage 01의 A안)</span></p>
+    <p class="ap-legend why-legend"><span><span class="prob-go">Stage 01 A</span>이 데이터에서 이어지는 제안</span></p>
     <div class="why-grid">
       <div class="why-col">
         <div class="card">
@@ -1155,25 +1181,26 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
           <h5>블로그 후기 82건 <small class="h-note">막대는 비율, 가는 선은 95% 신뢰구간</small></h5>
           <div class="bt" role="table" aria-label="블로그 후기 82건의 주제별 글 수와 비율">
             <div class="bt-g" role="row"><span role="columnheader">좋았던 점</span><span role="columnheader">글 수와 비율</span><span role="columnheader">이어지는 제안</span></div>
-          <div class="bt-r" role="row" title="직접 말하게 만든다: 48건, 58.5% (95% 신뢰구간 47.7~68.6%)"><span class="bt-l" role="cell">직접 말하게 만든다</span><span class="bt-b" role="cell" aria-hidden="true"><i style="--w:73.2%"></i><span class="ci" style="--lo:59.7%;--hi:85.7%"></span></span><b role="cell">48건<small>59%</small></b><em role="cell">01 B</em></div>
-          <div class="bt-r" role="row" title="실생활 표현과 수업 구성: 47건, 57.3% (95% 신뢰구간 46.5~67.5%)"><span class="bt-l" role="cell">실생활 표현과 수업 구성</span><span class="bt-b" role="cell" aria-hidden="true"><i style="--w:71.6%"></i><span class="ci" style="--lo:58.2%;--hi:84.3%"></span></span><b role="cell">47건<small>57%</small></b><em role="cell">01 C</em></div>
-          <div class="bt-r" role="row" title="불꽃, 리그, 보상: 45건, 54.9% (95% 신뢰구간 44.1~65.2%)"><span class="bt-l" role="cell">불꽃, 리그, 보상</span><span class="bt-b" role="cell" aria-hidden="true"><i style="--w:68.6%"></i><span class="ci" style="--lo:55.2%;--hi:81.5%"></span></span><b role="cell">45건<small>55%</small></b><em role="cell">01 B, 02 A</em></div>
-          <div class="bt-r" role="row" title="짧고 아무 때나: 42건, 51.2% (95% 신뢰구간 40.6~61.7%)"><span class="bt-l" role="cell">짧고 아무 때나</span><span class="bt-b" role="cell" aria-hidden="true"><i style="--w:64.0%"></i><span class="ci" style="--lo:50.7%;--hi:77.2%"></span></span><b role="cell">42건<small>51%</small></b><em role="cell">02 A</em></div>
-          <div class="bt-r" role="row" title="프리톡과 AI 튜터: 36건, 43.9% (95% 신뢰구간 33.7~54.7%)"><span class="bt-l" role="cell">프리톡과 AI 튜터</span><span class="bt-b" role="cell" aria-hidden="true"><i style="--w:54.9%"></i><span class="ci" style="--lo:42.1%;--hi:68.3%"></span></span><b role="cell">36건<small>44%</small></b><em role="cell">03 A</em></div>
+          <div class="bt-r" role="row" title="직접 말하게 만든다: 48건, 58.5% (95% 신뢰구간 47.7~68.6%)"><span class="bt-l" role="cell">직접 말하게 만든다</span><span class="bt-b" role="cell" aria-hidden="true"><i style="--w:73.2%"></i><span class="ci" style="--lo:59.7%;--hi:85.7%"></span></span><b role="cell">48건<small>59%</small></b><span class="bt-cs" role="cell"><em>Stage 01 B</em></span></div>
+          <div class="bt-r" role="row" title="실생활 표현과 수업 구성: 47건, 57.3% (95% 신뢰구간 46.5~67.5%)"><span class="bt-l" role="cell">실생활 표현과 수업 구성</span><span class="bt-b" role="cell" aria-hidden="true"><i style="--w:71.6%"></i><span class="ci" style="--lo:58.2%;--hi:84.3%"></span></span><b role="cell">47건<small>57%</small></b><span class="bt-cs" role="cell"><em>Stage 01 C</em></span></div>
+          <div class="bt-r" role="row" title="불꽃, 리그, 보상: 45건, 54.9% (95% 신뢰구간 44.1~65.2%)"><span class="bt-l" role="cell">불꽃, 리그, 보상</span><span class="bt-b" role="cell" aria-hidden="true"><i style="--w:68.6%"></i><span class="ci" style="--lo:55.2%;--hi:81.5%"></span></span><b role="cell">45건<small>55%</small></b><span class="bt-cs" role="cell"><em>Stage 01 B</em><em>Stage 02 A</em></span></div>
+          <div class="bt-r" role="row" title="짧고 아무 때나: 42건, 51.2% (95% 신뢰구간 40.6~61.7%)"><span class="bt-l" role="cell">짧고 아무 때나</span><span class="bt-b" role="cell" aria-hidden="true"><i style="--w:64.0%"></i><span class="ci" style="--lo:50.7%;--hi:77.2%"></span></span><b role="cell">42건<small>51%</small></b><span class="bt-cs" role="cell"><em>Stage 02 A</em></span></div>
+          <div class="bt-r" role="row" title="프리톡과 AI 튜터: 36건, 43.9% (95% 신뢰구간 33.7~54.7%)"><span class="bt-l" role="cell">프리톡과 AI 튜터</span><span class="bt-b" role="cell" aria-hidden="true"><i style="--w:54.9%"></i><span class="ci" style="--lo:42.1%;--hi:68.3%"></span></span><b role="cell">36건<small>44%</small></b><span class="bt-cs" role="cell"><em>Stage 03 A</em></span></div>
             <div class="bt-g" role="row"><span role="columnheader">고비</span><span></span><span></span></div>
-          <div class="bt-r" role="row" title="꾸준함이 흔들림: 29건, 35.4% (95% 신뢰구간 25.9~46.2%)"><span class="bt-l" role="cell">꾸준함이 흔들림</span><span class="bt-b" role="cell" aria-hidden="true"><i style="--w:44.2%"></i><span class="ci" style="--lo:32.4%;--hi:57.7%"></span></span><b role="cell">29건<small>35%</small></b><em role="cell">02 A</em></div>
-          <div class="bt-r" role="row" title="가격과 요금제: 16건, 19.5% (95% 신뢰구간 12.4~29.4%)"><span class="bt-l" role="cell">가격과 요금제</span><span class="bt-b" role="cell" aria-hidden="true"><i style="--w:24.4%"></i><span class="ci" style="--lo:15.5%;--hi:36.7%"></span></span><b role="cell">16건<small>20%</small></b><em role="cell">01 A, 02 B</em></div>
-          <div class="bt-r" role="row" title="갱신과 해지: 11건, 13.4% (95% 신뢰구간 7.7~22.4%)"><span class="bt-l" role="cell">갱신과 해지</span><span class="bt-b" role="cell" aria-hidden="true"><i style="--w:16.8%"></i><span class="ci" style="--lo:9.6%;--hi:28.1%"></span></span><b role="cell">11건<small>13%</small></b><em role="cell">02 B</em></div>
-          <div class="bt-r" role="row" title="범용 AI와 비교: 5건, 6.1% (95% 신뢰구간 2.6~13.5%)"><span class="bt-l" role="cell">범용 AI와 비교</span><span class="bt-b" role="cell" aria-hidden="true"><i style="--w:7.6%"></i><span class="ci" style="--lo:3.3%;--hi:16.9%"></span></span><b role="cell">5건<small>6%</small></b><em role="cell">02 B, 03 A</em></div>
+          <div class="bt-r" role="row" title="꾸준함이 흔들림: 29건, 35.4% (95% 신뢰구간 25.9~46.2%)"><span class="bt-l" role="cell">꾸준함이 흔들림</span><span class="bt-b" role="cell" aria-hidden="true"><i style="--w:44.2%"></i><span class="ci" style="--lo:32.4%;--hi:57.7%"></span></span><b role="cell">29건<small>35%</small></b><span class="bt-cs" role="cell"><em>Stage 02 A</em></span></div>
+          <div class="bt-r" role="row" title="가격과 요금제: 16건, 19.5% (95% 신뢰구간 12.4~29.4%)"><span class="bt-l" role="cell">가격과 요금제</span><span class="bt-b" role="cell" aria-hidden="true"><i style="--w:24.4%"></i><span class="ci" style="--lo:15.5%;--hi:36.7%"></span></span><b role="cell">16건<small>20%</small></b><span class="bt-cs" role="cell"><em>Stage 01 A</em><em>Stage 02 B</em></span></div>
+          <div class="bt-r" role="row" title="갱신과 해지: 11건, 13.4% (95% 신뢰구간 7.7~22.4%)"><span class="bt-l" role="cell">갱신과 해지</span><span class="bt-b" role="cell" aria-hidden="true"><i style="--w:16.8%"></i><span class="ci" style="--lo:9.6%;--hi:28.1%"></span></span><b role="cell">11건<small>13%</small></b><span class="bt-cs" role="cell"><em>Stage 02 B</em></span></div>
+          <div class="bt-r" role="row" title="범용 AI와 비교: 5건, 6.1% (95% 신뢰구간 2.6~13.5%)"><span class="bt-l" role="cell">범용 AI와 비교</span><span class="bt-b" role="cell" aria-hidden="true"><i style="--w:7.6%"></i><span class="ci" style="--lo:3.3%;--hi:16.9%"></span></span><b role="cell">5건<small>6%</small></b><span class="bt-cs" role="cell"><em>Stage 02 B</em><em>Stage 03 A</em></span></div>
           </div>
         </div>
       </div>
       <div class="why-col">
         <div class="card">
           <h5>광고 21개의 메시지 <small class="h-note">메타 광고 라이브러리, 11.2 기준</small></h5>
-          <div class="msgs" role="img" aria-label="오늘 말한 문장 수 5개, 사용자 후기 4개, 14일 챌린지 4개, AI와 대화 2개, 번역 없이 바로 2개, 그 밖의 메시지 4개, 재미를 약속하는 광고 0개, 여행에서 시작하는 광고 0개">
-            <span><b>5</b>오늘 말한 문장 수</span><span><b>4</b>사용자 후기</span><span><b>4</b>14일 챌린지</span><span><b>2</b>AI와 대화</span><span><b>2</b>번역 없이 바로</span><span><b>4</b>그 밖의 메시지 4종</span><span class="zero"><b>0</b>재미를 약속</span><span class="zero"><b>0</b>여행에서 시작</span>
+          <div class="msgs" role="img" aria-label="오늘 말한 문장 수 5개, 사용자 후기 4개, 14일 챌린지 4개, AI와 대화 2개, 번역 없이 바로 2개, 그 밖의 메시지 4개, 재미를 앞세운 광고 0개, 여행에서 시작하는 광고 0개">
+            <span><b>5</b>오늘 말한 문장 수</span><span><b>4</b>사용자 후기</span><span><b>4</b>14일 챌린지</span><span><b>2</b>AI와 대화</span><span><b>2</b>번역 없이 바로</span><span><b>4</b>그 밖의 메시지 4종</span><span class="zero"><b>0</b>재미를 앞세움</span><span class="zero"><b>0</b>여행에서 시작</span>
           </div>
+          <p class="sub ax-foot">11.3 재확인: 'AI 코치와 1:1' 광고 16개가 새로 나왔고, 여행과 100일 선물은 여전히 0개, '재밌게'는 후기 속 한 줄로만 2개입니다.</p>
         </div>
         <div class="card apx-reg">
           <div class="sx-reg">
@@ -1190,14 +1217,14 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
         </div>
       </div>
     </div>
-    <div class="opp" role="table" aria-label="데이터에서 본 것, 아쉬운 점, 기회, 이어지는 제안">
-      <div class="opp-hd" role="row"><span role="columnheader">퍼널 단계</span><span role="columnheader">데이터에서 본 것</span><span role="columnheader">아쉬운 점</span><span role="columnheader">기회</span><span role="columnheader">제안</span></div>
-      <div class="opp-r" role="row"><span class="opp-s" role="cell">랜딩, 결제</span><span role="cell">광고 속 월 10,750원이 랜딩 첫 화면에선 19,916원(플러스), 커뮤니티 고비 1위가 가격과 요금제</span><span role="cell">광고에서 본 가격과 챌린지가 첫 화면에 바로 보이지 않음</span><span class="opp-o" role="cell"><strong>광고의 약속을 첫 화면까지 이어 결제 직전 망설임 줄이기</strong></span><span class="opp-c" role="cell"><a class="prob-go" href="#p1a">01 A</a></span></div>
-      <div class="opp-r" role="row"><span class="opp-s" role="cell">광고</span><span role="cell">구글 리뷰 칭찬 1위가 재미, 광고 21개 중 재미를 약속하는 광고 0개</span><span role="cell">사용자가 꼽은 재미가 광고에는 아직 없음</span><span class="opp-o" role="cell"><strong>재미와 레벨로 오래 남을 사용자 데려오기</strong></span><span class="opp-c" role="cell"><a class="prob-go" href="#p1b">01 B</a></span></div>
-      <div class="opp-r" role="row"><span class="opp-s" role="cell">광고</span><span role="cell">여행을 시작 이유나 써먹은 순간으로 꼽은 블로그 후기 11건, 여행에서 시작하는 메타 광고 0개</span><span role="cell">메타 광고가 영어를 이미 찾는 사람에게 집중</span><span class="opp-o" role="cell"><strong>여행처럼 영어가 필요해지는 순간의 새 모수</strong></span><span class="opp-c" role="cell"><a class="prob-go" href="#p1c">01 C</a></span></div>
-      <div class="opp-r" role="row"><span class="opp-s" role="cell">첫 30일</span><span role="cell">블로그 고비 1위가 꾸준함, 꾸준함이 흔들린 사람은 그만둔 경우 4.4배, 100일 선물을 늦게 안 후기 5건</span><span role="cell">습관이 흔들리는 첫 달에는 100일 보상이 보이지 않음</span><span class="opp-o" role="cell"><strong>이미 있는 100일 보상을 첫 달의 목표로</strong></span><span class="opp-c" role="cell"><a class="prob-go" href="#p2a">02 A</a></span></div>
-      <div class="opp-r" role="row"><span class="opp-s" role="cell">갱신</span><span role="cell">갱신과 해지를 말한 블로그 후기 11건, '늘고 있는지 확신 없음' 커뮤니티 4건</span><span role="cell">갱신 순간에 1년 동안 쌓은 기록이 함께 보이지 않음</span><span class="opp-o" role="cell"><strong>1년 기록으로 할인 없이 갱신 지키기</strong></span><span class="opp-c" role="cell"><a class="prob-go" href="#p2b">02 B</a></span></div>
-      <div class="opp-r" role="row"><span class="opp-s" role="cell">복귀</span><span role="cell">그만둔 후기 13건 중 6건도 '직접 말하게 만든다'를 좋았던 점으로 꼽음, 프리톡과 AI 튜터 44%</span><span role="cell">지금 복귀 메시지는 브랜드가 말하는 형태</span><span class="opp-o" role="cell"><strong>좋아했던 이유(AI 튜터, 가입 목적)로 다시 말 걸기</strong></span><span class="opp-c" role="cell"><a class="prob-go" href="#p3a">03 A</a><a class="prob-go" href="#p3b">03 B</a></span></div>
+    <div class="opp" role="table" aria-label="데이터에서 본 것, 보완 포인트, 기회, 이어지는 제안">
+      <div class="opp-hd" role="row"><span role="columnheader">퍼널 단계</span><span role="columnheader">데이터에서 본 것</span><span role="columnheader">보완 포인트</span><span role="columnheader">기회</span><span role="columnheader">제안</span></div>
+      <div class="opp-r" role="row"><span class="opp-s" role="cell">랜딩, 결제</span><span role="cell">광고 속 월 10,750원이 랜딩 첫 화면에선 19,916원(플러스), 커뮤니티 고비 1위가 가격과 요금제</span><span role="cell">광고에서 본 가격과 챌린지가 첫 화면에 바로 보이지 않음</span><span class="opp-o" role="cell"><strong>광고의 약속을 첫 화면까지 이어 결제 직전 망설임 줄이기</strong></span><span class="opp-c" role="cell"><a class="prob-go" href="#p1a">Stage 01 A</a></span></div>
+      <div class="opp-r" role="row"><span class="opp-s" role="cell">광고</span><span role="cell">구글 리뷰 칭찬 1위가 재미, 광고 21개 중 재미를 앞세운 광고 0개</span><span role="cell">사용자가 꼽은 재미를 앞세운 광고는 아직 없음</span><span class="opp-o" role="cell"><strong>재미와 레벨로 오래 남을 사용자 데려오기</strong></span><span class="opp-c" role="cell"><a class="prob-go" href="#p1b">Stage 01 B</a></span></div>
+      <div class="opp-r" role="row"><span class="opp-s" role="cell">광고</span><span role="cell">여행을 시작 이유나 써먹은 순간으로 꼽은 블로그 후기 11건, 여행에서 시작하는 메타 광고 0개</span><span role="cell">메타 광고가 영어를 이미 찾는 사람에게 집중</span><span class="opp-o" role="cell"><strong>여행처럼 영어가 필요해지는 순간의 새 모수</strong></span><span class="opp-c" role="cell"><a class="prob-go" href="#p1c">Stage 01 C</a></span></div>
+      <div class="opp-r" role="row"><span class="opp-s" role="cell">첫 30일</span><span role="cell">블로그 고비 1위가 꾸준함, 꾸준함이 흔들린 사람은 그만둔 경우 4.4배, 100일 선물을 늦게 안 후기 5건</span><span role="cell">습관이 흔들리는 첫 달에는 100일 보상이 보이지 않음</span><span class="opp-o" role="cell"><strong>이미 있는 100일 보상을 첫 달의 목표로</strong></span><span class="opp-c" role="cell"><a class="prob-go" href="#p2a">Stage 02 A</a></span></div>
+      <div class="opp-r" role="row"><span class="opp-s" role="cell">갱신</span><span role="cell">갱신과 해지를 말한 블로그 후기 11건, '늘고 있는지 확신 없음' 커뮤니티 4건</span><span role="cell">갱신 순간에 1년 동안 쌓은 기록이 함께 보이지 않음</span><span class="opp-o" role="cell"><strong>1년 기록으로 할인 없이 갱신 지키기</strong></span><span class="opp-c" role="cell"><a class="prob-go" href="#p2b">Stage 02 B</a></span></div>
+      <div class="opp-r" role="row"><span class="opp-s" role="cell">복귀</span><span role="cell">그만둔 후기 13건 중 6건도 '직접 말하게 만든다'를 좋았던 점으로 꼽음, 프리톡과 AI 튜터 44%</span><span role="cell">지금 복귀 메시지는 브랜드가 말하는 형태</span><span class="opp-o" role="cell"><strong>좋아했던 이유(AI 튜터, 가입 목적)로 다시 말 걸기</strong></span><span class="opp-c" role="cell"><a class="prob-go" href="#p3a">Stage 03 A</a><a class="prob-go" href="#p3b">Stage 03 B</a></span></div>
     </div>
     <p class="src-note">자료: 구글 플레이 한국어 리뷰 2026.4~10월 전수, 커뮤니티 글과 댓글 같은 기간, 네이버 블로그 내돈내산 후기(대가 문구나 제휴 링크가 있는 23건 제외, 인용문 원문 대조), 메타 광고 21개 전수와 연결 랜딩. 검정은 Fisher 정확 검정, 회귀는 Firth 로지스틱 회귀입니다. 리뷰와 후기는 아주 만족하거나 불만이 큰 분들이 주로 써서 전체와 다를 수 있어, 원인은 실험으로 확인하겠습니다.</p>
   </div>
@@ -1210,23 +1237,23 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
       <h2 class="sec-title">핵심 아이디어와 실행 방안</h2>
     </header>
     <ol class="road" aria-label="실행 순서">
-      <li class="rd"><span class="rd-w">1차 11월</span><div class="rd-c"><a class="chip-p" href="#p1a">01 A</a><a class="chip-p" href="#p2a">02 A</a></div><p><strong>준비 부담이 적은 것부터.</strong> 지표와 기간을 먼저 고정합니다</p></li>
-      <li class="rd"><span class="rd-w">2차 12월</span><div class="rd-c"><a class="chip-p" href="#p1b">01 B</a><a class="chip-p" href="#p1c">01 C</a></div><p><strong>1차에서 고른 랜딩으로 소재 비교.</strong> 겨울방학과 설 연휴 여행 시즌에 맞춥니다</p></li>
-      <li class="rd"><span class="rd-w">3차 1월부터</span><div class="rd-c"><a class="chip-p" href="#p2b">02 B</a><a class="chip-p" href="#p3a">03 A</a><a class="chip-p" href="#p3b">03 B</a></div><p><strong>갱신과 복귀 대상자부터 순서대로.</strong> 모든 발송에 대조군 10%를 둡니다</p></li>
+      <li class="rd"><span class="rd-w">1차 11월</span><div class="rd-c"><a class="chip-p" href="#p1a">Stage 01 A</a><a class="chip-p" href="#p2a">Stage 02 A</a></div><p><strong>준비 부담이 적은 것부터.</strong> 지표와 기간을 먼저 고정합니다</p></li>
+      <li class="rd"><span class="rd-w">2차 12월</span><div class="rd-c"><a class="chip-p" href="#p1b">Stage 01 B</a><a class="chip-p" href="#p1c">Stage 01 C</a></div><p><strong>1차에서 고른 랜딩으로 소재 비교.</strong> 겨울방학과 설 연휴 여행 시즌에 맞춥니다</p></li>
+      <li class="rd"><span class="rd-w">3차 1월부터</span><div class="rd-c"><a class="chip-p" href="#p2b">Stage 02 B</a><a class="chip-p" href="#p3a">Stage 03 A</a><a class="chip-p" href="#p3b">Stage 03 B</a></div><p><strong>갱신과 복귀 대상자부터 순서대로.</strong> 모든 발송에 대조군 10%를 둡니다</p></li>
     </ol>
-    <p class="ap-legend"><span><em>01 A</em>제안 번호 (Stage 01의 A안)</span><span><b>랜딩</b>퍼널 단계</span><span><i>1차</i>실행 순서</span></p>
+    <p class="ap-legend"><span><em>Stage 01 A</em>제안 번호</span><span><b>랜딩</b>퍼널 단계</span><span><i>1차</i>실행 순서</span></p>
     <div class="ap" role="table" aria-label="제안 7가지의 타깃, 제안 드리고 싶은 것, 핵심 지표">
       <div class="ap-hd" role="row"><span role="columnheader">제안</span><span role="columnheader">타깃</span><span role="columnheader">제안 드리고 싶은 것</span><span role="columnheader">핵심 지표</span></div>
       <div class="ap-g" role="row"><span role="cell">Stage 01 더 많이 (Paid)</span></div>
-      <a class="ap-r" role="row" href="#p1a"><span class="ap-c" role="cell"><em>01 A</em><b>랜딩</b><i>1차</i></span><span role="cell" data-l="타깃">가격 광고와 챌린지 광고로 들어온 방문자</span><span role="cell" data-l="제안 드리고 싶은 것">광고 속 10,750원 플랜과 챌린지 안내를 첫 화면에 둔 랜딩</span><span class="ap-k" role="cell" data-l="핵심 지표"><b>결제 전환</b><small>방문자당 매출</small></span></a>
-      <a class="ap-r" role="row" href="#p1b"><span class="ap-c" role="cell"><em>01 B</em><b>광고</b><i>2차</i></span><span role="cell" data-l="타깃">지금 말하기 소재의 메타 신규 타깃</span><span role="cell" data-l="제안 드리고 싶은 것">후기 속 장면으로 만든 재미 편, '왕초보라면' 레벨 편 영상</span><span class="ap-k" role="cell" data-l="핵심 지표"><b>30일 리텐션</b><small>첫 수업 완료 단가</small></span></a>
-      <a class="ap-r" role="row" href="#p1c"><span class="ap-c" role="cell"><em>01 C</em><b>광고</b><i>2차</i></span><span role="cell" data-l="타깃">'오사카 여행'처럼 여행을 검색하는 사용자</span><span role="cell" data-l="제안 드리고 싶은 것">여행 쇼츠와 검색 광고, 클릭하면 공항 가기 수업으로 연결</span><span class="ap-k" role="cell" data-l="핵심 지표"><b>새 모수의 첫 수업 완료 단가</b><small>30일 리텐션</small></span></a>
+      <a class="ap-r" role="row" href="#p1a"><span class="ap-c" role="cell"><em>Stage 01 A</em><span class="ap-s"><b>랜딩</b><i>1차</i></span></span><span role="cell" data-l="타깃">가격 광고와 챌린지 광고로 들어온 방문자</span><span role="cell" data-l="제안 드리고 싶은 것">광고 속 10,750원 플랜과 챌린지 안내를 첫 화면에 둔 랜딩</span><span class="ap-k" role="cell" data-l="핵심 지표"><b>결제 전환</b><small>방문자당 매출</small></span></a>
+      <a class="ap-r" role="row" href="#p1b"><span class="ap-c" role="cell"><em>Stage 01 B</em><span class="ap-s"><b>광고</b><i>2차</i></span></span><span role="cell" data-l="타깃">지금 말하기 소재의 메타 신규 타깃</span><span role="cell" data-l="제안 드리고 싶은 것">후기 속 장면으로 만든 재미 편, '왕초보라면' 레벨 편 영상</span><span class="ap-k" role="cell" data-l="핵심 지표"><b>30일 리텐션</b><small>첫 수업 완료 단가</small></span></a>
+      <a class="ap-r" role="row" href="#p1c"><span class="ap-c" role="cell"><em>Stage 01 C</em><span class="ap-s"><b>광고</b><i>2차</i></span></span><span role="cell" data-l="타깃">'오사카 여행'처럼 여행을 검색하는 사용자</span><span role="cell" data-l="제안 드리고 싶은 것">여행 쇼츠와 검색 광고, 클릭하면 공항 가기 수업으로 연결</span><span class="ap-k" role="cell" data-l="핵심 지표"><b>새 모수의 첫 수업 완료 단가</b><small>30일 리텐션</small></span></a>
       <div class="ap-g" role="row"><span role="cell">Stage 02 더 오래 (CRM)</span></div>
-      <a class="ap-r" role="row" href="#p2a"><span class="ap-c" role="cell"><em>02 A</em><b>첫 30일</b><i>1차</i></span><span role="cell" data-l="타깃">가입 30일 이내, 3일 연속 수업을 넘긴 사용자</span><span role="cell" data-l="제안 드리고 싶은 것">연속 7일째에 100일 티셔츠를 미리 알리는 인앱 카드와 푸시</span><span class="ap-k" role="cell" data-l="핵심 지표"><b>30일 리텐션</b><small>알림 수 유지</small></span></a>
-      <a class="ap-r" role="row" href="#p2b"><span class="ap-c" role="cell"><em>02 B</em><b>갱신</b><i>3차</i></span><span role="cell" data-l="타깃">연간 구독 갱신 30일 전 사용자</span><span role="cell" data-l="제안 드리고 싶은 것">D-30 1년 학습 리포트 이메일, D-7 알림톡, D-1 푸시</span><span class="ap-k" role="cell" data-l="핵심 지표"><b>할인 없는 갱신율</b><small>결제 문의 감소</small></span></a>
+      <a class="ap-r" role="row" href="#p2a"><span class="ap-c" role="cell"><em>Stage 02 A</em><span class="ap-s"><b>첫 30일</b><i>1차</i></span></span><span role="cell" data-l="타깃">가입 30일 이내, 3일 연속 수업을 넘긴 사용자</span><span role="cell" data-l="제안 드리고 싶은 것">연속 7일째에 100일 티셔츠를 미리 알리는 인앱 카드와 푸시</span><span class="ap-k" role="cell" data-l="핵심 지표"><b>30일 리텐션</b><small>알림 수 유지</small></span></a>
+      <a class="ap-r" role="row" href="#p2b"><span class="ap-c" role="cell"><em>Stage 02 B</em><span class="ap-s"><b>갱신</b><i>3차</i></span></span><span role="cell" data-l="타깃">연간 구독 갱신 30일 전 사용자</span><span role="cell" data-l="제안 드리고 싶은 것">D-30 1년 학습 리포트 이메일, D-7 알림톡, D-1 푸시</span><span class="ap-k" role="cell" data-l="핵심 지표"><b>할인 없는 갱신율</b><small>결제 문의 감소</small></span></a>
       <div class="ap-g" role="row"><span role="cell">Stage 03 다시 (CRM)</span></div>
-      <a class="ap-r" role="row" href="#p3a"><span class="ap-c" role="cell"><em>03 A</em><b>복귀</b><i>3차</i></span><span role="cell" data-l="타깃">마지막 수업 후 3일, 7일, 14일이 지난 사용자</span><span role="cell" data-l="제안 드리고 싶은 것">AI 튜터나 캐릭터가 1인칭으로 말을 거는 복귀 푸시</span><span class="ap-k" role="cell" data-l="핵심 지표"><b>복귀율</b><small>알림 끄기율 유지</small></span></a>
-      <a class="ap-r" role="row" href="#p3b"><span class="ap-c" role="cell"><em>03 B</em><b>복귀</b><i>3차</i></span><span role="cell" data-l="타깃">14일 이상 학습하지 않은 사용자, 가입 목적별</span><span role="cell" data-l="제안 드리고 싶은 것">목적별 복귀 메시지와 그 코스의 리프레셔로 가는 딥링크</span><span class="ap-k" role="cell" data-l="핵심 지표"><b>목적별 복귀율</b></span></a>
+      <a class="ap-r" role="row" href="#p3a"><span class="ap-c" role="cell"><em>Stage 03 A</em><span class="ap-s"><b>복귀</b><i>3차</i></span></span><span role="cell" data-l="타깃">마지막 수업 후 3일, 7일, 14일이 지난 사용자</span><span role="cell" data-l="제안 드리고 싶은 것">AI 튜터나 캐릭터가 1인칭으로 말을 거는 복귀 푸시</span><span class="ap-k" role="cell" data-l="핵심 지표"><b>복귀율</b><small>알림 끄기율 유지</small></span></a>
+      <a class="ap-r" role="row" href="#p3b"><span class="ap-c" role="cell"><em>Stage 03 B</em><span class="ap-s"><b>복귀</b><i>3차</i></span></span><span role="cell" data-l="타깃">14일 이상 학습하지 않은 사용자, 가입 목적별</span><span role="cell" data-l="제안 드리고 싶은 것">목적별 복귀 메시지와 그 코스의 리프레셔로 가는 딥링크</span><span class="ap-k" role="cell" data-l="핵심 지표"><b>목적별 복귀율</b></span></a>
     </div>
     <p class="ap-note">카드 속 <strong>확대 기준의 숫자는 제가 세운 가정</strong>이라, 팀의 과거 데이터로 다시 맞추겠습니다.</p>
   </div>
@@ -1251,10 +1278,10 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
         </div>
       </header>
       <div class="sfun" aria-label="퍼널에서 이 장의 위치">
-        <div class="sf on"><b><span class="n">01</span>광고</b><span class="sf-p">01 B, 01 C</span></div>
-        <div class="sf on"><b><span class="n">02</span>랜딩</b><span class="sf-p">01 A</span></div>
-        <div class="sf on"><b><span class="n">03</span>결제</b><span class="sf-p m">01 A로 확인</span></div>
-        <div class="sf"><b><span class="n">04</span>첫 수업</b><span class="sf-p m">01 B, C로 확인</span></div>
+        <div class="sf on"><b><span class="n">01</span>광고</b><span class="sf-p">Stage 01 B</span><span class="sf-p">Stage 01 C</span></div>
+        <div class="sf on"><b><span class="n">02</span>랜딩</b><span class="sf-p">Stage 01 A</span></div>
+        <div class="sf on"><b><span class="n">03</span>결제</b><span class="sf-p m">Stage 01 A의 성과로 확인</span></div>
+        <div class="sf"><b><span class="n">04</span>첫 수업</b><span class="sf-p m">Stage 01 B, C의 성과로 확인</span></div>
         <div class="sf"><b><span class="n">05</span>첫 30일</b></div>
         <div class="sf"><b><span class="n">06</span>갱신</b></div>
         <div class="sf"><b><span class="n">07</span>복귀</b></div>
@@ -1262,7 +1289,7 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
       <div class="ex-grid">
         <div class="ex first" id="p1a">
           <span class="ex-badge">1차 실행</span>
-          <div class="ex-top"><p class="ex-h"><em>A</em>광고 속 가격과 챌린지를 랜딩 첫 화면에</p><p class="ex-at" aria-label="퍼널 위치"><i>랜딩</i><i>결제</i></p></div>
+          <div class="ex-top"><p class="ex-h"><em>Stage 01 A</em>광고 속 가격과 챌린지를 랜딩 첫 화면에</p><p class="ex-at" aria-label="퍼널 위치"><i>랜딩</i><i>결제</i></p></div>
           <div class="ev ev-img">
             <figure><img src="assets/ad-price.jpg" width="480" height="468" alt="스픽 인스타그램 피드 광고 캡처: 스픽 월 1만원대 링크, 프리미엄 이용권 월 10,750원"><figcaption><b>10,750원</b><span>광고 속 프리미엄 월 가격</span></figcaption></figure>
             <i aria-hidden="true">→</i>
@@ -1281,8 +1308,13 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
           </dl>
         </div>
         <div class="ex" id="p1b">
-          <div class="ex-top"><p class="ex-h"><em>B</em>사용자가 꼽은 재미를 광고 소재로</p><p class="ex-at" aria-label="퍼널 위치"><i>광고</i><i>첫 수업</i></p></div>
-          <p class="ex-why"><b>근거</b>리뷰 칭찬 1위는 <strong>재미</strong>였지만, 재미를 약속하는 광고는 21개 중 0개였습니다</p>
+          <div class="ex-top"><p class="ex-h"><em>Stage 01 B</em>사용자가 꼽은 재미를 광고 소재로</p><p class="ex-at" aria-label="퍼널 위치"><i>광고</i><i>첫 수업</i></p></div>
+          <p class="ex-why"><b>근거</b>리뷰 칭찬 1위는 <strong>재미</strong>였지만, 재미를 앞세운 광고는 21개 중 0개였습니다</p>
+          <div class="ev ev-img">
+            <figure><img src="assets/ad-method.jpg" width="480" height="480" alt="스픽 인스타그램 게시물 캡처: 스픽의 학습법은 다릅니다"><figcaption><b>학습법</b><span>'스픽의 학습법은 다릅니다'</span></figcaption></figure>
+            <figure><img src="assets/ad-cake.jpg" width="480" height="480" alt="스픽 인스타그램 게시물 캡처: 홈케이크 한 판 가격이면 스픽 2개월 무제한"><figcaption><b>가격</b><span>'홈케이크 한 판 가격이면'</span></figcaption></figure>
+          </div>
+          <p class="ev-src">11/2 인스타그램 스픽 게시물 직접 캡처</p>
           <p class="ex-now"><b>기존 자산</b>후기에서 동기로 꼽힌 불꽃, 리그, 100일 티셔츠. <strong>이 장면을 영상에 그대로 활용</strong>합니다</p>
           <dl class="act">
             <div><dt>타깃</dt><dd>지금 말하기 소재가 닿는 메타 신규 타깃 그대로</dd></div>
@@ -1295,7 +1327,7 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
           </dl>
         </div>
         <div class="ex" id="p1c">
-          <div class="ex-top"><p class="ex-h"><em>C</em>여행 검색에서 시작하는 신규 유입</p><p class="ex-at" aria-label="퍼널 위치"><i>광고</i><i>첫 수업</i></p></div>
+          <div class="ex-top"><p class="ex-h"><em>Stage 01 C</em>여행 검색에서 시작하는 신규 유입</p><p class="ex-at" aria-label="퍼널 위치"><i>광고</i><i>첫 수업</i></p></div>
           <p class="ex-why"><b>근거</b>여행을 시작 이유나 써먹은 순간으로 꼽은 블로그 후기 11건, 메타 광고 중 <strong>여행에서 시작하는 소재는 0개</strong>였습니다</p>
           <p class="ex-now"><b>기존 자산</b>여행 영어 코스, '우버타고 공항가기' 같은 상황별 프리톡 수업, 유명 여행 유튜버 협업 광고. <strong>여기에 여행 검색어 타깃을 더합니다</strong></p>
           <dl class="act">
@@ -1330,16 +1362,19 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
         <div class="sf"><b><span class="n">02</span>랜딩</b></div>
         <div class="sf"><b><span class="n">03</span>결제</b></div>
         <div class="sf"><b><span class="n">04</span>첫 수업</b></div>
-        <div class="sf on"><b><span class="n">05</span>첫 30일</b><span class="sf-p">02 A</span></div>
-        <div class="sf on"><b><span class="n">06</span>갱신</b><span class="sf-p">02 B</span></div>
-        <div class="sf on"><b><span class="n">07</span>복귀</b><span class="sf-p">03 A, 03 B</span></div>
+        <div class="sf on"><b><span class="n">05</span>첫 30일</b><span class="sf-p">Stage 02 A</span></div>
+        <div class="sf on"><b><span class="n">06</span>갱신</b><span class="sf-p">Stage 02 B</span></div>
+        <div class="sf on"><b><span class="n">07</span>복귀</b><span class="sf-p">Stage 03 A</span><span class="sf-p">Stage 03 B</span></div>
       </div>
       <div class="crm-groups"><p><b>Stage 02 더 오래</b>첫 30일 리텐션과 갱신율</p><p id="again"><b>Stage 03 다시</b>휴면 사용자 복귀</p></div>
       <div class="ex-grid four">
         <div class="ex" id="p2a">
-          <div class="ex-top"><p class="ex-h"><em>A</em>100일 선물을 첫 30일에 미리 안내</p></div>
+          <div class="ex-top"><p class="ex-h"><em>Stage 02 A</em>100일 선물을 첫 30일에 미리 안내</p></div>
           <p class="ex-why"><b>근거</b>100일 선물을 늦게 안 후기 5건, <strong>'이런 선물 주는 거 알았으면 중간에 안끊기고 열심히 했을 것'</strong></p>
-          <p class="ex-now"><b>기존 자산</b>평소 수업 시각 리마인드, 불꽃 응원과 꺼지기 전 알림, 3일 불꽃 챌린지, 불꽃 유지권, 헌드레드 클럽 안내 메일. <strong>안내 시점만 앞당깁니다</strong></p>
+          <p class="ex-now"><b>기존 자산</b>아래 3일 챌린지 푸시, 불꽃 응원, 수업 시각 리마인드, 불꽃 유지권, 헌드레드 클럽 안내 메일. <strong>3일 보상처럼 100일 보상도 미리</strong> 알립니다</p>
+          <div class="ev-push">
+            <img src="assets/push-challenge.jpg" width="760" height="159" alt="직접 받은 스픽 푸시 캡처: 11월 불꽃 챌린지 오픈. 딱! 3일만 연속 수업해도 네이버 페이 포인트 5,000원! (총 100명)">
+          </div>
           <dl class="act">
             <div><dt>타깃</dt><dd>가입 30일 이내, 3일 연속 수업을 넘긴 사용자</dd></div>
             <div><dt>제안</dt><dd><strong>연속 7일째에 100일 티셔츠를 미리 안내</strong>하는 인앱 카드와 푸시 (기존 알림 1회 대체)</dd></div>
@@ -1352,9 +1387,10 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
           <p class="msg"><span>메시지 예시</span>"7일 연속 성공! 이대로 100일이면 헌드레드 클럽 티셔츠를 보내 드려요"</p>
         </div>
         <div class="ex" id="p2b">
-          <div class="ex-top"><p class="ex-h"><em>B</em>갱신 전 1년 학습 리포트</p></div>
+          <div class="ex-top"><p class="ex-h"><em>Stage 02 B</em>갱신 전 1년 학습 리포트</p></div>
           <p class="ex-why"><b>근거</b>해지를 안 해 둬 새벽에 환불을 문의한 후기, <strong>늘고 있는지 확신이 없다</strong>는 글</p>
           <p class="ex-now"><b>기존 자산</b>앱 속 누적 기록, 주간 다이제스트 이메일, 연말 결산 Speak Wrapped. <strong>결산을 갱신 30일 전, 개인의 1년 기준으로</strong> 보냅니다</p>
+          <p class="ev-row"><img src="assets/badge-sentences.jpg" width="332" height="228" alt="스픽 랜딩 캡처: 7일간 문장 발화 수 1,356"><span>광고와 랜딩이 쓰는 <strong>'말한 문장 수'</strong>를 1년 치로 모아 리포트 첫 줄에</span></p>
           <dl class="act">
             <div><dt>타깃</dt><dd>연간 구독 갱신 30일 전 사용자 (최근 30일 학습 여부로 구분)</dd></div>
             <div><dt>제안</dt><dd><strong>D-30 1년 학습 리포트 이메일</strong>, D-7 갱신일과 금액, 해지 방법 알림톡, D-1 푸시</dd></div>
@@ -1366,9 +1402,13 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
           </dl>
         </div>
         <div class="ex" id="p3a">
-          <div class="ex-top"><p class="ex-h"><em>A</em>AI 튜터나 캐릭터가 1인칭으로 말 걸기</p></div>
+          <div class="ex-top"><p class="ex-h"><em>Stage 03 A</em>AI 튜터나 캐릭터가 1인칭으로 말 걸기</p></div>
           <p class="ex-why"><b>근거</b>프리톡과 AI 튜터를 좋았던 점으로 꼽은 후기 44%, <strong>그만둔 후기 13건 중 6건도 '직접 말하게 만든다'를 꼽음</strong></p>
-          <p class="ex-now"><b>기존 자산</b>'스피킹 할 것인가, 말 것인가…' 같은 재치 있는 문구, '5분이면 된다', 꺼진 불꽃 되살리기. <strong>말투와 빈도는 그대로, 화자만 바꿉니다</strong></p>
+          <p class="ex-now"><b>기존 자산</b>아래와 같은 재치 있는 문구, '5분이면 된다', 꺼진 불꽃 되살리기. <strong>말투와 빈도는 그대로, 화자만 바꿉니다</strong></p>
+          <div class="ev-push">
+            <img src="assets/push-speaking.jpg" width="760" height="172" alt="직접 받은 스픽 푸시 캡처: 스피킹 할 것인가, 말 것인가… 그것이 문제로다… 하지만 이미 올바른 답을 알고 계시죠?">
+            <p class="ev-to"><i aria-hidden="true">→</i><img src="assets/char-blue.jpg" width="200" height="200" alt="스픽 랜딩 속 파란 캐릭터"><span><strong>이 캐릭터나 AI 튜터</strong>가 1인칭으로</span></p>
+          </div>
           <dl class="act">
             <div><dt>타깃</dt><dd>구독 중, 마지막 수업 후 3일, 7일, 14일이 지난 사용자</dd></div>
             <div><dt>제안</dt><dd><strong>AI 튜터나 광고 속 파란 캐릭터가 1인칭으로</strong> 말을 거는 복귀 푸시</dd></div>
@@ -1381,7 +1421,7 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
           <p class="msg"><span>메시지 예시, AI 튜터</span>"저 혼자 영어로 떠들고 있었어요. 3분만 같이 얘기해요"</p>
         </div>
         <div class="ex" id="p3b">
-          <div class="ex-top"><p class="ex-h"><em>B</em>가입 목적으로 다시 부르기</p></div>
+          <div class="ex-top"><p class="ex-h"><em>Stage 03 B</em>가입 목적으로 다시 부르기</p></div>
           <p class="ex-why"><b>근거</b>한 달 하다 잊은 사용자도 <strong>자기 상황에 맞는</strong> 부모용 코스 이야기에는 '이런 기능이?' 하며 다시 관심</p>
           <p class="ex-now"><b>기존 자산</b>가입 때 고르는 학습 목적과 목적별 코스, '처음 시작한 계기를 생각해 보세요' 같은 초심 푸시, 유닛 리프레셔. <strong>계기 자리에 고른 목적을 직접 넣습니다</strong></p>
           <dl class="act">
@@ -1414,16 +1454,16 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
         <h5>기대 효과 <small class="h-note">확대 기준을 달성했을 때의 효과 (숫자는 가정)</small></h5>
         <div class="eff">
           <div class="eff-r"><span class="eff-s"><em>Stage 01</em>Paid</span><ul>
-            <li><b>결제 전환 10% 상승</b><i aria-hidden="true">→</i><span>같은 광고비로 <strong>결제 단가 약 9% 절감</strong></span><em class="eff-c">01 A</em></li>
-            <li><b>30일 리텐션이 높은 소구로 예산 이동</b><i aria-hidden="true">→</i><span>오래 남는 신규 사용자 비중 확대</span><em class="eff-c">01 B, C</em></li>
+            <li><b>결제 전환 10% 상승</b><i aria-hidden="true">→</i><span>같은 광고비로 <strong>결제 단가 약 9% 절감</strong></span><em class="eff-c">Stage 01 A</em></li>
+            <li><b>30일 리텐션이 높은 소구로 예산 이동</b><i aria-hidden="true">→</i><span>오래 남는 신규 사용자 비중 확대</span><em class="eff-c">Stage 01 B, C</em></li>
           </ul></div>
           <div class="eff-r"><span class="eff-s"><em>Stage 02</em>CRM</span><ul>
-            <li><b>30일 리텐션 5% 상승</b><i aria-hidden="true">→</i><span>알림 수를 늘리지 않고 <strong>첫 달 이탈 감소</strong></span><em class="eff-c">02 A</em></li>
-            <li><b>할인 없는 갱신율 유지</b><i aria-hidden="true">→</i><span><strong>할인 비용 없이 갱신 매출 확보</strong>, 결제 문의 감소</span><em class="eff-c">02 B</em></li>
+            <li><b>30일 리텐션 5% 상승</b><i aria-hidden="true">→</i><span>알림 수를 늘리지 않고 <strong>첫 달 이탈 감소</strong></span><em class="eff-c">Stage 02 A</em></li>
+            <li><b>할인 없는 갱신율 유지</b><i aria-hidden="true">→</i><span><strong>할인 비용 없이 갱신 매출 확보</strong>, 결제 문의 감소</span><em class="eff-c">Stage 02 B</em></li>
           </ul></div>
           <div class="eff-r"><span class="eff-s"><em>Stage 03</em>CRM</span><ul>
-            <li><b>복귀율 10% 상승</b><i aria-hidden="true">→</i><span>발송 빈도는 그대로 두고 <strong>휴면 사용자 복귀</strong></span><em class="eff-c">03 A</em></li>
-            <li><b>목적별 복귀율 확인</b><i aria-hidden="true">→</i><span>어떤 소구로 들어온 사용자가 돌아오는지 <strong>Stage 01 소구 선택에 반영</strong></span><em class="eff-c">03 B</em></li>
+            <li><b>복귀율 10% 상승</b><i aria-hidden="true">→</i><span>발송 빈도는 그대로 두고 <strong>휴면 사용자 복귀</strong></span><em class="eff-c">Stage 03 A</em></li>
+            <li><b>목적별 복귀율 확인</b><i aria-hidden="true">→</i><span>어떤 소구로 들어온 사용자가 돌아오는지 <strong>Stage 01 소구 선택에 반영</strong></span><em class="eff-c">Stage 03 B</em></li>
           </ul></div>
         </div>
         <p class="sub eff-note">확대 기준의 숫자는 제가 세운 가정이며, 팀의 과거 데이터로 다시 맞추겠습니다.</p>
@@ -1431,14 +1471,13 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
       <div class="card">
         <h5>입사 후 바로 맡을 수 있는 역할</h5>
         <ol class="who">
-          <li><div class="who-h"><b>랜딩과 소재 제작</b><span class="prob-gos"><a class="prob-go" href="#p1a">01 A</a><a class="prob-go" href="#p1b">01 B</a></span></div><p>지금 회사에서 치과 광고의 랜딩 기획과 소재 제작을 맡고 있습니다. 포항 임플란트 광고에서는 소재 판단 기준을 임플란트 상담 신청 단가에서 예약으로 바꿔 <strong>계정 전체 예약률을 3배 회복</strong>했습니다.</p></li>
+          <li><div class="who-h"><b>랜딩과 소재 제작</b><span class="prob-gos"><a class="prob-go" href="#p1a">Stage 01 A</a><a class="prob-go" href="#p1b">Stage 01 B</a></span></div><p>지금 회사에서 치과 광고의 랜딩 기획과 소재 제작을 맡고 있습니다. 포항 임플란트 광고에서는 소재 판단 기준을 임플란트 상담 신청 단가에서 예약으로 바꿔 <strong>계정 전체 예약률을 3배 회복</strong>했습니다.</p></li>
           <li><div class="who-h"><b>데이터 자동 적재와 판정</b><span class="who-to">주간 대시보드</span></div><p>구글 시트와 앱스 스크립트로 캠페인 데이터를 <strong>하루 3번 자동으로 쌓고</strong>, 학습 단계를 고려한 판정 수식을 만들어 쓰고 있습니다. 광고 성과, 앱 이벤트, 발송 데이터를 같은 방식으로 모아 매주 같은 기준으로 보겠습니다.</p></li>
           <li><div class="who-h"><b>놓치던 성과 찾기</b><span class="who-to">제안 효과 추적</span></div><p>기존 환자로 분류돼 광고 성과에서 빠지던 예약을 광고 리드와 매칭하는 함수를 만들어, <strong>놓치던 성과를 찾고 정례화</strong>했습니다. 스픽에서도 Paid 소구와 CRM 갱신, 복귀 데이터를 이어 제안 효과를 끝까지 보겠습니다.</p></li>
           <li><div class="who-h"><b>실험 설계와 통계</b><span class="who-to">실험 판정</span></div><p>관심사 타깃과 소재 변수를 나눈 A/B 테스트를 설계해 왔고, 방통대에서 통계데이터과학을 공부하고 있습니다. <strong>이번 분석의 검정과 회귀처럼</strong> 실험 결과를 숫자로 판정하겠습니다.</p></li>
         </ol>
       </div>
     </div>
-    <div class="ask"><span class="mono">Question</span><p>실제로 가장 공들이고 계신 구간이 어디인지 궁금합니다</p></div>
   </div>
 </section>
 
