@@ -865,9 +865,9 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 
 /* print: A4 가로 슬라이드 (표지 | 액션 요약 | 문제 6가지 | 근거 데이터 | Stage 01 | Stage 02 | Stage 03 | 확인 방법) */
 @media print{
-  @page{size:A4 landscape;margin:9mm 11mm}
+  @page{size:A4 landscape;margin:6mm}
   @page cover{size:A4 landscape;margin:0}
-  :root{--z-cover:0.900;--z-plan:0.850;--z-prob:0.770;--z-s1:0.660;--z-s2:0.650;--z-s3:0.770;--z-m:0.850;--z-app:0.920;--h-cover:881.9px;}
+  :root{--z-cover:1.090;--z-plan:0.960;--z-prob:0.810;--z-s1:0.690;--z-s2:0.680;--z-s3:0.800;--z-m:0.940;--z-app:1.190;--h-cover:728.2px;}
   html,body{background:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   html{scroll-behavior:auto}
   body{zoom:1}
@@ -891,6 +891,9 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
   #again{zoom:var(--z-s3)}
   #measure{zoom:var(--z-m)}
   #evidence{zoom:var(--z-app)}
+  #evidence .apx-grid{grid-template-columns:minmax(0,1.9fr) minmax(0,1fr) minmax(0,1.15fr)}
+  #evidence .bt-g,#evidence .bt-r{grid-template-columns:128px minmax(0,1fr) 74px 70px;gap:8px}
+  #evidence .ax{grid-template-columns:100px minmax(0,1fr) 18px}
   .sec-head{margin-bottom:16px;padding-bottom:12px}
   .case-head{margin-bottom:16px}
   .src-note{margin-top:10px;padding-top:8px}
