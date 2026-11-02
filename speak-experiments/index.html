@@ -705,6 +705,12 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
 .ev>div:last-child b{color:var(--blue)}
 .ev span{font-size:12px;line-height:1.45;color:var(--ink-2)}
 .ev>i{align-self:center;flex:none;font-style:normal;font-size:18px;font-weight:700;color:var(--blue)}
+.ev-img{align-items:flex-start;gap:10px}
+.ev-img figure{flex:1 1 0;min-width:0;display:grid;gap:7px}
+.ev-img img{width:100%;max-width:168px;height:auto;aspect-ratio:1 / 1;object-fit:cover;object-position:center;border-radius:8px;background:#fff;box-shadow:0 0 0 1px rgba(12,13,15,.1)}
+.ev-img figcaption{display:grid;gap:2px}
+.ev-img>i{margin-top:70px}
+.ev-src{margin-top:5px;font-size:11px;color:var(--mute)}
 .ex .ex-why{margin-top:8px;padding:0;background:none;font-size:13px;line-height:1.55;color:var(--ink-2)}
 .ex .ex-now{margin-top:8px}
 .ex .spec{margin:12px 0 0}
@@ -785,41 +791,41 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
   .dline::before{right:6px}
 }
 
-/* print: A4 세로 (개요와 강점 | 통계와 광고, Stage 01 | CRM 매체와 Stage 02 | Stage 03과 측정) */
+/* print: A4 가로 슬라이드 (표지 | 강점 | 통계 | 광고 | Stage 01 | CRM 매체 | Stage 02 | Stage 03 | 확인 방법) */
 @media print{
-  @page{size:A4;margin:9mm 10mm}
+  @page{size:A4 landscape;margin:9mm 11mm}
+  @page cover{size:A4 landscape;margin:0}
+  :root{--z-cover:0.900;--z-love:0.850;--z-stat:0.900;--z-ads:0.900;--z-s1:0.690;--z-ch:0.900;--z-s2:0.750;--z-s3:0.830;--z-m:0.900;--h-cover:881.9px;}
   html,body{background:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   html{scroll-behavior:auto}
-  body{zoom:var(--pz,.54)}
+  body{zoom:1}
   *,*::before,*::after{box-shadow:none!important;text-shadow:none!important}
   .topbar,.copy,.foot,.hi-go,.site-link,.closing,.fmap-lg .lg-go{display:none!important}
-  .wrap{max-width:none;padding:0 6px}
-  .hero{padding:20px 0 22px!important;border-radius:16px}
-  .hero .wrap{padding:0 28px}
-  .hero-meta{margin-bottom:14px;padding-bottom:10px}
-  .hero-pre{margin-bottom:8px}
-  .hero-title{font-size:50px}
-  .hero-sub{margin-top:8px}
-  .fmap{margin-top:18px}
-  .sec{padding:30px 0 0!important}
-  .sec-head{margin-bottom:18px;padding-bottom:12px}
-  .case{padding:26px 0 0!important;border-top:0}
+  .wrap{max-width:none;padding:0}
+  /* 슬라이드 나누기 */
+  .hero{page:cover;zoom:var(--z-cover);height:var(--h-cover);padding:0!important;display:flex;flex-direction:column;justify-content:center;border-radius:0;break-after:page}
+  .hero .wrap{padding:0 56px}
+  .hero-meta{margin-bottom:22px;padding-bottom:12px}
+  .fmap{margin-top:26px}
+  #love,#ads,#more,#channels,#longer,#again,#measure,#love .sx{break-before:page}
+  #stages>.wrap{display:none}
+  .case-no{font-size:60px}
+  .sec,.case{padding:0!important;border-top:0}
+  #love .sec-head,#love .love-grid,#love .ev-row{zoom:var(--z-love)}
+  #love .sx,#love .src-note{zoom:var(--z-stat)}
+  #love .sx{margin-top:0}
+  #ads{zoom:var(--z-ads)}
+  #more{zoom:var(--z-s1)}
+  #channels{zoom:var(--z-ch)}
+  #longer{zoom:var(--z-s2)}
+  #again{zoom:var(--z-s3)}
+  #measure{zoom:var(--z-m)}
+  .sec-head{margin-bottom:16px;padding-bottom:12px}
   .case-head{margin-bottom:16px}
   .src-note{margin-top:10px;padding-top:8px}
-  #ads{break-before:var(--brk-ads,auto)}
-  #channels{break-before:var(--brk-ch,page)}
-  #longer{break-before:var(--brk-longer,auto)}
-  #again{break-before:var(--brk-again,auto)}
-  #measure{break-before:var(--brk-measure,auto)}
-  #stages{padding-top:0!important}
-  .ex,.ad-grid .card,.ctx .card,.ev-row .card,.ch-table,.sx,.road,.m-grid .card{break-inside:avoid}
-  .case{break-inside:auto}
-  .card,.kpi,.need,.st,.rc,.hi,.stat,.flow,.ask{break-inside:avoid}
+  .ex,.card,.ch-table,.sx,.road,.stat,.rc,.ask,.flow{break-inside:avoid}
   .px,.r-num,.hi-num{transform:none!important}
   .pc:hover{transform:none}
-  .sec-head,.case-head,.ch-head,#stages>.wrap{break-after:avoid}
-  .sec-head{margin-bottom:14px}
-  .fmap-lg{margin-top:10px}
 }
 </style>
 </head>
@@ -1102,11 +1108,12 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
         <div class="ex first" id="p1a">
           <span class="ex-badge">준비가 가장 가벼운 제안</span>
           <div class="ex-top"><p class="ex-h"><em>A</em>광고의 약속을 랜딩 첫 화면까지</p><p class="ex-at" aria-label="퍼널 위치"><i>랜딩</i><i>결제</i></p></div>
-          <div class="ev">
-            <div><b>10,750원</b><span>광고 속 프리미엄 월 가격</span></div>
+          <div class="ev ev-img">
+            <figure><img src="assets/ad-price.jpg" width="480" height="468" alt="스픽 인스타그램 피드 광고 캡처: 스픽 월 1만원대 링크, 프리미엄 이용권 월 10,750원"><figcaption><b>10,750원</b><span>광고 속 프리미엄 월 가격</span></figcaption></figure>
             <i aria-hidden="true">→</i>
-            <div><b>19,916원</b><span>랜딩에서 먼저 보이는 가격 (플러스)</span></div>
+            <figure><img src="assets/landing-price.jpg" width="480" height="480" alt="광고를 누르면 열리는 랜딩 첫 화면 캡처: 이 링크에서 스픽 할인, 프리미엄 플러스 월 19,916원"><figcaption><b>19,916원</b><span>누르면 랜딩에서 먼저 보이는 가격 (플러스)</span></figcaption></figure>
           </div>
+          <p class="ev-src">11/2 인스타그램 피드 광고와 연결 랜딩, 직접 캡처</p>
           <p class="ex-why">14일 챌린지 안내도 찾지 못했고, '프리미엄이 가장 기본 맞습니다'라며 더 낮은 단계를 한참 찾았다는 블로그 후기도 있었습니다</p>
           <p class="ex-now"><b>이미 있는 것</b>플랜 표, 앱 속 챌린지와 아이패드 추첨. 새로 만들지 않고 보이는 위치만 바꾸기</p>
           <dl class="spec">
