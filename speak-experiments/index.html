@@ -1239,14 +1239,13 @@ figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
         <div class="card apx-reg">
           <div class="sx-reg">
             <h6>그만둔 사람에게 함께 나타난 특징 (회귀 분석)</h6>
-            <p class="cap">블로그 후기 중 상태를 알 수 있는 78건에서, 지금은 안 쓴다는 13건과 나머지를 비교했습니다 (Firth 로지스틱 회귀, 세 특징을 함께 넣음)</p>
+            <p class="cap">블로그 후기 중 상태를 알 수 있는 78건에서, 지금은 안 쓴다는 13건과 나머지를 비교했습니다 (Firth 로지스틱 회귀, 초대 링크 여부로 보정)</p>
             <div class="fp" role="table" aria-label="그만둔 경우의 배수와 95% 신뢰구간">
             <div class="fp-r" role="row"><div class="fp-t"><span role="cell">불꽃, 리그, 보상을 동기로 꼽음</span><b role="cell">0.05배 <small>(0.004~0.24), p&lt;0.001</small></b></div><div class="fp-a" aria-hidden="true" style="--ref:61.4%;--lo:7.2%;--hi:47.2%;--or:30.8%"><span class="ci"></span><span class="pt"></span></div></div>
             <div class="fp-r" role="row"><div class="fp-t"><span role="cell">꾸준함이 흔들렸다고 씀</span><b role="cell">4.4배 <small>(1.1~21.5), p=0.03</small></b></div><div class="fp-a" aria-hidden="true" style="--ref:61.4%;--lo:62.5%;--hi:91.7%;--or:76.0%"><span class="ci"></span><span class="pt"></span></div></div>
-            <div class="fp-r" role="row"><div class="fp-t"><span role="cell">초대 링크가 있음 (보정용)</span><b role="cell">0.25배 <small>(0.04~1.1), p=0.06</small></b></div><div class="fp-a" aria-hidden="true" style="--ref:61.4%;--lo:30.2%;--hi:62.0%;--or:47.5%"><span class="ci"></span><span class="pt"></span></div></div>
               <div class="fp-ax" aria-hidden="true"><span style="left:15.9%">0.01</span><span style="left:38.6%">0.1</span><span style="left:61.4%">1</span><span style="left:84.1%">10</span></div>
             </div>
-            <p class="cap">1배보다 작으면 그만둔 사람이 적고, 크면 많다는 뜻입니다. 초대 링크는 칭찬 쪽으로 기울 수 있어 함께 넣어 보정했습니다.</p>
+            <p class="cap">1배보다 작으면 그만둔 사람이 적고, 크면 많다는 뜻입니다. 초대 링크가 붙은 글은 아쉬운 점을 덜 써서(55% 대 87%) 회귀에서 보정했습니다.</p>
           </div>
         </div>
       </div>
