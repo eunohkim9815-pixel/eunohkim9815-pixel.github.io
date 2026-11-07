@@ -1,0 +1,1274 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>김은오 포트폴리오</title>
+<meta name="description" content="데이터로 퍼널의 이탈 원인을 찾아 전환을 끌어올려 온 김은오의 포트폴리오">
+<meta property="og:type" content="website">
+<meta property="og:title" content="김은오 포트폴리오">
+<meta property="og:description" content="데이터로 퍼널의 이탈 원인을 찾아 전환을 끌어올려 온 김은오의 포트폴리오">
+<meta property="og:url" content="https://eunohkim9815-pixel.github.io/portfolio-ohouse/">
+<meta property="og:image" content="https://eunohkim9815-pixel.github.io/portfolio-ohouse/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d0e10'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='700' text-anchor='middle' fill='%23fff'%3EEK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --bg:#ffffff; --ink:#0d0e10; --ink-2:#383b41; --mute:#72767d; --mute-2:#a4a8ae; --line:#e5e7ea; --soft:#f4f5f7; --soft-2:#eceef1;
+  /* 하이라이트: 오늘의집 브랜드 컬러 Ohouse Sky. 면, 선, 큰 숫자에 씀. 다른 값으로 확정되면 이 줄만 바꾸기 */
+  --hl:#35C5F0;
+  /* 작은 글씨용 진한 하늘색: Ohouse Sky는 흰 바탕에서 대비가 약 2:1이라 작은 글씨는 같은 계열의 진한 색으로(대비 약 4:1) */
+  --hl-ink:#0A86B8;
+  /* 예전 강조색 변수는 중립으로: 진한 글자색과 연한 회색 */
+  --blue:#16171a; --blue-deep:#16171a; --blue-tint:#f5f6f8;
+  --gray-d:#5f646b; --line-2:#d8dbe0;
+  --sans:'IBM Plex Sans KR','Apple SD Gothic Neo','Noto Sans KR',system-ui,sans-serif;
+  --serif:var(--sans); --it:var(--sans);
+  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --gutter:clamp(16px,3.6vw,56px); --maxw:1800px; --bar:58px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#fff;-webkit-text-size-adjust:100%;scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.65;letter-spacing:-0.01em;word-break:keep-all;overflow-wrap:break-word;overflow-x:clip;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+ol,ul{list-style:none}
+::selection{background:var(--blue);color:#fff}
+.wrap{width:100%;max-width:calc(var(--maxw) + 2*var(--gutter));margin:0 auto;padding:0 var(--gutter)}
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:400}
+section[id],article[id]{scroll-margin-top:calc(var(--bar) + 12px)}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
+
+/* top bar */
+.topbar{position:fixed;left:0;right:0;top:0;z-index:60;background:#fff;border-bottom:1px solid var(--line)}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;height:var(--bar);gap:16px}
+.brand{display:flex;align-items:baseline;gap:10px;white-space:nowrap}
+.brand b{font-weight:700;font-size:17px;letter-spacing:-.02em}
+.brand span{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;color:var(--mute)}
+.nav{display:flex;gap:clamp(16px,2.4vw,32px);font-size:13.5px;color:var(--ink-2)}
+.nav a{position:relative;padding:6px 0;transition:color .2s}
+.nav a:hover,.nav a.on{color:var(--ink)}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:0 50%;transition:transform .25s}
+.nav a.on::after{transform:scaleX(1)}
+.progress{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--gray-d);transform-origin:0 50%;transform:scaleX(0)}
+
+/* hero */
+.hero{padding:calc(var(--bar) + clamp(28px,4vw,56px)) 0 clamp(56px,7vw,96px)}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:center;color:var(--mute);font-size:13px;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:clamp(36px,5vw,72px)}
+.hero-meta .mono{color:var(--ink)}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--blue);display:inline-block;margin-right:8px;vertical-align:middle}
+.site-link{margin-left:auto;display:inline-flex;flex-wrap:wrap;align-items:center;gap:2px 10px;padding:6px 14px;border-radius:999px;border:1.5px solid var(--blue);background:var(--blue-tint);color:var(--blue-deep);font-size:12.5px;line-height:1.4;transition:background .2s,color .2s}
+.site-link b{font-weight:700}
+.site-link span{font-family:var(--mono);font-size:12px;letter-spacing:0;overflow-wrap:anywhere}
+.site-link:hover{background:var(--blue);color:#fff}
+.hero-title{font-weight:700;font-size:clamp(31px,4.6vw,64px);line-height:1.24;letter-spacing:-.045em}
+.hero-title .hl{color:var(--blue)}
+.hl-band{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:clamp(40px,5vw,72px)}
+.hi{display:flex;flex-direction:column;padding:22px 24px 20px;border-radius:18px;border:1px solid var(--line);background:#fff;transition:border-color .25s,transform .35s cubic-bezier(.2,.7,.2,1)}
+.hi:hover{border-color:var(--ink);transform:translateY(-3px)}
+.hi .mono{color:var(--mute);font-size:10.5px}
+.hi-name{margin-top:6px;font-size:20px;font-weight:700;letter-spacing:-.03em}
+.hi-tag{font-size:13px;color:var(--mute)}
+.hi-res{margin-top:22px;padding-top:16px;border-top:1px solid var(--line)}
+.hi-lb{display:block;font-size:13.5px;color:var(--ink-2)}
+.hi-num{display:block;margin-top:2px;font-size:clamp(30px,3vw,40px);font-weight:700;letter-spacing:-.04em;color:var(--blue);line-height:1.15;transform-origin:0 100%}
+.hi-go{margin-top:14px;font-size:12.5px;color:var(--mute)}
+@media screen and (max-width:860px){
+  .hl-band{grid-template-columns:minmax(0,1fr);gap:10px}
+  .site-link{margin-left:0}
+  .hero-title br{display:none}
+  .hero-title br.br-keep{display:inline}
+}
+/* ───────── section heads ───────── */
+.sec{position:relative;padding:clamp(64px,8vw,104px) 0}
+.sec-head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:20px;align-items:end;margin-bottom:clamp(32px,4.5vw,56px);padding-bottom:20px;border-bottom:1px solid var(--ink)}
+.kicker{grid-column:1 / 4;display:flex;align-items:center;gap:10px;color:var(--mute)}
+.kicker b{font-family:var(--it);font-style:italic;font-weight:400;font-size:42px;line-height:1;color:var(--ink);letter-spacing:0}
+.kicker .mono{color:var(--ink-2)}
+.sec-title{grid-column:4 / 13;font-family:var(--serif);font-weight:300;font-size:clamp(24px,2.6vw,36px);line-height:1.35;letter-spacing:-.03em}
+@media screen and (max-width:860px){
+  .sec-head{grid-template-columns:1fr;row-gap:10px}
+  .kicker,.sec-title{grid-column:1 / -1}
+  .kicker b{font-size:34px}
+}
+
+.sec-head.one{grid-template-columns:minmax(0,1fr);row-gap:14px}
+.sec-head.one .kicker,.sec-head.one .sec-title{grid-column:1 / -1}
+.sec-head.one .sec-title{font-size:clamp(22px,2.35vw,34px);font-weight:400;white-space:nowrap}
+@media screen and (max-width:860px){.sec-head.one .sec-title{white-space:normal;font-size:clamp(21px,5.6vw,28px)}}
+
+/* ───────── about ───────── */
+.about-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,4vw,64px)}
+.ab-h{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;letter-spacing:-.01em;margin-bottom:14px}
+.ab-h::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gray-d)}
+.core{display:grid;gap:12px}
+.core>li{padding:18px 20px;border-radius:14px;background:var(--soft)}
+.core-t{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font-weight:600;font-size:16.5px;line-height:1.45;color:var(--blue-deep);letter-spacing:-.02em}
+.core-t span{font-size:13px;font-weight:500;color:var(--ink);padding:2px 9px;border-radius:999px;background:#fff;border:1px solid var(--line)}
+.core ul{margin-top:8px;display:grid;gap:3px}
+.core ul li{position:relative;padding-left:14px;font-size:14.5px;color:var(--ink-2);line-height:1.6}
+.core ul li::before{content:"";position:absolute;left:0;top:.78em;width:6px;height:1.5px;background:var(--mute-2)}
+.core strong{font-weight:600;color:var(--ink)}
+.skills{display:grid;grid-template-columns:minmax(0,1fr);gap:26px;margin-top:30px}
+.soft{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.soft span{display:flex;align-items:center;justify-content:center;text-align:center;min-height:64px;padding:10px 6px;border-radius:12px;background:var(--ink);color:#fff;font-size:13.5px;font-weight:500;line-height:1.4}
+.hard{display:grid;gap:0;border-top:1px solid var(--line)}
+.hard div{display:grid;grid-template-columns:118px 1fr;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.hard dt{font-weight:600}
+.hard dd{color:var(--ink-2)}
+.ab-right{display:grid;gap:34px;align-content:start;padding-left:clamp(0px,3vw,48px);border-left:1px solid var(--line)}
+.total{font-size:17px;font-weight:600}
+.total span{font-weight:400;color:var(--mute);font-size:14.5px;margin-left:4px}
+.career{display:grid;gap:0;border-top:1px solid var(--line)}
+.career li{display:grid;grid-template-columns:132px 46px 1fr;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.cv-date{font-size:13px;color:var(--ink-2);line-height:1.5}
+.cv-date small{display:block;color:var(--mute);font-size:12px}
+.cv-logo{width:46px;height:46px;border-radius:10px;object-fit:cover;box-shadow:0 0 0 1px rgba(12,13,15,.08)}
+.cv-body b{display:block;font-size:15.5px;font-weight:600}
+.cv-body span{display:block;font-size:14px;color:var(--ink-2)}
+.cv-body small{display:block;font-size:13px;color:var(--mute)}
+.edu li{grid-template-columns:132px 1fr}
+@media screen and (max-width:1079px){
+  .about-grid{grid-template-columns:minmax(0,1fr)}
+  .ab-right{padding-left:0;border-left:0}
+}
+@media screen and (max-width:640px){
+  .soft{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .soft span:last-child{grid-column:1 / -1}
+  .hard div{grid-template-columns:1fr;gap:2px}
+  .career li{grid-template-columns:46px 1fr;row-gap:6px}
+  .cv-date{grid-column:1 / -1}
+  .edu li{grid-template-columns:1fr}
+}
+
+/* ───────── case (slide-like: 문제 | 전략 / 실행 | 결과) ───────── */
+.case{position:relative;padding:clamp(56px,6.5vw,88px) 0;border-top:1px solid var(--line)}
+.case-head{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:clamp(20px,3vw,40px);align-items:end;margin-bottom:clamp(26px,3vw,40px)}
+.case-no{font-family:var(--it);font-size:clamp(56px,6.4vw,92px);line-height:.82;letter-spacing:-.02em}
+.case-no i{font-size:.34em;color:var(--mute);margin-right:.16em;vertical-align:.9em}
+.case-tags{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin-bottom:10px}
+.tag{display:inline-block;padding:4px 12px;border-radius:999px;background:var(--blue);color:#fff;font-size:12.5px;font-weight:500}
+.case-meta{font-size:13.5px;color:var(--mute)}
+.case-title{font-family:var(--serif);font-weight:500;font-size:clamp(22px,2.3vw,31px);line-height:1.35;letter-spacing:-.035em}
+.cols{position:relative;display:grid;grid-template-columns:minmax(0,30fr) minmax(0,44fr) minmax(0,26fr);gap:0}
+.cols::before{content:"";position:absolute;left:0;right:0;top:15px;height:2px;background:radial-gradient(circle at 1px 1px,#c5c9d0 1px,transparent 1.3px) 0 0/8px 2px repeat-x}
+.col{position:relative;min-width:0;padding:0 clamp(16px,1.8vw,28px)}
+.col:first-child{padding-left:0}
+.col:last-child{padding-right:0}
+.col+.col{border-left:1px solid var(--line)}
+.col-h{position:relative;z-index:1;display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;padding:5px 14px 5px 10px;border-radius:999px;background:var(--ink);color:#fff;font-size:14px;font-weight:600;letter-spacing:-.01em}
+.col-h svg{width:15px;height:15px;color:#fff}
+.p-lead{font-size:17.5px;font-weight:600;line-height:1.5;letter-spacing:-.025em}
+.kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:16px}
+.kpi{display:flex;flex-direction:column;gap:2px;padding:14px 14px 12px;border-radius:12px;background:var(--soft)}
+.kpi .k-l{font-size:12.5px;color:var(--mute);font-weight:500}
+.kpi b{font-family:var(--serif);font-weight:500;font-size:22px;line-height:1.25;letter-spacing:-.03em}
+.kpi b small{font-family:var(--sans);font-size:12.5px;font-weight:500;color:var(--ink-2);margin-right:4px;letter-spacing:0}
+.kpi .k-s{font-size:12.5px;color:var(--ink-2);line-height:1.45}
+.kpi.txt b{font-family:var(--sans);font-weight:600;font-size:15.5px;line-height:1.4}
+.need{grid-column:1 / -1;display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;border:1.5px solid var(--blue);background:#fff;font-weight:600;font-size:14.5px;line-height:1.45;color:var(--ink)}
+.need svg{width:18px;height:18px;flex:none;color:var(--blue)}
+.card{margin-top:12px;padding:16px 16px 14px;border-radius:14px;border:1px solid var(--line);background:#fff}
+.card.tint{background:var(--blue-tint);border-color:transparent}
+.card h5{font-size:14.5px;font-weight:700;letter-spacing:-.01em}
+.card .sub{margin-top:2px;font-size:13px;color:var(--ink-2)}
+.pts{display:grid;gap:10px;margin-top:10px}
+.pts li{display:grid;gap:2px}
+.pts b{font-size:14px;font-weight:600;line-height:1.45}
+.pts p{font-size:13.5px;color:var(--ink-2);line-height:1.5}
+.pts .so,.pts .good{position:relative;padding-left:18px;color:var(--ink)}
+.pts .so::before,.hyp-v::before{content:"";position:absolute;left:0;top:.7em;width:11px;height:1.5px;background:var(--blue)}
+.pts .so::after,.hyp-v::after{content:"";position:absolute;left:6px;top:calc(.7em - 3px);width:6px;height:6px;border-top:1.5px solid var(--blue);border-right:1.5px solid var(--blue);transform:rotate(45deg)}
+.pts .good::before{content:"+";position:absolute;left:1px;top:0;color:var(--blue);font-weight:700}
+.hyp-t{margin-top:8px;font-size:15px;font-weight:600;line-height:1.5}
+.hyp-v{position:relative;margin-top:8px;padding-left:18px;font-size:13.5px;color:var(--ink-2)}
+/* 전략 / 실행 */
+.st+.st{margin-top:26px;padding-top:22px;border-top:1px dashed var(--line)}
+.st-h{font-size:16.5px;font-weight:700;letter-spacing:-.02em;line-height:1.45}
+.st-h em{font-style:normal;color:var(--blue)}
+.st-l{margin-top:6px;display:grid;gap:3px}
+.st-l li{position:relative;padding-left:14px;font-size:14.5px;color:var(--ink-2);line-height:1.6}
+.st-l li::before{content:"";position:absolute;left:0;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--mute-2)}
+.st-l li.so{color:var(--ink);font-weight:500}
+.st-l li.so::before{background:var(--blue)}
+.media{margin-top:14px}
+figure{position:relative;min-width:0}
+figcaption{margin-top:7px;font-size:12px;color:var(--mute);line-height:1.4}
+.shot{border-radius:10px;overflow:hidden;background:var(--soft);box-shadow:0 0 0 1px rgba(12,13,15,.08),0 18px 30px -24px rgba(12,13,15,.45)}
+.shot img{width:100%;height:auto}
+.px{will-change:transform}
+.ba{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.reels{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.reel .shot{border-radius:10px;aspect-ratio:386/566}
+.reel .shot img{height:100%;object-fit:cover}
+.reel figcaption{font-size:11.5px;line-height:1.35;color:var(--ink-2)}
+.reel figcaption span{display:block;color:var(--mute);font-size:11px}
+.reel figcaption span.rt{margin-top:5px;padding-top:5px;border-top:1px dashed var(--line);color:var(--ink-2);font-size:11px;line-height:1.4}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:end}
+.trio .shot{background:#fff}
+.quad{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;align-items:end}
+.land{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.25fr);gap:10px;align-items:end}
+.chart-box{padding:12px 12px 10px;border-radius:10px;background:var(--soft)}
+.hbars{display:grid;gap:8px}
+.hbar span{display:block;font-size:12px;color:var(--ink-2);margin-bottom:3px}
+.hbar i{display:flex;align-items:center;justify-content:flex-end;height:22px;border-radius:5px;background:#cdd2da;padding-right:8px;font-style:normal;font-size:11.5px;font-weight:700;color:#fff}
+.hbar.b2 i{background:var(--blue);width:48%}
+.flow{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,.9fr) auto minmax(0,1.5fr);gap:8px;align-items:center;padding:14px;border-radius:12px;border:1px solid var(--line)}
+.flow .src{display:grid;gap:6px}
+.flow .src span{padding:7px 8px;border-radius:8px;background:var(--soft);font-size:12.5px;text-align:center}
+.flow .arr{width:18px;height:2px;background:var(--mute-2);position:relative}
+.flow .arr::after{content:"";position:absolute;right:-1px;top:-4px;width:8px;height:8px;border-top:2px solid var(--mute-2);border-right:2px solid var(--mute-2);transform:rotate(45deg)}
+.flow .hub{padding:14px 8px;border-radius:10px;background:var(--ink);color:#fff;text-align:center;font-size:13px;font-weight:600;line-height:1.35}
+.flow .funnel{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;text-align:center}
+.flow .funnel span{padding:7px 2px;border-radius:8px;font-size:12.5px;background:var(--soft)}
+.flow .funnel span.new{background:var(--soft);color:#16171a;font-weight:700}
+.flow .judge{display:grid;grid-template-columns:1fr 2fr;gap:5px;margin-top:6px;text-align:center;font-size:11.5px;color:var(--mute)}
+.flow .judge span{border-top:1.5px solid var(--mute-2);padding-top:4px}
+.flow .judge span.new{border-color:#16171a;color:#16171a;font-weight:700}
+/* 결과 */
+.r-pre{font-size:16px;font-weight:500;line-height:1.5;color:var(--ink-2)}
+.r-num{display:flex;align-items:baseline;flex-wrap:wrap;gap:0 .16em;color:var(--blue);font-family:var(--serif);font-weight:400;font-size:clamp(46px,4.6vw,66px);line-height:1.02;letter-spacing:-.05em;margin-top:4px;transform-origin:0 100%;will-change:transform}
+.r-num small{font-size:.5em;letter-spacing:-.02em}
+.vbars{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end;margin-top:4px}
+.vbars div{display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
+.vbars b{font-family:var(--serif);font-weight:500;font-size:17px;letter-spacing:-.02em;margin-bottom:4px}
+.vbars i{display:block;flex:none;width:100%;height:calc(var(--h,1) * 140px);border-radius:7px 7px 3px 3px;background:#d0d5dc}
+.vbars .after i{background:var(--blue)}
+.vbars .after b{color:var(--blue)}
+.vbars span{margin-top:6px;font-size:12px;color:var(--mute)}
+.rc{margin-top:12px;padding:14px 16px;border-radius:14px;background:var(--soft)}
+.rc.line{background:#fff;border:1px solid var(--line)}
+.rc .cap{display:block;font-size:12.5px;color:var(--mute);line-height:1.5}
+.rc ul{display:grid;gap:8px;margin-top:8px}
+.rc ul:first-child{margin-top:0}
+.rc li{display:grid;gap:1px;padding-top:8px;border-top:1px dashed #d8dbe0}
+.rc li:first-child{border-top:0;padding-top:0}
+.rc li b{font-size:15.5px;font-weight:700;letter-spacing:-.02em}
+.rc li span{font-size:13px;color:var(--ink-2)}
+.rc .big{display:block;margin-top:2px;font-size:17px;font-weight:700;color:var(--blue);letter-spacing:-.02em}
+.rc p{font-size:13.5px;color:var(--ink-2);line-height:1.55}
+.rc.note{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line)}
+.rc.note svg{width:16px;height:16px;flex:none;margin-top:2px;color:var(--blue)}
+.ok{display:flex;align-items:center;gap:7px;font-size:14.5px;font-weight:700}
+.ok svg{width:17px;height:17px;color:var(--blue)}
+.checks{display:grid;gap:8px;margin-top:10px}
+.checks div{padding:10px 12px;border-radius:10px;background:#fff}
+.checks b{display:block;font-size:14.5px;font-weight:700;letter-spacing:-.02em}
+.checks span{display:block;font-size:12.5px;color:var(--ink-2);line-height:1.45}
+@media screen and (max-width:1079px){
+  .cols{grid-template-columns:minmax(0,1fr);row-gap:40px}
+  .cols::before{display:none}
+  .col,.col:first-child,.col:last-child{padding:0}
+  .col+.col{border-left:0;border-top:1px solid var(--line);padding-top:32px}
+  .r-num{font-size:clamp(48px,12vw,72px)}
+  .vbars{max-width:320px}
+}
+@media screen and (max-width:640px){
+  .case-head{grid-template-columns:1fr;row-gap:12px}
+  .kpis{grid-template-columns:1fr}
+  .reels{grid-template-columns:repeat(5,minmax(104px,1fr));overflow-x:auto;padding-bottom:10px;margin-right:calc(-1 * var(--gutter));padding-right:var(--gutter);scrollbar-width:none}
+  .reels::-webkit-scrollbar{display:none}
+  .quad{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .land{grid-template-columns:1fr 1fr}
+  .land .chart-box{grid-column:1 / -1}
+  .flow{grid-template-columns:1fr}
+  .flow .arr{width:2px;height:16px;justify-self:center}
+  .flow .arr::after{right:-4px;top:auto;bottom:-1px;transform:rotate(135deg)}
+}
+
+
+/* 링글 케이스 추가 블록 */
+.case-chips{display:flex;flex-wrap:wrap;gap:6px 8px;margin-top:12px}
+.tag.ol{padding:3px 11px;border:1px solid var(--blue);background:#fff;color:var(--blue-deep)}
+.obs{display:grid;gap:6px;margin-top:10px;counter-reset:ob}
+.obs li{position:relative;padding-left:24px;font-size:13.5px;line-height:1.5;color:var(--ink-2)}
+.obs li::before{counter-increment:ob;content:counter(ob);position:absolute;left:0;top:.15em;width:17px;height:17px;border-radius:50%;background:#fff;color:var(--blue-deep);font-size:11px;font-weight:700;line-height:17px;text-align:center}
+.obs+.hyp-t{margin-top:12px;padding-top:12px;border-top:1px solid rgba(22,23,26,.14)}
+.loop{margin-top:14px;padding:12px 14px 14px;border-radius:12px;border:1px solid var(--line)}
+.loop-h{display:block;margin-bottom:9px;font-size:12.5px;font-weight:600;color:var(--mute)}
+.loop-s{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.loop-s li{position:relative;display:flex;align-items:center;justify-content:center;min-height:44px;padding:7px 6px;border-radius:8px;background:var(--soft);font-size:12.5px;font-weight:500;line-height:1.35;text-align:center}
+.loop-s li+li::before{content:"";position:absolute;left:-15px;top:50%;width:11px;height:1.5px;background:var(--mute-2)}
+.loop-s li+li::after{content:"";position:absolute;left:-9px;top:calc(50% - 3.5px);width:6px;height:6px;border-top:1.5px solid var(--mute-2);border-right:1.5px solid var(--mute-2);transform:rotate(45deg)}
+.loop-s li{flex-direction:column}
+.loop-s li small{display:block;margin-top:2px;font-size:11px;font-weight:400;color:var(--mute)}
+.loop-s li.hl{background:var(--blue-tint);color:var(--blue-deep);font-weight:700}
+.kpis .loop{grid-column:1 / -1;margin-top:0}
+.loop.fn .loop-s{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 18px}
+.loop.fn .loop-s li:nth-child(3)::before,.loop.fn .loop-s li:nth-child(3)::after{display:none}
+.rc .retro{margin-top:10px;padding-top:10px;border-top:1px dashed #d8dbe0;font-size:13px}
+.rc .retro b{color:var(--ink)}
+@media screen and (max-width:640px){
+  .loop-s{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 18px}
+  .loop-s li:nth-child(3)::before,.loop-s li:nth-child(3)::after{display:none}
+}
+
+/* sans overrides for reused blocks */
+.sec-head{border-bottom:1px solid var(--ink)}
+.kicker{gap:10px}
+.kicker b{font-family:var(--mono);font-style:normal;font-weight:500;font-size:13px;letter-spacing:.06em;color:var(--gray-d)}
+.kicker .mono{color:var(--ink-2)}
+.sec-title{font-weight:700;letter-spacing:-.04em}
+.sec-head.one .sec-title{font-weight:700}
+.case-no{display:flex;flex-direction:column;font-family:var(--sans);font-style:normal;font-weight:700;font-size:clamp(48px,5.4vw,76px);line-height:.9;letter-spacing:-.05em}
+.case-no i{font-family:var(--mono);font-style:normal;font-weight:400;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin:0 0 10px;vertical-align:baseline}
+.case-title{font-weight:700;letter-spacing:-.04em}
+.cols::before{display:none}
+.col-h span{font-family:var(--mono);font-size:10.5px;font-weight:400;letter-spacing:.06em;color:#a9aeb6}
+.kpi b{font-weight:700}
+.r-num{font-weight:700;letter-spacing:-.045em}
+.r-num small{font-weight:600}
+.vbars b{font-weight:600}
+.cv-logo{border-radius:10px}
+.copy{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;background:var(--ink);color:#fff;font-size:12.5px;transition:background .2s}
+.copy:hover,.copy.done{background:var(--blue)}
+.copy svg{width:14px;height:14px}
+
+/* contact */
+.closing{padding-bottom:clamp(72px,9vw,120px)}
+.thanks{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:end}
+.thanks p.t{font-size:17px;color:var(--ink-2);line-height:1.85}
+.thanks .sign{margin-top:22px;font-weight:600;font-size:16px}
+.contact-card{padding:28px 28px 26px;border-radius:18px;background:var(--ink);color:#fff}
+.contact-card .mono{color:#9aa0a8;font-size:10.5px}
+.contact-card b{display:block;margin-top:10px;font-family:var(--mono);font-weight:500;font-size:clamp(15px,1.6vw,19px);letter-spacing:0;word-break:break-all}
+.contact-card .copy{margin-top:18px;background:#fff;color:var(--ink)}
+.contact-card .copy:hover,.contact-card .copy.done{background:var(--blue);color:#fff}
+.contact-card .cc-phone{margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14)}
+.contact-card .cc-phone a{color:inherit;text-decoration:none}
+@media screen and (max-width:860px){.thanks{grid-template-columns:minmax(0,1fr)}}
+
+.foot{padding:24px 0 36px;border-top:1px solid var(--line);color:var(--mute);font-size:12.5px}
+.foot-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
+.foot a{color:var(--ink-2);border-bottom:1px solid #cfd3d9}
+
+/* print / PDF */
+@media print{
+  @page{size:1480px 1040px;margin:26px 34px}
+  html,body{background:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  html{scroll-behavior:auto}
+  *,*::before,*::after{box-shadow:none!important;filter:none!important;text-shadow:none!important}
+  .topbar,.copy,.foot,.hi-go{display:none!important}
+  .wrap{max-width:none;padding:0}
+  .hero,.about,.closing{min-height:980px;display:flex;flex-direction:column;justify-content:center;padding:0!important}
+  .hero,.about{break-after:page}
+  .about .wrap{zoom:.92}
+  .projects{padding:0!important}
+  .projects>.wrap{display:none}
+  .case{break-before:page;border-top:0;padding:0;zoom:.8;min-height:1224px;display:flex!important;flex-direction:column;justify-content:center}
+  .closing{break-before:page}
+  .card,.kpi,.need,.st,figure,.core>li,.career li,.rc,.hi,.flow,.contact-card{break-inside:avoid}
+  .px,.r-num,.hi-num{transform:none!important}
+  .shot{outline:1px solid rgba(12,13,15,.10)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .px,.r-num,.hi-num{transform:none!important}
+}
+/* Hero: 흰 바탕, 진한 글자. --sp-blue는 '전환' 마커에만 쓰고 값은 --hl */
+.hero{--sp-blue:var(--hl);--sp-navy:#16171a;--sp-mute:#8e9299;position:relative;overflow:hidden;background:#fff;color:#16171a}
+.hero .wrap{position:relative;z-index:1}
+.hero .hero-meta{color:var(--mute);border-bottom-color:var(--line)}
+.hero .hero-meta .mono{color:#16171a}
+.hero .dot{background:var(--gray-d)}
+.hero .site-link{border-color:var(--line-2);background:#fff;color:#16171a}
+.hero .site-link:hover{background:var(--sp-navy);border-color:var(--sp-navy);color:#fff}
+.hero .hero-title{color:#16171a}
+.hero .hero-title .hl{display:inline-block;color:#fff;background:var(--sp-blue);border-radius:.16em;padding:.03em .12em .07em;line-height:1.04}
+.hero .hi{background:#fff;border-color:var(--line-2);color:var(--sp-navy);box-shadow:none}
+.hero .hi:hover{border-color:#b4b8bf;transform:translateY(-4px);box-shadow:0 18px 36px -24px rgba(12,13,15,.28)}
+.hero .hi .mono,.hero .hi-go{color:var(--sp-mute)}
+.hero .hi-res{border-top-color:#eceef1}
+.hero .hi-lb{color:var(--sp-navy)}
+.hero .hi-num{color:var(--sp-navy)}
+.hero .hi-num em{font-style:normal;color:var(--hl)}
+.hero .hi-tag{font-size:14.5px;color:#16171a}
+.hero .hi-tag .hi-ar{color:var(--hl-ink)}
+.hero .hi-num .ln{white-space:nowrap}
+/* 표지: 지원 직무 라벨, 길어진 타일 문구 */
+.hero .hero-meta{margin-bottom:clamp(20px,2.3vw,32px)}
+.hero .hero-role{margin:0 0 clamp(10px,1vw,14px);font-size:clamp(14px,1.15vw,16px);font-weight:600;line-height:1.6;color:var(--gray-d);letter-spacing:-.01em}
+/* 큰 문장: 1줄 끝에서만 줄바꿈(두 줄 고정), 가장 긴 1줄이 타일에 들어가게 타일 폭 기준 크기, 세 타일 같은 크기 */
+.hero .hi-num{font-size:clamp(14px,7.7cqi,30px);line-height:1.3;letter-spacing:-.035em}
+@media screen and (max-width:380px){.hero .hero-title{font-size:8vw}}
+/* 표지 타일 작은 줄: 칩 + 텍스트 */
+.hero .hi{container-type:inline-size}
+.hero .hi-lb{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.hero .hi-chip{display:inline-block;box-sizing:border-box;min-width:14.5em;padding:2px 10px;border-radius:999px;background:#edeff2;color:#44474d;font-size:13.5px;line-height:1.6;text-align:center;white-space:nowrap}
+.hero .hi-txt{font-size:13.5px;line-height:1.6;color:var(--ink-2)}
+/* 칩은 항상 윗줄, 텍스트는 아랫줄 (세 타일 통일) */
+/* 작은 글씨가 한 줄에 안 들어가면 '→' 앞에서만 줄바꿈 */
+.hero .hi-txt .seg{white-space:nowrap}
+@media screen and (min-width:861px){@container (max-width:167px){.hero .hi-txt{min-height:3.2em}}}
+@media screen and (min-width:861px) and (max-width:900px){.hero .hi{padding-left:18px;padding-right:18px}}
+
+/* About(2장): 프로필 + 서머리, 아래 2열(이력 | 자격, Skills & Tools) */
+.about .ab-intro{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(28px,4.5vw,72px);align-items:center;margin-bottom:clamp(36px,4.5vw,56px);padding-bottom:clamp(32px,4vw,48px);border-bottom:1px solid var(--line)}
+/* 사진 옆에 이름과 정보 (사진 높이 가운데) */
+.about .ab-profile{display:flex;align-items:center;gap:24px}
+.about .ab-photo{display:block;flex:none;width:200px;height:auto;aspect-ratio:1;object-fit:cover;border-radius:16px;background:var(--soft)}
+.about .ab-info{min-width:0}
+.about .ab-name{font-size:20px;font-weight:700;letter-spacing:-.02em;line-height:1.4}
+.about .ab-role{font-size:14px;color:var(--ink-2)}
+.about .ab-contact{margin-top:10px;display:grid;gap:2px;font-size:14px;color:var(--ink-2)}
+.about .ab-contact a{color:inherit;text-decoration:none;word-break:normal;overflow-wrap:normal}
+.about .ab-summary{font-size:clamp(16px,1.45vw,20px);font-weight:500;line-height:1.85;letter-spacing:-.02em;color:var(--ink);max-width:40em}
+.about .ab-two{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.about .ab-col{display:grid;gap:34px;align-content:start}
+.about .cert{width:100%;border-collapse:collapse;border-top:1px solid var(--line)}
+.about .cert th,.about .cert td{padding:11px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.5;text-align:left;vertical-align:middle}
+.about .cert th{font-weight:600;color:var(--ink)}
+.about .cert td{text-align:right;color:var(--ink-2);white-space:nowrap;font-variant-numeric:tabular-nums;padding-left:16px}
+.about .tools{display:grid;gap:20px}
+.about .tg-h{font-size:13px;font-weight:600;color:var(--ink-2);margin-bottom:10px}
+.about .tg-chips{display:flex;flex-wrap:wrap;gap:8px}
+.about .tg-chips li{padding:3px 12px;border-radius:999px;background:#edeff2;color:#44474d;font-size:13.5px;line-height:1.6;white-space:nowrap}
+.about .tg-icons{display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:14px 8px}
+.about .tg-icons li{display:flex;flex-direction:column;align-items:center;text-align:center}
+.about .ti{display:grid;place-items:center;width:48px;height:48px;border-radius:12px;background:#fff;border:1px solid var(--line)}
+.about .ti img{width:26px;height:26px;object-fit:contain}
+.about .tn{margin-top:6px;font-size:12px;line-height:1.35;color:var(--ink-2);word-break:keep-all}
+@media screen and (max-width:1079px){.about .ab-intro{grid-template-columns:minmax(0,1fr);align-items:start}}
+@media screen and (max-width:860px){
+  .about .ab-profile{gap:18px}
+  .about .ab-photo{width:120px}
+  .about .ab-two{grid-template-columns:minmax(0,1fr)}
+}
+/* 어바웃 미 글씨 키움 (PC와 인쇄) */
+@media screen and (min-width:861px),print{
+  .about .ab-photo{width:220px}
+  .about .ab-name{font-size:25px}
+  .about .ab-role{font-size:16.5px}
+  .about .ab-contact{font-size:16.5px}
+  .about .ab-summary{font-size:clamp(18px,1.55vw,23px)}
+  .about .ab-h{font-size:17px;margin-bottom:16px}
+  .about .ab-h::before{width:7px;height:7px}
+  .about .total{font-size:21px}
+  .about .total span{font-size:17px}
+  .about .career li{grid-template-columns:160px 54px minmax(0,1fr);gap:16px;padding:15px 0}
+  .about .cv-date{font-size:15.5px}
+  .about .cv-date small{font-size:14px}
+  .about .cv-logo{width:54px;height:54px}
+  .about .cv-body b{font-size:19px}
+  .about .cv-body span{font-size:16.5px}
+  .about .cv-body small{font-size:15px}
+  .about .edu li{grid-template-columns:160px minmax(0,1fr)}
+  .about .cert th,.about .cert td{font-size:17px;padding:12px 0}
+  .about .tg-h{font-size:15.5px;margin-bottom:12px}
+  .about .tg-chips li{font-size:16px;padding:4px 14px}
+  .about .tg-icons{grid-template-columns:repeat(auto-fill,minmax(86px,1fr));gap:16px 10px}
+  .about .ti{width:58px;height:58px;border-radius:14px}
+  .about .ti img{width:32px;height:32px}
+  .about .tn{font-size:14px}
+}
+
+/* 사례 장 3~10장: 사례마다 A장(문제), B장(전략과 결과). 헤더 바는 마리트 장표의 검은 바 모양 */
+.cs{position:relative;padding:clamp(56px,6vw,84px) 0;border-top:1px solid var(--line)}
+.cs-bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:14px 22px;border-radius:12px;background:#16171a;color:#fff}
+.cs-no{flex:none;padding:3px 10px;border-radius:6px;background:#fff;color:#16171a;font-family:var(--mono);font-size:12.5px;font-weight:500;letter-spacing:.06em;line-height:1.5;white-space:nowrap}
+.cs-title{flex:1 1 360px;min-width:0;font-size:clamp(18px,1.7vw,23px);font-weight:700;line-height:1.4;letter-spacing:-.035em;color:#fff}
+.cs-4p{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
+.cs-4p li{padding:2px 10px;border-radius:999px;background:#edeff2;color:#44474d;font-size:12px;font-weight:500;line-height:1.6;white-space:nowrap}
+.cs-role{margin-top:12px;font-size:13.5px;color:var(--mute)}
+/* 회사명과 기간: 검은 헤더 바 안, 제목 오른쪽 (B장은 3C4P 칩 왼쪽) */
+.cs-bar .cs-co{flex:none;margin-left:auto;padding:6px 18px;border-radius:999px;background:#fff;font-size:16px;font-weight:500;line-height:1.5;color:#16171a;white-space:nowrap}
+.cs-bar .cs-co b{font-size:17px;font-weight:700;letter-spacing:-.02em}
+.cs-bar .cs-co+.cs-4p{margin-left:0}
+/* 퍼널 한 줄: 끊긴 단계만 빨강 */
+/* A장 퍼널 띠: 전체 폭 연한 회색 띠, 왼쪽 위 '퍼널' 라벨. 끊긴 구간만 --hl, 그 구간 바로 아래 --hl 라벨 */
+.fband{position:relative;margin-top:clamp(18px,2vw,26px);padding:22px 24px;border-radius:14px;background:#f5f6f8}
+.fband-l{position:absolute;left:18px;top:12px;font-size:12.5px;font-weight:600;line-height:1.4;letter-spacing:.02em;color:var(--mute)}
+.cs-funnel{--fh:52px;display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;row-gap:12px}
+.cs-funnel .fs{display:inline-flex;align-items:center;height:var(--fh);padding:0 24px;border-radius:12px;border:1.5px solid #16171a;background:#fff;font-size:22px;font-weight:700;line-height:1;letter-spacing:-.02em;color:#16171a;white-space:nowrap}
+.cs-funnel .fs.x{border:2px solid var(--hl);color:var(--hl-ink)}
+.cs-funnel .fa{position:relative;flex:none;width:clamp(36px,5vw,80px);height:0;margin:calc(var(--fh) / 2 - 1px) 14px 0 10px;border-top:2px solid var(--gray-d)}
+.cs-funnel .fa::after{content:"";position:absolute;right:-2px;top:-6px;width:10px;height:10px;border-top:2px solid var(--gray-d);border-right:2px solid var(--gray-d);transform:rotate(45deg)}
+.cs-funnel .fa.x{border-top:2px dashed var(--hl)}
+.cs-funnel .fa.x::after{border-color:var(--hl)}
+/* 상자 4개 */
+.cs-boxes{display:grid;gap:12px;margin-top:clamp(20px,2.4vw,30px)}
+.bx{display:grid;grid-template-columns:clamp(190px,17vw,240px) minmax(0,1fr);gap:8px 28px;align-items:start;padding:18px 24px;border-radius:14px;border:1px solid var(--line);background:#fff}
+.bx h4{display:flex;align-items:baseline;gap:8px;font-size:16.5px;font-weight:700;line-height:1.45;letter-spacing:-.025em;color:var(--ink)}
+.bx h4 b{flex:none;font-weight:700}
+.bx ul{display:grid;gap:6px}
+.bx li{position:relative;padding-left:14px;font-size:15.5px;line-height:1.65;color:var(--ink-2)}
+.bx li::before{content:"";position:absolute;left:0;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--mute-2)}
+.bx.q{border:1.5px solid var(--blue)}
+.bx.q h4{color:var(--blue-deep)}
+.bx.q li{font-weight:500;color:var(--ink)}
+.bx.q li::before{background:var(--blue)}
+/* ④ 문제 정의: 첫 줄 질문 굵게 */
+.bx-c{min-width:0}
+.bx-why{display:inline-block;margin-bottom:6px;padding:1px 10px;border-radius:999px;background:#edeff2;color:#44474d;font-size:12.5px;font-weight:700;line-height:1.6;letter-spacing:.02em}
+.bx-q em{font-style:normal;color:var(--hl-ink)}
+/* ② 불릿의 핵심 수치만 굵게 (색은 불릿 그대로). 굵게 한 묶음은 줄을 나누지 않음 */
+.bx li b{font-weight:700;white-space:nowrap}
+.bx-q{margin-bottom:8px;font-size:17px;font-weight:700;line-height:1.5;letter-spacing:-.02em;color:var(--ink)}
+/* 채울 것, 확인 표시 */
+mark.fill{padding:1px 6px;border-radius:4px;background:#ffe45c;color:#3d3200;font-weight:600;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+/* B장 */
+.cs-hyp{display:flex;align-items:flex-start;gap:14px;margin-top:clamp(18px,2.2vw,26px);padding:16px 22px;border-radius:14px;background:var(--blue-tint)}
+.cs-hyp .hyp-l{flex:none;margin-top:2px;padding:6px 18px;border-radius:999px;background:var(--blue);color:#fff;font-size:17px;font-weight:700;line-height:1.5}
+.cs-hyp>p{font-size:17px;font-weight:600;line-height:1.6;letter-spacing:-.02em;color:var(--ink)}
+.cs-hyp>p small{display:block;margin-top:4px;font-size:14px;font-weight:400;letter-spacing:-.01em;color:var(--ink-2)}
+/* A장 맨 아래 가설 칸: 전체 폭. '가설' 칩과 문장을 한 묶음으로 붙여 가운데에, 그 아래 As-is → To-be 띠 */
+.cs-a .cs-hyp{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 14px;margin-top:12px;text-align:left}
+.cs-a .cs-hyp .hyp-l{margin-top:0}
+.cs-a .cs-hyp>p{flex:0 1 auto;max-width:calc(100% - 120px)}
+.cs-a .cs-hyp .cs-cmp{flex-basis:100%;margin-top:14px}
+.cs-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:clamp(24px,2.6vw,36px);align-items:start;margin-top:clamp(16px,1.8vw,22px)}
+/* B장 전략은 2열, 결과까지 3열 */
+.cs-st{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px clamp(20px,2.2vw,30px);align-items:start}
+.cs-st>.loop{grid-column:1 / -1;margin-top:0}
+.cs-st.r3>.sg:first-child{grid-row:span 2}
+.cs-st .quad{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cs-st .ba{grid-template-columns:minmax(0,1fr)}
+.cs-st.r1{grid-template-columns:minmax(0,1fr)}
+.cs-st.r1 .trio{max-width:620px}
+.cs-st .flow{grid-template-columns:minmax(0,.85fr) auto minmax(0,.75fr) auto minmax(0,1.8fr);padding:12px}
+.sg-bar{display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:10px;background:#eef0f2;font-size:16px;font-weight:700;line-height:1.45;letter-spacing:-.025em;color:var(--ink)}
+.sg-bar b{color:var(--blue-deep)}
+.sg-bar.rs{background:var(--hl);color:#fff}
+/* B장 결과 바 오른쪽 끝 흰 칩(바 높이 그대로), 화살표만 --hl */
+.sg-bar.rs .rs-chip{margin-left:auto;padding:1px 10px;border-radius:999px;background:#fff;color:#16171a;font-size:13px;font-weight:600;line-height:1.5;letter-spacing:-.01em;white-space:nowrap}
+.rs-chip i{font-style:normal;color:var(--hl-ink)}
+.sg-l{display:grid;gap:5px;margin-top:12px}
+.sg-l li{position:relative;padding-left:14px;font-size:15px;line-height:1.65;color:var(--ink-2)}
+.sg-l li::before{content:"";position:absolute;left:0;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--mute-2)}
+.sg-l li small{display:block;font-size:13px;color:var(--mute)}
+.sg-l li small.in{display:inline}
+.sg-side{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:20px;align-items:start}
+.sg-side .media{margin-top:12px}
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.duo .cap{grid-column:1 / -1;margin-top:-1px}
+.cap{margin-top:7px;font-size:12px;line-height:1.4;color:var(--mute)}
+.sg-pair{display:grid;gap:14px;margin-top:14px}
+.sg-pair .media{margin-top:0}
+.tb{width:100%;margin-top:14px;border-collapse:collapse;border-top:1.5px solid var(--ink)}
+.sg-pair .tb{margin-top:0}
+.tb th{padding:8px 10px;border-bottom:1px solid var(--line);background:var(--soft);font-size:13px;font-weight:700;line-height:1.4;text-align:left;color:var(--ink-2)}
+.tb td{padding:8px 10px;border-bottom:1px solid var(--line);font-size:14px;line-height:1.5;color:var(--ink-2);vertical-align:top}
+.tb td:first-child{font-weight:600;color:var(--ink)}
+.cs-b .reel figcaption{font-size:12px;line-height:1.4;color:var(--ink-2)}
+.cs-res{display:grid;gap:14px;align-content:start}
+.big{padding:4px 2px}
+.big+.big{padding-top:12px;border-top:1px solid var(--line)}
+.big-s{font-size:17px;font-weight:700;line-height:1.5;letter-spacing:-.02em;color:#16171a}
+.big-n{margin-top:2px;font-size:clamp(28px,2.6vw,36px);font-weight:700;line-height:1.25;letter-spacing:-.04em;color:var(--hl)}
+.big-n em{font-style:normal;font-size:1.2em}
+.big-n .nw{white-space:nowrap}
+.big-n .d{color:#16171a}
+.big-n.s{font-size:clamp(24px,2.2vw,30px)}
+.big-n mark.fill{font-size:15px;line-height:1.6;letter-spacing:-.01em}
+.big-sub{margin-top:4px;font-size:13px;color:var(--mute)}
+.big-t{margin-top:4px;font-size:clamp(20px,1.85vw,25px);font-weight:700;line-height:1.45;letter-spacing:-.035em;color:#16171a}
+.big-t em{font-style:normal;color:var(--hl)}
+.vbox{padding:14px 18px;border-radius:14px;border:1px solid var(--line);background:#fff}
+.vbox h5,.nx h5{margin-bottom:6px;font-size:14px;font-weight:700;letter-spacing:-.01em;color:var(--ink)}
+.vbox li{position:relative;padding:6px 0 6px 22px;border-top:1px dashed var(--line);font-size:14.5px;font-weight:600;line-height:1.5;color:var(--ink)}
+.vbox li:first-child{border-top:0}
+.vbox li::before{content:"";position:absolute;left:2px;top:calc(6px + .42em);width:11px;height:6px;border-left:2px solid var(--blue);border-bottom:2px solid var(--blue);transform:rotate(-45deg)}
+.nx{padding:14px 18px;border-radius:14px;background:var(--soft)}
+.nx-r{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;align-items:baseline}
+.nx-r.solo{grid-template-columns:minmax(0,1fr)}
+.nx-r+.nx-r{margin-top:10px;padding-top:10px;border-top:1px dashed #d8dbe0}
+.nx-r>b{font-size:13px;font-weight:700;color:var(--blue-deep)}
+.nx-r li{font-size:14px;line-height:1.6;color:var(--ink-2)}
+.nx-r li+li{margin-top:5px}
+.res-img .shot{background:#fff}
+@media print{
+  .cs{break-before:page;border-top:0;padding:0;display:flex!important;flex-direction:column;justify-content:center}
+  .bx,.sg,.vbox,.nx,.big,.tb,.cs-hyp,.cs-bar,.fband,.loop{break-inside:avoid}
+}
+@media screen and (max-width:1079px){.cs-grid,.cs-st{grid-template-columns:minmax(0,1fr)}.cs-st.r3>.sg:first-child{grid-row:auto}}
+@media screen and (max-width:860px){
+  .cs-bar{padding:12px 16px}
+  .cs-title{flex-basis:100%}
+  .cs-4p{margin-left:0}
+  .bx{grid-template-columns:minmax(0,1fr);padding:16px 18px}
+  .fband{padding:38px 14px 18px}
+  .fband-l{left:14px;top:12px}
+  .cs-funnel{--fh:42px;row-gap:10px}
+  .cs-funnel .fa{width:24px;margin-left:6px;margin-right:9px}
+  .cs-hyp{flex-direction:column;gap:8px;padding:14px 16px}
+  .cs-a .cs-hyp{flex-direction:column;align-items:flex-start;gap:8px}
+  .cs-a .cs-hyp>p{max-width:100%}
+  .cs-a .cs-hyp .cs-cmp{margin-top:6px}
+  .cs-bar .cs-co{margin-left:0;padding:4px 14px;font-size:14px}
+  .cs-bar .cs-co b{font-size:15px}
+  .cs-funnel .fs{padding:0 14px;font-size:17px}
+  .sg-side{grid-template-columns:minmax(0,1fr);gap:0}
+  .tb th,.tb td{padding:7px 7px;font-size:13px}
+}
+
+/* A장 가설 상자 안 As-is → To-be 띠: 두 칸과 화살표, 칸 위 칩, To-be 칸만 빨강 테두리 (세 사례 같은 스타일) */
+.cs-cmp{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);grid-template-areas:"ca . cb" "ba ar bb";row-gap:8px;column-gap:18px;align-items:center;margin-top:clamp(16px,1.8vw,22px)}
+.cmp-chip{grid-area:ca;justify-self:center;padding:2px 12px;border-radius:999px;background:#edeff2;color:#44474d;font-size:13px;font-weight:700;line-height:1.5;letter-spacing:.01em}
+.cmp-chip.to{grid-area:cb;background:var(--blue);color:#fff}
+.cmp-box{grid-area:ba;align-self:stretch;display:flex;align-items:center;justify-content:center;padding:13px 22px;border:2px solid #d3d6db;border-radius:14px;background:#fff;font-size:17px;font-weight:600;line-height:1.5;letter-spacing:-.02em;color:var(--ink-2);text-align:center}
+.cmp-box.to{grid-area:bb;border-color:#16171a;border-width:1.5px;color:var(--ink)}
+.cmp-arr{grid-area:ar;position:relative;display:block;width:56px;height:0;border-top:2.5px solid #b4b8bf}
+.cmp-arr::after{content:"";position:absolute;right:-2px;top:-7.5px;width:12px;height:12px;border-top:2.5px solid #b4b8bf;border-right:2.5px solid #b4b8bf;transform:rotate(45deg)}
+/* 정성 성과 칩 */
+.qchip{display:inline-block;margin-right:6px;padding:0 8px;border-radius:999px;background:#edeff2;color:#44474d;font-size:11.5px;font-weight:600;line-height:1.75;vertical-align:1px;white-space:nowrap}
+@media screen and (max-width:860px){
+  .cs-cmp{grid-template-columns:minmax(0,1fr);grid-template-areas:"ca" "ba" "ar" "cb" "bb"}
+  .cmp-box{padding:11px 16px;font-size:15px}
+  .cmp-arr{justify-self:center;width:0;height:22px;border-top:0;border-left:2.5px solid #b4b8bf}
+  .cmp-arr::after{right:auto;left:-7.3px;top:auto;bottom:0;transform:rotate(135deg)}
+}
+
+/* ── 도식 (세 사례 같은 스타일, 빨강은 끊긴 단계와 개선 후만) ── */
+/* 1. A장 퍼널: 끊긴 구간(화살표, 다음 칩, 그 아래 라벨)을 한 묶음으로 둬 폰에서 같이 줄바꿈. 라벨은 폭 0으로 두고 가운데 정렬해 구간 폭을 바꾸지 않음 */
+.fgrp{display:inline-flex;flex-direction:column;align-items:center}
+.fseg{display:flex;align-items:flex-start}
+.flab{display:flex;justify-content:center;width:0;margin-top:8px;font-size:14px;font-weight:700;line-height:1.5;letter-spacing:-.01em;color:var(--hl-ink);white-space:nowrap}
+/* 2. A장 사고 과정 스테퍼: 왼쪽 세로 선과 번호 원. 1079px 이하 화면에서만 보임 (1080px 이상과 PDF는 아래 2-1 세로 퍼널 기둥) */
+.cs-steps{--sg:12px;position:relative;margin-top:clamp(20px,2.4vw,30px);padding-left:52px}
+.cs-steps .cs-boxes{margin-top:0;gap:var(--sg)}
+.cs-steps .cs-hyp{margin-top:var(--sg)}
+.cs-steps [data-step]{position:relative}
+.cs-steps [data-step]::before{content:"";position:absolute;left:-37px;top:calc(var(--sg) / -2);bottom:calc(var(--sg) / -2);width:2px;background:#d6d9de}
+.cs-steps .bx[data-step="1"]::before{top:50%}
+.cs-steps .cs-hyp[data-step]::before{bottom:50%}
+.cs-steps [data-step]::after{content:attr(data-step);position:absolute;left:-52px;top:50%;z-index:1;width:32px;height:32px;margin-top:-16px;border-radius:50%;background:#e6e8eb;color:#5f646b;font-family:var(--sans);font-size:15px;font-weight:700;line-height:32px;text-align:center}
+.cs-steps .cs-hyp[data-step]::after{background:#e6e8eb;color:#5f646b}
+/* 3. B장 전후 비교 막대: 검증 상자 안, 기존 회색, 개선 후 빨강 */
+.cmpbar{margin-top:8px;padding-top:10px;border-top:1px dashed var(--line)}
+.cb-lg{display:flex;gap:14px;justify-content:flex-end;margin-bottom:6px;font-size:12px;color:var(--mute)}
+.cb-lg span{display:inline-flex;align-items:center;gap:5px}
+.cb-lg span::before{content:"";width:10px;height:10px;border-radius:2px;background:#c4c8ce}
+.cb-lg .r::before{background:var(--hl)}
+.cb-m{display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;align-items:center}
+.cb-m+.cb-m{margin-top:8px}
+.cb-l{font-size:13px;font-weight:600;line-height:1.3;color:var(--ink-2)}
+.cb-l small{display:block;font-size:11px;font-weight:500;color:var(--mute)}
+.cb-bars{display:grid;gap:3px}
+.cb-r{display:flex;align-items:center;gap:6px}
+.cb-r i{display:block;flex:none;width:calc(var(--w) * .78);height:12px;border-radius:3px;background:#c4c8ce}
+.cb-r.r i{background:var(--hl)}
+.cb-r b{font-size:12.5px;font-weight:700;line-height:1;color:#6b7078;white-space:nowrap}
+.cb-r.r b{color:var(--hl-ink)}
+@media screen and (max-width:860px){
+  .cs-steps{padding-left:40px}
+  .cs-steps [data-step]::before{left:-28px}
+  .cs-steps [data-step]::after{left:-40px;width:26px;height:26px;margin-top:-13px;font-size:13px;line-height:26px}
+}
+/* 2-1. 1080px 이상과 PDF: 가로 퍼널 띠와 스테퍼를 빼고, 상자 ①~④ 묶음 왼쪽에만 세로 퍼널 기둥 (높이는 ①~④ 묶음과 같음). 가설 상자는 묶음에서 빼서 맨 아래 전체 폭. 상자 라벨은 본문 높이의 세로 가운데이고 라벨 칸 가로 가운데. 1079px 이하는 가로 퍼널 띠, 스테퍼, 라벨 정렬 그대로 */
+.fcol{display:none}
+@media screen and (min-width:1080px),print{
+  .cs-a .fband{display:none}
+  .cs-ab{display:grid;grid-template-columns:280px minmax(0,1fr);column-gap:28px;margin-top:clamp(18px,2vw,26px)}
+  .cs-ab>.cs-steps{display:contents}
+  .cs-ab>.cs-steps [data-step]::before,.cs-ab>.cs-steps [data-step]::after{display:none}
+  .fcol{grid-column:1;grid-row:1;display:flex;flex-direction:column;padding:26px 0;background:#fff}
+  .cs-ab .cs-boxes{grid-column:2;grid-row:1}
+  .cs-ab .cs-steps .cs-hyp{grid-column:1 / -1;grid-row:2;margin-top:12px}
+  .cs-a .bx{align-items:center}
+  .cs-a .bx h4{justify-content:center;text-align:center}
+}
+/* 기둥 안 퍼널: 첫 막대는 기둥 맨 위, 마지막 막대는 맨 아래, 막대 사이 세로 화살표가 남는 높이를 똑같이 나눔. 끊긴 막대만 --hl 바탕, 그 바로 위 화살표만 --hl 점선과 한가운데 '이탈' 알약 */
+.vfun{flex:1;display:flex;flex-direction:column;align-items:center}
+.vfun>.vb{flex:none;display:flex;align-items:center;justify-content:center;height:52px;border:1.5px solid #b8bcc2;border-radius:10px;background:#fff;font-size:19px;font-weight:600;line-height:1;letter-spacing:-.02em;color:#383b41;white-space:nowrap}
+.vfun.n4>.vb:nth-of-type(1),.vfun.n3>.vb:nth-of-type(1){width:240px}
+.vfun.n4>.vb:nth-of-type(2){width:205px}
+.vfun.n4>.vb:nth-of-type(3){width:170px}
+.vfun.n3>.vb:nth-of-type(2){width:195px}
+.vfun.n4>.vb:nth-of-type(4),.vfun.n3>.vb:nth-of-type(3){width:150px}
+.vfun>.vb.x{border:0;background:var(--hl);color:#fff;font-size:21px;font-weight:800}
+.vfun>.va{position:relative;flex:1 1 0;width:14px;min-height:40px;margin:6px 0}
+.vfun>.va::before{content:"";position:absolute;left:50%;top:0;bottom:2px;border-left:2px solid #9aa0a6;transform:translateX(-50%)}
+.vfun>.va::after{content:"";position:absolute;left:50%;bottom:2px;width:10px;height:10px;border-right:2px solid #9aa0a6;border-bottom:2px solid #9aa0a6;transform:translateX(-50%) rotate(45deg)}
+.vfun>.va.x::before{border-left:2.5px dashed var(--hl)}
+.vfun>.va.x::after{border-color:var(--hl)}
+.vcut{position:absolute;left:50%;top:50%;z-index:1;height:22px;transform:translate(-50%,-50%);padding:0 10px;border:1.5px solid var(--hl);border-radius:999px;background:#fff;font-size:12px;font-style:normal;font-weight:800;line-height:19px;letter-spacing:.02em;color:var(--hl-ink);white-space:nowrap}
+
+/* 인쇄: 글자 크기는 그대로 두고 안쪽 여백과 간격만 줄여 한 쪽에 맞춤 */
+@media print{
+  .cs-bar{padding-top:10px;padding-bottom:10px}
+  .fband{margin-top:14px}
+  .cs-steps{--sg:7px;margin-top:16px}
+  .cs-ab{margin-top:16px}
+  .cs-a .cs-hyp{padding-top:10px;padding-bottom:10px}
+  .cs-a .cs-hyp .cs-cmp{margin-top:10px}
+  .cmp-box{padding-top:9px;padding-bottom:9px}
+  .cs-grid{margin-top:12px}
+  .cs-st{row-gap:18px}
+  .cs-st .sg-stack .duo{grid-template-columns:repeat(2,146px)}
+  .cs-st .flow{padding:9px 12px}
+  .sg-bar{padding-top:6px;padding-bottom:6px}
+  .sg-l{margin-top:8px;gap:3px}
+  .media,.sg-pair{margin-top:10px}
+  .tb{margin-top:10px}
+  .tb th,.tb td{padding-top:5px;padding-bottom:5px}
+  .cs-res{gap:10px}
+  .vbox,.nx{padding:10px 14px}
+  .cmpbar{margin-top:6px;padding-top:8px}
+  .cb-m+.cb-m{margin-top:6px}
+}
+
+/* Contact: 흰 바탕, 진한 글자 */
+.closing{--sp-navy:#16171a;--sp-mute:#8e9299;overflow:hidden;background:#fff;color:#16171a}
+.closing .wrap{position:relative;z-index:1}
+.closing .thanks p.t{color:#16171a}
+.closing .thanks .sign{color:#16171a}
+.closing .thanks{align-items:center;grid-template-columns:minmax(0,1.9fr) minmax(0,1fr)}
+/* 감사 문장: 어바웃 미 제목과 같은 크기, 두 문장은 줄을 나눔 */
+.closing .thanks p.t{font-size:clamp(22px,2.35vw,34px);font-weight:600;line-height:1.5;letter-spacing:-.035em;color:#16171a}
+.closing .thanks p.t .ln{display:block}
+.closing .thanks p.t .ln+.ln{margin-top:.25em}
+@media screen and (max-width:860px){.closing .thanks{grid-template-columns:minmax(0,1fr)}}
+.closing .contact-card{background:#fff;color:var(--sp-navy);border:1px solid var(--line-2);border-radius:22px 22px 22px 6px;box-shadow:none}
+.closing .contact-card .mono{color:var(--sp-mute)}
+.closing .contact-card .copy{background:#16171a;color:#fff;font-weight:600}
+.closing .contact-card .copy:hover,.closing .contact-card .copy.done{background:#383b41;color:#fff}
+.closing .contact-card .cc-phone{border-top-color:#eceef1}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M7.5 12.4l3 3 6-6.3" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4m0 0h11l-2 4 2 4H5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  </defs>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="#top" aria-label="처음으로"><b>김은오</b><span>PORTFOLIO</span></a>
+    <nav class="nav" aria-label="섹션 이동">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+  <div class="progress" aria-hidden="true"></div>
+</header>
+
+<main>
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-meta">
+      <span class="mono"><span class="dot"></span>Portfolio 2026</span>
+      <span>김은오 | EUNOH KIM</span>
+      <a class="site-link" id="siteLink" href="https://eunohkim9815-pixel.github.io/portfolio-ohouse/" target="_blank" rel="noopener"><b>웹사이트에서 보기</b><span>eunohkim9815-pixel.github.io/portfolio-ohouse</span><i aria-hidden="true">↗</i></a>
+    </div>
+    <p class="hero-role">오늘의집 CRM Marketing Assistant 지원</p>
+    <h1 class="hero-title">데이터로 퍼널의 이탈 원인을 찾아<br> <span class="hl">전환</span>을 끌어올리는 마케터 김은오입니다</h1>
+    <nav class="hl-band" aria-label="케이스 바로가기">
+      <a class="hi" href="#case-1" data-case="1">
+        <span class="mono">Case 01</span>
+        <span class="hi-name">링글 틴즈</span>
+        <span class="hi-tag">가입 <span class="hi-ar">→</span> 구매</span>
+        <span class="hi-res"><span class="hi-lb"><span class="hi-chip">인플루언서 콘텐츠 가이드 재구성</span><span class="hi-txt"><span class="seg">적용 전 4.8%</span> <span class="seg">→ 적용 후 8.3%</span></span></span><span class="hi-num" data-grow><span class="ln">인플루언서 광고 구매 전환율을</span><br><span class="ln"><em>1.7배</em>로 개선</span></span></span>
+      </a>
+      <a class="hi" href="#case-3" data-case="3">
+        <span class="mono">Case 02</span>
+        <span class="hi-name">이지엠앤씨</span>
+        <span class="hi-tag">상담 신청 <span class="hi-ar">→</span> 예약</span>
+        <span class="hi-res"><span class="hi-lb"><span class="hi-chip">광고 소재와 성과 판정 기준 변경</span><span class="hi-txt"><span class="seg">8월 초 3.5%</span> <span class="seg">→ 9월 초 10.6%</span></span></span><span class="hi-num" data-grow><span class="ln">임플란트 광고 예약 전환율을</span><br><span class="ln"><em>3배</em>로 개선</span></span></span>
+      </a>
+      <a class="hi" href="#case-2" data-case="2">
+        <span class="mono">Case 03</span>
+        <span class="hi-name">KZ_K Studio</span>
+        <span class="hi-tag">구매 <span class="hi-ar">→</span> 재방문</span>
+        <span class="hi-res"><span class="hi-lb"><span class="hi-chip">쇼룸 1:1 대화로 고객 취향 분석</span><span class="hi-txt">맞춤 기프트박스 발송 뒤 재구매</span></span><span class="hi-num" data-grow><span class="ln">쇼룸에서 만난 고객 <em>약 70%</em>를</span><br><span class="ln">재구매로 연결</span></span></span>
+      </a>
+    </nav>
+  </div>
+</section>
+
+<section class="sec about" id="about">
+  <div class="wrap">
+    <header class="sec-head one">
+      <div class="kicker"><b>01</b><span class="mono">About me</span></div>
+      <h2 class="sec-title">데이터로 퍼널의 이탈 원인을 찾아, 전환을 끌어올려 왔습니다</h2>
+    </header>
+    <div class="ab-intro">
+      <div class="ab-profile">
+        <img class="ab-photo" src="assets/profile.jpg" alt="김은오 사진" width="520" height="520">
+        <div class="ab-info">
+          <p class="ab-name">김은오</p>
+          <p class="ab-role">마케터</p>
+          <ul class="ab-contact">
+            <li><a href="tel:010-6253-7082">010-6253-7082</a></li>
+            <li><a href="mailto:eunoh.kim9815@gmail.com">eunoh.kim9815<wbr>@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="ab-summary">퍼널의 이탈 구간은 데이터로 찾고, 이탈 원인은 고객 리서치로 끝까지 확인합니다. 발견한 문제는 주도적으로 개선에 나서고, 정형화된 방식이라도 고객이 반응하지 않으면 재설계합니다. 그렇게 유입에서 멈추지 않고, 전환과 리텐션까지 책임지는 마케팅을 지향합니다.</p>
+    </div>
+    <div class="about-grid ab-two">
+      <div class="ab-col">
+        <div>
+          <h3 class="ab-h">총 경력</h3>
+          <p class="total">2년 2개월<span>(재직 9개월, 인턴 17개월)</span></p>
+        </div>
+        <div>
+          <h3 class="ab-h">이력</h3>
+          <ol class="career">
+            <li><div class="cv-date">2026.02 ~ 재직 중<small>9개월</small></div><img class="cv-logo" src="assets/logo-ez.jpg" alt="이지엠앤씨 로고" width="46" height="46"><div class="cv-body"><b>이지엠앤씨</b><span>퍼포먼스 마케터</span><small>치과 광고 운영, 소재와 랜딩 기획</small></div></li>
+            <li><div class="cv-date">2024.05 ~ 2024.12<small>8개월</small></div><img class="cv-logo" src="assets/logo-ringle.jpg" alt="링글 로고" width="46" height="46"><div class="cv-body"><b>링글</b><span>틴즈팀 사업개발 인턴</span><small>인플루언서 마케팅 담당</small></div></li>
+            <li><div class="cv-date">2022.11 ~ 2023.07<small>9개월</small></div><img class="cv-logo" src="assets/logo-kz.jpg" alt="KZ_K Studio 로고" width="46" height="46"><div class="cv-body"><b>KZ_K Studio, 뉴욕</b><span>마케팅팀 인턴</span><small>프로모션 및 콘텐츠 기획</small></div></li>
+          </ol>
+        </div>
+        <div>
+          <h3 class="ab-h">학력</h3>
+          <ol class="career edu">
+            <li><div class="cv-date">2016.03 ~ 2022.02</div><div class="cv-body"><b>경북대학교</b><small>심리학 전공, 경영학 복수전공</small></div></li>
+            <li><div class="cv-date">2025.03 ~ 2027.08</div><div class="cv-body"><b>한국방송통신대학교</b><small>통계데이터과학과 편입, 졸업예정</small></div></li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="ab-right">
+        <div>
+          <h3 class="ab-h">자격</h3>
+          <table class="cert">
+            <tr><th scope="row">ADsP 데이터분석 준전문가</th><td>2026.05</td></tr>
+            <tr><th scope="row">Google Analytics Certification (GA4)</th><td>2026.10</td></tr>
+            <tr><th scope="row">검색광고마케터</th><td>2026.03</td></tr>
+            <tr><th scope="row">GTQ 포토샵 1급</th><td>2022.07</td></tr>
+            <tr><th scope="row">GTQi 일러스트 1급</th><td>2022.06</td></tr>
+          </table>
+        </div>
+        <div>
+          <h3 class="ab-h">Skills &amp; Tools</h3>
+          <div class="tools">
+            <div class="tg">
+              <p class="tg-h">광고 매체</p>
+              <ul class="tg-chips"><li>Meta Ads</li><li>Google Ads</li><li>TikTok Ads</li><li>네이버 광고</li><li>토스애즈</li></ul>
+            </div>
+            <div class="tg">
+              <p class="tg-h">데이터와 자동화</p>
+              <ul class="tg-chips"><li>GA4</li><li>SQL</li><li>Google Apps Script</li><li>n8n</li><li>Claude Code</li></ul>
+            </div>
+            <div class="tg">
+              <p class="tg-h">디자인과 협업</p>
+              <ul class="tg-icons">
+                <li><span class="ti"><img src="assets/tools/figma.svg" alt="" width="26" height="26"></span><span class="tn">Figma</span></li>
+                <li><span class="ti"><img src="assets/tools/photoshop.svg" alt="" width="26" height="26"></span><span class="tn">Photoshop</span></li>
+                <li><span class="ti"><img src="assets/tools/illustrator.svg" alt="" width="26" height="26"></span><span class="tn">Illustrator</span></li>
+                <li><span class="ti"><img src="assets/tools/indesign.svg" alt="" width="26" height="26"></span><span class="tn">InDesign</span></li>
+                <li><span class="ti"><img src="assets/tools/google.svg" alt="" width="26" height="26"></span><span class="tn">Google Workspace</span></li>
+                <li><span class="ti"><img src="assets/tools/slack.svg" alt="" width="26" height="26"></span><span class="tn">Slack</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ PROJECTS ═════════ -->
+<section class="sec projects" id="projects">
+  <div class="wrap">
+    <header class="sec-head one">
+      <div class="kicker"><b>02</b><span class="mono">Projects</span></div>
+      <h2 class="sec-title">구매, 예약, 재구매를 끌어올린 <span style="white-space:nowrap">세 개의 케이스</span></h2>
+    </header>
+  </div>
+
+  <!-- ───── 3장 CASE 01 링글 틴즈 인플루언서: A 문제 ───── -->
+  <article class="cs cs-a" id="case-1">
+    <div class="wrap">
+      <header class="cs-bar"><span class="cs-no">CASE 01</span><h3 class="cs-title">세일즈 콜 기준으로 인플루언서 가이드를 재구성해 구매 전환율을 1.7배로 높인 경험</h3><span class="cs-co"><b>링글 틴즈</b> | 2024.07 ~ 2024.12</span></header>
+      <div class="fband"><span class="fband-l">퍼널</span>
+      <div class="cs-funnel" role="img" aria-label="릴스 광고, 랜딩 유입, 가입, 구매 순서의 퍼널에서 가입에서 구매로 가는 단계가 끊김, 구매 전환율 4.8%, 팀 기준 11%">
+        <span class="fs">릴스 광고</span><i class="fa"></i><span class="fs">랜딩 유입</span><i class="fa"></i><span class="fs">가입</span><span class="fgrp"><span class="fseg"><i class="fa x"></i><span class="fs x">구매</span></span><b class="flab">구매 전환율 4.8%, 팀 기준 11%</b></span>
+      </div>
+      </div>
+      <div class="cs-ab">
+      <div class="fcol" role="img" aria-label="릴스 광고, 랜딩 유입, 가입, 구매 순서의 퍼널에서 가입에서 구매로 가는 단계에서 이탈">
+        <div class="vfun n4"><span class="vb">릴스 광고</span><i class="va"></i><span class="vb">랜딩 유입</span><i class="va"></i><span class="vb">가입</span><i class="va x"><span class="vcut">이탈</span></i><span class="vb x">구매</span></div>
+      </div>
+      <div class="cs-steps">
+      <ol class="cs-boxes">
+          <li class="bx" data-step="1"><h4><b>①</b>팀 KPI</h4><ul><li>프로젝트 목적: 인플루언서 광고의 구매 전환 증진</li><li>팀 KPI: 가입당 비용 목표치와 적정 범위, 가입 → 첫결제 전환율 11%, 첫결제 ROAS 240%</li><li>개선 전 가이드 광고의 가입당 비용은 적정 범위 이내로 KPI상 이상 징후 없음</li></ul></li>
+          <li class="bx" data-step="2"><h4><b>②</b>퍼널 이탈 구간</h4><div class="bx-c"><p class="bx-q">이탈 구간: <em>가입 → 구매</em></p><ul><li>광고비의 1/3을 편성한 인플루언서 광고에서 가입은 늘었지만 구매로 이어지지 않음</li><li>가입 → 구매 <b>4.8%</b>는 팀 내부 기준 <b>11%</b>의 절반 이하, ROAS 63%는 기준치 240%는 물론 손익분기 100%에도 미달</li></ul></div></li>
+          <li class="bx" data-step="3"><h4><b>③</b>원인 분석</h4><ul><li>세일즈 콜을 활용한 고객 리서치 실시: 영어 학습 목적, 유입 광고, 중시 요소를 질문해 학부모의 구매 결정 요인이 진도와 첨삭임을 확인</li><li>성과 상위 4개와 하위 4개 영상 요소별 비교 분석 실시: 고성과 영상에는 예습, 수업, 숙제, 복습의 4단계 학습 과정이 노출됨</li></ul></li>
+          <li class="bx q" data-step="4"><h4><b>④</b>문제 정의</h4><div class="bx-c"><p class="bx-q">왜 학부모가 보는 기준이 콘텐츠에 없었나</p><ul><li>개선 전 가이드는 '재미있게, 많이 말하기'만 요구해 학부모의 구매 결정 요인인 진도와 첨삭이 콘텐츠에 없었음</li><li>엄마표 영어, 영유 자녀, 사립초 자녀, 국제학교 자녀, 미국 학교 진학 준비 등 자녀 배경이 다른 인플루언서에게 같은 흐름을 요구해 각 타겟 학부모에게 맞는 소구가 되지 않음</li></ul></div></li>
+        </ol>
+        <div class="cs-hyp" data-step="H"><span class="hyp-l">가설</span><p>학부모의 기준인 예습, 수업, 숙제, 복습의 4단계 학습 과정과 튜터 첨삭이 보이도록 가이드를 재구성하고, 인플루언서 유형별로 도입부와 강조점을 나누면 구매 전환이 오를 것</p>
+          <div class="cs-cmp">
+            <span class="cmp-chip">As-is</span><span class="cmp-chip to">To-be</span>
+            <p class="cmp-box">개선 전 가이드, 유형 구분 없는 동일 흐름</p><i class="cmp-arr" aria-hidden="true"></i><p class="cmp-box to">4단계 학습 과정과 튜터 첨삭 노출, 유형별 도입부와 강조점</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ───── 4장 CASE 01: B 전략과 결과 ───── -->
+  <article class="cs cs-b" id="case-1-b">
+    <div class="wrap">
+      <header class="cs-bar"><span class="cs-no">CASE 01</span><h3 class="cs-title">세일즈 콜 기준으로 인플루언서 가이드를 재구성해 구매 전환율을 1.7배로 높인 경험</h3><span class="cs-co"><b>링글 틴즈</b> | 2024.07 ~ 2024.12</span></header>
+      <div class="cs-grid">
+        <div class="cs-st">
+          <section class="sg">
+            <h4 class="sg-bar"><b>①</b>학부모 기준에 맞는 가이드 재구성</h4>
+            <ul class="sg-l"><li>예습, 수업, 숙제, 복습의 4단계 학습 과정 화면 필수 노출</li><li>콘텐츠 초안 직접 검수</li></ul>
+            <div class="media ba">
+              <figure><div class="shot"><img src="assets/rg-guide-before.jpg" alt="개선 전 인플루언서 콘텐츠 가이드" loading="lazy" width="1400" height="788"></div><figcaption>개선 전 가이드</figcaption></figure>
+              <figure><div class="shot"><img src="assets/rg-guide-after.jpg" alt="개선 후 인플루언서 콘텐츠 가이드" loading="lazy" width="1400" height="788"></div><figcaption>개선 후 가이드</figcaption></figure>
+            </div>
+          </section>
+          <section class="sg">
+            <h4 class="sg-bar"><b>②</b>인플루언서 유형별 협업</h4>
+            <ul class="sg-l"><li>협업 방식: 인플루언서가 자녀 수업 장면을 담은 릴스를 제작해 게시하고, 그 영상을 메타 광고 소재로 집행</li><li>자녀 배경별 5개 유형으로 도입부와 강조점을 나눠 기획, 재구성한 가이드를 모든 인플루언서에게 전달 <small class="in">(2024.08.12부터 집행한 광고 60개)</small></li><li>섭외 메일, 채널톡 응대, 정산 자동화로 섭외부터 정산까지 단독 운영</li></ul>
+            <div class="sg-pair">
+              <table class="tb"><thead><tr><th>인플루언서 프로필</th><th>타겟 학부모</th><th>강조점</th></tr></thead><tbody>
+                <tr><td>16년 차 엄마표 영어 육아</td><td>엄마표 영어 학부모</td><td>원어민과 1:1 대화</td></tr>
+                <tr><td>영유 출신 자녀를 둔 학부모</td><td>영유 다닌 자녀</td><td>라이팅, 1:1 심화 토론</td></tr>
+                <tr><td>사립초 자녀 학부모</td><td>영어 다음 단계가 필요한 자녀</td><td>원서읽기 루틴, 1:1 수업</td></tr>
+                <tr><td>국제학교 재학생 자녀</td><td>국제학교 재학 자녀</td><td>학교 과목 대비, 에세이 첨삭</td></tr>
+                <tr><td>미국 학교 진학 준비 자녀</td><td>미국 학교 진학 예정 자녀</td><td>현지 수업 대비 1:1 수업</td></tr>
+              </tbody></table>
+              <div class="media reels">
+                <figure class="reel"><div class="shot"><img src="assets/rg-reel-1.jpg" alt="16년 영어육아 인플루언서 릴스" loading="lazy" width="386" height="566"></div><figcaption>원어민과 1:1 대화</figcaption></figure>
+                <figure class="reel"><div class="shot"><img src="assets/rg-reel-2.jpg" alt="영유 출신 인플루언서 릴스" loading="lazy" width="386" height="566"></div><figcaption>라이팅, 1:1 심화 토론</figcaption></figure>
+                <figure class="reel"><div class="shot"><img src="assets/rg-reel-3.jpg" alt="사립초 겨울방학 인플루언서 릴스" loading="lazy" width="386" height="566"></div><figcaption>원서읽기 루틴, 1:1 수업</figcaption></figure>
+                <figure class="reel"><div class="shot"><img src="assets/rg-reel-4.jpg" alt="국제학교 학생 인플루언서 릴스" loading="lazy" width="386" height="566"></div><figcaption>학교 과목 대비, 에세이 첨삭</figcaption></figure>
+                <figure class="reel"><div class="shot"><img src="assets/rg-reel-5.jpg" alt="미국 학교 준비 인플루언서 릴스" loading="lazy" width="386" height="566"></div><figcaption>현지 수업 대비 1:1 수업</figcaption></figure>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="cs-res">
+          <h4 class="sg-bar rs">결과<span class="rs-chip">이탈 구간 가입 <i>→</i> 구매</span></h4>
+          <div class="big">
+            <p class="big-s">인플루언서 광고 구매 전환율</p>
+            <p class="big-n"><span class="d">4.8% →</span> 8.3%, <span class="nw"><em>1.7배</em> 상승</span></p>
+            <p class="big-sub">기존 가이드 광고 24개 대 재구성 가이드 광고 60개</p>
+          </div>
+          <div class="vbox">
+            <h5>검증</h5>
+            <ul><li>가입당 비용은 유지, 구매당 비용 45% 절감</li><li>ROAS 63% → 120%, 손익분기 넘김</li><li><span class="qchip">정성 성과</span>가이드라인 재구성으로 성과가 개선된 사례를 회사가 메타 크리에이티브 데이에서 소개</li></ul>
+            <div class="cmpbar" role="img" aria-label="기존 가이드 광고 대 재구성 가이드 광고: 구매 전환율 4.8%에서 8.3%, ROAS 63%에서 120%, 구매당 비용 지수 100에서 55"><p class="cb-lg"><span class="g">기존</span><span class="r">개선 후</span></p><div class="cb-m"><p class="cb-l">구매 전환율</p><div class="cb-bars"><div class="cb-r g"><i style="--w:57.8%"></i><b>4.8%</b></div><div class="cb-r r"><i style="--w:100.0%"></i><b>8.3%</b></div></div></div><div class="cb-m"><p class="cb-l">ROAS</p><div class="cb-bars"><div class="cb-r g"><i style="--w:52.5%"></i><b>63%</b></div><div class="cb-r r"><i style="--w:100.0%"></i><b>120%</b></div></div></div><div class="cb-m"><p class="cb-l">구매당 비용<small>지수</small></p><div class="cb-bars"><div class="cb-r g"><i style="--w:100.0%"></i><b>100</b></div><div class="cb-r r"><i style="--w:55.0%"></i><b>55</b></div></div></div></div>
+          </div>
+          <div class="nx">
+            <h5>확장</h5>
+            <div class="nx-r solo"><ul><li>성과 상위 인플루언서와 겨울캠프 공동구매 진행, 10일 만에 신규 가입 115건, 평소 인플루언서 광고 3주치, 가입당 비용은 평소보다 19% 낮음</li></ul></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ───── 5장 CASE 02 이지엠앤씨 임플란트: A 문제 ───── -->
+  <article class="cs cs-a" id="case-3">
+    <div class="wrap">
+      <header class="cs-bar"><span class="cs-no">CASE 02</span><h3 class="cs-title">상담 기록 163건에서 찾은 기준으로 소재와 판정 기준을 바꿔 예약률을 3배로 끌어올린 경험</h3><span class="cs-co"><b>이지엠앤씨</b> | 2026.07 ~ 2026.09</span></header>
+      <div class="fband"><span class="fband-l">퍼널</span>
+      <div class="cs-funnel" role="img" aria-label="광고, 상담 신청, 예약, 내원 순서의 퍼널에서 상담 신청에서 예약으로 가는 단계가 끊김, 예약률 10.3%에서 3.5%로">
+        <span class="fs">광고</span><i class="fa"></i><span class="fs">상담 신청</span><span class="fgrp"><span class="fseg"><i class="fa x"></i><span class="fs x">예약</span></span><b class="flab">예약률 10.3% → 3.5%</b></span><i class="fa"></i><span class="fs">내원</span>
+      </div>
+      </div>
+      <div class="cs-ab">
+      <div class="fcol" role="img" aria-label="광고, 상담 신청, 예약, 내원 순서의 퍼널에서 상담 신청에서 예약으로 가는 단계에서 이탈">
+        <div class="vfun n4"><span class="vb">광고</span><i class="va"></i><span class="vb">상담 신청</span><i class="va x"><span class="vcut">이탈</span></i><span class="vb x">예약</span><i class="va"></i><span class="vb">내원</span></div>
+      </div>
+      <div class="cs-steps">
+      <ol class="cs-boxes">
+          <li class="bx" data-step="1"><h4><b>①</b>팀 KPI</h4><ul><li>프로젝트 목적: 임플란트 상담 신청의 예약과 내원 증진</li><li>팀 KPI: 임플란트 상담 신청 DB 단가. 명시된 목표치 없이 직전 달 수준 유지와 소재 간 상대 비교로 판정</li><li>광고 성과를 DB 단가로 판정해 소재와 랜딩의 ON/OFF와 예산 배분을 결정하는 구조. 이 기준에서는 지원금 소구가 최우수로 분류됨. 구글 기준 지원금 랜딩의 DB 단가가 가격 공개 랜딩보다 32% 낮았기 때문</li></ul></li>
+          <li class="bx" data-step="2"><h4><b>②</b>퍼널 이탈 구간</h4><div class="bx-c"><p class="bx-q">이탈 구간: <em>상담 신청 → 예약</em></p><ul><li>7월보다 광고비와 상담 신청은 늘었고 DB 단가는 28% 악화에 그쳐 보였지만, 8월 초 계정 전체 예약률은 <b>10.3%에서 3.5%로</b> 3분의 1 수준까지 하락하고 예약단가는 <b>3.7배</b> 상승</li></ul></div></li>
+          <li class="bx" data-step="3"><h4><b>③</b>원인 분석</h4><ul><li>상담 기록 163건 전수 분석: 혜택만 보고 신청한 허수가 8월 초 신청의 절반인 50.5%</li><li>지원금 안내 랜딩은 '신청한 적 없다' 응답이 11.2%, 가격 공개 랜딩은 0.9%</li><li>광고로 재유입됐지만 기존 환자로 분류돼 광고 성과에서 누락되던 예약과 내원을 광고 리드 DB와 매칭해 집계, 광고 성과가 실제보다 낮게 잡히던 왜곡을 보정</li></ul></li>
+          <li class="bx q" data-step="4"><h4><b>④</b>문제 정의</h4><div class="bx-c"><p class="bx-q">왜 신청은 늘고 예약은 무너졌나</p><ul><li>광고 성과를 DB 단가로 판정해 소재 ON/OFF를 결정하니, 지원금 소구 소재가 계속 ON으로 유지됐고 시 지원금으로 오인한 허수 신청이 늘어도 판정에 드러나지 않았음</li><li>임플란트는 의료진과 가격을 보고 결정하는데 광고는 둘 다 보여 주지 않았음</li></ul></div></li>
+        </ol>
+        <div class="cs-hyp" data-step="H"><span class="hyp-l">가설</span><p>신청 전에 핵심 USP인 의료진 이력과 가격을 보여 주면 허수는 줄고 예약은 늘 것<small>검증은 같은 기간 기존 소재와 허수, 예약, 내원 비교</small></p>
+          <div class="cs-cmp">
+            <span class="cmp-chip">As-is</span><span class="cmp-chip to">To-be</span>
+            <p class="cmp-box">신청당 비용 기준 소재 판정, 지원금 소구 중심</p><i class="cmp-arr" aria-hidden="true"></i><p class="cmp-box to">예약과 내원 기준 판정, 의료진 이력과 가격 공개 소구</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ───── 6장 CASE 02: B 전략과 결과 ───── -->
+  <article class="cs cs-b" id="case-3-b">
+    <div class="wrap">
+      <header class="cs-bar"><span class="cs-no">CASE 02</span><h3 class="cs-title">상담 기록 163건에서 찾은 기준으로 소재와 판정 기준을 바꿔 예약률을 3배로 끌어올린 경험</h3><span class="cs-co"><b>이지엠앤씨</b> | 2026.07 ~ 2026.09</span></header>
+      <div class="cs-grid">
+        <div class="cs-st r3">
+          <section class="sg">
+            <h4 class="sg-bar"><b>①</b>메타: 의료진 이력을 앞세운 소재</h4>
+            <ul class="sg-l"><li>메타는 소재가 성과를 좌우하는 채널이라 지원금 소구 소재를 의료진 이력 소재로 교체하는 것이 가장 빠른 레버</li><li>8월 초 예약률 하락을 확인한 직후 지원금 소구 소재 축소</li><li>소재 제작팀과 협업해 치의학 박사, 식립 실적 등 의료진 특장점 강조 소재 투입</li></ul>
+            <div class="media quad">
+              <figure><div class="shot"><img src="assets/im-cr-1.jpg" alt="의료진 이력을 앞세운 메타 소재 1" loading="lazy" width="700" height="875"></div></figure>
+              <figure><div class="shot"><img src="assets/im-cr-2.jpg" alt="의료진 이력을 앞세운 메타 소재 2" loading="lazy" width="700" height="700"></div></figure>
+              <figure><div class="shot"><img src="assets/im-cr-3.jpg" alt="의료진 이력을 앞세운 메타 소재 3" loading="lazy" width="700" height="700"></div></figure>
+              <figure><div class="shot"><img src="assets/im-cr-4.jpg" alt="의료진 이력을 앞세운 메타 소재 4" loading="lazy" width="700" height="875"></div></figure>
+            </div>
+            <p class="cap">메타 소재</p>
+          </section>
+          <section class="sg">
+            <h4 class="sg-bar"><b>②</b>구글: 가격 공개 랜딩으로 예산 이동</h4>
+            <div class="sg-stack">
+              <ul class="sg-l"><li>구글은 소구가 다른 랜딩 여러 개를 동시에 운영하던 채널이라 새 소재 제작 없이 랜딩 간 예산 재배분으로 즉시 대응</li><li>기존 랜딩 중 개당 가격을 공개한 페이지를 골라 예산 비중 19.5% → 50.9%로 확대</li><li>신청당 비용은 지원금 랜딩이 32% 낮았지만, 예약 전환율은 가격 공개 랜딩이 2배 높았음</li></ul>
+              <div class="media duo">
+                <figure><div class="shot"><img src="assets/im-land-1.jpg" alt="가격 공개 랜딩 첫 화면 1" loading="lazy" width="700" height="700"></div></figure>
+                <figure><div class="shot"><img src="assets/im-land-2.jpg" alt="가격 공개 랜딩 첫 화면 2" loading="lazy" width="700" height="700"></div></figure>
+                <p class="cap">가격 공개 랜딩 첫 화면</p>
+              </div>
+            </div>
+          </section>
+          <section class="sg">
+            <h4 class="sg-bar"><b>③</b>예약과 내원 기준 리포팅 구조 구축</h4>
+            <ul class="sg-l"><li>매체별 광고 데이터와 상담 기록을 AI로 통합한 대시보드 구축: 소재별 예약과 내원 결과를 매일 확인 가능</li><li>신청일 기준 코호트 도입: 월말 신청의 예약이 다음 달 실적으로 잡히던 왜곡 제거</li><li>재유입 고객 매칭과 판정 가이드라인 공유: 소재 판정 기준을 신청당 비용에서 예약과 내원으로 전환, 팀이 점차 같은 기준으로 소재를 판단</li></ul>
+            <div class="media flow" role="img" aria-label="메타 광고, 구글 광고, 상담 기록을 통합 대시보드로 모아 신청, 예약, 내원까지 보는 구조. 기존 판정은 신청, 새 판정은 예약과 내원">
+              <div class="src"><span>메타 광고</span><span>구글 광고</span><span>상담 기록</span></div>
+              <div class="arr"></div>
+              <div class="hub">통합<br>대시보드</div>
+              <div class="arr"></div>
+              <div>
+                <div class="funnel"><span>신청</span><span class="new">예약</span><span class="new">내원</span></div>
+                <div class="judge"><span>기존 판정</span><span class="new">새 판정</span></div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="cs-res">
+          <h4 class="sg-bar rs">결과<span class="rs-chip">이탈 구간 상담 신청 <i>→</i> 예약</span></h4>
+          <div class="big">
+            <p class="big-s">계정 전체 예약률</p>
+            <p class="big-n"><span class="d">3.5% →</span> 10.6%, <span class="nw"><em>3배</em> 상승</span></p>
+            <p class="big-sub">(8월 초 대비 9월 초)</p>
+          </div>
+          <div class="big">
+            <p class="big-n s"><span class="d">예약단가</span> 67% 절감</p>
+          </div>
+          <div class="vbox">
+            <h5>같은 기간 비교</h5>
+            <ul><li>새 소재 예약 전환 23.4% 대 기존 소재 7.4%, 3.2배</li><li>허수 비율 36.6% → 8.5%, 상담 가능한 유효 리드 비율 상승</li><li>구글 가격 공개 랜딩 내원단가 52% 절감</li></ul>
+            <div class="cmpbar" role="img" aria-label="같은 기간 기존 소재 대 새 소재: 예약 전환 7.4%에서 23.4%, 허수 비율 36.6%에서 8.5%, 구글 내원단가 지수 100에서 48"><p class="cb-lg"><span class="g">기존</span><span class="r">개선 후</span></p><div class="cb-m"><p class="cb-l">예약 전환</p><div class="cb-bars"><div class="cb-r g"><i style="--w:31.6%"></i><b>7.4%</b></div><div class="cb-r r"><i style="--w:100.0%"></i><b>23.4%</b></div></div></div><div class="cb-m"><p class="cb-l">허수 비율</p><div class="cb-bars"><div class="cb-r g"><i style="--w:100.0%"></i><b>36.6%</b></div><div class="cb-r r"><i style="--w:23.2%"></i><b>8.5%</b></div></div></div><div class="cb-m"><p class="cb-l">구글 내원단가<small>지수</small></p><div class="cb-bars"><div class="cb-r g"><i style="--w:100.0%"></i><b>100</b></div><div class="cb-r r"><i style="--w:48.0%"></i><b>48</b></div></div></div></div>
+          </div>
+          <div class="nx">
+            <h5>확장</h5>
+            <div class="nx-r solo"><ul><li><span class="qchip">정성 성과</span>판정 기준을 신청에서 예약과 내원으로 바꾸는 가이드라인을 팀 기준으로 정착시키는 중</li></ul></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ───── 7장 CASE 03 KZ_K Studio 기프트박스: A 문제 ───── -->
+  <article class="cs cs-a" id="case-2">
+    <div class="wrap">
+      <header class="cs-bar"><span class="cs-no">CASE 03</span><h3 class="cs-title">관성적으로 만들던 VIP 기프트박스를 고객 취향으로 바꿔 재구매로 연결한 경험</h3><span class="cs-co"><b>KZ_K Studio</b> | 2022.11 ~ 2023.07</span></header>
+      <div class="fband"><span class="fband-l">퍼널</span>
+      <div class="cs-funnel" role="img" aria-label="구매, 재방문, 재구매 순서의 퍼널에서 구매에서 재방문으로 가는 단계가 끊김, 박스를 받아도 다시 찾을 이유가 없음">
+        <span class="fs">구매</span><span class="fgrp"><span class="fseg"><i class="fa x"></i><span class="fs x">재방문</span></span><b class="flab">박스를 받아도 다시 찾을 이유가 없음</b></span><i class="fa"></i><span class="fs">재구매</span>
+      </div>
+      </div>
+      <div class="cs-ab">
+      <div class="fcol" role="img" aria-label="구매, 재방문, 재구매 순서의 퍼널에서 구매에서 재방문으로 가는 단계에서 이탈">
+        <div class="vfun n3"><span class="vb">구매</span><i class="va x"><span class="vcut">이탈</span></i><span class="vb x">재방문</span><i class="va"></i><span class="vb">재구매</span></div>
+      </div>
+      <div class="cs-steps">
+      <ol class="cs-boxes">
+          <li class="bx" data-step="1"><h4><b>①</b>팀 KPI</h4><ul><li>프로젝트 목적: VIP 고객 리텐션 강화</li><li>팀 KPI: 하이엔드 브랜드 특성상 매출을 좌우하는 VIP 고객의 재방문과 재구매. 시즌마다 VIP 250명에게 기프트박스를 보내 관리</li></ul></li>
+          <li class="bx" data-step="2"><h4><b>②</b>퍼널 이탈 구간</h4><div class="bx-c"><p class="bx-q">이탈 구간: <em>구매 → 재방문</em></p><ul><li>시즌 유행 아이템 위주의 기프트박스는 어디서나 받을 수 있어, 박스를 받은 고객이 다음 시즌에 쇼룸을 다시 찾을 이유가 되기 어려웠음</li></ul></div></li>
+          <li class="bx" data-step="3"><h4><b>③</b>원인 분석</h4><ul><li>기존 기프트박스 구성의 근거는 매거진 리서치와 구매 이력뿐이라, 고객이 무엇을 좋아하는지 보여 주는 취향 데이터가 없어 구성 기준이 시즌 유행에 머물렀음</li><li>쇼룸 응대를 자청해 1:1 고객 리서치 실시: 방문 고객 약 80%의 취미가 그림</li></ul></li>
+          <li class="bx q" data-step="4"><h4><b>④</b>문제 정의</h4><div class="bx-c"><p class="bx-q">기존 박스로는 브랜드 호감이 쌓이지 않아 재구매로 이어지기 어렵다고 판단</p><span class="bx-why">Why</span><ul><li>받는 사람의 취향이 아니라 시즌 유행 아이템을 기준으로 구성하던 관성</li><li>디자이너가 옷을 만들 때 그린 스케치, 컬렉션마다 정해 두는 원단 색상처럼 브랜드만 가진 자산이 박스에 전혀 담기지 않았음</li></ul></div></li>
+        </ol>
+        <div class="cs-hyp" data-step="H"><span class="hyp-l">가설</span><p>고객의 취향인 그림에 브랜드를 담으면 브랜드만의 호감이 쌓이고 그 호감이 재구매로 이어질 것</p>
+          <div class="cs-cmp">
+            <span class="cmp-chip">As-is</span><span class="cmp-chip to">To-be</span>
+            <p class="cmp-box">시즌 유행 아이템 기프트박스</p><i class="cmp-arr" aria-hidden="true"></i><p class="cmp-box to">고객 취향인 그림을 담은 기프트박스</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ───── 8장 CASE 03: B 전략과 결과 ───── -->
+  <article class="cs cs-b" id="case-2-b">
+    <div class="wrap">
+      <header class="cs-bar"><span class="cs-no">CASE 03</span><h3 class="cs-title">관성적으로 만들던 VIP 기프트박스를 고객 취향으로 바꿔 재구매로 연결한 경험</h3><span class="cs-co"><b>KZ_K Studio</b> | 2022.11 ~ 2023.07</span></header>
+      <div class="cs-grid">
+        <div class="cs-st r1">
+          <section class="sg">
+            <h4 class="sg-bar"><b>①</b>취향 조사에서 상품으로</h4>
+            <ul class="sg-l"><li>타겟이 즐겨 보는 매거진을 전부 읽어 레퍼런스로 삼고, 쇼룸 대화로 취향 확인</li><li>디자이너와 협업해 컬렉션 의상을 밑그림으로 그린 스케치북과 원단 컬러 색연필 8색으로 구성, 스케치북 제작부터 박스 구성까지 직접 진행</li></ul>
+            <div class="media trio">
+              <figure><div class="shot"><img src="assets/kz-sketch.jpg" alt="스케치북 표지" loading="lazy" width="367" height="367"></div><figcaption>스케치북 표지</figcaption></figure>
+              <figure><div class="shot"><img src="assets/kz-drawing.jpg" alt="밑그림과 원단 정보" loading="lazy" width="242" height="286"></div><figcaption>밑그림과 원단 정보</figcaption></figure>
+              <figure><div class="shot"><img src="assets/kz-howto.jpg" alt="색칠 가이드" loading="lazy" width="280" height="226"></div><figcaption>색칠 가이드</figcaption></figure>
+            </div>
+          </section>
+          <section class="sg">
+            <h4 class="sg-bar"><b>②</b>외주 콘텐츠를 직접 제작</h4>
+            <ul class="sg-l"><li>외주였던 릴스 편집, 메일러, 뉴스페이퍼와 룩북 등 시즌 간행물을 직접 디자인</li></ul>
+            <div class="media trio" style="align-items:start">
+              <figure><div class="shot"><img src="assets/kz-cover.jpg" alt="뉴스페이퍼 표지" loading="lazy" width="1200" height="800"></div><figcaption>뉴스페이퍼 표지</figcaption></figure>
+              <figure><div class="shot"><img src="assets/kz-spread.jpg" alt="뉴스페이퍼 내지" loading="lazy" width="1200" height="800"></div><figcaption>뉴스페이퍼 내지</figcaption></figure>
+              <figure><div class="shot" style="background:#ededed"><img src="assets/kz-mailer.jpg" alt="룩북 메일러" loading="lazy" width="838" height="309"></div><figcaption>룩북 메일러</figcaption></figure>
+            </div>
+          </section>
+          <div class="loop">
+            <span class="loop-h">기대한 고객 행동</span>
+            <ol class="loop-s"><li>박스 수령</li><li>밑그림 색칠</li><li>실물 보러 쇼룸 방문</li><li>재구매</li></ol>
+          </div>
+        </div>
+        <div class="cs-res">
+          <h4 class="sg-bar rs">결과<span class="rs-chip">이탈 구간 구매 <i>→</i> 재방문</span></h4>
+          <div class="big">
+            <p class="big-t">쇼룸에서 직접 만난 고객 <em>약 70%</em>의 재방문과 재구매</p>
+          </div>
+          <div class="vbox">
+            <h5>근거</h5>
+            <ul><li>250세트 기한 내 전량 발송</li><li><span class="qchip">정성 성과</span>VIP 긍정 피드백 다수, '역대 최고의 기프트박스' 호평, 색칠한 그림을 보내온 고객</li></ul>
+          </div>
+          <figure class="res-img"><div class="shot"><img src="assets/kz-giftbox.jpg" alt="열린 기프트박스" loading="lazy" width="740" height="516"></div></figure>
+          <div class="nx">
+            <h5>확장</h5>
+            <div class="nx-r solo"><ul><li>취향 기반 기프트박스 기획은 다음 시즌부터 정례화</li></ul></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- ═════════ CONTACT ═════════ -->
+<section class="sec closing" id="contact">
+  <div class="wrap">
+    <header class="sec-head one">
+      <div class="kicker"><b>03</b><span class="mono">Contact</span></div>
+    </header>
+    <div class="thanks">
+      <div>
+        <p class="t"><span class="ln">제 이야기를 끝까지 읽어주셔서 진심으로 감사드립니다.</span><span class="ln">궁금한 점이 있으시면 언제든 편하게 연락 주세요.</span></p>
+        <p class="sign">김은오 드림</p>
+      </div>
+      <div class="contact-card">
+        <span class="mono">E-mail</span>
+        <b>eunoh.kim9815@gmail.com</b>
+        <button class="copy" type="button" data-copy="eunoh.kim9815@gmail.com"><svg aria-hidden="true"><use href="#i-copy"/></svg><span class="lbl">이메일 복사</span></button>
+        <div class="cc-phone">
+          <span class="mono">Phone</span>
+          <b><a href="tel:010-6253-7082">010-6253-7082</a></b>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p>© 2026 김은오</p>
+    <p><a href="#top">처음으로 ↑</a></p>
+  </div>
+</footer>
+<script>
+(function(){
+  /* 방문 분석 설정: 깃허브(github.io)에서만 동작해요 */
+  var SITE = { ga4: 'G-73SENFXNYM', clarity: 'yy02i3cg82' };
+  var landing = location.href; /* 들어온 주소 그대로(UTM 포함) 기록용 */
+  var onSite = /(^|\.)github\.io$/.test(location.hostname);
+  var qs = {}; try { new URLSearchParams(location.search).forEach(function(v,k){ qs[k]=v; }); } catch(e){}
+  /* 내 방문 제외: 주소 끝에 ?me=1 을 붙여 한 번 열면 그 브라우저의 방문은 집계에서 빠져요 (?me=0 으로 해제) */
+  var owner = false;
+  try {
+    if (qs.me === '1') localStorage.setItem('ek_owner', '1');
+    if (qs.me === '0') localStorage.removeItem('ek_owner');
+    owner = localStorage.getItem('ek_owner') === '1';
+  } catch(e){ owner = qs.me === '1'; }
+  if (qs.me === '1' || qs.me === '0') {
+    try { history.replaceState(null, '', location.pathname + location.hash); } catch(e){}
+    var tst = document.createElement('div');
+    tst.textContent = owner ? '✓ 이 브라우저에서 연 방문은 이제 집계에서 빠져요' : '이 브라우저에서 연 방문도 다시 집계돼요';
+    tst.setAttribute('style', 'position:fixed;left:50%;bottom:28px;transform:translateX(-50%);z-index:9999;background:#111;color:#fff;font-size:14px;font-weight:600;padding:12px 20px;border-radius:999px;white-space:nowrap');
+    document.body.appendChild(tst);
+    setTimeout(function(){ if (tst.parentNode) tst.parentNode.removeChild(tst); }, 4000);
+  }
+  onSite = onSite && !owner;
+  /* 주소창 정리: utm_ 값은 기록에만 쓰고 주소창에서는 바로 지워요 */
+  try {
+    var sp = new URLSearchParams(location.search), hadUtm = false;
+    Array.from(sp.keys()).forEach(function(k){ if (/^utm_/i.test(k)) { sp.delete(k); hadUtm = true; } });
+    if (hadUtm) { var rest = sp.toString(); history.replaceState(null, '', location.pathname + (rest ? '?' + rest : '') + location.hash); }
+  } catch(e){}
+  if (onSite && SITE.ga4) {
+    var g = document.createElement('script'); g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=' + SITE.ga4; document.head.appendChild(g);
+    window.dataLayer = window.dataLayer || []; window.gtag = function(){ dataLayer.push(arguments); };
+    gtag('js', new Date()); gtag('config', SITE.ga4, { page_location: landing });
+  }
+  if (onSite && SITE.clarity) {
+    (function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)}; t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i; y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y); })(window, document, "clarity", "script", SITE.clarity);
+    if (qs.utm_source) clarity('set', 'utm_source', qs.utm_source);
+    if (qs.utm_medium) clarity('set', 'utm_medium', qs.utm_medium);
+  }
+  function track(name, params){ try { if (window.gtag) gtag('event', name, params || {}); if (window.clarity) clarity('event', name); } catch(e){} }
+
+  var root = document.documentElement;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.querySelectorAll('[data-copy]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var t = btn.getAttribute('data-copy'), lbl = btn.querySelector('.lbl'), orig = lbl ? lbl.textContent : '';
+      function done(){ btn.classList.add('done'); if (lbl) lbl.textContent = '복사됨'; setTimeout(function(){ btn.classList.remove('done'); if (lbl) lbl.textContent = orig; }, 1600); }
+      function fallback(){ try { var ta=document.createElement('textarea'); ta.value=t; ta.setAttribute('readonly',''); ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); } catch(e){} done(); }
+      try { if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(done, fallback); else fallback(); } catch(e){ fallback(); }
+      track('copy_email');
+    });
+  });
+  document.querySelectorAll('.hi').forEach(function(a){ a.addEventListener('click', function(){ track('case_card_click', {case_id: a.getAttribute('data-case')}); }); });
+  var sl = document.getElementById('siteLink'); if (sl) sl.addEventListener('click', function(){ track('site_link_click'); });
+
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
+  var seen = {};
+  if ('IntersectionObserver' in window) {
+    var navIO = new IntersectionObserver(function(es){ es.forEach(function(en){ if (en.isIntersecting) navLinks.forEach(function(a){ a.classList.toggle('on', a.getAttribute('href') === '#' + en.target.id); }); }); }, {rootMargin:'-45% 0px -50% 0px'});
+    ['top','about','projects','contact'].forEach(function(id){ var el=document.getElementById(id); if (el) navIO.observe(el); });
+    var viewIO = new IntersectionObserver(function(es){ es.forEach(function(en){ var id = en.target.id; if (en.isIntersecting && !seen[id]) { seen[id] = 1; track('section_view', {section: id}); } }); }, {threshold:0.3});
+    ['about','case-1','case-1-b','case-3','case-3-b','case-2','case-2-b','contact'].forEach(function(id){ var el=document.getElementById(id); if (el) viewIO.observe(el); });
+  }
+
+  var bar = document.querySelector('.progress');
+  var pxEls = Array.prototype.slice.call(document.querySelectorAll('[data-speed]'));
+  var grow = Array.prototype.slice.call(document.querySelectorAll('[data-grow]'));
+  var marks = [25,50,75,100], sent = {};
+  var printing = false, ticking = false;
+  function clamp(v,a,b){ return v<a?a:(v>b?b:v); }
+  function frame(){
+    ticking = false; if (printing) return;
+    var vh = window.innerHeight, sy = window.pageYOffset || root.scrollTop, H = Math.max(1, root.scrollHeight - vh);
+    var prog = clamp(sy / H, 0, 1);
+    if (bar) bar.style.transform = 'scaleX(' + prog.toFixed(4) + ')';
+    marks.forEach(function(m){ if (!sent[m] && prog * 100 >= m - 1) { sent[m] = 1; track('scroll_milestone', {percent: m}); } });
+    if (reduce) return;
+    pxEls.forEach(function(el){
+      var r = el.parentElement.getBoundingClientRect(); if (r.bottom < -200 || r.top > vh + 200) return;
+      el.style.transform = 'translate3d(0,' + (-((r.top + r.height/2) - vh/2) * parseFloat(el.getAttribute('data-speed'))).toFixed(1) + 'px,0)';
+    });
+    grow.forEach(function(el){
+      var r = el.parentElement.getBoundingClientRect(); if (r.bottom < -100 || r.top > vh + 100) return;
+      var t = clamp((vh - r.top) / (vh * 0.7), 0, 1), e = 1 - Math.pow(1 - t, 3);
+      el.style.transform = 'scale(' + (0.88 + 0.12 * e).toFixed(4) + ')';
+    });
+  }
+  function onScroll(){ if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  window.addEventListener('load', onScroll);
+  window.addEventListener('beforeprint', function(){ printing = true; document.querySelectorAll('img[loading="lazy"]').forEach(function(i){ i.loading = 'eager'; }); pxEls.concat(grow).forEach(function(el){ el.style.transform = ''; }); });
+  window.addEventListener('afterprint', function(){ printing = false; onScroll(); });
+  frame();
+})();
+</script>
+</body>
+</html>
